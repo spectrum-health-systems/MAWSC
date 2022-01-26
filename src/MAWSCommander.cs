@@ -4,8 +4,6 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Entry point for MAWSC
-// b220125.132925
+// b220126.132738
 
-MACL.Logging.WriteLog();
-
-//Console.WriteLine("Hello, World!");
+MACL.LogEvent.ToFile($@"C:\MAWS_Staging", "Message", 8);
