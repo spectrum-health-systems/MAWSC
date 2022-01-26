@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAWSC", "MAWSC.csproj", "{81D19010-B5AE-4CB7-B4C4-8FF5F3F99D92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MACL", "..\..\MACL\src\MACL.csproj", "{F8CD3255-626C-45D1-9B18-BC234C571354}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{81D19010-B5AE-4CB7-B4C4-8FF5F3F99D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81D19010-B5AE-4CB7-B4C4-8FF5F3F99D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81D19010-B5AE-4CB7-B4C4-8FF5F3F99D92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8CD3255-626C-45D1-9B18-BC234C571354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8CD3255-626C-45D1-9B18-BC234C571354}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8CD3255-626C-45D1-9B18-BC234C571354}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8CD3255-626C-45D1-9B18-BC234C571354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
