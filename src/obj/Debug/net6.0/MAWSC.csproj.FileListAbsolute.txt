@@ -12,3 +12,4 @@ D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\MAWSC.dll
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\ref\MAWSC.dll
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\MAWSC.pdb
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\MAWSC.genruntimeconfig.cache
+D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\MAWSC.csproj.AssemblyReference.cache

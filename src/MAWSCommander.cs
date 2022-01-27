@@ -4,20 +4,22 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Entry point for MAWSC
-// b220126.170648
+// b220127.085201
 
 using MAWSC;
 
-/* Put some space between whatever is currently in the console, and what we will be writing.
+/* Initialize the logMessage for logfiles, and put some space between whatever is currently in the console, and what we
+ * will be writing.
  */
-Console.WriteLine($"{Environment.NewLine}");
+var logMessage = Utility.MawscStart();
 
 /* There has to be at least one argument passed, otherwise just exit.
  */
 if(args.Length == 0)
 {
-    Log.ToScreen($"[ERROR] No arguments passed (arg[0] does not exist).", true);
-    Log.ToFile($"[ERROR] No arguments passed. (arg[0] does not exist)");
+    var logMsgNoArgs = $"[  ERROR] No arguments passed to MAWSC...[EXITING]{Environment.NewLine}";
+    Log.ToScreen(logMsgNoArgs, true);
+    Log.WriteToFile(logMsgNoArgs);
     Environment.Exit(1);
 }
 
@@ -25,16 +27,21 @@ if(args.Length == 0)
  */
 var firstArgument = args[0].Trim().ToLower().Replace("-", "");
 
-var logMessage = "";
-
 switch(firstArgument)
 {
     case "s":
     case "stage":
     case "staging":
-        Log.ToScreen($"[ INFO] Value of arg[0] is valid: \"{args[0]}\" -> \"{firstArgument}\"...");
-        logMessage += $"[ INFO] Value of arg[0] is valid: \"{args[0]}\"/\"{firstArgument}\"...{Environment.NewLine}";
+        var logMsgValidArg0 = $"[  CHECK] Value of arg[0] is valid: \"{args[0]}\"...[     OK]{Environment.NewLine}";
+        logMessage = Log.AppendAndDisplay(logMessage, logMsgValidArg0);
+
+        //var logMsgValidArg0 = $"[  CHECK] Value of arg[0] is valid: \"{args[0]}\"...[     OK]{Environment.NewLine}";
+        //Log.ToScreen(logMsgValidArg0);
+        //logMessage += logMsgValidArg0;
+
+
         Staging.ParseArguments(args, logMessage);
+        Utility.MawscFinish(logMessage);
         break;
 
     case "p":
@@ -49,8 +56,8 @@ switch(firstArgument)
         break;
 
     default:
-        Log.ToScreen($"[ERROR] Value of Arg[0] is invalid: \"{args[0]}\"/\"{firstArgument}\".", true);
-        Log.ToFile($"[ERROR] Value of Arg[0] is invalid: \"{args[0]}\"/\"{firstArgument}\".");
-        Environment.Exit(1);
+        var logMsgInvalidArg0 = $"[  ERROR] Value of Arg[0] is invalid: \"{args[0]}\"...[EXITING]{Environment.NewLine}";
+        Log.ToScreen(logMsgInvalidArg0, true);
+        Utility.MawscFinish(logMessage);
         break;
 }

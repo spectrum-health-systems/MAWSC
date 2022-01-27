@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MAWSC": {
+      "commandName": "Project",
+      "commandLineArgs": "--Stage -deploy"
+    }
+  }
+}
