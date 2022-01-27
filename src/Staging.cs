@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Staging environment.
-// b220126.170648
+// b220127.144311
 
 namespace MAWSC
 {
@@ -19,10 +19,7 @@ namespace MAWSC
              */
             if(args.Length == 1)
             {
-                var logMsgNoArg1 = $"[ERROR] Not enough arguments passed (arg[1] does not exist).{Environment.NewLine}";
-                logMessage = Log.AppendAndDisplay(logMessage, logMsgNoArg1);
-                ////Log.ToScreen(logMsgNoArg1, true);
-                ////logMessage += logMsgNoArg1;
+                logMessage = Log.AppendAndDisplay(logMessage, "[ ERROR] ", $"Not enough arguments passed (Arg[1] does not exist)", "INVALID", true);
                 Utility.MawscFinish(logMessage);
             }
 
@@ -35,21 +32,13 @@ namespace MAWSC
                 case "d":
                 case "dep":
                 case "deploy":
-                    var logMsgStagingDeploy = $"[ INFO] Argument \"{args[1]}\" (arg[1]) is valid.{Environment.NewLine}";
-                    logMessage = Log.AppendAndDisplay(logMessage, logMsgStagingDeploy);
-
-                    //////Log.ToScreen(logMsgStagingDeploy);
-                    //////logMessage += logMsgStagingDeploy;
+                    logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"Arg[1] \"{args[1]}\"", "VALID");
                     Deploy(logMessage);
-
                     break;
 
                 default:
-                    var logMsgStagingError = $"[ERROR] Invalid Arg1: \"{args[1]}\" -> \"{secondArgument}\".";
-                    Log.ToScreen(logMsgStagingError, true);
-                    logMessage += logMsgStagingError;
+                    logMessage = Log.AppendAndDisplay(logMessage, "[ ERROR] ", $"Arg[1] \"{args[1]}\"", "INVALID", true);
                     Utility.MawscFinish(logMessage);
-
                     break;
             }
         }
@@ -62,80 +51,44 @@ namespace MAWSC
             /* Create the backup directory
              */
             var backupDirectoryRoot = $@"C:\MyAvatool\MAWS\Staging\Backup";
-            var logMsgCreateBackupDirStart = $"[ INFO] Creating Staging backup directory in \"{backupDirectoryRoot}\\\"...{Environment.NewLine}";
-            logMessage = Log.AppendAndDisplay(logMessage, logMsgCreateBackupDirStart);
-            //////Log.ToScreen(logMsgCreateBackupDirectoryStart);
-            //////logMessage += logMsgCreateBackupDirectoryStart;
-
+            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{backupDirectoryRoot}\\", "CREATING");
             var backupDirectory = CreateBackupDirectory(backupDirectoryRoot);
-
-            var logMsgCreateBackupDirectoryComplete = $"        Directory \"{backupDirectory}\"\\ CREATED.{Environment.NewLine}";
-            Log.ToScreen(logMsgCreateBackupDirectoryComplete);
-            logMessage += logMsgCreateBackupDirectoryComplete;
+            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{backupDirectory}", "CREATED");
 
             /* Verify that the Staging IIS directory exists.
              */
             var stagingIisDirectory = $@"C:\AvatoolWebService\MAWS_Staging\";
-            var logMsgVerifyStagingIisDirectory = $"[ INFO] Verifying the Staging IIS directory (\"{stagingIisDirectory}\" exists...{Environment.NewLine})";
-            Log.ToScreen(logMsgVerifyStagingIisDirectory);
-            logMessage += logMsgVerifyStagingIisDirectory;
-
+            logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"{stagingIisDirectory}", "EXISTS?");
             VerifyStagingIisDirectory(logMessage, stagingIisDirectory);
-
-            var logMsgStagingIisDirectoryVerified = $"       Staging IIS directory (\"{stagingIisDirectory}\") does exist...OK.{Environment.NewLine}";
-            Log.ToScreen(logMsgStagingIisDirectoryVerified);
-            logMessage += logMsgStagingIisDirectoryVerified;
+            logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"{stagingIisDirectory}", "EXISTS");
 
             /* Backup the current Staging IIS directory.
              */
-            var logMsgBackupStagingIisDirectoryStart = $"[ INFO] Creating timestamped backup of current Staging IIS directory...{Environment.NewLine}";
-            Log.ToScreen(logMsgBackupStagingIisDirectoryStart);
-            logMessage += logMsgBackupStagingIisDirectoryStart;
-
+            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"{stagingIisDirectory}", "BACKUP SOURCE");
+            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"{backupDirectory}", "BACKUP DESITNATION");
             Utility.MoveDirectory(stagingIisDirectory, backupDirectory);
-
-            //BackupStagingIisDirectory(stagingIisDirectory, backupDirectory);
-
-            var logMsgBackupStagingIisDirectoryFinish = $"        Copied \"{stagingIisDirectory}\" to \"{stagingIisDirectory}\"...OK.{Environment.NewLine}";
-            Log.ToScreen(logMsgBackupStagingIisDirectoryFinish);
-            logMessage += logMsgBackupStagingIisDirectoryFinish;
+            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"Backing up Staging environment", "BACKUP COMPLETE");
 
             /* Refresh the Staging IIS directory.
              */
-            var logMsgRefreshStagingIisDirectoryStart = $"[ INFO] Refreshing Staging IIS directory...{Environment.NewLine}";
-            Log.ToScreen(logMsgRefreshStagingIisDirectoryStart);
-            logMessage += logMsgRefreshStagingIisDirectoryStart;
-
-            var logMsgDeleteStagingIisDirectoryStart = $"        Deleting Staging IIS directory...";
-            Log.ToScreen(logMsgDeleteStagingIisDirectoryStart);
-            logMessage += logMsgDeleteStagingIisDirectoryStart;
-
+            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{stagingIisDirectory}", "DELETING");
             Directory.Delete(stagingIisDirectory, true);
+            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{stagingIisDirectory}", "DELETED");
 
-            var logMsgDeleteStagingIisDirectoryFinish = $"        COMPLETE.{Environment.NewLine}";
-            Log.ToScreen(logMsgDeleteStagingIisDirectoryFinish);
-            logMessage += logMsgDeleteStagingIisDirectoryFinish;
-
-            var logMsgRecreateStagingIisDirectoryStart = $"        Recreating Staging IIS directory...";
-            Log.ToScreen(logMsgRecreateStagingIisDirectoryStart);
-            logMessage += logMsgRecreateStagingIisDirectoryStart;
-
+            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{stagingIisDirectory}", "CREATING");
             Utility.ConfirmDirectoryExists(stagingIisDirectory);
+            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{stagingIisDirectory}", "CREATED");
 
-            var logMsgRecreateStagingIisDirectoryFinish = $"        COMPLETE.{Environment.NewLine}";
-            Log.ToScreen(logMsgRecreateStagingIisDirectoryFinish);
-            logMessage += logMsgRecreateStagingIisDirectoryFinish;
-
-            var logMsgCopyGitHubSourceStart = $"[ INFO] Copying GitHub Staging src\\...{Environment.NewLine}";
-            Log.ToScreen(logMsgCopyGitHubSourceStart);
-            logMessage += logMsgCopyGitHubSourceStart;
-
+            /* Copy GitHub source to IIS.
+             */
             var stagingGitHubSrc = $@"C:\MyAvatool\MAWS\Staging\src\";
+            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{stagingGitHubSrc}", "COPY SOURCE");
+            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{stagingIisDirectory}", "COPY DESTINATION");
             Utility.CopyDirectory(stagingGitHubSrc, stagingIisDirectory);
+            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
 
-            var logMsgCopyGitHubSourceFinish = $"        COMPLETE...{Environment.NewLine}";
-            Log.ToScreen(logMsgCopyGitHubSourceFinish);
-            logMessage += logMsgCopyGitHubSourceFinish;
+            logMessage += $"{Environment.NewLine}" +
+                          $"Deployment to staging complete!{Environment.NewLine}";
 
             Utility.MawscFinish(logMessage);
         }
@@ -161,57 +114,9 @@ namespace MAWSC
              */
             if(!Directory.Exists(stagingIisDirectory))
             {
-                var logMsgStagingIisDirectoryDoesNotExist = $"[ERROR] Staging IIS directory does not exist.{Environment.NewLine}";
-                Log.ToScreen(logMsgStagingIisDirectoryDoesNotExist);
-                logMessage += logMsgStagingIisDirectoryDoesNotExist;
+                logMessage = Log.AppendAndDisplay(logMessage, "[  ERROR] ", $"{stagingIisDirectory}", "DOES NOT EXIST", true);
                 Utility.MawscFinish(logMessage);
             }
         }
-
-        ///////// <summary>
-        ///////// 
-        ///////// </summary>
-        //////private static void BackupStagingIisDirectory(string stagingIisDirectory, string backupDirectory)
-        //////{
-        //////    Utility.MoveDirectory(stagingIisDirectory, backupDirectory);
-        //////}
-
-        ///////// <summary>
-        ///////// 
-        ///////// </summary>
-        //////private static void CleanStagingIisDirectory(string stagingIisDirectory)
-        //////{
-        //////    /* Since we know the stagingIisDirectory exists, we'll just update the user via the console, and not worry
-        //////     * about upating the logMessage here.
-        //////     */
-        //////    Log.ToScreen($"[ INFO] Cleaning Staging IIS directory...");
-        //////    Directory.Delete(stagingIisDirectory, true);
-        //////    Log.ToScreen($"COMPLETE.{Environment.NewLine}");
-        //////}
-
-        /////////////// <summary>
-        ///////// 
-        ///////// </summary>
-        //////private static void RefreshStagingIisDirectory(string stagingIisDirectory)
-        //////{
-        //////    /* Since we know the stagingIisDirectory exists, we'll just update the user via the console, and not worry
-        //////     * about upating the logMessage here.
-        //////     */
-        //////    Log.ToScreen($"[ INFO] Refreshing Staging IIS directory...");
-        //////    Utility.ConfirmDirectoryExists(stagingIisDirectory);
-        //////    Log.ToScreen($"COMPLETE.{Environment.NewLine}");
-        //////}
-
-        ///////// <summary>
-        ///////// 
-        ///////// </summary>
-        //////private static void CopyGitHubSourceToIis(string stagingGitHubSrc, string stagingIisDirectory)
-        //////{
-        //////    /* Since we know the both the stagingGitHubSrc and stagingIisDirectory exist, we'll just update the user via
-        //////     * the console, and not worry about upating the logMessage here.
-        //////     */
-        //////    Log.ToScreen($"[ INFO] Copying repository src to IIS...");
-        //////    Utility.CopyDirectory(stagingGitHubSrc, stagingIisDirectory);
-        //////}
     }
 }

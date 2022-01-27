@@ -4,8 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Utilities.
-// b220126.170648
-
+// b220127.144311
 
 namespace MAWSC
 {
@@ -16,7 +15,11 @@ namespace MAWSC
         /// </summary>
         public static string MawscStart()
         {
-            var logMsgStart = $"[MAWSC] Started...{Environment.NewLine}";
+            var logMsgStart = $"{Environment.NewLine}" +
+                              $"================{Environment.NewLine}" +
+                              $"MAWSC started...{Environment.NewLine}" +
+                              $"================{Environment.NewLine}";
+
             Console.WriteLine(logMsgStart);
 
             return logMsgStart;
@@ -27,7 +30,11 @@ namespace MAWSC
         /// </summary>
         public static void MawscFinish(string logMessage)
         {
-            var logMsgFinish = $"[MAWSC] Exiting...";
+            var logMsgFinish = $"{Environment.NewLine}" +
+                              $"================{Environment.NewLine}" +
+                              $"MAWSC exiting...{Environment.NewLine}" +
+                              $"================{Environment.NewLine}";
+
             Console.WriteLine(logMsgFinish);
 
             var logContent = $"{logMessage}" +
@@ -43,22 +50,20 @@ namespace MAWSC
         /// </summary>
         public static void CopyDirectory(string sourceDir, string destinationDir)
         {
-            var directoryToCopy      = new DirectoryInfo(sourceDir);
-            var subDirectoriesToCopy = GetRecursiveDirectories(sourceDir, destinationDir);
+            ConfirmDirectoryExists(destinationDir);
 
-            Log.ToScreen($"[ INFO] Working with directory: {directoryToCopy}...{Environment.NewLine}");
+            var dirToCopy      = new DirectoryInfo(sourceDir);
+            var subDirsToCopy = GetRecursiveDirectories(sourceDir, destinationDir);
 
-            foreach(FileInfo file in directoryToCopy.GetFiles())
+            foreach(FileInfo file in dirToCopy.GetFiles())
             {
-                Log.ToScreen($"  -> Copying file: {directoryToCopy}...");
-                var targetFilePath = Path.Combine(destinationDir, file.Name);
+                string targetFilePath = Path.Combine(destinationDir, file.Name);
                 file.CopyTo(targetFilePath);
-                Log.ToScreen($"COPIED.{Environment.NewLine}");
             }
 
-            foreach(DirectoryInfo subDirectory in subDirectoriesToCopy)
+            foreach(DirectoryInfo subDirectory in subDirsToCopy)
             {
-                var newDestinationDir = Path.Combine(destinationDir, subDirectory.Name);
+                string newDestinationDir = Path.Combine(destinationDir, subDirectory.Name);
                 CopyDirectory(subDirectory.FullName, newDestinationDir);
             }
 
@@ -71,22 +76,20 @@ namespace MAWSC
         {
             ConfirmDirectoryExists(destinationDir);
 
-            var dir  = new DirectoryInfo(sourceDir);
-            var dirs = GetRecursiveDirectories(sourceDir, destinationDir);
+            var dirToMove     = new DirectoryInfo(sourceDir);
+            var subDirsToMove = GetRecursiveDirectories(sourceDir, destinationDir);
 
-            // Get the files in the source directory and copy to the destination directory
-            foreach(FileInfo file in dir.GetFiles())
+            foreach(FileInfo file in dirToMove.GetFiles())
             {
                 string targetFilePath = Path.Combine(destinationDir, file.Name);
                 file.MoveTo(targetFilePath);
             }
 
-            foreach(DirectoryInfo subDir in dirs)
+            foreach(DirectoryInfo subDir in subDirsToMove)
             {
                 string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
                 MoveDirectory(subDir.FullName, newDestinationDir);
             }
-            var breaker=0;
         }
 
         /// <summary>
@@ -95,10 +98,8 @@ namespace MAWSC
         /// <returns></returns>
         private static DirectoryInfo GetDirectoryInfo(string sourceDir, string destinationDir)
         {
-            // Get information about the source directory
             var dir = new DirectoryInfo(sourceDir);
 
-            // Check if the source directory exists, and create it if it does not.
             if(!dir.Exists)
             {
                 Directory.CreateDirectory(destinationDir);
@@ -113,16 +114,13 @@ namespace MAWSC
         /// <returns></returns>
         private static DirectoryInfo[] GetRecursiveDirectories(string sourceDir, string destinationDir)
         {
-            // Get information about the source directory
             var dir = new DirectoryInfo(sourceDir);
 
-            // Check if the source directory exists, and create it if it does not.
             if(!dir.Exists)
             {
                 Directory.CreateDirectory(destinationDir);
             }
 
-            // Cache directories before we start copying
             DirectoryInfo[] dirs = dir.GetDirectories();
 
             return dirs;
@@ -138,9 +136,7 @@ namespace MAWSC
              */
             if(!Directory.Exists(directoryToConfirm))
             {
-                Log.ToScreen($"[ INFO] Creating directory: {directoryToConfirm}...");
                 Directory.CreateDirectory(directoryToConfirm);
-                Log.ToScreen($"CREATED.{Environment.NewLine}");
             }
         }
     }

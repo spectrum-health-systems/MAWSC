@@ -4,24 +4,48 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // MAWSC logging.
-// b220126.170648
+// b220127.144311
 
 namespace MAWSC
 {
     internal class Log
     {
-        public static string AppendAndDisplay(string origLogMsg, string newLogMsg, bool displayHelp = false, bool exitMawsc = false)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static string AppendAndDisplay(string origLogMsg, string logPrefix, string newLogMessage, string logSuffix, bool displayHelp = false)
         {
+            var logMsgLine = BuildLogMsg(logPrefix, newLogMessage, logSuffix);
+
             if(displayHelp)
             {
-                ToScreen(origLogMsg, true);
+                ToScreen(logMsgLine, true);
             }
             else
             {
-                ToScreen(origLogMsg, false);
+                ToScreen(logMsgLine, false);
             }
 
-            return origLogMsg + newLogMsg;
+            return $"{origLogMsg}{logMsgLine}{Environment.NewLine}";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private static string BuildLogMsg(string logPrefix, string logMsg, string logSuffix)
+        {
+            var prefixAndMsg   = $"{logPrefix}{logMsg}";
+            var totalMsgLength = prefixAndMsg.Length + logSuffix.Length;
+            var dotString      = "";
+
+            if(totalMsgLength <= 79)
+            {
+                dotString = new string('.', 80 - totalMsgLength);
+            }
+
+            return $"{prefixAndMsg}{dotString}{logSuffix}";
         }
 
         /// <summary>
@@ -44,10 +68,9 @@ namespace MAWSC
             /* If there was a fatal error, let the user know what it was, and point them to help information.
              */
             var displayContents = displayHelp
-                ? $"  [MAWSC] {msgToDisplay}" +
+                ? $"{msgToDisplay}" +
                   $"{Environment.NewLine}" +
-                  $"{Environment.NewLine}" +
-                  $"  Please type \"MAWSC --help\" for more information"
+                  $"Please type \"MAWSC --help\" for more information"
                 : msgToDisplay;
 
             Console.WriteLine($"{displayContents}");

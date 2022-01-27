@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Entry point for MAWSC
-// b220127.085201
+// b220127.144311
 
 using MAWSC;
 
@@ -17,10 +17,8 @@ var logMessage = Utility.MawscStart();
  */
 if(args.Length == 0)
 {
-    var logMsgNoArgs = $"[  ERROR] No arguments passed to MAWSC...[EXITING]{Environment.NewLine}";
-    Log.ToScreen(logMsgNoArgs, true);
-    Log.WriteToFile(logMsgNoArgs);
-    Environment.Exit(1);
+    logMessage = Log.AppendAndDisplay(logMessage, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID", true);
+    Utility.MawscFinish(logMessage);
 }
 
 /* The user can pass arguments as "myarg", "-myarg", or "--myarg", and we'll just turn all of those into "myarg".
@@ -32,14 +30,7 @@ switch(firstArgument)
     case "s":
     case "stage":
     case "staging":
-        var logMsgValidArg0 = $"[  CHECK] Value of arg[0] is valid: \"{args[0]}\"...[     OK]{Environment.NewLine}";
-        logMessage = Log.AppendAndDisplay(logMessage, logMsgValidArg0);
-
-        //var logMsgValidArg0 = $"[  CHECK] Value of arg[0] is valid: \"{args[0]}\"...[     OK]{Environment.NewLine}";
-        //Log.ToScreen(logMsgValidArg0);
-        //logMessage += logMsgValidArg0;
-
-
+        logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"Arg[0] \"{args[0]}\"", "VALID");
         Staging.ParseArguments(args, logMessage);
         Utility.MawscFinish(logMessage);
         break;
@@ -56,8 +47,7 @@ switch(firstArgument)
         break;
 
     default:
-        var logMsgInvalidArg0 = $"[  ERROR] Value of Arg[0] is invalid: \"{args[0]}\"...[EXITING]{Environment.NewLine}";
-        Log.ToScreen(logMsgInvalidArg0, true);
+        logMessage = Log.AppendAndDisplay(logMessage, "[  ERROR] ", $"Arg[0] \"{args[0]}\"", "INVALID", true);
         Utility.MawscFinish(logMessage);
         break;
 }
