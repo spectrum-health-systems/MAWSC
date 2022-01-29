@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Utilities.
-// b2220129.123835
+// bb220129.142505
 
 using System.Reflection;
 
@@ -72,6 +72,23 @@ namespace MAWSC
             }
 
         }
+
+        public static void CopyFiles(List<string> filesToCopy, string sourceDir, string destinationDir)
+        {
+            foreach(var fileToCopy in filesToCopy)
+            {
+                string targetFilePath = Path.Combine(destinationDir, $"{destinationDir}{fileToCopy}");
+                File.Copy($"{sourceDir}{fileToCopy}", targetFilePath);
+            }
+        }
+        //public static void MoveFiles(List<string> filesToMove, string destinationDir, string sourceDir)
+        //{
+        //    foreach(var fileToMove in filesToMove)
+        //    {
+        //        File.Copy($"{sourceDir}{fileToMove}", destinationDir);
+        //    }
+        //}
+
 
         /// <summary>
         /// 

@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MAWSC/0.1.0-build.2220129-123835": {
+      "MAWSC/0.2.0-b220129.142505": {
         "runtime": {
           "MAWSC.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "MAWSC/0.1.0-build.2220129-123835": {
+    "MAWSC/0.2.0-b220129.142505": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

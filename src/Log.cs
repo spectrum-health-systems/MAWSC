@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // MAWSC logging.
-// b2220129.123835
+// b220129.142505
 
 namespace MAWSC
 {
@@ -69,6 +69,7 @@ namespace MAWSC
              */
             var displayContents = displayHelp
                 ? $"{msgToDisplay}" +
+                  $"{Environment.NewLine}" +
                   $"{Environment.NewLine}" +
                   $"Please type \"MAWSC --help\" for more information"
                 : msgToDisplay;
