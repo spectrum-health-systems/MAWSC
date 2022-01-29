@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Entry point for MAWSC
-// b220127.144311
+// b2220129.123835
 
 using MAWSC;
 
@@ -32,7 +32,7 @@ switch(firstArgument)
     case "staging":
         logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"Arg[0] \"{args[0]}\"", "VALID");
         Staging.ParseArguments(args, logMessage);
-        Utility.MawscFinish(logMessage);
+        Utility.MawscFinish(logMessage, 0);
         break;
 
     case "p":

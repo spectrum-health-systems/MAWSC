@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Staging environment.
-// b220127.144311
+// b2220129.123835
 
 namespace MAWSC
 {
@@ -90,7 +90,7 @@ namespace MAWSC
             logMessage += $"{Environment.NewLine}" +
                           $"Deployment to staging complete!{Environment.NewLine}";
 
-            Utility.MawscFinish(logMessage);
+            //Utility.MawscFinish(logMessage, 0);
         }
 
         /// <summary>

@@ -4,7 +4,9 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Utilities.
-// b220127.144311
+// b2220129.123835
+
+using System.Reflection;
 
 namespace MAWSC
 {
@@ -15,10 +17,12 @@ namespace MAWSC
         /// </summary>
         public static string MawscStart()
         {
+            var ver = Assembly.GetEntryAssembly().GetName().Version;
+
             var logMsgStart = $"{Environment.NewLine}" +
-                              $"================{Environment.NewLine}" +
-                              $"MAWSC started...{Environment.NewLine}" +
-                              $"================{Environment.NewLine}";
+                              $"================================================================================{Environment.NewLine}" +
+                              $"MAWS Commander {ver} started{Environment.NewLine}" +
+                              $"================================================================================{Environment.NewLine}";
 
             Console.WriteLine(logMsgStart);
 
@@ -28,12 +32,12 @@ namespace MAWSC
         /// <summary>
         /// 
         /// </summary>
-        public static void MawscFinish(string logMessage)
+        public static void MawscFinish(string logMessage, int exitCode = 1)
         {
             var logMsgFinish = $"{Environment.NewLine}" +
-                              $"================{Environment.NewLine}" +
-                              $"MAWSC exiting...{Environment.NewLine}" +
-                              $"================{Environment.NewLine}";
+                              $"================================================================================{Environment.NewLine}" +
+                              $"MAWS Commander exiting{Environment.NewLine}" +
+                              $"================================================================================{Environment.NewLine}";
 
             Console.WriteLine(logMsgFinish);
 
@@ -42,7 +46,7 @@ namespace MAWSC
 
             Log.WriteToFile(logContent);
 
-            Environment.Exit(1);
+            Environment.Exit(exitCode);
         }
 
         /// <summary>
