@@ -13,12 +13,12 @@ using MAWSC;
  */
 var logContent = Utility.MawscStart();
 
-/* There has to be at least one argument passed, otherwise exit.
+/* There has to be at least one argument passed, otherwise exit.e
  */
 if(args.Length == 0)
 {
     logContent = Log.AppendAndShow(logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
-    Utility.MawscFinish(logContent);
+    Utility.MawscFinish(logContent, 1);
 }
 
 /* The user can pass arguments as "myarg", "-myarg", or "--myarg", and we'll just turn all of those into "myarg".
