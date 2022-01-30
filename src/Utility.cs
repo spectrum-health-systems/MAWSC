@@ -3,121 +3,98 @@
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
-// Utilities.
-// b220130.083155
-
-using System.Reflection;
+// Common utilities used bt MAWS Commander.
+// b20130.101224
 
 namespace MAWSC
 {
     public class Utility
     {
         /// <summary>
-        /// 
+        /// Things to do when MAWS Commander starts.
         /// </summary>
-        public static string MawscStart()
+        public static void MawscStart(ref string logContent)
         {
-            var ver = Assembly.GetEntryAssembly().GetName().Version;
-
-            var logMsgStart = $"{Environment.NewLine}" +
-                              $"================================================================================{Environment.NewLine}" +
-                              $"MAWS Commander {ver} started{Environment.NewLine}" +
-                              $"================================================================================{Environment.NewLine}";
-
-            Console.WriteLine(logMsgStart);
-
-            return logMsgStart;
+            Log.StartLogging(ref logContent);
         }
 
         /// <summary>
-        /// 
+        /// Things to do when MAWS Commander exits.
         /// </summary>
-        public static void MawscFinish(string logMessage, int exitCode)
+        public static void MawscFinish(string logContent, int exitCode)
         {
-            var logMsgFinish = $"{Environment.NewLine}" +
-                              $"================================================================================{Environment.NewLine}" +
-                              $"MAWS Commander exiting{Environment.NewLine}" +
-                              $"================================================================================{Environment.NewLine}";
-
-
-            if(exitCode != 0)
-            {
-                logMsgFinish += $"{Environment.NewLine}" +
-                                $"{Environment.NewLine}" +
-                                $"Please type \"MAWSC --help\" for more information";
-            }
-
-            Console.WriteLine(logMsgFinish);
-
-            var logContent = $"{logMessage}" +
-                             $"{logMsgFinish}";
-
-            Log.WriteToFile(logContent);
-
+            Log.EndLogging(logContent, exitCode);
             Environment.Exit(exitCode);
         }
 
         /// <summary>
-        /// 
+        /// Force an argument to be trimmed, lowercase, and remove dashes.
         /// </summary>
-        public static void CopyDirectory(string sourceDir, string destinationDir)
+        /// <param name="argToReduce">The argument to reduce.</param>
+        /// <returns>A nice looking argument (e.g., "--Argument1" -> "argument1")</returns>
+        public static string ReduceArg(string argToReduce)
         {
-            ConfirmDirectoryExists(destinationDir);
+            return argToReduce.Trim().ToLower().Replace("-", "");
+        }
 
-            var dirToCopy      = new DirectoryInfo(sourceDir);
-            var subDirsToCopy = GetRecursiveDirectories(sourceDir, destinationDir);
+        /// <summary>
+        /// Copy all files and subdirectories from a source to a destination.
+        /// </summary>
+        public static void CopyDir(ref string logContent, string sourceDir, string targetDir)
+        {
+            ConfirmDirExists(ref logContent, sourceDir, false);
+            ConfirmDirExists(ref logContent, targetDir, true);
+
+            var dirToCopy     = new DirectoryInfo(sourceDir);
+            var subDirsToCopy = GetSubDirs(sourceDir, targetDir);
 
             foreach(FileInfo file in dirToCopy.GetFiles())
             {
-                string targetFilePath = Path.Combine(destinationDir, file.Name);
+                string targetFilePath = Path.Combine(targetDir, file.Name);
+                Log.AppendAndShow(ref logContent, "[ CHECK] ", $"test", "VALID");
                 file.CopyTo(targetFilePath);
             }
 
             foreach(DirectoryInfo subDirectory in subDirsToCopy)
             {
-                string newDestinationDir = Path.Combine(destinationDir, subDirectory.Name);
-                CopyDirectory(subDirectory.FullName, newDestinationDir);
-            }
-
-        }
-
-        public static void CopyFiles(List<string> filesToCopy, string sourceDir, string destinationDir)
-        {
-            foreach(var fileToCopy in filesToCopy)
-            {
-                string targetFilePath = Path.Combine(destinationDir, $"{destinationDir}{fileToCopy}");
-                File.Copy($"{sourceDir}{fileToCopy}", targetFilePath);
+                string newDestinationDir = Path.Combine(targetDir, subDirectory.Name);
+                CopyDir(ref logContent, subDirectory.FullName, newDestinationDir);
             }
         }
-        //public static void MoveFiles(List<string> filesToMove, string destinationDir, string sourceDir)
-        //{
-        //    foreach(var fileToMove in filesToMove)
-        //    {
-        //        File.Copy($"{sourceDir}{fileToMove}", destinationDir);
-        //    }
-        //}
-
 
         /// <summary>
         /// 
         /// </summary>
-        public static void MoveDirectory(string sourceDir, string destinationDir)
+        public static void CopyFiles(List<string> filesToCopy, string sourceDir, string targetDir)
         {
-            ConfirmDirectoryExists(destinationDir);
+            foreach(var fileToCopy in filesToCopy)
+            {
+                string targetFilePath = Path.Combine(targetDir, $"{targetDir}{fileToCopy}");
+                File.Copy($"{sourceDir}{fileToCopy}", targetFilePath);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void MoveDir(ref string logContent, string sourceDir, string targetDir)
+        {
+            ConfirmDirExists(ref logContent, targetDir, true);
+
 
             var dirToMove     = new DirectoryInfo(sourceDir);
-            var subDirsToMove = GetRecursiveDirectories(sourceDir, destinationDir);
+            var subDirsToMove = GetSubDirs(sourceDir, targetDir);
 
             foreach(FileInfo file in dirToMove.GetFiles())
             {
-                string targetFilePath = Path.Combine(destinationDir, file.Name);
+                string targetFilePath = Path.Combine(targetDir, file.Name);
                 file.MoveTo(targetFilePath);
             }
 
             foreach(DirectoryInfo subDir in subDirsToMove)
             {
-                string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
-                MoveDirectory(subDir.FullName, newDestinationDir);
+                string newDestinationDir = Path.Combine(targetDir, subDir.Name);
+                MoveDir(ref logContent, subDir.FullName, newDestinationDir);
             }
         }
 
@@ -125,13 +102,13 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <returns></returns>
-        private static DirectoryInfo GetDirectoryInfo(string sourceDir, string destinationDir)
+        private static DirectoryInfo GetDirInfo(string sourceDir, string targetDir)
         {
             var dir = new DirectoryInfo(sourceDir);
 
             if(!dir.Exists)
             {
-                Directory.CreateDirectory(destinationDir);
+                Directory.CreateDirectory(targetDir);
             }
 
             return dir;
@@ -141,13 +118,13 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <returns></returns>
-        private static DirectoryInfo[] GetRecursiveDirectories(string sourceDir, string destinationDir)
+        private static DirectoryInfo[] GetSubDirs(string sourceDir, string targetDir)
         {
             var dir = new DirectoryInfo(sourceDir);
 
             if(!dir.Exists)
             {
-                Directory.CreateDirectory(destinationDir);
+                Directory.CreateDirectory(targetDir);
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();
@@ -158,15 +135,32 @@ namespace MAWSC
         /// <summary>
         /// 
         /// </summary>
-        public static void ConfirmDirectoryExists(string directoryToConfirm)
+        public static void ConfirmDirExists(ref string logContent, string dirToConfirm, bool createIfNonexistant)
         {
-            /* Since we are going to create a directory no matter what, we'll just update the user via the console, and not worry
-             * about upating the logMessage here.
-             */
-            if(!Directory.Exists(directoryToConfirm))
+            if(!Directory.Exists(dirToConfirm))
             {
-                Directory.CreateDirectory(directoryToConfirm);
+                if(createIfNonexistant)
+                {
+                    Directory.CreateDirectory(dirToConfirm);
+                }
+                else
+                {
+                    Log.AppendAndShow(ref logContent, "[ ERROR] ", $"{dirToConfirm} does not exist.", "INVALID");
+                    Utility.MawscFinish(logContent, 1);
+                }
             }
         }
+
+        public static void RefreshDir(ref string logContent, string dirToRefresh)
+        {
+            if(Directory.Exists(dirToRefresh))
+            {
+                Directory.Delete(dirToRefresh, true);
+                Directory.CreateDirectory(dirToRefresh);
+            }
+
+        }
+
+
     }
 }

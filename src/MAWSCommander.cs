@@ -3,38 +3,38 @@
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
-// Entry point for MAWS Commander
-// b220130.083155
+// Entry point for MAWS Commander.
+// b20130.101224
+
+/* ====================
+ * About MAWS Commander
+ * ====================
+ */
 
 using MAWSC;
 
-/* Initialize the logMessage for logfiles, and put some space between whatever is currently in the console, and what we
- * will be writing.
- */
-var logContent = Utility.MawscStart();
+var passedArgs = args;
+var logContent = "";
 
-/* There has to be at least one argument passed, otherwise exit.e
- */
-if(args.Length == 0)
+Utility.MawscStart(ref logContent);
+
+if(passedArgs.Length == 0)
 {
-    logContent = Log.AppendAndShow(logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
+    /* There has to be at least one argument, otherwise we can't do anything, so just exit.
+     */
+    Log.AppendAndShow(ref logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
     Utility.MawscFinish(logContent, 1);
 }
 
-/* The user can pass arguments as "myarg", "-myarg", or "--myarg", and we'll just turn all of those into "myarg".
- */
-var firstArgument = args[0].Trim().ToLower().Replace("-", "");
+var mawscPrime = Utility.ReduceArg(passedArgs[0]);
 
-
-/* Main logic to determine what needs to be done.
- */
-switch(firstArgument)
+switch(mawscPrime)
 {
     case "s":
     case "stage":
     case "staging":
-        logContent = Log.AppendAndShow(logContent, "[ CHECK] ", $"Arg[0] \"{args[0]}\"", "VALID");
-        Staging.ParseArguments(args, logContent);
+        Log.AppendAndShow(ref logContent, "[ CHECK] ", $"Arg[0] \"{passedArgs[0]}\"", "VALID");
+        Staging.ParseArgs(ref logContent, passedArgs);
         Utility.MawscFinish(logContent, 0);
         break;
 
@@ -50,7 +50,7 @@ switch(firstArgument)
         break;
 
     default:
-        logContent = Log.AppendAndShow(logContent, "[  ERROR] ", $"Arg[0] \"{args[0]}\"", "INVALID");
+        Log.AppendAndShow(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArgs[0]}\"", "INVALID");
         Utility.MawscFinish(logContent, 1);
         break;
 }

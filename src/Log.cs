@@ -4,7 +4,9 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Loggin logic for MAWS Commander
-// b220130.083155
+// b20130.101224
+
+using System.Reflection;
 
 namespace MAWSC
 {
@@ -18,13 +20,13 @@ namespace MAWSC
         /// <param name="logMsg">The log message (e.g., "Checking value").</param>
         /// <param name="logMsgSuffix">The suffix for the log message (e.g., "OK")</param>
         /// <returns></returns>
-        public static string AppendAndShow(string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
+        public static void AppendAndShow(ref string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            var logMsgComplete = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
+            var logMsgLine = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
 
-            Console.WriteLine(logMsgComplete);
+            Console.WriteLine(logMsgLine);
 
-            return $"{logContent}{logMsgComplete}{Environment.NewLine}";
+            logContent = $"{logContent}{logMsgLine}{Environment.NewLine}";
         }
 
         /// <summary>
@@ -51,6 +53,47 @@ namespace MAWSC
                 : "...";
 
             return $"{prefixAndMsg}{dotString}{logMsgSuffix}";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logContent"></param>
+        public static void StartLogging(ref string logContent)
+        {
+            Version? mawscVersion = Assembly.GetEntryAssembly().GetName().Version;
+
+            logContent += $"{Environment.NewLine}" +
+                          $"================================================================================{Environment.NewLine}" +
+                          $"MAWS Commander {mawscVersion} started{Environment.NewLine}" +
+                          $"================================================================================{Environment.NewLine}";
+
+            Console.WriteLine(logContent);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logContent"></param>
+        /// <param name="exitCode"></param>
+        public static void EndLogging(string logContent, int exitCode)
+        {
+            logContent += $"{Environment.NewLine}" +
+              $"================================================================================{Environment.NewLine}" +
+              $"MAWS Commander exiting{Environment.NewLine}" +
+              $"================================================================================{Environment.NewLine}";
+
+            /* An exitCode that != 0 means something went wrong, and we should prompt the user to view the help details.
+             */
+            if(exitCode != 0)
+            {
+                logContent += $"{Environment.NewLine}" +
+                              $"{Environment.NewLine}" +
+                              $"Please type \"MAWSC --help\" for more information";
+            }
+
+            Console.WriteLine(logContent);
+            Log.WriteToFile(logContent);
         }
 
         /// <summary>
