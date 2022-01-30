@@ -29,8 +29,8 @@ namespace MAWSC
              */
             if(args.Length == 1)
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[ ERROR] ", $"Not enough arguments passed (Arg[1] does not exist)", "INVALID", true);
-                Utility.MawscFinish(logMessage);
+                logMessage = Log.AppendAndShow(logMessage, "[ ERROR] ", $"Not enough arguments passed (Arg[1] does not exist)", "INVALID");
+                Utility.MawscFinish(logMessage, 1);
             }
             else
             {
@@ -51,13 +51,13 @@ namespace MAWSC
                 case "d":
                 case "dep":
                 case "deploy":
-                    logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"Arg[1] \"{args[1]}\"", "VALID");
+                    logMessage = Log.AppendAndShow(logMessage, "[ CHECK] ", $"Arg[1] \"{args[1]}\"", "VALID");
                     Deploy(logMessage, mawscAction);
                     break;
 
                 default:
-                    logMessage = Log.AppendAndDisplay(logMessage, "[ ERROR] ", $"Arg[1] \"{args[1]}\"", "INVALID", true);
-                    Utility.MawscFinish(logMessage);
+                    logMessage = Log.AppendAndShow(logMessage, "[ ERROR] ", $"Arg[1] \"{args[1]}\"", "INVALID");
+                    Utility.MawscFinish(logMessage, 1);
                     break;
             }
         }
@@ -78,12 +78,12 @@ namespace MAWSC
 
             if(mawscAction == "minimal")
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  INFO] ", "Performing a minimal delete of the current the IIS Staging environment", "< INFO");
+                logMessage = Log.AppendAndShow(logMessage, "[  INFO] ", "Performing a minimal delete of the current the IIS Staging environment", "< INFO");
                 MinimalDeleteIisStagingDirectory(ref logMessage, IisStagingDirectory);
             }
             else
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  INFO] ", "Performing a complete delete of the current IIS Staging environment", "< INFO");
+                logMessage = Log.AppendAndShow(logMessage, "[  INFO] ", "Performing a complete delete of the current IIS Staging environment", "< INFO");
                 DeleteIisStagingDirectory(ref logMessage, IisStagingDirectory);
             }
 
@@ -94,17 +94,17 @@ namespace MAWSC
 
             if(mawscAction == "full")
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  INFO] ", "Performing a full copy of the IIS Staging environment", "< INFO");
+                logMessage = Log.AppendAndShow(logMessage, "[  INFO] ", "Performing a full copy of the IIS Staging environment", "< INFO");
                 FullCopyGitHubSourceToIisStaging(ref logMessage, IisStagingDirectory);
             }
             else if(mawscAction == "minimal")
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  INFO] ", "Performing a minimal copy of the IIS Staging environment", "< INFO");
+                logMessage = Log.AppendAndShow(logMessage, "[  INFO] ", "Performing a minimal copy of the IIS Staging environment", "< INFO");
                 MinimalCopyGitHubSourceToIisStaging(ref logMessage, IisStagingDirectory);
             }
             else
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  INFO] ", "Performing a standard copy of the IIS Staging environment", "< INFO");
+                logMessage = Log.AppendAndShow(logMessage, "[  INFO] ", "Performing a standard copy of the IIS Staging environment", "< INFO");
                 StandardCopyGitHubSourceToIisStaging(ref logMessage, IisStagingDirectory);
             }
 
@@ -122,9 +122,9 @@ namespace MAWSC
             var currentDateTime = DateTime.Now.ToString("yyMMddHHmmss");
             var backupDirectory = $@"{BackupDirectoryRoot}\{currentDateTime}";
 
-            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{backupDirectory}\\", "<- CREATING");
+            logMessage = Log.AppendAndShow(logMessage, "[CREATE] ", $"{backupDirectory}\\", "<- CREATING");
             Utility.ConfirmDirectoryExists(backupDirectory);
-            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{backupDirectory}\\", "CREATED");
+            logMessage = Log.AppendAndShow(logMessage, "[CREATE] ", $"{backupDirectory}\\", "CREATED");
 
             return backupDirectory;
         }
@@ -137,13 +137,13 @@ namespace MAWSC
         {
             //var stagingIisDirectory = $@"C:\AvatoolWebService\MAWS_Staging\";
 
-            logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"{IisStagingDirectory}", "<- VERIFY");
+            logMessage = Log.AppendAndShow(logMessage, "[ CHECK] ", $"{IisStagingDirectory}", "<- VERIFY");
             if(!Directory.Exists(IisStagingDirectory))
             {
-                logMessage = Log.AppendAndDisplay(logMessage, "[  ERROR] ", $"{IisStagingDirectory}", "DOES NOT EXIST", true);
-                Utility.MawscFinish(logMessage);
+                logMessage = Log.AppendAndShow(logMessage, "[  ERROR] ", $"{IisStagingDirectory}", "DOES NOT EXIST");
+                Utility.MawscFinish(logMessage, 1);
             }
-            logMessage = Log.AppendAndDisplay(logMessage, "[ CHECK] ", $"{IisStagingDirectory}", "VALID");
+            logMessage = Log.AppendAndShow(logMessage, "[ CHECK] ", $"{IisStagingDirectory}", "VALID");
 
             return IisStagingDirectory;
         }
@@ -154,10 +154,10 @@ namespace MAWSC
         /// <returns></returns>
         private static void BackupIisStaging(ref string logMessage, string backupDestination, string IisStagingDirectory)
         {
-            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"{IisStagingDirectory}", "<- SOURCE");
-            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"{backupDestination}", "<- DESITNATION");
+            logMessage = Log.AppendAndShow(logMessage, "[BACKUP] ", $"{IisStagingDirectory}", "<- SOURCE");
+            logMessage = Log.AppendAndShow(logMessage, "[BACKUP] ", $"{backupDestination}", "<- DESITNATION");
             Utility.MoveDirectory(IisStagingDirectory, backupDestination);
-            logMessage = Log.AppendAndDisplay(logMessage, "[BACKUP] ", $"Backing up Staging environment", "BACKUP COMPLETE");
+            logMessage = Log.AppendAndShow(logMessage, "[BACKUP] ", $"Backing up Staging environment", "BACKUP COMPLETE");
         }
 
         /// <summary>
@@ -165,9 +165,9 @@ namespace MAWSC
         /// </summary>
         private static void DeleteIisStagingDirectory(ref string logMessage, string IisStagingDirectory)
         {
-            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "<- DELETING");
+            logMessage = Log.AppendAndShow(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "<- DELETING");
             Directory.Delete(IisStagingDirectory, true);
-            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "DELETED");
+            logMessage = Log.AppendAndShow(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "DELETED");
         }
 
         private static void MoveRequiredFiles(ref string logMessage, string IisStagingDirectory)
@@ -194,10 +194,10 @@ namespace MAWSC
                 "Web.Release.config"
             };
 
-            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "<- DELETING");
+            logMessage = Log.AppendAndShow(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "<- DELETING");
             Utility.CopyFiles(filesToKeep, IisStagingDirectory, AvatoolTemporaryFiles);
             Directory.Delete(IisStagingDirectory, true);
-            logMessage = Log.AppendAndDisplay(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "DELETED");
+            logMessage = Log.AppendAndShow(logMessage, "[DELETE] ", $"{IisStagingDirectory}", "DELETED");
         }
 
         /// <summary>
@@ -205,9 +205,9 @@ namespace MAWSC
         /// </summary>
         private static void CreateIisStagingDirectory(ref string logMessage, string IisStagingDirectory)
         {
-            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{IisStagingDirectory}", "<- CREATING");
+            logMessage = Log.AppendAndShow(logMessage, "[CREATE] ", $"{IisStagingDirectory}", "<- CREATING");
             Utility.ConfirmDirectoryExists(IisStagingDirectory);
-            logMessage = Log.AppendAndDisplay(logMessage, "[CREATE] ", $"{IisStagingDirectory}", "CREATED");
+            logMessage = Log.AppendAndShow(logMessage, "[CREATE] ", $"{IisStagingDirectory}", "CREATED");
         }
 
         /// <summary>
@@ -216,10 +216,10 @@ namespace MAWSC
         private static void FullCopyGitHubSourceToIisStaging(ref string logMessage, string IisStagingDirectory)
         {
             //var stagingGitHubSrc = $@"C:\MyAvatool\MAWS\Staging\src\";
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
             Utility.CopyDirectory(GitHubStagingSource, IisStagingDirectory);
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
 
         }
 
@@ -244,8 +244,8 @@ namespace MAWSC
                 "Web.Release.config"
             };
 
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
 
             foreach(var directoryToCopy in directoriesToCopy)
             {
@@ -254,7 +254,7 @@ namespace MAWSC
 
             Utility.CopyFiles(filesToCopy, $"{GitHubStagingSource}", $"{IisStagingDirectory}");
             Utility.CopyFiles(filesToMove, $"{AvatoolTemporaryFiles}", $"{IisStagingDirectory}");
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
         }
 
         private static void StandardCopyGitHubSourceToIisStaging(ref string logMessage, string IisStagingDirectory)
@@ -274,8 +274,8 @@ namespace MAWSC
                 "Web.Release.config"
             };
 
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{GitHubStagingSource}", "<- SOURCE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"{IisStagingDirectory}", "<- DESTINATION");
 
             foreach(var directoryToCopy in directoriesToCopy)
             {
@@ -285,7 +285,7 @@ namespace MAWSC
             Utility.CopyFiles(filesToCopy, $"{GitHubStagingSource}", $"{IisStagingDirectory}");
 
             //Utility.CopyDirectory(GitHubStagingSource, IisStagingDirectory);
-            logMessage = Log.AppendAndDisplay(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
+            logMessage = Log.AppendAndShow(logMessage, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
         }
     }
 }

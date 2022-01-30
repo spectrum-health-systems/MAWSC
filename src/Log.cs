@@ -3,54 +3,60 @@
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
-// MAWSC logging.
-// b220129.142505
+// Loggin logic for MAWS Commander
+// b220130.083155
 
 namespace MAWSC
 {
     internal class Log
     {
         /// <summary>
-        /// 
+        /// Show a log message on the console, and add it to the existing logContent.
         /// </summary>
+        /// <param name="logContent">The existing content for the logfile.</param>
+        /// <param name="logMsgPrefix">The prefix for the log message (e.g., "[  CHECK] ")</param>
+        /// <param name="logMsg">The log message (e.g., "Checking value").</param>
+        /// <param name="logMsgSuffix">The suffix for the log message (e.g., "OK")</param>
         /// <returns></returns>
-        public static string AppendAndDisplay(string origLogMsg, string logPrefix, string newLogMessage, string logSuffix, bool displayHelp = false)
+        public static string AppendAndShow(string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            var logMsgLine = BuildLogMsg(logPrefix, newLogMessage, logSuffix);
+            var logMsgComplete = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
 
-            if(displayHelp)
-            {
-                ToScreen(logMsgLine, true);
-            }
-            else
-            {
-                ToScreen(logMsgLine, false);
-            }
+            Console.WriteLine(logMsgComplete);
 
-            return $"{origLogMsg}{logMsgLine}{Environment.NewLine}";
+            return $"{logContent}{logMsgComplete}{Environment.NewLine}";
         }
 
         /// <summary>
-        /// 
+        /// Build a nice looking message line.
         /// </summary>
+        /// <param name="logMsgPrefix">The prefix for the log message (e.g., "[  CHECK] ")</param>
+        /// <param name="logMsg">The log message (e.g., "Checking value").</param>
+        /// <param name="logMsgSuffix">The suffix for the log message (e.g., "OK")</param>
         /// <returns></returns>
-        private static string BuildLogMsg(string logPrefix, string logMsg, string logSuffix)
+        private static string BuildLogMsgLine(string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            var prefixAndMsg   = $"{logPrefix}{logMsg}";
-            var totalMsgLength = prefixAndMsg.Length + logSuffix.Length;
-            var dotString      = "";
+            /* This creates a nice looking 80-character message.
+             * 
+             * ex. "[  CREATE] Creating a file....................OK
+             */
+            var prefixAndMsg                = $"{logMsgPrefix}{logMsg}";
+            var prefixAndMsgAndSuffixLength = prefixAndMsg.Length + logMsgSuffix.Length;
 
-            if(totalMsgLength <= 79)
-            {
-                dotString = new string('.', 80 - totalMsgLength);
-            }
+            /* If the length of the completed line is less than 77, fill the rest with dots. Otherwise, just put three
+             * dots between the prefix/msg and suffix. There isn't a cutoff, so lines >80 characters won't look great.
+             */
+            var dotString = prefixAndMsgAndSuffixLength <= 77
+                ? new string('.', 80 - prefixAndMsgAndSuffixLength)
+                : "...";
 
-            return $"{prefixAndMsg}{dotString}{logSuffix}";
+            return $"{prefixAndMsg}{dotString}{logMsgSuffix}";
         }
 
         /// <summary>
-        /// Write a log to a file.
+        /// Write logContents to a file.
         /// </summary>
+        /// <param name="logContent"></param>
         public static void WriteToFile(string logContent)
         {
             var logDirectory    = $@"C:\MyAvatool\MAWSC\Logs";
@@ -58,23 +64,6 @@ namespace MAWSC
             var logfilePath     = $"{logDirectory}/{currentDateTime}.log";
 
             File.WriteAllText(logfilePath, logContent);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static void ToScreen(string msgToDisplay, bool displayHelp)
-        {
-            /* If there was a fatal error, let the user know what it was, and point them to help information.
-             */
-            var displayContents = displayHelp
-                ? $"{msgToDisplay}" +
-                  $"{Environment.NewLine}" +
-                  $"{Environment.NewLine}" +
-                  $"Please type \"MAWSC --help\" for more information"
-                : msgToDisplay;
-
-            Console.WriteLine($"{displayContents}");
         }
     }
 }

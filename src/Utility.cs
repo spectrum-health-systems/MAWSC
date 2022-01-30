@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 
 // Utilities.
-// bb220129.142505
+// b220130.083155
 
 using System.Reflection;
 
@@ -32,12 +32,20 @@ namespace MAWSC
         /// <summary>
         /// 
         /// </summary>
-        public static void MawscFinish(string logMessage, int exitCode = 1)
+        public static void MawscFinish(string logMessage, int exitCode)
         {
             var logMsgFinish = $"{Environment.NewLine}" +
                               $"================================================================================{Environment.NewLine}" +
                               $"MAWS Commander exiting{Environment.NewLine}" +
                               $"================================================================================{Environment.NewLine}";
+
+
+            if(exitCode != 0)
+            {
+                logMsgFinish += $"{Environment.NewLine}" +
+                                $"{Environment.NewLine}" +
+                                $"Please type \"MAWSC --help\" for more information";
+            }
 
             Console.WriteLine(logMsgFinish);
 
