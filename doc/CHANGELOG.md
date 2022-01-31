@@ -1,3 +1,7 @@
 # MAWS Commander Changelog
 
-## v0.2.0
+## v1.0.1
+Fix: Nonexistant IIS Staging dir.
+
+## v1.0.0
+Initial release

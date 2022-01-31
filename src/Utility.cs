@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
 // Common utilities used bt MAWS Commander.
-// b220131.115810
+// b220131.123427
 
 namespace MAWSC
 {
@@ -58,7 +58,7 @@ namespace MAWSC
         {
             /* Before we do anything else, let's make sure that the source and target directories exist.
              */
-            ConfirmDirExists(ref logContent, sourceDir, false);
+            ConfirmDirExists(ref logContent, sourceDir, true);
             ConfirmDirExists(ref logContent, targetDir, true);
 
             /* Get information about the directory we are moving, and any sub-directories that exist.
@@ -97,7 +97,7 @@ namespace MAWSC
         {
             /* Before we do anything else, let's make sure that the source and target directories exist.
              */
-            ConfirmDirExists(ref logContent, sourceDir, false);
+            ConfirmDirExists(ref logContent, sourceDir, true);
             ConfirmDirExists(ref logContent, targetDir, true);
 
             /* Get information about the directory we are moving, and any sub-directories that exist.
