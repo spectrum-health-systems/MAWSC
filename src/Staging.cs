@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
 // Staging environment.
-// b220131.115810
+// b220131.125532
 
 namespace MAWSC
 {
@@ -15,7 +15,7 @@ namespace MAWSC
          */
         const string BackupRoot          = $@"C:\MyAvatool\MAWS\Staging\Backup";
         const string IisStagingDir       = $@"C:\AvatoolWebService\MAWS_Staging\";
-        const string GitHubStagingSource = $@"C:\MyAvatool\MAWS\Staging\src\";
+        const string GitHubStagingSource = $@"C:\MyAvatool\MAWS\src\";
         const string AvatoolTempDir      = $@"C:\MyAvatool\Temp\";
 
         /// <summary>
