@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
 // Loggin logic for MAWS Commander
-// b20130.101224
+// b220131.115810
 
 using System.Reflection;
 
@@ -35,10 +35,9 @@ namespace MAWSC
         /// <param name="logMsgPrefix">The prefix for the log message (e.g., "[  CHECK] ")</param>
         /// <param name="logMsg">The log message (e.g., "Checking value").</param>
         /// <param name="logMsgSuffix">The suffix for the log message (e.g., "OK")</param>
-        /// <returns></returns>
-        public static void AppendAndShow(ref string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
+        public static void AppendAndShowMsg(ref string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            var logMsgFinal = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
+            var logMsgFinal = BuildLogMsg(logMsgPrefix, logMsg, logMsgSuffix);
 
             Console.WriteLine(logMsgFinal);
 
@@ -51,32 +50,48 @@ namespace MAWSC
         /// <param name="logMsgPrefix">The prefix for the log message (e.g., "[  CHECK] ")</param>
         /// <param name="logMsg">The log message (e.g., "Checking value").</param>
         /// <param name="logMsgSuffix">The suffix for the log message (e.g., "OK")</param>
-        /// <returns></returns>
-        private static string BuildLogMsgLine(string logMsgPrefix, string logMsg, string logMsgSuffix)
+        /// <returns>A nice looking log message.</returns>
+        private static string BuildLogMsg(string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            /* This creates a nice looking 80-character message.
+            /* This creates a nice looking message.
              * 
              * ex. "[  CREATE] Creating a file....................OK
              */
             var prefixAndMsg                = $"{logMsgPrefix}{logMsg}";
             var prefixAndMsgAndSuffixLength = prefixAndMsg.Length + logMsgSuffix.Length;
 
-            /* If the length of the completed line is less than 77, fill the rest with dots. Otherwise, just put three
-             * dots between the prefix/msg and suffix. There isn't a cutoff, so lines >80 characters won't look great.
+            string dotString;
+
+            // TODO There is a better way to do this, and maybe make it so subsequent entries (e.g., "MOVE" and "MOVED")
+            //      have the same length. And potentially lock a specific length, maybe even just for logfiles.
+            /* This makes sure that longer lines look ok.
              */
-            var dotString = prefixAndMsgAndSuffixLength <= 77
-                ? new string('.', 80 - prefixAndMsgAndSuffixLength)
-                : "...";
+            if(prefixAndMsgAndSuffixLength <= 77)
+            {
+                dotString = new string('.', 80 - prefixAndMsgAndSuffixLength);
+            }
+            else if(prefixAndMsgAndSuffixLength >= 81 && prefixAndMsgAndSuffixLength <= 100)
+            {
+                dotString = new string('.', 100 - prefixAndMsgAndSuffixLength);
+            }
+            else if(prefixAndMsgAndSuffixLength >= 101 && prefixAndMsgAndSuffixLength <= 120)
+            {
+                dotString = new string('.', 120 - prefixAndMsgAndSuffixLength);
+            }
+            else
+            {
+                dotString = "...";
+            }
 
             return $"{prefixAndMsg}{dotString}{logMsgSuffix}";
         }
 
         /// <summary>
-        /// 
+        /// Generate the end of the log information.
         /// </summary>
-        /// <param name="logContent"></param>
-        /// <param name="exitCode"></param>
-        public static void EndLogging(string logContent, int exitCode)
+        /// <param name="logContent">Existing logContent.</param>
+        /// <param name="exitCode">"0" is no error, "1" is error.</param>
+        public static void GenerateLogContentIntro(string logContent, int exitCode)
         {
             logContent += $"{Environment.NewLine}" +
               $"================================================================================{Environment.NewLine}" +
@@ -93,14 +108,14 @@ namespace MAWSC
             }
 
             Console.WriteLine(logContent);
-            Log.WriteToFile(logContent);
+            WriteLogToFile(logContent);
         }
 
         /// <summary>
         /// Write logContents to a file.
         /// </summary>
         /// <param name="logContent"></param>
-        public static void WriteToFile(string logContent)
+        public static void WriteLogToFile(string logContent)
         {
             var logDirectory    = $@"C:\MyAvatool\MAWSC\Logs";
             var currentDateTime = DateTime.Now.ToString("yy-MM-dd_HH-mm-ss");

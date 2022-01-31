@@ -3,8 +3,10 @@
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
+// Version 1.0.0
+//
 // Entry point for MAWS Commander.
-// b20130.101224
+// b220131.115810
 
 /* ====================
  * ABOUT MAWS COMMANDER
@@ -53,12 +55,11 @@ Utility.MawscStart(ref logContent);
  */
 if(passedArgs.Length == 0)
 {
-    Log.AppendAndShow(ref logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
+    Log.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
     Utility.MawscFinish(logContent, 1);
 }
 
-/* The MAWS Commander "command" is the first argument that is passed when MAWSC is executed, so let's make it easy to 
- * work with.
+/* The MAWSC "command" is the first argument that is passed when MAWSC is executed, so let's make it easy to work with.
  */
 var mawscCommand = Utility.ReduceArg(passedArgs[0]);
 
@@ -71,7 +72,7 @@ switch(mawscCommand)
     case "staging":
         /* We're going to do something with the MAWS Staging environment!
          */
-        Log.AppendAndShow(ref logContent, "[ CHECK] ", $"Arg[0] \"{passedArgs[0]}\"", "VALID");
+        Log.AppendAndShowMsg(ref logContent, "[ CHECK] ", $"Arg[0] \"{passedArgs[0]}\"", "VALID");
         Staging.ParseArgs(ref logContent, passedArgs);
         Utility.MawscFinish(logContent, 0);
         break;
@@ -92,7 +93,7 @@ switch(mawscCommand)
     default:
         /* An invalid MAWSC command was sent, so just exit.
          */
-        Log.AppendAndShow(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArgs[0]}\"", "INVALID");
+        Log.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArgs[0]}\"", "INVALID");
         Utility.MawscFinish(logContent, 1);
         break;
 }
