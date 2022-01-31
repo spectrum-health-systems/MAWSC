@@ -4,7 +4,7 @@
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
 // Staging environment.
-// b220131.130005
+// b220131.130240
 
 namespace MAWSC
 {
@@ -219,7 +219,7 @@ namespace MAWSC
             }
 
             Utility.CopyFiles(filesToCopy, $"{GitHubStagingSource}", $"{IisStagingDir}");
-            Utility.CopyFiles(filesToMove, $"{AvatoolTempDir}", $"{IisStagingDir}");
+            //Utility.CopyFiles(filesToMove, $"{AvatoolTempDir}", $"{IisStagingDir}");
             Log.AppendAndShowMsg(ref logContent, "[  COPY] ", $"Copying GitHub Staging to IIS Staging", "COPY COMPLETE");
         }
     }
