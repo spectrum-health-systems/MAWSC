@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "SpEk6zua15c3gHwdjDhigflKnP7rhQ/OI/+FA+0Ksw2hyx5CulCQEEBaN/4RXy0gle1tKiGvrIpMaTSOZYyPbA==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\spectrum-health-systems\\MAWSC\\src\\MAWSC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cbanw\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.1\\microsoft.netcore.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\cbanw\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.1\\microsoft.aspnetcore.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\cbanw\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\cbanw\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.1\\microsoft.netcore.app.crossgen2.win-x64.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
