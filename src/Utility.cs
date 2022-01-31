@@ -2,20 +2,20 @@
 // https://github.com/aprettycoolprogram/MAWSC
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-
+//
 // Common utilities used bt MAWS Commander.
 // b20130.101224
 
 namespace MAWSC
 {
-    public class Utility
+    internal class Utility
     {
         /// <summary>
         /// Things to do when MAWS Commander starts.
         /// </summary>
         public static void MawscStart(ref string logContent)
         {
-            Log.StartLogging(ref logContent);
+            Log.GenerateLogContentIntro(ref logContent);
         }
 
         /// <summary>
@@ -23,6 +23,10 @@ namespace MAWSC
         /// </summary>
         public static void MawscFinish(string logContent, int exitCode)
         {
+            /* Since this is the last thing MAWS Commander does, we don't pass logContent as a reference. Also, if you
+             * pass anything other than a "0" (no errors) for exitCode, the "Type MAWSC -help" stuff will be included
+             * in logContent and displayed on the console.
+             */
             Log.EndLogging(logContent, exitCode);
             Environment.Exit(exitCode);
         }
@@ -34,6 +38,9 @@ namespace MAWSC
         /// <returns>A nice looking argument (e.g., "--Argument1" -> "argument1")</returns>
         public static string ReduceArg(string argToReduce)
         {
+            /* Users can pass an argument as "argument", "-ARGUMENT", "--ArGuMeNt", or whatever combination of cases and
+             * leading hyphens, and they will all be converted to "argument".
+             */
             return argToReduce.Trim().ToLower().Replace("-", "");
         }
 

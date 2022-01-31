@@ -2,14 +2,17 @@
 // https://github.com/aprettycoolprogram/MAWSC
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-
+//
 // Staging environment.
 // bb220129.142505
 
 namespace MAWSC
 {
-    public class Staging
+    internal class Staging
     {
+        /* Let's define a bunch of constants here, that way if you need to make changes (which you probably will), you
+         * just need to make them once.
+         */
         const string BackupRoot          = $@"C:\MyAvatool\MAWS\Staging\Backup";
         const string IisStagingDir       = $@"C:\AvatoolWebService\MAWS_Staging\";
         const string GitHubStagingSource = $@"C:\MyAvatool\MAWS\Staging\src\";
@@ -20,10 +23,14 @@ namespace MAWSC
         /// </summary>
         public static void ParseArgs(ref string logContent, string[] passedArgs)
         {
-            var mawscCommand ="";
-            var mawscAction  ="";
+            /* The MAWS Commander "action" is the second argument that is passed when MAWSC is executed. If there was an
+             * (optional) third argument passed, that is the MAWS Commander "option". We'll be updating these inside of
+             * the loop below, so let's initialize them now.
+             */
+            var mawscAction ="";
+            var mawscOption ="";
 
-            /* There has to be at least one Staging argument passed, otherwise just exit.
+            /* There has to be at least one Staging argument passed, otherwise we can't do anything, so just exit.
              */
             if(passedArgs.Length == 1)
             {
@@ -32,24 +39,35 @@ namespace MAWSC
             }
             else
             {
-                mawscCommand = Utility.ReduceArg(passedArgs[1]);
+                /* Let's make it easy to work with the MAWSC command.
+                 */
+                mawscAction = Utility.ReduceArg(passedArgs[1]);
 
                 if(passedArgs.Length == 3)
                 {
-                    mawscAction = Utility.ReduceArg(passedArgs[2]);
+                    /* If an (optional) third argument was passed, that's the MAWSC option, so let's make it easy to
+                     * work with.
+                     */
+                    mawscOption = Utility.ReduceArg(passedArgs[2]);
                 }
             }
 
-            switch(mawscCommand)
+            /* Give the users a little wiggle room when typing commands, this way they can use shorthand if they want.
+             */
+            switch(mawscAction)
             {
                 case "d":
                 case "dep":
                 case "deploy":
+                    /* Let's deploy the MAWS Staging environment!
+                     */
                     Log.AppendAndShow(ref logContent, "[ CHECK] ", $"Arg[1] \"{passedArgs[1]}\"", "VALID");
                     Deploy(ref logContent, mawscAction);
                     break;
 
                 default:
+                    /* An invalid MAWSC action was sent, so just exit.
+                     */
                     Log.AppendAndShow(ref logContent, "[ ERROR] ", $"Arg[1] \"{passedArgs[1]}\"", "INVALID");
                     Utility.MawscFinish(logContent, 1);
                     break;
@@ -61,14 +79,10 @@ namespace MAWSC
         /// </summary>
         private static void Deploy(ref string logContent, string mawscAction)
         {
+            /* Determine the Staging backup and IIS locations.
+             */
             var backupDestination   = GetBackupDirectory(ref logContent);
             var IisStagingDirectory = GetStagingIisDirectory(ref logContent);
-
-            //////if(mawscAction == "minimal")
-            //////{
-            //////    Utility.RefreshDir(ref logContent, $"{AvatoolTemporaryFiles}");
-            //////    CopyRequiredFiles(ref logContent, IisStagingDirectory);
-            //////}
 
             BackupIisStaging(ref logContent, backupDestination, IisStagingDirectory);
 

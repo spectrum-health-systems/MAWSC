@@ -2,7 +2,7 @@
 // https://github.com/aprettycoolprogram/MAWSC
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-
+//
 // Loggin logic for MAWS Commander
 // b20130.101224
 
@@ -13,7 +13,23 @@ namespace MAWSC
     internal class Log
     {
         /// <summary>
-        /// Show a log message on the console, and add it to the existing logContent.
+        /// Generate the start of the log information.
+        /// </summary>
+        /// <param name="logContent">Existing logContent.</param>
+        public static void GenerateLogContentIntro(ref string logContent)
+        {
+            Version? mawscVersion = Assembly.GetEntryAssembly().GetName().Version;
+
+            logContent += $"{Environment.NewLine}" +
+                          $"================================================================================{Environment.NewLine}" +
+                          $"MAWS Commander {mawscVersion} started{Environment.NewLine}" +
+                          $"================================================================================{Environment.NewLine}";
+
+            Console.WriteLine(logContent);
+        }
+
+        /// <summary>
+        /// Append a single log message to logContent, and also show that log message on the console.
         /// </summary>
         /// <param name="logContent">The existing content for the logfile.</param>
         /// <param name="logMsgPrefix">The prefix for the log message (e.g., "[  CHECK] ")</param>
@@ -22,11 +38,11 @@ namespace MAWSC
         /// <returns></returns>
         public static void AppendAndShow(ref string logContent, string logMsgPrefix, string logMsg, string logMsgSuffix)
         {
-            var logMsgLine = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
+            var logMsgFinal = BuildLogMsgLine(logMsgPrefix, logMsg, logMsgSuffix);
 
-            Console.WriteLine(logMsgLine);
+            Console.WriteLine(logMsgFinal);
 
-            logContent = $"{logContent}{logMsgLine}{Environment.NewLine}";
+            logContent = $"{logContent}{logMsgFinal}{Environment.NewLine}";
         }
 
         /// <summary>
@@ -53,22 +69,6 @@ namespace MAWSC
                 : "...";
 
             return $"{prefixAndMsg}{dotString}{logMsgSuffix}";
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="logContent"></param>
-        public static void StartLogging(ref string logContent)
-        {
-            Version? mawscVersion = Assembly.GetEntryAssembly().GetName().Version;
-
-            logContent += $"{Environment.NewLine}" +
-                          $"================================================================================{Environment.NewLine}" +
-                          $"MAWS Commander {mawscVersion} started{Environment.NewLine}" +
-                          $"================================================================================{Environment.NewLine}";
-
-            Console.WriteLine(logContent);
         }
 
         /// <summary>

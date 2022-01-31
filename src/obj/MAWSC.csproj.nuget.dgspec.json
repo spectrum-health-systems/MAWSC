@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\GitHub\\spectrum-health-systems\\MAWSC\\src\\MAWSC.csproj": {
-      "version": "0.3.0",
+      "version": "0.99.0-rc.1",
       "restore": {
         "projectUniqueName": "D:\\GitHub\\spectrum-health-systems\\MAWSC\\src\\MAWSC.csproj",
         "projectName": "MAWSC",
