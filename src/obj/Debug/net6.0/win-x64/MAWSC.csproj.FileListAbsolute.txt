@@ -225,6 +225,7 @@ D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Debug\net6.0\win-x64\mscordbi.dl
 D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Debug\net6.0\win-x64\mscorrc.dll
 D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Debug\net6.0\win-x64\msquic.dll
 D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Debug\net6.0\win-x64\ucrtbase.dll
+D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\win-x64\MAWSC.csproj.AssemblyReference.cache
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\win-x64\MAWSC.GeneratedMSBuildEditorConfig.editorconfig
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\win-x64\MAWSC.AssemblyInfoInputs.cache
 D:\GitHub\spectrum-health-systems\MAWSC\src\obj\Debug\net6.0\win-x64\MAWSC.AssemblyInfo.cs
