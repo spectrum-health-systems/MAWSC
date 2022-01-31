@@ -3,7 +3,7 @@
 // Copyright (C) 2015-2022 A Pretty Cool Program
 // Licensed under Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //
-// Version 1.0.2
+// Version 1.0.3
 //
 // Entry point for MAWS Commander.
 // b220131.115810
