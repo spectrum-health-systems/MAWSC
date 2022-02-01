@@ -7,8 +7,7 @@
 
 <h3 align="center">
 
-  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="256">
-  <br>
+  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="300">
   <br>
 
 </h3>
@@ -23,15 +22,9 @@
 
 </h3>
 
-<h1 align="center">
-
-  <img src="resources/image/screenshot/archiwizator-screenshot-01.png" alt="Archiwizator Screenshot" width="400"><br>
-
-</h1>
-
 <h4 align="center">
 
-  [MANUAL](src/Resources/Doc/Manual/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](src/Resources/Doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](src/Resources/Doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](src/Resources/Doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](src/Resources/Doc/support.md)
+  [CHANGELOG](src/Resources/Doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](src/Resources/Doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](src/Resources/Doc/KNOWN-ISSUES.md)
   <br>
 
 </h4>
@@ -41,7 +34,7 @@
 <tr>
 <td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
 
-  ### CONTENTS
+  ## CONTENTS
   [ABOUT](#about)<br>
   [GETTING STARTED](#getting-started)<br>
   [INSTALLING](#installing)<br>
@@ -55,8 +48,8 @@
 </tr>
 </table>
 
-# ABOUT
-Archiwizator is a Graphical User Interface (GUI) front-end for [7-Zip](https://www.7-zip.org/).
+## ABOUT
+MAWS Commander is a command-line interface for the MyAvatool Web Service.
 
 ### Features
 * Batch archiving!
