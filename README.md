@@ -24,7 +24,7 @@
 
 <h4 align="center">
 
-  [CHANGELOG](src/Resources/Doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](src/Resources/Doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](src/Resources/Doc/KNOWN-ISSUES.md)
+  [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
   <br>
 
 </h4>
@@ -36,8 +36,6 @@
   [USING](#using)<br>
   [UPDATING](#updating)<br>
   [UNINSTALLING](#uninstalling)<br>
-  [DEVELOPMENT](#development)<br>
-  [ADDITIONAL INFORMATION](#additional-information)<br>
 
 ## ABOUT
 
