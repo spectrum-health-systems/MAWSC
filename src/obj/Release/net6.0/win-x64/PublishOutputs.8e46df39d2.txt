@@ -1,0 +1,2 @@
+D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Release\net6.0\publish\win-x64\MAWSC.pdb
+D:\GitHub\spectrum-health-systems\MAWSC\src\bin\Release\net6.0\publish\win-x64\MAWSC.exe
