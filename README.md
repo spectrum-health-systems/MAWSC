@@ -7,7 +7,7 @@
 
 <h3 align="center">
 
-  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="Archiwizator logo" width="512">
+  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="512">
   <br>
   MAWS Commander
   <br>
