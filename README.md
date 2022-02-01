@@ -7,9 +7,8 @@
 
 <h3 align="center">
 
-  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="512">
+  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="256">
   <br>
-  MAWS Commander
   <br>
 
 </h3>
@@ -18,9 +17,9 @@
 
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square">&nbsp;
   [![License](https://img.shields.io/github/license/aprettycoolprogram/Archiwizator?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
-  [![GitHub release](https://img.shields.io/github/v/release/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/APrettyCoolProgram/Archiwizator/releases)&nbsp;
-  [![Issues](https://img.shields.io/github/issues/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/aprettycoolprogram/Archiwizator/issues)&nbsp;
-  [![Pulls](https://img.shields.io/github/issues-pr/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/aprettycoolprogram/Archiwizator/pulls)&nbsp;
+  [![GitHub release](https://img.shields.io/github/v/release/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/releases)&nbsp;
+  [![Issues](https://img.shields.io/github/issues/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/issues)&nbsp;
+  [![Pulls](https://img.shields.io/github/issues-pr/aprettycoolprogram/Archiwizator?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)&nbsp;
 
 </h3>
 
