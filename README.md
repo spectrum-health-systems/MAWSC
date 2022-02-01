@@ -29,10 +29,10 @@
 
 </h4>
 
-<!-- The HTML indentations have to stay this way to work. -->
+<!-- The HTML indentations have to stay this way to work.
 <table>
 <tr>
-<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
+<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1"> -->
 
   ## CONTENTS
   [ABOUT](#about)<br>
@@ -44,12 +44,12 @@
   [DEVELOPMENT](#development)<br>
   [ADDITIONAL INFORMATION](#additional-information)<br>
 
-</td>
+<!--</td>
 </tr>
-</table>
+</table>  -->
 
 ## ABOUT
-MAWS Commander is a command-line interface for the MyAvatool Web Service.
+MAWS Commander is a command-line interface for the [**MyAvatool Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS).
 
 ### Features
 * Batch archiving!
