@@ -77,11 +77,21 @@ Currently MAWSC only supports Microsoft Windows.
 
 ## USING
 
+### Verifying directory structure
+While in developemnt MAWSC uses the following hard-coded directories:
+
+* IIS Staging backup directory: `C:\MyAvatool\MAWS\Staging\Backup`
+* IIS Staging directory: `C:\AvatoolWebService\MAWS_Staging\`
+* GitHub src/: `C:\MyAvatool\MAWS\Repository\src\`
+* Temporary folder: `C:\MyAvatool\Temp\`
+
+### Commands and Actions
+
 MAWSC needs at least a `command` and an `action` to work.
 
 From a console, type `MAWSC -command -action [-option]`
 
-### Current commands and actions:
+#### Current commands and actions:
 
 *This section will be updated as MAWSC is developed*
 
