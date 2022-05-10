@@ -4,7 +4,7 @@
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-// v1.2.0.0-b220510+dev064930
+// v1.2.0.0-b220510+dev101647
 
 /* ============================================================================================
  * About this project
@@ -12,6 +12,7 @@
  * MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
  * MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
  * for myAvatar™.
+ * 
  * 
  * ----------------------------------------
  * Read the README!

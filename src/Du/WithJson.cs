@@ -4,14 +4,13 @@
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-// b220510.065025 (ApprenticeWizard)
+// v1.0-b220510.065025 (ApprenticeWizard)
 
 /* =============================================================================
  * About this class
  * =============================================================================
  * Does things with JSON.
  */
-
 
 using System.Text.Json;
 
@@ -21,6 +20,8 @@ namespace MAWSC.Du
     {
         public static void SerializeToMinimizedFile<T>(T obj, string jsonFilePath)
         {
+            // Not tested as of 5-10-22
+
             var jsonString = JsonSerializer.Serialize(obj);
 
             File.WriteAllText(jsonFilePath, jsonString);
@@ -28,6 +29,8 @@ namespace MAWSC.Du
 
         public static void SerializeToIndentedFile<T>(T obj, string jsonFilePath)
         {
+            // Not tested as of 5-10-22
+
             var jsonOptions = new JsonSerializerOptions
             {
                 WriteIndented = true
@@ -48,6 +51,8 @@ namespace MAWSC.Du
         /// <returns>The contents of the configuration file as an object.</returns>
         public static T SerializeFile<T>(string jsonFormattedFilePath)
         {
+            // Not tested as of 5-10-22
+
             var jsonString = File.ReadAllText(jsonFormattedFilePath);
             T J = JsonSerializer.Deserialize<T>(jsonString);
             T jsonObject   = JsonSerializer.Deserialize<T>(jsonString);
@@ -63,6 +68,8 @@ namespace MAWSC.Du
         /// <returns>The contents of the JSON string as an object.</returns>
         public static T SerializeString<T>(string jsonString)
         {
+            // Not tested as of 5-10-22
+
             T jsonObject = JsonSerializer.Deserialize<T>(jsonString);
 
             return (T)Convert.ChangeType(jsonObject, typeof(T));
@@ -76,8 +83,7 @@ namespace MAWSC.Du
         /// <returns>The contents of the configuration file as an object.</returns>
         public static T DeserializeFile<T>(string jsonFormattedFilePath)
         {
-
-
+            // Not tested as of 5-10-22
 
             var jsonString = File.ReadAllText(jsonFormattedFilePath);
             T jsonObject = JsonSerializer.Deserialize<T>(jsonString);
@@ -93,6 +99,8 @@ namespace MAWSC.Du
         /// <returns>The contents of the JSON string as an object.</returns>
         public static T DeserializeString<T>(string jsonString)
         {
+            // Not tested as of 5-10-22
+
             T jsonObject = JsonSerializer.Deserialize<T>(jsonString);
 
             return (T)Convert.ChangeType(jsonObject, typeof(T));
