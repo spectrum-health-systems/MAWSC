@@ -51,10 +51,9 @@
  * You will find three types of comments in this sourcecode:
  *
  *  /// XML comments used by Visual Studio
- *  
  *  // Additional information
- *  
- *  /* Narrative comments
+ *  /* Narrative
+ *   * comments
  *   * / 
  * 
  * Please do not remove any of the sourcecode comments!
@@ -74,16 +73,9 @@ StartApp(args);
 /// </summary>
 static void StartApp(string[] commandLineArguments)
 {
-    /* Start fresh.
-     */
     Console.Clear();
 
-    /* Verify that command line arguments have been passed. If no arguments were
-     * passed, MAWSC will exit.
-     */
     MAWSC.Utility.Verify.ArgumentsPassed(commandLineArguments);
 
-    /* Process the MAWSC command.
-     */
     MAWSC.Roundhouse.ProcessCommand(commandLineArguments);
 }

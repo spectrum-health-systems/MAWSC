@@ -44,7 +44,7 @@ namespace MAWSC
             }
             else
             {
-                ProcessInvalidCommand(mawscCommand);
+                InvalidCommand(mawscCommand);
             }
         }
 
@@ -59,7 +59,7 @@ namespace MAWSC
              */
             if(mawscCommand.StartsWith("h"))
             {
-                ProcessHelp();
+                CommandHelp();
             }
             else
             {
@@ -68,15 +68,15 @@ namespace MAWSC
 
                 if(mawscCommand.StartsWith("c"))
                 {
-                    ProcessConfiguration(mawscConfiguration);
+                    CommandConfiguration(mawscConfiguration);
                 }
                 else if(mawscCommand.StartsWith("p"))
                 {
-                    ProcessProduction(mawscConfiguration);
+                    CommandProduction(mawscConfiguration);
                 }
                 else if(mawscCommand.StartsWith("s"))
                 {
-                    ProcessStaging(mawscAction, mawscOption, mawscConfiguration);
+                    CommmandStaging(mawscAction, mawscOption, mawscConfiguration);
                 }
 
                 ////switch(mawscCommand)
@@ -114,13 +114,13 @@ namespace MAWSC
         /// <summary>
         /// 
         /// </summary>
-        private static void ProcessHelp()
+        private static void CommandHelp()
         {
             MAWSC.Help.Display.OnCommandLine();
             MAWSC.Utility.Maintenance.Finalize(0);
         }
 
-        private static void ProcessInvalidCommand(string mawscCommand)
+        private static void InvalidCommand(string mawscCommand)
         {
             var logInvalidCommandPassed = MAWSC.Log.Component.InvalidCommandPassed(mawscCommand);
             Console.WriteLine(logInvalidCommandPassed);
@@ -132,7 +132,7 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        private static void ProcessProduction(Configuration mawscConfiguration)
+        private static void CommandProduction(Configuration mawscConfiguration)
         {
             MAWSC.Utility.Maintenance.Finalize(0);
         }
@@ -141,7 +141,7 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        private static void ProcessStaging(string mawscAction, string mawscOption, Configuration mawscConfiguration)
+        private static void CommmandStaging(string mawscAction, string mawscOption, Configuration mawscConfiguration)
         {
             //var logMessage = "STAGE";
             //MAWSC.Log.Export.ToEverywhere(logMessage, mawscConfiguration.LogfilePath);
@@ -156,7 +156,7 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        private static void ProcessDefault(Configuration mawscConfiguration)
+        private static void DefaultFallthrough(Configuration mawscConfiguration)
         {
 
         }
@@ -166,7 +166,7 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        private static void ProcessConfiguration(Configuration mawscConfiguration)
+        private static void CommandConfiguration(Configuration mawscConfiguration)
         {
 
         }
