@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Environ\" />
     <Folder Include="Production\" />
-    <Folder Include="Staging\" />
   </ItemGroup>
 
   <ItemGroup>

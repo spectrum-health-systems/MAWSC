@@ -25,7 +25,7 @@ namespace MAWSC.Du
         {
             // Not tested as of 5-10-22
 
-            if(directoryPath.EndsWith("\\"))
+            if(directoryPath.EndsWith("/"))
             {
                 directoryPath = directoryPath.Remove(directoryPath.Length - 1);
 

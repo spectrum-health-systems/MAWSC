@@ -1,10 +1,10 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.MAWSC.cs
-// UPDATED: 5-09-2022
+// UPDATED: 5-11-2022
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-// v1.2.0.0-b220510+dev101647
+// v1.2.0.0-b220511+dev080542
 
 /* ============================================================================================
  * About this project
@@ -12,7 +12,6 @@
  * MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
  * MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
  * for myAvatar™.
- * 
  * 
  * ----------------------------------------
  * Read the README!
@@ -68,27 +67,35 @@
  * This is the entry point for MAWSC.
  */
 
-/* Since well be passing args[] around, give it a nice name so we remember what it is.
- */
-var passedArguments = args;
+StartApp(args);
 
-/* I'm passing the "logContent" variable by reference, which is less than ideal from a "best
- * practice" point of view. But since logContent is modified *a lot*, and in a linear manner,
- * it ends up being cleaner (to me) than passing it as a value (then returning it each time),
- * or using a global.
- */
-var logContent = "";
+/// <summary>
+/// Start MAWSC.
+/// </summary>
+static void StartApp(string[] commandLineArguments)
+{
+    Console.Clear();
 
-//MAWSC.Settings.ResetToDefault();
+    MAWSC.Utility.Verify.ArgumentsPassed(commandLineArguments);
 
-Console.Clear();
+    var mawscCommand = MAWSC.Parser.GetMawscCommand(commandLineArguments);
 
-/* Verify at least one argument was passed.
- */
-MAWSC.Utility.Verify.ArgumentsPassed(ref logContent, passedArguments);
+    MAWSC.Roundhouse.ProcessCommand(mawscCommand, commandLineArguments);
 
-MAWSC.Utility.MawscStatus.Start(ref logContent);
+    /////* If user passed the help command, show the help screen, then exit. Otherwise, start MAWSC
+    //// * for real.
+    //// */
+    ////if(mawscCommand == "h" || mawscCommand == "help")
+    ////{
+    ////    MAWSC.Help.Display.OnCommandLine();
+    ////    MAWSC.Utility.Maintenance.Finalize(0);
+    ////}
+    ////else
+    ////{
+    ////    var mawscConfiguration = MAWSC.Configuration.Load();
 
-var mawscCommand = MAWSC.SyntaxEngine.Parser.GetCommand(passedArguments);
+    ////    MAWSC.Utility.Maintenance.Initialize(mawscConfiguration, commandLineArguments);
 
-MAWSC.Roundhouse.ProcessCommand(ref logContent, mawscCommand, passedArguments);
+    ////    MAWSC.Roundhouse.ProcessCommand(mawscCommand, commandLineArguments, mawscConfiguration);
+    ////}
+}

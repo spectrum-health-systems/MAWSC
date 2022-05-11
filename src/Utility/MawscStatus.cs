@@ -16,16 +16,26 @@ namespace MAWSC.Utility
 {
     internal class MawscStatus
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="logContent"></param>
-        internal static void Start(ref string logContent)
-        {
-            /*
-             */
-            MAWSC.Logging.LogContent.BuildStartMessage(ref logContent);
-        }
+        ///////// <summary>
+        ///////// 
+        ///////// </summary>
+        ///////// <param name="logContent"></param>
+        //////internal static Configuration Start()
+        //////{
+        //////    var mawscConfiguration = MAWSC.Configuration.Load();
+
+        //////    var logMessageStart               = Log.Content.StartMessage();
+        //////    var logMessageConfigurationInfo   = MAWSC.Log.Content.ConfigurationInfo(mawscConfiguration);
+        //////    var logMessageRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
+
+        //////    var logMessage = $"{logMessageStart}{Environment.NewLine}" +
+        //////                     $"{logMessageConfigurationInfo}{Environment.NewLine}" +
+        //////                     $"{logMessageRequiredDirectories}{Environment.NewLine}";
+
+        //////    Log.Export.ToEverywhere(logMessage.Trim(), mawscConfiguration.LogfilePath);
+
+        //////    return mawscConfiguration;
+        //////}
 
         /// <summary>
         /// 
@@ -39,7 +49,7 @@ namespace MAWSC.Utility
              * in logContent and displayed on the console.
              */
 
-            MAWSC.Logging.LogContent.BuildEndMessage(logContent, exitCode);
+            //MAWSC.Logging.Content.BuildEndMessage(logContent, exitCode);
             Environment.Exit(exitCode);
         }
     }

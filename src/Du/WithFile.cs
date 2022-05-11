@@ -22,7 +22,7 @@ namespace MAWSC.Du
         /// <param name="filePath">The filePath to convert.</param>
         /// <param name="delimiter">The delimter used to seperate lines.</param>
         /// <returns></returns>
-        public static string[] ToStringArray(string filePath, char delimiter)
+        internal static string[] ToStringArray(string filePath, char delimiter)
         {
             // Not tested as of 5-10-22
 
@@ -32,11 +32,34 @@ namespace MAWSC.Du
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textToAppend"></param>
+        /// <param name="filePath"></param>
+        internal static void AppendText(string textToAppend, string filePath)
+        {
+            if(!File.Exists(filePath))
+            {
+                using(StreamWriter sw = File.CreateText(filePath))
+                {
+                    sw.WriteLine(textToAppend);
+                }
+            }
+            else
+            {
+                using(StreamWriter sw = File.AppendText(filePath))
+                {
+                    sw.WriteLine(textToAppend);
+                }
+            }
+        }
+
+        /// <summary>
         /// Move a file from a source directory to a target directory.
         /// </summary>
         /// <param name="sourcePath">The source path</param>
         /// <param name="targetPath">The target path</param>
-        public static void MoveUsingFileName(string sourcePath, string targetPath)
+        internal static void MoveUsingFileName(string sourcePath, string targetPath)
         {
             // Not tested as of 5-10-22
 
@@ -51,7 +74,7 @@ namespace MAWSC.Du
         /// <param name="filesToCopy">The files to copy.</param>
         /// <param name="sourceDir">The source directory.</param>
         /// <param name="targetDir">The target directory.</param>
-        public static void CopyFiles(List<string> filesToCopy, string sourceDirectory, string targetDirectory)
+        internal static void CopyFiles(List<string> filesToCopy, string sourceDirectory, string targetDirectory)
         {
             // Not tested as of 5-10-22
 

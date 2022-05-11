@@ -12,8 +12,6 @@
  * Displays help information.
  */
 
-using System.Reflection;
-
 namespace MAWSC.Help
 {
     internal class Display
@@ -23,12 +21,12 @@ namespace MAWSC.Help
         /// </summary>
         internal static void OnCommandLine()
         {
-            Version mawscVersion = Assembly.GetEntryAssembly().GetName().Version;
+            var helpHeader = MAWSC.Log.Component.Header();
 
-            var helpMessage = $"{Environment.NewLine}" +
-                              $"================================================================================{ Environment.NewLine}" +
-                              $"MAWSC {mawscVersion} HELP{Environment.NewLine}" +
-                              $"================================================================================{Environment.NewLine}" +
+            var helpMessage = $"{helpHeader}{Environment.NewLine}" +
+                              $"----------{Environment.NewLine}" +
+                              $"MAWSC HELP{Environment.NewLine}" +
+                              $"----------{Environment.NewLine}" +
                               $"{Environment.NewLine}" +
                               $"usage: mawsc <command> [action] [option]{ Environment.NewLine}" +
                               $"{Environment.NewLine}" +

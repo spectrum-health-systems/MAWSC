@@ -13,7 +13,7 @@
  */
 
 
-namespace MAWSC.SyntaxEngine
+namespace MAWSC
 {
     internal class Parser
     {
@@ -23,13 +23,19 @@ namespace MAWSC.SyntaxEngine
         /// <param name="logContent"></param>
         /// <param name="passedArgs"></param>
         /// <returns></returns>
-        internal static string GetCommand(string[] passedArguments)
+        internal static string GetMawscCommand(string[] commandLineArguments)
         {
+            /* Has to be at least one command line argument.
+             */
+            if(commandLineArguments.Length != 0)
+            {
+                commandLineArguments[0].Trim().ToLower().Replace("-", "");
+            }
+
             /* The MAWSC "command" is the first argument that is passed when MAWSC is executed,
              * so let's make it easy to work with.
              */
-            return passedArguments[0].Trim().ToLower().Replace("-", "");
+            return commandLineArguments[0].Trim().ToLower().Replace("-", "");
         }
-
     }
 }

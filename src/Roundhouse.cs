@@ -9,9 +9,8 @@
 /* =============================================================================
  * About this class
  * =============================================================================
- * Determines what to do.
+ * MAWSC roundhouse
  */
-
 
 namespace MAWSC
 {
@@ -23,48 +22,52 @@ namespace MAWSC
         /// <param name="logContent"></param>
         /// <param name="mawscCommand"></param>
         /// <param name="passedArguments"></param>
-        internal static void ProcessCommand(ref string logContent, string mawscCommand, string[] passedArguments)
+        internal static void ProcessCommand(string mawscCommand, string[] commandLineArguments)
         {
-            /* Give the users a little wiggle room when typing commands, this way they can use shorthand if they want.
-             */
-            switch(mawscCommand)
+            if(mawscCommand == "h" || mawscCommand == "help")
             {
-                case "s":
-                case "stage":
-                case "staging":
-                    /* We're going to do something with the MAWS Staging environment!
-                     */
-                    MAWSC.Logging.LogContent.AppendAndShowMsg(ref logContent, "[ CHECK] ", $"Arg[0] \"{passedArguments[0]}\"", "VALID");
-                    //Staging.ParseArgs(ref logContent, passedArguments);
-                    MAWSC.Utility.MawscStatus.End(logContent, 0);
-                    break;
+                MAWSC.Help.Display.OnCommandLine();
+                MAWSC.Utility.Maintenance.Finalize(0);
+            }
+            else
+            {
+                var mawscConfiguration = MAWSC.Configuration.Load();
 
-                case "p":
-                case "prod":
-                case "production":
-                    /* We're going to do something with the MAWS Staging environment! - Future functionality
-                     */
-                    break;
+                MAWSC.Utility.Maintenance.Initialize(mawscConfiguration, commandLineArguments);
 
-                case "h":
-                case "help":
-                    Help.Display.OnCommandLine();
-                    break;
+                switch(mawscCommand)
+                {
+                    case "s":
+                    case "stage":
+                    case "staging":
+                        //var logMessage = "STAGE";
+                        //MAWSC.Log.Export.ToEverywhere(logMessage, mawscConfiguration.LogfilePath);
+                        //////MAWSC.Logging.Content.AppendAndShowMsg(ref logContent, "[ CHECK] ", $"Arg[0] \"{passedArguments[0]}\"", "VALID");
+                        //Staging.ParseArgs(ref logContent, passedArguments);
+                        MAWSC.Utility.Maintenance.Finalize(0);
+                        break;
 
-                case "reset":
-                    MAWSC.Logging.LogContent.AppendAndShowMsg(ref logContent, "[  RESET] ", $"Resetting config.json", "DONE");
-                    MAWSC.Settings.ResetToDefault();
-                    MAWSC.Utility.MawscStatus.End(logContent, 0);
-                    break;
+                    case "p":
+                    case "prod":
+                    case "production":
+                        /* We're going to do something with the MAWS Staging environment! - Future functionality
+                         */
+                        break;
 
-                default:
-                    /* An invalid MAWSC command was sent, so just exit.
-                     */
-                    MAWSC.Logging.LogContent.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArguments[0]}\"", "INVALID");
-                    MAWSC.Utility.MawscStatus.End(logContent, 0);
-                    break;
+                    case "reset":
+                        //////MAWSC.Logging.Content.AppendAndShowMsg(ref logContent, "[  RESET] ", $"Resetting config.json", "DONE");
+                        MAWSC.Configuration.ResetToDefault();
+                        //MAWSC.Utility.MawscStatus.End( 0);
+                        break;
+
+                    default:
+                        /* An invalid MAWSC command was sent, so just exit.
+                         */
+                        //////MAWSC.Logging.Content.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArguments[0]}\"", "INVALID");
+                        //MAWSC.Utility.MawscStatus.End(logContent, 0);
+                        break;
+                }
             }
         }
-
     }
 }

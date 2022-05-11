@@ -13,6 +13,7 @@
  */
 
 
+
 namespace MAWSC.Utility
 {
     internal class Verify
@@ -20,16 +21,47 @@ namespace MAWSC.Utility
         /// <summary>
         /// Verifies that at least one argument was passed.
         /// </summary>
-        /// <param name="passedArgs">The args[] object.</param>
-        internal static void ArgumentsPassed(ref string logContent, string[] passedArgs)
+        /// <param name="passedArgumentss">The args[] object.</param>
+        /// <returns>A log message</returns>
+        internal static void ArgumentsPassed(string[] commandLineArguments)
         {
-            /* There has to be at least one argument, otherwise we can't do anything, so just exit.
-             */
-            if(passedArgs.Length == 0)
+            if(commandLineArguments.Length == 0)
             {
-                Logging.LogContent.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"No arguments passed to MAWSC", "INVALID");
-                Utility.MawscStatus.End(logContent, 1);
+                var logNoArgumentsPassedMessage = MAWSC.Log.Component.NoArgumentsPassed();
+                MAWSC.Log.Export.ToConsole(logNoArgumentsPassedMessage);
+                MAWSC.Utility.Maintenance.Finalize(1);
             }
+        }
+
+        internal static string RequiredDirectories(Configuration mawscConfiguration)
+        {
+            var logRequiredDirectories = $"------------------------------{Environment.NewLine}" +
+                                         $"Verifying required directories{Environment.NewLine}" +
+                                         $"------------------------------{Environment.NewLine}";
+
+            var requiredDirectories = new List<string>
+            {
+                mawscConfiguration.ConfigDirectory,
+                mawscConfiguration.LogDirectory,
+                mawscConfiguration.BackupDirectory,
+                mawscConfiguration.TemporaryDirectory
+            };
+
+            foreach(var requiredDirectory in requiredDirectories)
+            {
+                if(!Directory.Exists(requiredDirectory))
+                {
+                    logRequiredDirectories += $"{requiredDirectory} does not exist.{Environment.NewLine}";
+                    _=Directory.CreateDirectory(requiredDirectory);
+                    logRequiredDirectories += $"{requiredDirectory} created.{Environment.NewLine}";
+                }
+                else
+                {
+                    logRequiredDirectories += $"{requiredDirectory} exists.{Environment.NewLine}";
+                }
+            }
+
+            return logRequiredDirectories;
         }
     }
 }
