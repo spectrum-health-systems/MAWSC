@@ -1,15 +1,13 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Settings.cs
-// UPDATED: 5-09-2022
+// UPDATED: 220511.104821
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
-
-// b220509.112805 
 
 /* =============================================================================
  * About this class
  * =============================================================================
- * Does stuff with settings.
+ * Does stuff with configuration settings.
  */
 
 using System.Reflection;
@@ -31,6 +29,10 @@ namespace MAWSC
         public string DestinationStagingDirectory { get; set; }
         public string SourceProductionDirectory { get; set; }
         public string DestinationProductionDirectory { get; set; }
+
+        /* Don't modify these!
+         */
+        public List<string> ValidCommands { get; set; }
 
         /* These are set at runtime.
          */
@@ -86,7 +88,23 @@ namespace MAWSC
                 DestinationStagingDirectory    = $@"./AppData/Staging-destination/",
                 SourceProductionDirectory      = $@"./AppData/Production-source/",
                 DestinationProductionDirectory = $@"./AppData/Production-destination/",
+                ValidCommands                  = new List<string>
+                {
+                    "h",
+                    "help",
+                    "s",
+                    "stage",
+                    "staging",
+                    "p",
+                    "prod",
+                    "production",
+                    "c",
+                    "config",
+                    "configuration"
+                },
+                ApplicationVersion             = "set-at-runtime",
                 SessionTimestamp               = "set-at-runtime",
+                LogfilePath                    = "set-at-runtime",
             };
 
             Du.WithJson.SerializeToIndentedFile<Configuration>(defaultSettings, $@"{defaultSettings.ConfigDirectory}mawsc-config.json");

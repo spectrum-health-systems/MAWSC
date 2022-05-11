@@ -7,12 +7,12 @@
 /* =============================================================================
  * About this class
  * =============================================================================
- * Staging roundhouse.
+ * Staging parser.
  */
 
 namespace MAWSC.Staging
 {
-    internal class Roundhouse
+    internal class Parser
     {
     }
 }

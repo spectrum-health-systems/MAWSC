@@ -1,4 +1,14 @@
-﻿
+﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
+//    FILE: MAWSC.Utility.Verify.cs
+// UPDATED: 220511.104821
+// LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+//          Copyright 2021 A Pretty Cool Program
+
+/* =============================================================================
+ * About this class
+ * =============================================================================
+ * Verifies stuff.
+ */
 
 namespace MAWSC.Utility
 {
@@ -8,19 +18,19 @@ namespace MAWSC.Utility
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        internal static void Initialize(Configuration mawscConfiguration, string[] commandLineArguments)
+        internal static void Initialize(string mawscCommand, string mawscAction, string mawscOption, Configuration mawscConfiguration)
         {
             var logHeader = MAWSC.Log.Component.Header();
-            Log.Export.ToEverywhere(logHeader, mawscConfiguration.LogfilePath);
-
-            var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(commandLineArguments);
-            Log.Export.ToEverywhere(logCommandLineArguments, mawscConfiguration.LogfilePath);
-
+            var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(mawscCommand, mawscAction, mawscOption);
             var logConfigurationInfo = MAWSC.Log.Component.ConfigurationInfo(mawscConfiguration);
-            Log.Export.ToEverywhere(logConfigurationInfo, mawscConfiguration.LogfilePath);
-
             var logRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
-            Log.Export.ToEverywhere(logRequiredDirectories, mawscConfiguration.LogfilePath);
+
+            var logMessage = $"{logHeader}{Environment.NewLine}" +
+                             $"{logCommandLineArguments}{Environment.NewLine}" +
+                             $"{logConfigurationInfo}{Environment.NewLine}" +
+                             $"{logRequiredDirectories}{Environment.NewLine}";
+
+            Log.Export.ToEverywhere(logMessage, mawscConfiguration.LogfilePath);
         }
 
         /// <summary>
@@ -29,7 +39,16 @@ namespace MAWSC.Utility
         /// <param name="mawscConfiguration"></param>
         internal static void Finalize(int exitCode)
         {
-            Console.WriteLine($">>> MAWSC Exiting...[EXIT CODE {exitCode}]{Environment.NewLine}{Environment.NewLine}");
+            if(exitCode == 0)
+            {
+                Console.WriteLine($">>> MAWSC Exiting gracefully (Exit code {exitCode})...");
+            }
+            else
+            {
+                Console.WriteLine($">>> MAWSC Exiting with error (Exit code {exitCode})...");
+            }
+
+            Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}");
             Environment.Exit(exitCode);
         }
     }
