@@ -77,5 +77,5 @@ static void StartApp(string[] commandLineArguments)
 
     MAWSC.Utility.Verify.ArgumentsPassed(commandLineArguments);
 
-    MAWSC.Roundhouse.ProcessCommand(commandLineArguments);
+    MAWSC.Roundhouse.Process(commandLineArguments);
 }

@@ -1,5 +1,7 @@
 # MAWS Commander Changelog
 
+## v1.2
+
 ## v1.0.4
 * `FIXED` MAWSC temp/ path was incorrct.
 

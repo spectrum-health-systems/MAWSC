@@ -1,6 +1,6 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Configuration.cs
-// UPDATED: 220511.113459
+// UPDATED: 220512.114404
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
@@ -105,19 +105,29 @@ namespace MAWSC
                 DestinationProductionDirectory = $@"./AppData/Production-destination/",
                 ValidCommands = new List<string>
                 {
-                    "h", "help",
-                    "s", "stage", "staging",
-                    "p", "prod", "production",
-                    "c", "config", "configuration"
+                    "h",
+                    "help",
+                    "s",
+                    "stage",
+                    "staging",
+                    "p",
+                    "prod",
+                    "production",
+                    "c",
+                    "config",
+                    "configuration"
                 },
                 ValidActions = new List<string>
                 {
-                    "d", "deploy",
-                    "r", "reset"
+                    "d",
+                    "deploy",
+                    "r",
+                    "reset"
                 },
                 ValidOptions = new List<string>
                 {
-                    "t", "tbd",
+                    "t",
+                    "tbd",
                 },
                 ApplicationVersion             = "set-at-runtime",
                 SessionTimestamp               = "set-at-runtime",

@@ -1,6 +1,6 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Utility.Maintenance.cs
-// UPDATED: 220511.104821
+// UPDATED: 220512.114404
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
@@ -18,10 +18,10 @@ namespace MAWSC.Utility
         /// 
         /// </summary>
         /// <param name="mawscConfiguration"></param>
-        internal static void Initialize(string mawscCommand, string mawscAction, string mawscOption, Configuration mawscConfiguration)
+        internal static void Initialize(Dictionary<string, string> mawscArguments, Configuration mawscConfiguration)
         {
             var logHeader = MAWSC.Log.Component.Header();
-            var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(mawscCommand, mawscAction, mawscOption);
+            var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(mawscArguments);
             var logConfigurationInfo = MAWSC.Log.Component.ConfigurationInfo(mawscConfiguration);
             var logRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
 

@@ -1,6 +1,6 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Roundhouse.cs
-// UPDATED: 220511.104821
+// UPDATED: 220512.114404
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
@@ -18,34 +18,44 @@ namespace MAWSC
         /// 
         /// </summary>
         /// <param name="commandLineArguments"></param>
-        internal static void ProcessCommand(string[] commandLineArguments)
+        internal static void Process(string[] commandLineArguments)
         {
-            var mawscCommand = commandLineArguments[0].Trim().ToLower().Replace("-", "");
-
-            var mawscAction = "none";
-
-            if(commandLineArguments.Length == 2)
-            {
-                mawscAction = commandLineArguments[1].Trim().ToLower().Replace("-", "");
-            }
-
-            var mawscOption = "none";
-
-            if(commandLineArguments.Length == 3)
-            {
-                mawscOption = commandLineArguments[2].Trim().ToLower().Replace("-", "");
-            }
+            var mawscArguments = GetMawscArguments(commandLineArguments);
 
             var mawscConfiguration = MAWSC.Configuration.Load();
 
-            if(mawscConfiguration.ValidCommands.Contains(mawscCommand))
+            if(mawscConfiguration.ValidCommands.Contains(mawscArguments["mawscCommand"]))
             {
-                ProcessCommander(mawscCommand, mawscAction, mawscOption, mawscConfiguration);
+                ProcessCommand(mawscArguments, mawscConfiguration);
             }
             else
             {
-                InvalidCommand(mawscCommand);
+                InvalidCommand(mawscArguments["mawscCommand"]);
             }
+        }
+
+        private static Dictionary<string, string> GetMawscArguments(string[] commandLineArguments)
+        {
+            var mawscArguments = new Dictionary<string, string>
+            {
+                {"mawscCommand", "none" },
+                {"mawscAction",  "none" },
+                {"mawscOption",  "none" },
+            };
+
+            mawscArguments["mawscCommand"] = commandLineArguments[0].Trim().ToLower().Replace("-", "");
+
+            if(commandLineArguments.Length == 2)
+            {
+                mawscArguments["mawscAction"] = commandLineArguments[1].Trim().ToLower().Replace("-", "");
+            }
+
+            if(commandLineArguments.Length == 3)
+            {
+                mawscArguments["mawscOption"] = commandLineArguments[2].Trim().ToLower().Replace("-", "");
+            }
+
+            return mawscArguments;
         }
 
         /// <summary>
@@ -53,61 +63,31 @@ namespace MAWSC
         /// </summary>
         /// <param name="mawscCommand"></param>
         /// <param name="mawscConfiguration"></param>
-        private static void ProcessCommander(string mawscCommand, string mawscAction, string mawscOption, Configuration mawscConfiguration)
+        private static void ProcessCommand(Dictionary<string, string> mawscArguments, Configuration mawscConfiguration)
         {
             /* If the "help" argument was passed, show the help screen and exit.
              */
-            if(mawscCommand.StartsWith("h"))
+            if(mawscArguments["mawscCommand"].StartsWith("h"))
             {
                 CommandHelp();
             }
             else
             {
-                MAWSC.Utility.Maintenance.Initialize(mawscCommand, mawscAction, mawscOption, mawscConfiguration);
+                MAWSC.Utility.Maintenance.Initialize(mawscArguments, mawscConfiguration);
                 //ProcessCommander(mawscCommand, mawscConfiguration);
 
-                if(mawscCommand.StartsWith("c"))
+                if(mawscArguments["mawscCommand"].StartsWith("c"))
                 {
                     CommandConfiguration(mawscConfiguration);
                 }
-                else if(mawscCommand.StartsWith("p"))
+                else if(mawscArguments["mawscCommand"].StartsWith("p"))
                 {
                     CommandProduction(mawscConfiguration);
                 }
-                else if(mawscCommand.StartsWith("s"))
+                else if(mawscArguments["mawscCommand"].StartsWith("s"))
                 {
-                    CommmandStaging(mawscAction, mawscOption, mawscConfiguration);
+                    CommmandStaging(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
                 }
-
-                ////switch(mawscCommand)
-                ////    {
-                ////        case "c":
-                ////        case "config":
-                ////        case "configuration":
-                ////            ProcessConfiguration(mawscConfiguration);
-                ////            break;
-
-                ////        case "s":
-                ////        case "stage":
-                ////        case "staging":
-                ////            ProcessStaging(mawscConfiguration);
-                ////            break;
-
-                ////        case "p":
-                ////        case "prod":
-                ////        case "production":
-                ////            ProcessProduction(mawscConfiguration);
-                ////            break;
-
-
-
-                ////        default:
-                ////            /* An invalid MAWSC command was sent, so just exit.
-                ////             */
-                ////            //////MAWSC.Logging.Content.AppendAndShowMsg(ref logContent, "[  ERROR] ", $"Arg[0] \"{passedArguments[0]}\"", "INVALID");
-                ////            //MAWSC.Utility.MawscStatus.End(logContent, 0);
-                ////            break;
-                ////    }
             }
         }
 
@@ -151,7 +131,6 @@ namespace MAWSC
         }
 
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -160,7 +139,6 @@ namespace MAWSC
         {
 
         }
-
 
         /// <summary>
         /// 
