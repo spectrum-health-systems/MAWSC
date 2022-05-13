@@ -1,11 +1,11 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Configuration.cs
-// UPDATED: 220512.114404
+// UPDATED: 220513.093416
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
 /* =============================================================================
- * About this class
+ * About this (partial) class
  * =============================================================================
  * Does stuff with configuration settings.
  */
@@ -14,13 +14,17 @@ using System.Reflection;
 
 namespace MAWSC
 {
-    internal class Configuration
+    internal partial class Configuration
     {
+        /* This is the one piece of information that is hard-coded in a few places, so don't
+         * modify this.
+         */
+        public string ConfigurationDirectory { get; set; }
+
         /* These directories *should not* be modified, as they contain data that MAWSC requires
          * to function, and shouldn't be changed unless you really, really have a reason to
          * change them. It's recommended that you leave these alone.
          */
-        public string ConfigDirectory { get; set; }
         public string LogDirectory { get; set; }
         public string BackupDirectory { get; set; }
         public string TemporaryDirectory { get; set; }
@@ -47,6 +51,61 @@ namespace MAWSC
         public string SessionTimestamp { get; set; }
         public string LogfilePath { get; set; }
 
+        /// <summary>
+        /// Verify a valid configuration file exists.
+        /// </summary>
+        internal static void Validate()
+        {
+            /* We will assume that the configuration file exists, and is valid, but if any of
+             * the following test fail, recreate the file:
+             * 
+             *  1. It doesn't exist
+             *  2. Since it's JSON-formatted data, it needs to startstart with "{" and end
+             *     with "}"
+             *  3. There are 15 configuration settings, so the file needs to be at least 15
+             *     lines long
+             */
+
+            var configurationFilePath = MAWSC.Configuration.GetDefaultConfigurationFilePath();
+
+            var validConfigurationFile = true;
+
+            if(!File.Exists($@"{configurationFilePath}"))
+            {
+                validConfigurationFile = false;
+            }
+            else
+            {
+                var fileContents = File.ReadAllLines(configurationFilePath);
+
+                if(!fileContents[0].StartsWith("{") && !fileContents[fileContents.Length].EndsWith("}"))
+                {
+                    validConfigurationFile = false;
+                }
+
+                if(fileContents.Length < 15)
+                {
+                    validConfigurationFile = false;
+                }
+            }
+
+            if(!validConfigurationFile)
+            {
+                MAWSC.Configuration.Action.Reset();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        internal static string GetDefaultConfigurationFilePath()
+        {
+            /* The configuration file path is the only hard-coded component of MAWSC. This
+             * should not be modified.
+             */
+            return $@"./AppData/Config/mawsc-config.json";
+        }
 
         /// <summary>
         /// Loads configuration settings from a file.
@@ -54,22 +113,19 @@ namespace MAWSC
         /// <returns></returns>
         internal static Configuration Load()
         {
-            /* The configuration file path is the only hard-coded component of MAWSC. This
-             * should not be modified.
-             */
-            var configurationFileName = $@"./AppData/Config/mawsc-config.json";
+            var configurationFileName = GetDefaultConfigurationFilePath();
 
             /* The configuration file is required for MAWSC to function, so if it doesn't exist
              * we will create a new file with default values.
              */
             if(!File.Exists($@"{configurationFileName}"))
             {
-                ResetToDefault();
+                MAWSC.Configuration.Action.Reset();
             }
 
             /* Get the configuration settings from the configuration file.
              */
-            Configuration mawscConfiguration = Du.WithJson.DeserializeFromFile<Configuration>($@"./AppData/Config/mawsc-config.json");
+            Configuration mawscConfiguration = Du.WithJson.DeserializeFromFile<Configuration>(configurationFileName);
 
             /* There are a few configuration settings we need to set that are specific to this session.
              */
@@ -80,61 +136,82 @@ namespace MAWSC
             return mawscConfiguration;
         }
 
-        /// <summary>
-        /// Reset the configuration file to default settings.
-        /// </summary>
-        internal static void ResetToDefault()
+        ///// <summary>
+        ///// Reset the configuration file to default settings.
+        ///// </summary>
+        //internal static void ResetToDefault()
+        //{
+        //    var configurationFileName = $@"./AppData/Config/mawsc-config.json";
+
+        //    if(File.Exists($@"{configurationFileName}"))
+        //    {
+        //        File.Delete(configurationFileName);
+        //        File.Create(configurationFileName);
+        //    }
+
+        //    var defaultSettings = new Configuration()
+        //    {
+        //        ConfigDirectory                = $@"./AppData/Config/",
+        //        LogDirectory                   = $@"./AppData/Log/",
+        //        BackupDirectory                = $@"./AppData/Backup/",
+        //        TemporaryDirectory             = $@"./AppData/Temp/",
+        //        SourceStagingDirectory         = $@"./AppData/Staging-source/",
+        //        DestinationStagingDirectory    = $@"./AppData/Staging-destination/",
+        //        SourceProductionDirectory      = $@"./AppData/Production-source/",
+        //        DestinationProductionDirectory = $@"./AppData/Production-destination/",
+        //        ValidCommands = new List<string>
+        //        {
+        //            "h",
+        //            "help",
+        //            "s",
+        //            "stage",
+        //            "staging",
+        //            "p",
+        //            "prod",
+        //            "production",
+        //            "c",
+        //            "config",
+        //            "configuration"
+        //        },
+        //        ValidActions = new List<string>
+        //        {
+        //            "d",
+        //            "deploy",
+        //            "r",
+        //            "reset"
+        //        },
+        //        ValidOptions = new List<string>
+        //        {
+        //            "t",
+        //            "tbd",
+        //        },
+        //        ApplicationVersion             = "set-at-runtime",
+        //        SessionTimestamp               = "set-at-runtime",
+        //        LogfilePath                    = "set-at-runtime",
+        //    };
+
+        //    Du.WithJson.SerializeToIndentedFile<Configuration>(defaultSettings, $@"{defaultSettings.ConfigDirectory}mawsc-config.json");
+        //}
+
+        internal static void ProcessAction(string mawscAction, string mawscOption, Configuration mawscConfiguration)
         {
-            var configurationFileName = $@"./AppData/Config/mawsc-config.json";
-
-            if(File.Exists($@"{configurationFileName}"))
+            if(mawscConfiguration.ValidActions.Contains(mawscAction))
             {
-                File.Delete(configurationFileName);
-                File.Create(configurationFileName);
+                switch(mawscAction)
+                {
+                    case "r":
+                    case "reset":
+                        Configuration.Action.Reset();
+                        MAWSC.Maintenance.Finalize(0);
+                        break;
+
+                    default:
+                        // Catch here.
+                        break;
+                }
+
+
             }
-
-            var defaultSettings = new Configuration()
-            {
-                ConfigDirectory                = $@"./AppData/Config/",
-                LogDirectory                   = $@"./AppData/Log/",
-                BackupDirectory                = $@"./AppData/Backup/",
-                TemporaryDirectory             = $@"./AppData/Temp/",
-                SourceStagingDirectory         = $@"./AppData/Staging-source/",
-                DestinationStagingDirectory    = $@"./AppData/Staging-destination/",
-                SourceProductionDirectory      = $@"./AppData/Production-source/",
-                DestinationProductionDirectory = $@"./AppData/Production-destination/",
-                ValidCommands = new List<string>
-                {
-                    "h",
-                    "help",
-                    "s",
-                    "stage",
-                    "staging",
-                    "p",
-                    "prod",
-                    "production",
-                    "c",
-                    "config",
-                    "configuration"
-                },
-                ValidActions = new List<string>
-                {
-                    "d",
-                    "deploy",
-                    "r",
-                    "reset"
-                },
-                ValidOptions = new List<string>
-                {
-                    "t",
-                    "tbd",
-                },
-                ApplicationVersion             = "set-at-runtime",
-                SessionTimestamp               = "set-at-runtime",
-                LogfilePath                    = "set-at-runtime",
-            };
-
-            Du.WithJson.SerializeToIndentedFile<Configuration>(defaultSettings, $@"{defaultSettings.ConfigDirectory}mawsc-config.json");
         }
     }
 }

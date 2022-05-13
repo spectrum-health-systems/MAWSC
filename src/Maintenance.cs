@@ -1,6 +1,6 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Utility.Maintenance.cs
-// UPDATED: 220512.114404
+// UPDATED: 220513.093416
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
@@ -10,7 +10,7 @@
  * Maintenance stuff.
  */
 
-namespace MAWSC.Utility
+namespace MAWSC
 {
     internal class Maintenance
     {
@@ -20,15 +20,15 @@ namespace MAWSC.Utility
         /// <param name="mawscConfiguration"></param>
         internal static void Initialize(Dictionary<string, string> mawscArguments, Configuration mawscConfiguration)
         {
-            var logHeader = MAWSC.Log.Component.Header();
+            var logHeader = MAWSC.Log.Component.MasterHeader();
             var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(mawscArguments);
             var logConfigurationInfo = MAWSC.Log.Component.ConfigurationInfo(mawscConfiguration);
-            var logRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
+            //var logRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
 
             var logMessage = $"{logHeader}{Environment.NewLine}" +
                              $"{logCommandLineArguments}{Environment.NewLine}" +
-                             $"{logConfigurationInfo}{Environment.NewLine}" +
-                             $"{logRequiredDirectories}{Environment.NewLine}";
+                             $"{logConfigurationInfo}{Environment.NewLine}";
+            //$"{logRequiredDirectories}{Environment.NewLine}";
 
             Log.Export.ToEverywhere(logMessage, mawscConfiguration.LogfilePath);
         }

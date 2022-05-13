@@ -1,6 +1,6 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.Help.Display.cs
-// UPDATED: 220511.104821
+// UPDATED: 220513.093416
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
@@ -19,10 +19,8 @@ namespace MAWSC.Help
         /// </summary>
         internal static void OnCommandLine()
         {
-            var helpHeader = MAWSC.Log.Component.Header();
-
-            var helpMessage = $"{helpHeader}{Environment.NewLine}" +
-                              $"----------{Environment.NewLine}" +
+            var helpHeader  = MAWSC.Log.Component.MasterHeader();
+            var helpContent = $"----------{Environment.NewLine}" +
                               $"MAWSC HELP{Environment.NewLine}" +
                               $"----------{Environment.NewLine}" +
                               $"{Environment.NewLine}" +
@@ -49,7 +47,8 @@ namespace MAWSC.Help
                               $"{Environment.NewLine}" +
                               $"{Environment.NewLine}";
 
-            Console.WriteLine(helpMessage);
+            Console.WriteLine($"{helpHeader}" +
+                              $"{helpContent}");
         }
     }
 }

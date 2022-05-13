@@ -2,7 +2,7 @@
   "profiles": {
     "MAWSC": {
       "commandName": "Project",
-      "commandLineArgs": "-j"
+      "commandLineArgs": "-s"
     }
   }
 }

@@ -1,10 +1,10 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.MAWSC.cs
-// UPDATED: 220511.104821
+// UPDATED: 220513.093416
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-// v1.2.0.0-b220511+dev113517
+// v1.2.0.0-b220513+dev093506
 
 /* ============================================================================================
  * About this project
@@ -75,7 +75,21 @@ static void StartApp(string[] commandLineArguments)
 {
     Console.Clear();
 
-    MAWSC.Utility.Verify.ArgumentsPassed(commandLineArguments);
+    MAWSC.Verify.Requirements(commandLineArguments);
 
-    MAWSC.Roundhouse.Process(commandLineArguments);
+    var mawscConfiguration = MAWSC.Configuration.Load();
+    var mawscArguments     = MAWSC.CommandLine.GetArgumentValues(commandLineArguments);
+
+    var commandIsValid = MAWSC.Argument.Command.Validate(mawscArguments["mawscCommand"], mawscConfiguration.ValidCommands);
+
+    if(commandIsValid)
+    {
+        MAWSC.Argument.Command.Process(mawscArguments, mawscConfiguration);
+    }
+    else
+    {
+        var logInvalidCommandPassed = MAWSC.Log.Component.InvalidCommandPassed(mawscArguments["mawscCommand"]);
+        Console.WriteLine(logInvalidCommandPassed);
+        MAWSC.Maintenance.Finalize(2);
+    }
 }
