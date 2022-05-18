@@ -16,83 +16,44 @@ namespace MAWSC
 {
     internal partial class Configuration
     {
-        /* This is the one piece of information that is hard-coded in a few places, so don't
-         * modify this.
-         */
-        public string ConfigurationDirectory { get; set; }
-
-        /* These directories *should not* be modified, as they contain data that MAWSC requires
-         * to function, and shouldn't be changed unless you really, really have a reason to
-         * change them. It's recommended that you leave these alone.
-         */
-        public string LogDirectory { get; set; }
-        public string BackupDirectory { get; set; }
-        public string TemporaryDirectory { get; set; }
-
-        /* These directories *should* be modified for your organization, and MAWSC won't
-         * function properly if you leave them at default. They need to point to your web
-         * service source (e.g., a sourcecode repository) and destination (e.g., where you host
-         * your web service) for the web service staging and production environments.
-         */
-        public string SourceStagingDirectory { get; set; }
-        public string DestinationStagingDirectory { get; set; }
-        public string SourceProductionDirectory { get; set; }
-        public string DestinationProductionDirectory { get; set; }
-
-        /* These values correspond to data that MAWSC uses, and should not be changed.
-         */
-        public List<string> ValidCommands { get; set; }
-        public List<string> ValidActions { get; set; }
-        public List<string> ValidOptions { get; set; }
-
-        /* These values are set at runtime.
-         */
-        public string ApplicationVersion { get; set; }
-        public string SessionTimestamp { get; set; }
-        public string LogfilePath { get; set; }
-
         /// <summary>
         /// Verify a valid configuration file exists.
         /// </summary>
         internal static void Validate()
         {
-            /* We will assume that the configuration file exists, and is valid, but if any of
-             * the following test fail, recreate the file:
+            /* If any of the following conditions are true, recreate the configuration file:
              * 
-             *  1. It doesn't exist
-             *  2. Since it's JSON-formatted data, it needs to startstart with "{" and end
-             *     with "}"
-             *  3. There are 15 configuration settings, so the file needs to be at least 15
-             *     lines long
+             *  1. mawsc-config.json doesn't exist
+             *  2. mawsc-config.json starts with "{" and ends with "}"
+             *  3. mawsc-config.json starts with is a minimum of 5 lines long
              */
 
-            var configurationFilePath = MAWSC.Configuration.GetDefaultConfigurationFilePath();
-
+            var configurationFilePath  = MAWSC.Configuration.GetDefaultConfigurationFilePath();
             var validConfigurationFile = true;
 
             if(!File.Exists($@"{configurationFilePath}"))
             {
-                validConfigurationFile = false;
+                //validConfigurationFile = false;
+                MAWSC.Configuration.Action.Reset();
             }
             else
             {
                 var fileContents = File.ReadAllLines(configurationFilePath);
 
-                if(!fileContents[0].StartsWith("{") && !fileContents[fileContents.Length].EndsWith("}"))
-                {
-                    validConfigurationFile = false;
-                }
+                var fileEnclosureValid = fileContents[0].StartsWith("{")
+                                      && fileContents[fileContents.Length].EndsWith("}");
 
-                if(fileContents.Length < 15)
+                if(!fileEnclosureValid || fileContents.Length < 5)
                 {
-                    validConfigurationFile = false;
+                    //validConfigurationFile = false;
+                    MAWSC.Configuration.Action.Reset();
                 }
             }
 
-            if(!validConfigurationFile)
-            {
-                MAWSC.Configuration.Action.Reset();
-            }
+            //if(!validConfigurationFile)
+            //{
+            //    MAWSC.Configuration.Action.Reset();
+            //}
         }
 
         /// <summary>

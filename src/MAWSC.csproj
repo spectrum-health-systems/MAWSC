@@ -20,6 +20,9 @@
     <None Update="AppData\Config\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AppData\StagingSrc\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AppData\Temp\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

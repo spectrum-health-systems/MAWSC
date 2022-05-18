@@ -1,10 +1,10 @@
 ﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
 //    FILE: MAWSC.MAWSC.cs
-// UPDATED: 220513.093416
+// UPDATED: 220518.074644
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-// v1.2.0.0-b220513+dev111229
+// v1.2.0.0-b220518+dev074638
 
 /* ============================================================================================
  * About this project
