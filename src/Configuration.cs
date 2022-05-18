@@ -136,63 +136,6 @@ namespace MAWSC
             return mawscConfiguration;
         }
 
-        ///// <summary>
-        ///// Reset the configuration file to default settings.
-        ///// </summary>
-        //internal static void ResetToDefault()
-        //{
-        //    var configurationFileName = $@"./AppData/Config/mawsc-config.json";
-
-        //    if(File.Exists($@"{configurationFileName}"))
-        //    {
-        //        File.Delete(configurationFileName);
-        //        File.Create(configurationFileName);
-        //    }
-
-        //    var defaultSettings = new Configuration()
-        //    {
-        //        ConfigDirectory                = $@"./AppData/Config/",
-        //        LogDirectory                   = $@"./AppData/Log/",
-        //        BackupDirectory                = $@"./AppData/Backup/",
-        //        TemporaryDirectory             = $@"./AppData/Temp/",
-        //        SourceStagingDirectory         = $@"./AppData/Staging-source/",
-        //        DestinationStagingDirectory    = $@"./AppData/Staging-destination/",
-        //        SourceProductionDirectory      = $@"./AppData/Production-source/",
-        //        DestinationProductionDirectory = $@"./AppData/Production-destination/",
-        //        ValidCommands = new List<string>
-        //        {
-        //            "h",
-        //            "help",
-        //            "s",
-        //            "stage",
-        //            "staging",
-        //            "p",
-        //            "prod",
-        //            "production",
-        //            "c",
-        //            "config",
-        //            "configuration"
-        //        },
-        //        ValidActions = new List<string>
-        //        {
-        //            "d",
-        //            "deploy",
-        //            "r",
-        //            "reset"
-        //        },
-        //        ValidOptions = new List<string>
-        //        {
-        //            "t",
-        //            "tbd",
-        //        },
-        //        ApplicationVersion             = "set-at-runtime",
-        //        SessionTimestamp               = "set-at-runtime",
-        //        LogfilePath                    = "set-at-runtime",
-        //    };
-
-        //    Du.WithJson.SerializeToIndentedFile<Configuration>(defaultSettings, $@"{defaultSettings.ConfigDirectory}mawsc-config.json");
-        //}
-
         internal static void ProcessAction(string mawscAction, string mawscOption, Configuration mawscConfiguration)
         {
             if(mawscConfiguration.ValidActions.Contains(mawscAction))
