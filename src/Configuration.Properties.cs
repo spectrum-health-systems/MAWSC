@@ -4,7 +4,7 @@
 // LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 //          Copyright 2021 A Pretty Cool Program
 
-/* ============================================================================================
+/* ==========================================================================================-|
  * About this class
  * =============================================================================
  * This is a partial that contains the properties for the MAWSC.Configuration.cs class.
