@@ -1,14 +1,14 @@
-﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
-//    FILE: MAWSC.Configuration.Action.cs
-// UPDATED: 220518.081922
-// LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-//          Copyright 2021 A Pretty Cool Program
+﻿// =============================================================================
+// MAWSC: MyAvatool Web Service Commander
+// Tools and utilities for myAvatar™ custom web services.
+// https://github.com/spectrum-health-systems/MAWSC)
+// Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+// Copyright 2021-2022 A Pretty Cool Program
+// =============================================================================
 
-/* =============================================================================
- * About this class
- * =============================================================================
- * A partial class that contains the logic for MAWSC.Configuration.cs
- */
+// MAWSC.Configuration.cs
+// Partial class that contains action logic for MAWSC.Configuration.cs.
+// b220518.115916
 
 namespace MAWSC
 {
@@ -16,12 +16,11 @@ namespace MAWSC
     {
         internal class Action
         {
-            /// <summary>
-            /// Reset the configuration file to default settings.
-            /// </summary>
+
+            /// <include file='MawscDoc.xml' path='doc/configuration[@name="Action.Reset"]/*' />
             internal static void Reset()
             {
-                var configurationFilePath = MAWSC.Configuration.GetDefaultConfigurationFilePath();
+                var configurationFilePath = MAWSC.Configuration.GetDefaultFilePath();
 
                 if(File.Exists($@"{configurationFilePath}"))
                 {
@@ -38,7 +37,7 @@ namespace MAWSC
                     BackupDirectory        = $@"./AppData/Backup/",
                     TemporaryDirectory     = $@"./AppData/Temp/",
                     StagingDirectory       = $@"./AppData/Staging-source/",
-                    ProductionDirectory    = "<path/to/your/web/service/>",
+                    ProductionDirectory    = "path/to/your/web/service/",
                     ValidCommands = new List<string>
                     {
                         "h",

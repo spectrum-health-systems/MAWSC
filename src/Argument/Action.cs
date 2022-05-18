@@ -1,14 +1,12 @@
-﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
-//    FILE: MAWSC.Argument.Action.cs
-// UPDATED: 220513.105244
-// LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-//          Copyright 2021 A Pretty Cool Program
+﻿// =============================================================================
+// MAWSC: MyAvatool Web Service Commander
+// Tools and utilities for myAvatar™ custom web services.
+// https://github.com/spectrum-health-systems/MAWSC)
+// Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+// Copyright 2021-2022 A Pretty Cool Program
+// =============================================================================
 
-/* =============================================================================
- * About this class
- * =============================================================================
- * Logic for MAWSC actions.
- */
+
 
 namespace MAWSC.Argument
 {

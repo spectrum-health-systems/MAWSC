@@ -1,42 +1,20 @@
-﻿// PROJECT: MAWSC (https://github.com/spectrum-health-systems/MAWSC)
-//    FILE: MAWSC.Utility.Maintenance.cs
-// UPDATED: 220513.093416
-// LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-//          Copyright 2021 A Pretty Cool Program
+﻿// =============================================================================
+// MAWSC: MyAvatool Web Service Commander
+// Tools and utilities for myAvatar™ custom web services.
+// https://github.com/spectrum-health-systems/MAWSC)
+// Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+// Copyright 2021-2022 A Pretty Cool Program
+// =============================================================================
 
-/* =============================================================================
- * About this class
- * =============================================================================
- * Maintenance stuff.
- */
+// MAWSC.Maintenance.cs
+// Maintenance utilities.
+// b220518.115916
 
 namespace MAWSC
 {
     internal class Maintenance
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="mawscConfiguration"></param>
-        internal static void Initialize(Dictionary<string, string> mawscArguments, Configuration mawscConfiguration)
-        {
-            var logHeader = MAWSC.Log.Component.MasterHeader();
-            var logCommandLineArguments = MAWSC.Log.Component.CommandLineArguments(mawscArguments);
-            var logConfigurationInfo = MAWSC.Log.Component.ConfigurationInfo(mawscConfiguration);
-            //var logRequiredDirectories = MAWSC.Utility.Verify.RequiredDirectories(mawscConfiguration);
-
-            var logMessage = $"{logHeader}{Environment.NewLine}" +
-                             $"{logCommandLineArguments}{Environment.NewLine}" +
-                             $"{logConfigurationInfo}{Environment.NewLine}";
-            //$"{logRequiredDirectories}{Environment.NewLine}";
-
-            Log.Export.ToEverywhere(logMessage, mawscConfiguration.LogfilePath);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="mawscConfiguration"></param>
+        /// <include file='MawscDoc.xml' path='doc/maintenance[@name="Finalize"]/*' />
         internal static void Finalize(int exitCode)
         {
             if(exitCode == 0)

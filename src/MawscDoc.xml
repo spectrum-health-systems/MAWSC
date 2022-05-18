@@ -1,0 +1,279 @@
+﻿<doc>
+    <!--
+    MAWS.Configuration.cs
+    -->
+    <configuration name="GetDefaultFilePath">
+        <summary>
+            Get the MAWSC configuration default filepath.
+        </summary>
+        <remarks>
+            <para>
+                The default filepath is <i>./AppData/Config/mawsc-config.json</i>.
+            </para>
+        </remarks>
+    </configuration>
+    
+    <configuration name="Load">
+        <summary>
+            Loads MAWSC settings from the configuration file.
+        </summary>
+        <remarks>
+            <para>
+                If the configuration file does not exist, a new configuration file will be created.
+            </para>
+            <para>
+                The following configuration settings are created at runtime:
+                <list type ="bullet">
+                    <item>
+                        <description>SessionTimestamp</description>
+                    </item>
+                    <item>
+                        <description>ApplicationVersion</description>
+                    </item>
+                    <item>
+                        <description>LogfilePath</description>
+                    </item>
+                </list>
+            </para>
+        </remarks>
+    </configuration>
+    
+    <configuration name="ProcessAction">
+        <summary>
+            Process a configuration action.
+        </summary>
+    </configuration>
+    
+    <configuration name="Validate">
+        <summary>
+            Verify a valid configuration file exists.
+        </summary>
+        <remarks>
+            <para>
+                Recreate ./AppData/Config/mawsc-config.json if the file:
+                <list type ="bullet">
+                    <item>
+                        <term>Does not exist</term>
+                        <description>The configuration file is required.</description>
+                    </item>
+                    <item>
+                        <term>Is not enclosed properly</term>
+                        <description>JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data. JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data.</description>
+                    </item>
+                    <item>
+                        <term>Is too short</term>
+                        <description>There are at least 5 configuration settings, so if the configuration file must contain<br/>more than 5 lines.</description>
+                    </item>
+                </list>
+            </para>
+        </remarks>
+    </configuration>
+    
+    <configuration name="Action.Reset">
+        <summary>
+            Recreate the configuration file with default values.
+        </summary>
+    </configuration>
+
+    <!--
+    MAWS.Log
+    -->
+    <log name="Component.MasterHeader">
+        <summary>
+            Create the log message master header.
+        </summary>
+    </log>
+    
+    <log name="Component.SubHeader">
+        <summary>
+            Create a log message sub-header.
+        </summary>
+        <param name="subHeaderText">Sub-header text.</param>
+    </log>
+
+    <log name="Component.CommandLineArguments">
+        <summary>
+            Create a log message with the arguments passed via the command line.
+        </summary>
+        <param name="mawscArguments">Arguments passed via the command line.</param>
+    </log>
+
+    <log name="Component.CommandLineArgumentsMissing">
+        <summary>
+            Create a log message letting the user know command line arguments are missing.
+        </summary>
+    </log>
+
+    <log name="Component.ConfigurationInfo">
+        <summary>
+            Create a log message with the configuration settings.
+        </summary>
+        <param name="mawscConfiguration">Configuration settings.</param>
+    </log>
+
+    <log name="Component.ConfigurationNotFound">
+        <summary>
+            Create a log message letting the user know the configuration file is missing.
+        </summary>
+    </log>
+
+    <log name="Component.ConfigurationReset">
+        <summary>
+            Create a log message letting the user know the configuration file is being reset.
+        </summary>
+    </log>
+
+    <log name="Component.InvalidCommandPassed">
+        <summary>
+            Create a log message letting the user know that an invalid command was passed.
+        </summary>
+        <param name="mawscCommand">Passed command.</param>
+    </log>
+
+    <log name="Export.ToConsole">
+        <summary>
+            Display log information on the console.
+        </summary>
+        <param name="logMessage">Log message to display.</param>
+    </log>
+
+    <log name="Export.ToEverywhere">
+        <summary>
+            Display log information on the console, and write it to a file.
+        </summary>
+        <param name="logMessage">Log message to display.</param>
+        <param name="logfilePath">Logfile path.</param>
+    </log>
+
+    <log name="Export.ToFile">
+        <summary>
+            Write log information to a file.
+        </summary>
+        <param name="logMessage">Log message to display.</param>
+        <param name="logfilePath">Logfile path.</param>
+    </log>
+
+
+
+
+
+    <!--
+    MAWS.Maintenance
+    -->
+    <maintenance name="Finalize">
+        <summary>
+            Exit MAWSC
+        </summary>
+        <param name="exitCode">Exit code for troubleshooting purposes.</param>
+    </maintenance>
+    
+    
+    <!--
+    MAWS.Verify
+    -->
+    <verify name="Requirements">
+        <summary>
+            Verify MAWSC requirements.
+        </summary>
+    </verify>
+    
+    <verify name="ArgumentsPassed">
+        <summary>
+            Verify at least one argument was passed via the command line.
+        </summary>
+        <remarks>
+            <para>
+                We aren't testing for valid arguments yet, just their existance.
+            </para>
+            <para>
+                If there aren't any passed arguments, we can't do anything, so let the user know via the console (don't write a log file), and exit MAWSC.
+            </para>
+        </remarks>
+    </verify>
+    
+    <verify name="DirectoriesExist">
+        <summary>
+            Verify that required directories exist, and create them if they don't.
+        </summary>
+        <returns>A log message.</returns>
+    </verify>
+</doc>
+
+
+<!--
+Template:
+
+/// <include file='MawscDoc.xml' path='doc/configuration[@name="Action.Reset"]/*' />
+
+
+    <configuration name="Action.Reset">
+        <summary>
+            Recreate the configuration file with default values.
+        </summary>
+    </configuration>
+
+
+
+<doc>
+    <configuration name="MethodName">
+        <summary>
+            A summary template.
+        </summary>
+        <remarks>
+            <para>
+                This is the<b> first</b> paragraph. You can also use <i>italics</i> and <u>underline.</u>
+            </para>
+            <para>
+                This is the<b> second</b> paragraph, with a link to the <see href="https://github.com/spectrum-health-systems/MAWSC">MAWSC repository</see>.
+            </para>
+            <list type ="bullet">
+                <item>
+                    <term>Bullet 1</term>
+                    <description>Bullet 1 description.</description>
+                </item>
+                <item>
+                    <description>Bullet 2</description>
+                </item>
+            </list>
+            <list type="number">
+                <item>
+                    <term>Number 1</term>
+                    <description>Number 1 description.</description>
+                </item>
+                <item>
+                    <description>Number 2.</description>
+                </item>
+            </list>
+            <para>
+                Here is a <c>single line of code</c>
+            </para>
+            <para>
+                Here are
+            <code>
+            Multiple lines
+            of code
+            </code>
+                Here are
+            <code>
+                Multiple lines
+                of code, intented
+            </code>
+            </para>
+            <example>
+            This is an example of some code:
+                <code>
+                Example of some
+                indented code
+                </code>
+            </example>
+            <see href="https://github.com/spectrum-health-systems/MAWSC">MAWSC repository</see>
+        </remarks>
+        <param name="aString">A string string.</param>
+        <param name="anInt">An integer.</param>
+        <returns>A boolean.</returns>
+        <value>A value</value>
+    </configuration>
+</doc>
+
+
+-->
