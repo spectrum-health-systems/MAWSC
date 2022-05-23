@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MAWSC.MawscCommand
+﻿namespace MAWSC.MawscCommand
 {
     internal class Validate
     {
+        /// <summary></summary>
+        /// <param name="mawscSettings"></param>
+        /// <returns></returns>
+        internal static bool IsValid(MAWSC.Configuration.Settings mawscSettings)
+        {
+            return mawscSettings.ValidCommands.Contains(mawscSettings.MawscCommand);
+        }
     }
 }

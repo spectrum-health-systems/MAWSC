@@ -10,8 +10,6 @@
 // Load configuration settings.
 // bb220523.131356 -
 
-using System.Reflection;
-
 namespace MAWSC.Configuration
 {
     internal class Load
@@ -36,7 +34,7 @@ namespace MAWSC.Configuration
         ///     </para>
         /// </remarks>
         /// <returns>Configuration settings.</returns>
-        internal static Settings FromFile(string[] commandLineArguments)
+        internal static Settings FromFile()
         {
             var configurationFile = MAWSC.Configuration.Common.GetDefaultFilePath();
 
@@ -47,19 +45,10 @@ namespace MAWSC.Configuration
 
             Settings mawscSettings = Du.WithJson.DeserializeFromFile<Settings>(configurationFile);
 
-            /* Some of the configuration settings are set at runtime.
-             */
-            mawscSettings.SessionTimestamp   = DateTime.Now.ToString("MMddyy-HHmmss");
-            mawscSettings.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawscSettings.LogfilePath        = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
-
-            Dictionary<string, string> mawscArguments  = MAWSC.CommandLine.GetArgumentValues(commandLineArguments);
-
-            mawscSettings.MawscCommand = mawscArguments["mawscCommand"];
-            mawscSettings.MawscAction = mawscArguments["mawscAction"];
-            mawscSettings.MawscOption = mawscArguments["mawscOption"];
 
             return mawscSettings;
         }
+
+
     }
 }

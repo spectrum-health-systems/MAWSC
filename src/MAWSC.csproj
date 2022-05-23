@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <Folder Include="Production\" />
-    <Folder Include="Staging\" />
   </ItemGroup>
 
 </Project>

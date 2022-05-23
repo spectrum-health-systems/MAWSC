@@ -70,5 +70,34 @@ namespace MAWSC.Du
 
             ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
         }
+
+
+        /// <summary>
+        /// Archives a directory.
+        /// </summary>
+        /// <param name="sourceDirectory">Directory to archive.</param>
+        /// <param name="targetDirectory">Directory to create the archive.</param>
+        internal static void DirectoryAsFullname(string sourceDirectory, string targetDirectory)
+        {
+            // Not tested as of 5-10-22
+
+            /* Archived directories will have a name using this format:
+             * 
+             *      "path/to/archive/file/name-of-directory-that-is-archived.zip"
+             *      
+             * Since the archive filename will be the entire filepath, which in some cases will
+             * be long enough to cause issues, so be careful.
+             */
+
+            /* Strip existing trailing slash to make path names clearer later.
+             */
+            sourceDirectory     = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
+            targetDirectory     = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
+
+            var archiveFileName = sourceDirectory.Replace("\\","-" );
+            var targetFilePath  = $@"{targetDirectory}/{archiveFileName}.zip";
+
+            ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
+        }
     }
 }

@@ -29,5 +29,17 @@ namespace MAWSC.Configuration
         public string MawscCommand { get; set; }
         public string MawscAction { get; set; }
         public string MawscOption { get; set; }
+
+
+        internal static Settings Initialize(string[] commandLineArguments)
+        {
+            Settings mawscSettings = Configuration.Load.FromFile();
+
+            mawscSettings = Runtime.SetSettings(mawscSettings, commandLineArguments);
+
+            return mawscSettings;
+        }
     }
+
+
 }
