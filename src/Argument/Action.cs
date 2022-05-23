@@ -6,7 +6,9 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-
+// MAWSC.Argument.Action.cs
+// Logic for MAWSC Actions.
+// b220518.115916
 
 namespace MAWSC.Argument
 {

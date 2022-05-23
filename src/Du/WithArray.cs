@@ -8,7 +8,7 @@
 
 // Du.WithArray.cs
 // Does things with arrays.
-// v1.0.0.0-b220518.115916+ApprenticeWizard
+// v0.99.0.0-220523.075036 (standalone version for MAWSC 1.2)
 
 namespace MAWSC.Du
 {

@@ -12,10 +12,11 @@
 
 namespace MAWSC
 {
-    internal class Maintenance
+    internal class Terminate
     {
-        /// <include file='MawscDoc.xml' path='doc/maintenance[@name="Finalize"]/*' />
-        internal static void Finalize(int exitCode)
+        /// <summary>Exit MAWSC.</summary>
+        /// <param name="exitCode">Exit code for troubleshooting purposes.</param>
+        internal static void Gracefully(int exitCode)
         {
             if(exitCode == 0)
             {

@@ -6,13 +6,13 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Configuration.Properties.cs
-// Partial class that contains class properties for MAWSC.Configuration.cs.
-// b220518.115916
+// MAWSC.Configuration.Settings.cs
+// Setting properties
+// b220523.132053 -
 
-namespace MAWSC
+namespace MAWSC.Configuration
 {
-    internal partial class Configuration
+    internal class Settings
     {
         public string ConfigurationDirectory { get; set; }
         public string LogDirectory { get; set; }
@@ -26,5 +26,8 @@ namespace MAWSC
         public string ApplicationVersion { get; set; }
         public string SessionTimestamp { get; set; }
         public string LogfilePath { get; set; }
+        public string MawscCommand { get; set; }
+        public string MawscAction { get; set; }
+        public string MawscOption { get; set; }
     }
 }

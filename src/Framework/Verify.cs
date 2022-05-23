@@ -6,44 +6,27 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Utility.Verify.cs
-// Verify and validate variouse data.
-// b220518.115916
+// MAWSC.Framework.Verify.cs
+// Verify framework components.
+// b220523.131302 -
 
-namespace MAWSC
+
+namespace MAWSC.Framework
 {
     internal class Verify
     {
-        /// <include file='MawscDoc.xml' path='doc/verify[@name="Requirements"]/*' />
-        internal static void Requirements(string[] commandLineArguments)
+        /// <summary>Verify that required directories exist, and create them if they don't.</summary>
+        /// <returns>Log message.</returns>
+        internal static string Directories(MAWSC.Configuration.Settings mawscSettings)
         {
-            MAWSC.Configuration.Validate();
-            MAWSC.Verify.ArgumentsPassed(commandLineArguments);
-            MAWSC.Verify.DirectoriesExist();
-        }
-
-        /// <include file='MawscDoc.xml' path='doc/verify[@name="Arguments"]/*' />
-        private static void ArgumentsPassed(string[] commandLineArguments)
-        {
-            if(commandLineArguments.Length == 0)
-            {
-                var logNoArgumentsPassedMessage = MAWSC.Log.Component.CommandLineArgumentsMissing();
-                MAWSC.Log.Export.ToConsole(logNoArgumentsPassedMessage);
-                MAWSC.Maintenance.Finalize(1);
-            }
-        }
-
-        /// <include file='MawscDoc.xml' path='doc/verify[@name="DirectoriesExist"]/*' />
-        private static string DirectoriesExist()
-        {
-            var mawscConfiguration = MAWSC.Configuration.Load();
+            //var mawscConfiguration = MAWSC.Configuration.Load.FromFile();
 
             var requiredDirectories = new List<string>
             {
-                mawscConfiguration.ConfigurationDirectory,
-                mawscConfiguration.LogDirectory,
-                mawscConfiguration.BackupDirectory,
-                mawscConfiguration.TemporaryDirectory
+                mawscSettings.ConfigurationDirectory,
+                mawscSettings.LogDirectory,
+                mawscSettings.BackupDirectory,
+                mawscSettings.TemporaryDirectory
             };
 
             var logSubHeader = MAWSC.Log.Component.SubHeader("Verifying required directories");

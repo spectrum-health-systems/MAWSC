@@ -11,10 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Production\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="AppData\Backup\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -27,6 +23,11 @@
     <None Update="AppData\Temp\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Production\" />
+    <Folder Include="Staging\" />
   </ItemGroup>
 
 </Project>

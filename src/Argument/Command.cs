@@ -35,33 +35,33 @@ namespace MAWSC.Argument
         /// wetrw
         /// </summary>
         /// <param name="mawscCommand">tet</param>
-        /// <param name="mawscConfiguration">tet</param>
-        internal static void Process(Dictionary<string, string> mawscArguments, Configuration mawscConfiguration)
+        /// <param name="mawscSettings">tet</param>
+        internal static void Process(MAWSC.Configuration.Settings mawscSettings)
         {
             /* If the "help" argument was passed, show the help screen and exit.
              */
-            if(mawscArguments["mawscCommand"].StartsWith("h"))
+            if(mawscSettings.MawscCommand.StartsWith("h"))
             {
-                MAWSC.Help.Display.OnCommandLine();
-                MAWSC.Maintenance.Finalize(0);
+                MAWSC.Help.Display.Complete();
+                MAWSC.Terminate.Gracefully(0);
             }
             else
             {
                 //MAWSC.Maintenance.Initialize(mawscArguments, mawscConfiguration);
 
-                if(mawscArguments["mawscCommand"].StartsWith("c"))
-                {
-                    MAWSC.Configuration.ProcessAction(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
-                }
-                else if(mawscArguments["mawscCommand"].StartsWith("p"))
-                {
-                    //CommandProduction(mawscConfiguration);
-                }
-                else if(mawscArguments["mawscCommand"].StartsWith("s"))
-                {
-                    //MAWSC.Staging.Roundhouse.Process(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
+                ////if(mawscArguments["mawscCommand"].StartsWith("c"))
+                ////{
+                ////    MAWSC.Configuration.Roundhouse.ProcessAction(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscSettings);
+                ////}
+                ////else if(mawscArguments["mawscCommand"].StartsWith("p"))
+                ////{
+                ////    //CommandProduction(mawscConfiguration);
+                ////}
+                ////else if(mawscArguments["mawscCommand"].StartsWith("s"))
+                ////{
+                ////    //MAWSC.Staging.Roundhouse.Process(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
 
-                }
+                ////}
             }
         }
 
