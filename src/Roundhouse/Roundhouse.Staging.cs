@@ -22,11 +22,13 @@
 
                     case "d":
                     case "deploy":
-                        MAWSC.Staging.Deploy.All(mawscSettings);
+                        ParseOptionDeploy(mawscSettings);
                         break;
 
                     case "f":
                     case "fetch":
+                        MAWSC.Staging.Backup.Source(mawscSettings);
+                        MAWSC.Staging.Backup.Target(mawscSettings);
                         MAWSC.Staging.Fetch.FromUrl(mawscSettings);
                         break;
 
@@ -49,31 +51,26 @@
             }
         }
 
+        internal static void ParseOptionDeploy(MAWSC.Configuration.Settings mawscSettings)
+        {
+            switch(mawscSettings.MawscOption)
+            {
+                case "a":
+                case "all":
+                    MAWSC.Staging.Deploy.All(mawscSettings);
+                    break;
 
+                case "m":
+                case "minimal":
+                    MAWSC.Staging.Deploy.Minimal(mawscSettings);
+                    break;
 
+                case "not-passed":
+                default:
+                    MAWSC.Staging.Deploy.Minimal(mawscSettings);
+                    break;
+            }
+        }
 
-        //    /* If the "help" argument was passed, show the help screen and exit.
-        //     */
-        //    if(mawscSettings.MawscCommand == "h" || mawscSettings.MawscCommand == "help")
-        //    {
-        //        Help.Display.Complete();
-
-        //        MAWSC.Maintenance.Terminate.Gracefully(0);
-        //    }
-        //    else
-        //    {
-        //        switch(mawscSettings.MawscCommand)
-        //        {
-        //            case "s":
-        //            case "stage":
-        //            case "staging":
-        //                Staging.Roundhouse.Parse(mawscSettings);
-        //                break;
-
-        //            default:
-        //                break;
-        //        }
-        //    }
-        //}
     }
 }

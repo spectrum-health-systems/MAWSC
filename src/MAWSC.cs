@@ -5,7 +5,7 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
 //
-// v1.2.0.0-b220524+dev090809
+// v1.2.0.0-b220524+dev142834
 //
 // --------------------------------------------------------------------------------------------
 // About MAWSC
@@ -90,7 +90,7 @@ ERROR CODES
 0: No error
 1: Arguments missing
 2: Invalid command was passed.
-
- 
+3: Invalid action was passed
+4: Invalid option was passed.
 
  */

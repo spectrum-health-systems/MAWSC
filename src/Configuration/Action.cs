@@ -33,6 +33,7 @@ namespace MAWSC.Configuration
                 LogDirectory              = $@"./AppData/Log/",
                 BackupDirectory           = $@"./AppData/Backup/",
                 TemporaryDirectory        = $@"./AppData/Temp/",
+                RepositoryName            = "name-of-your-repository",
                 RepositoryUrl             = "path/to/your/web/service/repository/url",
                 RepositorySrcDirectory    = "path/to/your/repository/src/",
                 StagingSourceDirectory    = $@"./AppData/Staging_source/",
@@ -74,8 +75,8 @@ namespace MAWSC.Configuration
                 SessionTimestamp   = "set-at-runtime",
                 LogfilePath        = "set-at-runtime",
                 MawscCommand       = "set-at-runtime",
-                MawscAction      = "set-at-runtime",
-                MawscOption      = "set-at-runtime",
+                MawscAction        = "set-at-runtime",
+                MawscOption        = "set-at-runtime",
             };
 
             Du.WithJson.SerializeToIndentedFile<Settings>(defaultSettings, $@"{configurationFilePath}");

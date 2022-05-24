@@ -18,6 +18,7 @@ namespace MAWSC.Configuration
         public string LogDirectory { get; set; }
         public string BackupDirectory { get; set; }
         public string TemporaryDirectory { get; set; }
+        public string RepositoryName { get; set; }
         public string RepositoryUrl { get; set; }
         public string RepositorySrcDirectory { get; set; }
         public string StagingSourceDirectory { get; set; }
