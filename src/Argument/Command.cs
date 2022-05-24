@@ -6,6 +6,10 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
+// MAWSC.Argument.Command.cs
+// Logic for MAWSC Commands.
+// b220524.080525
+
 namespace MAWSC.Argument
 {
     internal class Command
