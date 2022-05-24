@@ -94,10 +94,15 @@ namespace MAWSC.Du
             sourceDirectory     = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
             targetDirectory     = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
 
-            var archiveFileName = sourceDirectory.Replace("\\","-" );
+            var archiveFileName = sourceDirectory.Substring(sourceDirectory.LastIndexOf("/") + 1);
             var targetFilePath  = $@"{targetDirectory}/{archiveFileName}.zip";
 
             ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
+        }
+
+        internal static void Uncompress(string sourceFilePath, string targetDirectory)
+        {
+            ZipFile.ExtractToDirectory(sourceFilePath, targetDirectory);
         }
     }
 }

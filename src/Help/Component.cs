@@ -66,8 +66,7 @@ namespace MAWSC.Help
         /// <returns></returns>
         internal static string MoreInformation()
         {
-            return $"For more information, please visit: https://github.com/spectrum-health-systems/MAWSC{ Environment.NewLine}" +
-                   $"{Environment.NewLine}";
+            return $"For more information, please visit: https://github.com/spectrum-health-systems/MAWSC{ Environment.NewLine}";
         }
     }
 }

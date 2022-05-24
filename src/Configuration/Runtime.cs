@@ -12,12 +12,12 @@ namespace MAWSC.Configuration
 {
     internal class Runtime
     {
-        internal static Settings SetSetting(MAWSC.Configuration.Settings mawscSettings, string[] commandLineArguments)
+        internal static Settings SetSetting(MAWSC.Configuration.Settings mawscSettings, string[] commandLineArguments, string sessionTimestamp)
         {
 
             /* Some of the configuration settings are set at runtime.
              */
-            mawscSettings.SessionTimestamp   = DateTime.Now.ToString("MMddyy-HHmmss");
+            mawscSettings.SessionTimestamp   = sessionTimestamp;
             mawscSettings.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
             mawscSettings.LogfilePath        = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
 

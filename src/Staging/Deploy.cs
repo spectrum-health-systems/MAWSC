@@ -10,5 +10,13 @@ namespace MAWSC.Staging
 {
     internal class Deploy
     {
+        internal static void All(MAWSC.Configuration.Settings mawscSettings)
+        {
+            var stagingSrcDirectory = $"{mawscSettings.StagingSourceDirectory}{mawscSettings.RepositorySrcDirectory}";
+
+            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTargetDirectory);
+
+            Du.WithDirectory.MoveRecursively(stagingSrcDirectory, mawscSettings.StagingTargetDirectory);
+        }
     }
 }

@@ -5,7 +5,7 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
 //
-// v1.2.0.0-b220524+dev083904
+// v1.2.0.0-b220524+dev090809
 //
 // --------------------------------------------------------------------------------------------
 // About MAWSC
@@ -41,7 +41,7 @@
 
 // MAWSC.cs
 // Entry point for MAWSC
-// b220524.083908
+// b220524.090813
 
 StartApp(args);
 
@@ -49,26 +49,48 @@ static void StartApp(string[] commandLineArguments)
 {
     Console.Clear();
 
+    var SessionTimestamp = DateTime.Now.ToString("MMddyy-HHmmss");
+
+    MAWSC.Log.Export.ToConsole(MAWSC.Log.Header.Top(SessionTimestamp));
+
     MAWSC.Configuration.Validate.Data();
 
     MAWSC.Argument.Verify.Passed(commandLineArguments);
 
-    MAWSC.Configuration.Settings mawscSettings = MAWSC.Configuration.Settings.Initialize(commandLineArguments);
+    MAWSC.Configuration.Settings mawscSettings = MAWSC.Configuration.Settings.Initialize(commandLineArguments, SessionTimestamp);
+
+    MAWSC.Framework.Refresh.Directories(mawscSettings);
+
+    MAWSC.Log.Export.ToFile(MAWSC.Log.Header.Top(SessionTimestamp), mawscSettings.LogfilePath);
+
+    MAWSC.Log.Export.ToEverywhere(MAWSC.Log.Message.ArgumentsPassed(mawscSettings), mawscSettings.LogfilePath);
 
     MAWSC.Framework.Verify.Directories(mawscSettings);
 
-    var logMasterHeader = MAWSC.Log.Component.MasterHeader();
-    MAWSC.Log.Export.ToEverywhere(logMasterHeader, mawscSettings.LogfilePath);
+    MAWSC.Backup.VerifySessionBackupDirectory(mawscSettings);
+
+
 
     if(MAWSC.Validate.MawscCommand.IsValid(mawscSettings))
     {
-        MAWSC.Roundhouse.MawscCommand.Parse(mawscSettings);
-        MAWSC.Maintenance.Terminate.Gracefully(1);
+        MAWSC.Roundhouse.Parse(mawscSettings);
+        MAWSC.Maintenance.Terminate.Gracefully(0);
     }
     else
     {
-        var logInvalidCommandPassed = MAWSC.Log.Component.InvalidCommandPassed(mawscSettings.MawscCommand);
-        Console.WriteLine(logInvalidCommandPassed);
+        Console.WriteLine(MAWSC.Log.Message.CommandIsInvalid(mawscSettings.MawscCommand));
         MAWSC.Maintenance.Terminate.Gracefully(2);
     }
 }
+
+/*
+
+ERROR CODES
+
+0: No error
+1: Arguments missing
+2: Invalid command was passed.
+
+ 
+
+ */

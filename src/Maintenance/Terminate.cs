@@ -20,14 +20,13 @@ namespace MAWSC.Maintenance
         {
             if(exitCode == 0)
             {
-                Console.WriteLine($">>> MAWSC Exiting gracefully (Exit code {exitCode})...");
+                Console.WriteLine($"{Environment.NewLine}>>> MAWSC Exiting gracefully (Exit code {exitCode})...");
             }
             else
             {
-                Console.WriteLine($">>> MAWSC Exiting with error (Exit code {exitCode})...");
+                Console.WriteLine($"{Environment.NewLine}>>> MAWSC Exiting with error (Exit code {exitCode})...");
             }
 
-            Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}");
             Environment.Exit(exitCode);
         }
     }

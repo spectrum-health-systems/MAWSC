@@ -10,14 +10,26 @@ namespace MAWSC.Staging
 {
     internal class Backup
     {
-        internal static void Current(MAWSC.Configuration.Settings mawscSettings)
+        internal static void Source(MAWSC.Configuration.Settings mawscSettings)
         {
-            var stagingDirectory = mawscSettings.StagingDirectory;
+            var stagingSourceDirectory = mawscSettings.StagingSourceDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            //Du.WithDirectory.ConfirmDirectoryExists(backupDirectory);
+            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingSourceRequest(mawscSettings));
+            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingSource(mawscSettings));
 
-            Du.WithArchive.DirectoryAsFullname(stagingDirectory, backupDirectory);
+            Du.WithArchive.DirectoryAsFullname(stagingSourceDirectory, backupDirectory);
+        }
+
+        internal static void Target(MAWSC.Configuration.Settings mawscSettings)
+        {
+            var stagingTargetDirectory = mawscSettings.StagingTargetDirectory;
+            var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
+
+            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingTargetRequest(mawscSettings));
+            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingTarget(mawscSettings));
+
+            Du.WithArchive.DirectoryAsFullname(stagingTargetDirectory, backupDirectory);
         }
     }
 }

@@ -40,6 +40,7 @@ namespace MAWSC.Configuration
 
             if(!File.Exists($@"{configurationFile}"))
             {
+                MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileNotFound());
                 Action.Reset();
             }
             else
@@ -49,6 +50,7 @@ namespace MAWSC.Configuration
 
                 if(!fileEnclosureValid || fileContents.Length < 5)
                 {
+                    MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileInvalid());
                     Action.Reset();
                 }
             }

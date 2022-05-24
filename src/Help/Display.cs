@@ -16,6 +16,8 @@ namespace MAWSC.Help
     {
         internal static void Complete()
         {
+            Console.Clear();
+
             var helpMessage = Component.HelpHeader() +
                               Component.UsageSyntax() +
                               Component.ValidArguments() +

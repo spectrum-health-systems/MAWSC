@@ -33,6 +33,8 @@ namespace MAWSC.Configuration
                 LogDirectory              = $@"./AppData/Log/",
                 BackupDirectory           = $@"./AppData/Backup/",
                 TemporaryDirectory        = $@"./AppData/Temp/",
+                RepositoryUrl             = "path/to/your/web/service/repository/url",
+                RepositorySrcDirectory    = "path/to/your/repository/src/",
                 StagingSourceDirectory    = $@"./AppData/Staging_source/",
                 StagingTargetDirectory    = "path/to/your/staging/web/service/target/",
                 ProductionSourceDirectory = "path/to/your/production/web/service/source/",
@@ -78,13 +80,7 @@ namespace MAWSC.Configuration
 
             Du.WithJson.SerializeToIndentedFile<Settings>(defaultSettings, $@"{configurationFilePath}");
 
-            /* Logging variables are setup a little differently here.
-             */
-            var sessionTimestamp             = DateTime.Now.ToString("MMddyy-HHmmss");
-            var logfilePath                  = $"{defaultSettings.LogDirectory}mawsc-{sessionTimestamp}.log";
-            var logConfigurationResetMessage = MAWSC.Log.Component.ConfigurationReset();
-            MAWSC.Log.Export.ToEverywhere(logConfigurationResetMessage, logfilePath);
+            MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileReset());
         }
     }
-
 }

@@ -9,27 +9,40 @@
             /// </summary>
             /// <param name="mawscCommand">tet</param>
             /// <param name="mawscSettings">tet</param>
-            internal static void Parse(MAWSC.Configuration.Settings mawscSettings)
+            internal static void ParseAction(MAWSC.Configuration.Settings mawscSettings)
             {
 
-                switch(mawscSettings.MawscCommand)
+                switch(mawscSettings.MawscAction)
                 {
-                    case "h":
-                    case "help":
-                        Help.Display.Complete();
-
+                    case "b":
+                    case "backup":
+                        MAWSC.Staging.Backup.Source(mawscSettings);
+                        MAWSC.Staging.Backup.Target(mawscSettings);
                         break;
 
-                    case "s":
-                    case "stage":
-                    case "staging":
-                        Roundhouse.Staging.Parse(mawscSettings);
+                    case "d":
+                    case "deploy":
+                        MAWSC.Staging.Deploy.All(mawscSettings);
                         break;
 
+                    case "f":
+                    case "fetch":
+                        MAWSC.Staging.Fetch.FromUrl(mawscSettings);
+                        break;
 
-                    case "none":
+                    case "r":
+                    case "refresh":
+                        MAWSC.Staging.Backup.Source(mawscSettings);
+                        MAWSC.Staging.Backup.Target(mawscSettings);
+                        MAWSC.Staging.Fetch.FromUrl(mawscSettings);
+                        break;
+
+                    case "i":
+                    case "info":
+                    case "information":
+                    case "not-passed":
                     default:
-                        MAWSC.Staging.Information.Display(mawscSettings);
+                        //MAWSC.Log.Export.ToEverywhere(Log.Message.ConfigurationInformationRequest(mawscSettings), mawscSettings.LogfilePath);
                         break;
                 }
 

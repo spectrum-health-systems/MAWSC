@@ -27,8 +27,7 @@ namespace MAWSC.Argument
         {
             if(commandLineArguments.Length == 0)
             {
-                var logNoArgumentsPassedMessage = MAWSC.Log.Component.CommandLineArgumentsMissing();
-                MAWSC.Log.Export.ToConsole(logNoArgumentsPassedMessage);
+                MAWSC.Log.Export.ToConsole(Log.Message.ArgumentsMissing());
 
                 MAWSC.Maintenance.Terminate.Gracefully(1);
             }

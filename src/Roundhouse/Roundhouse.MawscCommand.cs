@@ -2,7 +2,7 @@
 {
     internal partial class Roundhouse
     {
-        internal class MawscCommand
+        private class MawscCommand
         {
             /// <summary>
             /// wetrw
@@ -11,7 +11,6 @@
             /// <param name="mawscSettings">tet</param>
             internal static void Parse(MAWSC.Configuration.Settings mawscSettings)
             {
-
                 switch(mawscSettings.MawscCommand)
                 {
                     case "h":
@@ -19,10 +18,16 @@
                         Help.Display.Complete();
                         break;
 
+                    case "c":
+                    case "config":
+                    case "configuration":
+                        Roundhouse.Configuration.ParseAction(mawscSettings);
+                        break;
+
                     case "s":
                     case "stage":
                     case "staging":
-                        Roundhouse.Staging.Parse(mawscSettings);
+                        Roundhouse.Staging.ParseAction(mawscSettings);
                         break;
 
                     default:

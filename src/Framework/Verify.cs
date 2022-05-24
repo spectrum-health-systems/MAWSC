@@ -17,42 +17,14 @@ namespace MAWSC.Framework
     {
         /// <summary>Verify that required directories exist, and create them if they don't.</summary>
         /// <returns>Log message.</returns>
-        internal static string Directories(MAWSC.Configuration.Settings mawscSettings)
+        internal static void Directories(MAWSC.Configuration.Settings mawscSettings)
         {
-            var logRequiredDirectoriesMessage    = RequiredDirectories(mawscSettings);
-            var logSessionBackupDirectoryMessage = SessionBackupDirectory(mawscSettings);
+            //var logRequiredDirectoriesMessage    = RequiredDirectories(mawscSettings);
+            //var logSessionBackupDirectoryMessage = SessionBackupDirectory(mawscSettings);
 
+            Verify.RequiredDirectories(mawscSettings);
+            //Verify.SessionBackupDirectory(mawscSettings);
 
-            //var requiredDirectories = new List<string>
-            //{
-            //    mawscSettings.ConfigurationDirectory,
-            //    mawscSettings.LogDirectory,
-            //    mawscSettings.BackupDirectory,
-            //    mawscSettings.TemporaryDirectory
-            //};
-
-            //var logSubHeader = MAWSC.Log.Component.SubHeader("Verifying required directories");
-            //var logContent   = "";
-
-            ///* The majority of MAWSC logging is taken care of by MAWS.Log.Components.cs, but
-            // * since this update is just via the console, we'll take care of logging directly.
-            // */
-            //foreach(var requiredDirectory in requiredDirectories)
-            //{
-            //    if(!Directory.Exists(requiredDirectory))
-            //    {
-            //        logContent += $"{requiredDirectory} does not exist.{Environment.NewLine}";
-            //        _=Directory.CreateDirectory(requiredDirectory);
-            //        logContent += $"{requiredDirectory} created.{Environment.NewLine}";
-            //    }
-            //    else
-            //    {
-            //        logContent += $"{requiredDirectory} exists.{Environment.NewLine}";
-            //    }
-            //}
-
-            return $"{logRequiredDirectoriesMessage}" +
-                   $"{logSessionBackupDirectoryMessage}";
         }
 
         /// <summary>
@@ -60,54 +32,36 @@ namespace MAWSC.Framework
         /// </summary>
         /// <param name="mawscSettings"></param>
         /// <returns></returns>
-        private static string RequiredDirectories(MAWSC.Configuration.Settings mawscSettings)
+        private static void RequiredDirectories(MAWSC.Configuration.Settings mawscSettings)
         {
             var requiredDirectories = new List<string>
             {
                 mawscSettings.ConfigurationDirectory,
                 mawscSettings.LogDirectory,
                 mawscSettings.BackupDirectory,
+                mawscSettings.StagingSourceDirectory,
                 mawscSettings.TemporaryDirectory
             };
 
-            var logSubHeader = MAWSC.Log.Component.SubHeader("Verifying required directories");
-            var logContent   = "";
+            var logContent = "";
 
             foreach(var requiredDirectory in requiredDirectories)
             {
+                logContent += $"{Environment.NewLine}";
+
                 if(!Directory.Exists(requiredDirectory))
                 {
-                    logContent += $"{requiredDirectory} does not exist.{Environment.NewLine}";
+                    logContent += $"           {requiredDirectory}: does not exist...";
                     _=Directory.CreateDirectory(requiredDirectory);
-                    logContent += $"{requiredDirectory} created.{Environment.NewLine}";
+                    logContent += $"created...Verified";
                 }
                 else
                 {
-                    logContent += $"{requiredDirectory} exists.{Environment.NewLine}";
+                    logContent += $"           {requiredDirectory}: Verified.";
                 }
             }
 
-            return $"{logSubHeader}" +
-                   $"{logContent}";
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="mawscSettings"></param>
-        private static string SessionBackupDirectory(MAWSC.Configuration.Settings mawscSettings)
-        {
-            var logSubHeader = MAWSC.Log.Component.SubHeader("Verifying session backup directory");
-            var logContent   = "";
-
-            var sessionBackupDirectory = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
-
-            Du.WithDirectory.ConfirmDirectoryExists(sessionBackupDirectory);
-
-            logContent = $"{sessionBackupDirectory} created.";
-
-            return $"{logSubHeader}" +
-                   $"{logContent}";
+            MAWSC.Log.Export.ToEverywhere(MAWSC.Log.Message.FrameworkDirectoryRequirementsVerify(logContent), mawscSettings.LogfilePath);
         }
     }
 }

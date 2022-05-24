@@ -19,7 +19,7 @@ namespace MAWSC.Argument
         {
             return commandLineArguments.Length == 3
                 ? commandLineArguments[2].Trim().ToLower().Replace("-", "")
-                : "none";
+                : "not-passed";
         }
 
         internal static void Validate()
