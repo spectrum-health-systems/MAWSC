@@ -25,7 +25,7 @@ namespace MAWSC.Configuration
                     case "r":
                     case "reset":
                         Configuration.Action.Reset();
-                        MAWSC.Terminate.Gracefully(0);
+                        MAWSC.Maintenance.Terminate.Gracefully(0);
                         break;
 
                     default:

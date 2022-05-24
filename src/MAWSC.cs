@@ -5,7 +5,7 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
 //
-// v1.2.0.0-b220524+dev080506
+// v1.2.0.0-b220524+dev083904
 //
 // --------------------------------------------------------------------------------------------
 // About MAWSC
@@ -41,7 +41,7 @@
 
 // MAWSC.cs
 // Entry point for MAWSC
-// b220524.080511
+// b220524.083908
 
 StartApp(args);
 
@@ -60,17 +60,15 @@ static void StartApp(string[] commandLineArguments)
     var logMasterHeader = MAWSC.Log.Component.MasterHeader();
     MAWSC.Log.Export.ToEverywhere(logMasterHeader, mawscSettings.LogfilePath);
 
-    if(MAWSC.MawscCommand.Validate.IsValid(mawscSettings))
+    if(MAWSC.Validate.MawscCommand.IsValid(mawscSettings))
     {
-        MAWSC.MawscCommand.Roundhouse.ProcessCommand(mawscSettings);
-        MAWSC.Terminate.Gracefully(1);
+        MAWSC.Roundhouse.MawscCommand.Parse(mawscSettings);
+        MAWSC.Maintenance.Terminate.Gracefully(1);
     }
     else
     {
-        // TODO: Re-enable this.
-
-        //////var logInvalidCommandPassed = MAWSC.Log.Component.InvalidCommandPassed(mawscArguments["mawscCommand"]);
-        //////Console.WriteLine(logInvalidCommandPassed);
-        //////MAWSC.Maintenance.Finalize(2);
+        var logInvalidCommandPassed = MAWSC.Log.Component.InvalidCommandPassed(mawscSettings.MawscCommand);
+        Console.WriteLine(logInvalidCommandPassed);
+        MAWSC.Maintenance.Terminate.Gracefully(2);
     }
 }

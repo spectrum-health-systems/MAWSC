@@ -47,7 +47,7 @@ namespace MAWSC.Argument
             if(mawscSettings.MawscCommand.StartsWith("h"))
             {
                 MAWSC.Help.Display.Complete();
-                MAWSC.Terminate.Gracefully(0);
+                MAWSC.Maintenance.Terminate.Gracefully(0);
             }
             else
             {

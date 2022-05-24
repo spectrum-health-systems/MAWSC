@@ -12,7 +12,7 @@ namespace MAWSC.Configuration
 {
     internal class Runtime
     {
-        internal static void SetSetting(MAWSC.Configuration.Settings mawscSettings, string[] commandLineArguments)
+        internal static Settings SetSetting(MAWSC.Configuration.Settings mawscSettings, string[] commandLineArguments)
         {
 
             /* Some of the configuration settings are set at runtime.
@@ -21,10 +21,13 @@ namespace MAWSC.Configuration
             mawscSettings.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
             mawscSettings.LogfilePath        = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
 
-            mawscSettings.MawscCommand = MawscCommand.Transform(commandLineArguments);
-            ////mawscSettings.MawscAction = mawscArguments["mawscAction"];
-            ////mawscSettings.MawscOption = mawscArguments["mawscOption"];
+            var mawscArguments = MAWSC.Argument.CommandLine.GetArgumentValues(commandLineArguments);
 
+            mawscSettings.MawscCommand = mawscArguments["mawscCommand"];
+            mawscSettings.MawscAction = mawscArguments["mawscAction"];
+            mawscSettings.MawscOption = mawscArguments["mawscOption"];
+
+            return mawscSettings;
         }
     }
 }

@@ -6,7 +6,7 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-namespace MAWSC
+namespace MAWSC.Argument
 {
     internal class CommandLine
     {

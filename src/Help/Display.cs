@@ -23,6 +23,8 @@ namespace MAWSC.Help
                               Component.MoreInformation();
 
             Console.WriteLine(helpMessage);
+
+            MAWSC.Maintenance.Terminate.Gracefully(0);
         }
     }
 }

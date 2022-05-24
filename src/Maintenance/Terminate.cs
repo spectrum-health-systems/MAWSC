@@ -10,7 +10,7 @@
 // Maintenance utilities.
 // b220518.115916
 
-namespace MAWSC
+namespace MAWSC.Maintenance
 {
     internal class Terminate
     {

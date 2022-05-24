@@ -10,45 +10,67 @@ namespace MAWSC.MawscCommand
 {
     internal class Roundhouse
     {
-        /// <summary>
-        /// wetrw
-        /// </summary>
-        /// <param name="mawscCommand">tet</param>
-        /// <param name="mawscSettings">tet</param>
-        internal static void ProcessCommand(MAWSC.Configuration.Settings mawscSettings)
-        {
-            /* If the "help" argument was passed, show the help screen and exit.
-             */
-            if(mawscSettings.MawscCommand == "h" || mawscSettings.MawscCommand == "help")
-            {
-                Help.Display.Complete();
+        //    /// <summary>
+        //    /// wetrw
+        //    /// </summary>
+        //    /// <param name="mawscCommand">tet</param>
+        //    /// <param name="mawscSettings">tet</param>
+        //    internal static void Parse(MAWSC.Configuration.Settings mawscSettings)
+        //    {
+        //        /* If the "help" argument was passed, show the help screen and exit.
+        //         */
+        //        if(mawscSettings.MawscCommand == "h" || mawscSettings.MawscCommand == "help")
+        //        {
+        //            Help.Display.Complete();
 
-                Terminate.Gracefully(0);
-            }
-            else
-            {
-                switch(mawscSettings.MawscCommand)
-                {
+        //            MAWSC.Maintenance.Terminate.Gracefully(0);
+        //        }
+        //        else
+        //        {
+        //            switch(mawscSettings.MawscCommand)
+        //            {
+        //                case "h":
+        //                case "help":
+        //                    Help.Display.Complete();
 
-                }
+        //                    break;
+
+        //                case "s":
+        //                case "stage":
+        //                case "staging":
+        //                    Staging.Roundhouse.Parse(mawscSettings);
+        //                    break;
+
+        //                default:
+        //                    break;
+        //            }
+        //        }
+        //    }
 
 
-                ////MAWSC.Maintenance.Initialize(mawscArguments, mawscConfiguration);
+        //    //    /* If the "help" argument was passed, show the help screen and exit.
+        //    //     */
+        //    //    if(mawscSettings.MawscCommand == "h" || mawscSettings.MawscCommand == "help")
+        //    //    {
+        //    //        Help.Display.Complete();
 
-                //////if(mawscArguments["mawscCommand"].StartsWith("c"))
-                //////{
-                //////    MAWSC.Configuration.Roundhouse.ProcessAction(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscSettings);
-                //////}
-                //////else if(mawscArguments["mawscCommand"].StartsWith("p"))
-                //////{
-                //////    //CommandProduction(mawscConfiguration);
-                //////}
-                //////else if(mawscArguments["mawscCommand"].StartsWith("s"))
-                //////{
-                //////    //MAWSC.Staging.Roundhouse.Process(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
+        //    //        MAWSC.Maintenance.Terminate.Gracefully(0);
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        switch(mawscSettings.MawscCommand)
+        //    //        {
+        //    //            case "s":
+        //    //            case "stage":
+        //    //            case "staging":
+        //    //                Staging.Roundhouse.Parse(mawscSettings);
+        //    //                break;
 
-                //////}
-            }
-        }
+        //    //            default:
+        //    //                break;
+        //    //        }
+        //    //    }
+        //    //}
+        //}
     }
 }

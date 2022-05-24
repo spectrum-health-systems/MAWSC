@@ -30,7 +30,7 @@ namespace MAWSC.Argument
                 var logNoArgumentsPassedMessage = MAWSC.Log.Component.CommandLineArgumentsMissing();
                 MAWSC.Log.Export.ToConsole(logNoArgumentsPassedMessage);
 
-                MAWSC.Terminate.Gracefully(1);
+                MAWSC.Maintenance.Terminate.Gracefully(1);
             }
         }
     }

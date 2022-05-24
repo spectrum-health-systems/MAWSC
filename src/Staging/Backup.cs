@@ -15,12 +15,9 @@ namespace MAWSC.Staging
             var stagingDirectory = mawscSettings.StagingDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            Du.WithDirectory.ConfirmDirectoryExists(backupDirectory);
+            //Du.WithDirectory.ConfirmDirectoryExists(backupDirectory);
 
             Du.WithArchive.DirectoryAsFullname(stagingDirectory, backupDirectory);
-
-
-
         }
     }
 }

@@ -18,8 +18,10 @@ namespace MAWSC.Configuration
         public string LogDirectory { get; set; }
         public string BackupDirectory { get; set; }
         public string TemporaryDirectory { get; set; }
-        public string StagingDirectory { get; set; }
-        public string ProductionDirectory { get; set; }
+        public string StagingSourceDirectory { get; set; }
+        public string StagingTargetDirectory { get; set; }
+        public string ProductionTargetDirectory { get; set; }
+        public string ProductionSourceDirectory { get; set; }
         public List<string> ValidCommands { get; set; }
         public List<string> ValidActions { get; set; }
         public List<string> ValidOptions { get; set; }
@@ -35,7 +37,7 @@ namespace MAWSC.Configuration
         {
             Settings mawscSettings = Configuration.Load.FromFile();
 
-            mawscSettings = Runtime.SetSettings(mawscSettings, commandLineArguments);
+            mawscSettings = Runtime.SetSetting(mawscSettings, commandLineArguments);
 
             return mawscSettings;
         }

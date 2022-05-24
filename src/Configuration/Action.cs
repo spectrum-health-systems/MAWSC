@@ -29,12 +29,14 @@ namespace MAWSC.Configuration
              */
             var defaultSettings = new Settings()
             {
-                ConfigurationDirectory = $@"./AppData/Config/",
-                LogDirectory           = $@"./AppData/Log/",
-                BackupDirectory        = $@"./AppData/Backup/",
-                TemporaryDirectory     = $@"./AppData/Temp/",
-                StagingDirectory       = $@"./AppData/Staging-source/",
-                ProductionDirectory    = "path/to/your/web/service/",
+                ConfigurationDirectory    = $@"./AppData/Config/",
+                LogDirectory              = $@"./AppData/Log/",
+                BackupDirectory           = $@"./AppData/Backup/",
+                TemporaryDirectory        = $@"./AppData/Temp/",
+                StagingSourceDirectory    = $@"./AppData/Staging_source/",
+                StagingTargetDirectory    = "path/to/your/staging/web/service/target/",
+                ProductionSourceDirectory = "path/to/your/production/web/service/source/",
+                ProductionTargetDirectory = "path/to/your/production/web/service/target/",
                 ValidCommands = new List<string>
                     {
                         "h",
@@ -51,8 +53,13 @@ namespace MAWSC.Configuration
                     },
                 ValidActions = new List<string>
                     {
+                        "b",
+                        "backup",
                         "d",
                         "deploy",
+                        "i",
+                        "info",
+                        "information",
                         "r",
                         "reset"
                     },

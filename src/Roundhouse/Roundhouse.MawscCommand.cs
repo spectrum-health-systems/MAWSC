@@ -1,0 +1,34 @@
+﻿namespace MAWSC
+{
+    internal partial class Roundhouse
+    {
+        internal class MawscCommand
+        {
+            /// <summary>
+            /// wetrw
+            /// </summary>
+            /// <param name="mawscCommand">tet</param>
+            /// <param name="mawscSettings">tet</param>
+            internal static void Parse(MAWSC.Configuration.Settings mawscSettings)
+            {
+
+                switch(mawscSettings.MawscCommand)
+                {
+                    case "h":
+                    case "help":
+                        Help.Display.Complete();
+                        break;
+
+                    case "s":
+                    case "stage":
+                    case "staging":
+                        Roundhouse.Staging.Parse(mawscSettings);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+}
