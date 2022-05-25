@@ -1,5 +1,3 @@
->`Last updated: May 9, 2022`
-
 # MAWC: Built with
 
 MAWS was built with the following:

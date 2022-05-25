@@ -5,7 +5,7 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
 //
-// v1.2.0.0-b220524+dev142834
+// v1.99.00.0-b220525+dev081457
 //
 // --------------------------------------------------------------------------------------------
 // About MAWSC
@@ -14,7 +14,7 @@
 // MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
 // for myAvatar™.
 // 
-// Please see the README:
+// For more information about MAWSC, please see the README:
 //
 //  https://github.com/spectrum-health-systems/MAWSC#readme
 //
@@ -41,7 +41,7 @@
 
 // MAWSC.cs
 // Entry point for MAWSC
-// b220524.090813
+// b2b220525.080720
 
 StartApp(args);
 

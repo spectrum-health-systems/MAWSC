@@ -7,7 +7,7 @@
 
 <h3 align="center">
 
-  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="300">
+  <img src="resource/logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="300">
   <br>
 
 </h3>
@@ -29,7 +29,7 @@
 
 </h4>
 
-  ## CONTENTS
+  ### CONTENTS
   [ABOUT](#about)<br>
   [GETTING STARTED](#getting-started)<br>
   [INSTALLING](#installing)<br>
@@ -37,9 +37,9 @@
   [UPDATING](#updating)<br>
   [UNINSTALLING](#uninstalling)<br>
 
-## ABOUT
+# ABOUT
 
-MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatool Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS).
+MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatool Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS), although it can be used to help maintain any custom web service for myAvatar™.
 
 ### Features
 
