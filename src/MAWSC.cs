@@ -1,4 +1,4 @@
-﻿// ==========================================================[ v1.99.00.0-b220525+dev081457 ]==
+﻿// =========================================================== [ v1.99.00.0-b220525+dev113817 ]
 // MAWSC: MyAvatool Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
@@ -8,10 +8,10 @@
 
 // MAWSC.cs
 // Entry point for MAWSC 
-// b220525.083554
+// bb220525.113822
 
 /* --------------------------------------------------------------------------------------------
- * About MAWSC                                                     v1.99.00.0-b220525+dev081457
+ * About MAWSC
  * --------------------------------------------------------------------------------------------
  * MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
  * MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
@@ -26,9 +26,6 @@
  * For more myAvatar™ related development, please visit the myAvatar™ Development Community:
  *  https://github.com/myAvatar-Development-Community
  */
-
-
-
 
 StartApp(args);
 
