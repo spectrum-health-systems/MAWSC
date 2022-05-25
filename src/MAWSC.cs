@@ -1,4 +1,4 @@
-﻿// ============================================================================================
+﻿// ==========================================================[ v1.99.00.0-b220525+dev081457 ]==
 // MAWSC: MyAvatool Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
@@ -6,7 +6,9 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
 
-// MAWSC.cs - Entry point for MAWSC [b220525.083554]
+// MAWSC.cs
+// Entry point for MAWSC 
+// b220525.083554
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC                                                     v1.99.00.0-b220525+dev081457
