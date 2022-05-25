@@ -14,30 +14,16 @@
 // MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
 // for myAvatar™.
 // 
-// For more information about MAWSC, please see the README:
-//
-//  https://github.com/spectrum-health-systems/MAWSC#readme
+// README: https://github.com/spectrum-health-systems/MAWSC#readme
+// Changelog: https://github.com/spectrum-health-systems/MAWSC/doc/CHANGELOG.md
+// Roadmap: https://github.com/spectrum-health-systems/MAWSC/doc/ROADMAP.md
+// Known issues: https://github.com/spectrum-health-systems/MAWSC/doc/KNOWN-ISSUES.md
+// Development: https://github.com/spectrum-health-systems/MAWSC/tree/development
 //
 // For more myAvatar™ related development, please visit the myAvatar™ Development Community:
 //
 //  https://github.com/myAvatar-Development-Community
-//
-// ---------------------------------------------------------
-// About this sourcecode
-// ---------------------------------------------------------
-// Attempts have been made to make this sourcecode as human-readable as possible, but since
-// other organizations may use MAWSC, it is heavily comment everything as well - sometimes
-// even in places where it is very clear as to what the code does.
-// 
-// You will find three types of comments in this sourcecode:
-// 
-//  /// XML comments used by Visual Studio
-//  // Additional information
-//  /* Narrative
-//   * comments
-//   * / 
-// 
-// Please do not remove any of the sourcecode comments!
+
 
 // MAWSC.cs
 // Entry point for MAWSC
