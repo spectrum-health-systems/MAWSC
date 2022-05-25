@@ -1,33 +1,32 @@
 ﻿// ============================================================================================
+// MAWSC: MyAvatool Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 // Copyright 2021-2022 A Pretty Cool Program
 // ============================================================================================
-//
-// v1.99.00.0-b220525+dev081457
-//
-// --------------------------------------------------------------------------------------------
-// About MAWSC
-// --------------------------------------------------------------------------------------------
-// MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
-// MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
-// for myAvatar™.
-// 
-// README: https://github.com/spectrum-health-systems/MAWSC#readme
-// Changelog: https://github.com/spectrum-health-systems/MAWSC/doc/CHANGELOG.md
-// Roadmap: https://github.com/spectrum-health-systems/MAWSC/doc/ROADMAP.md
-// Known issues: https://github.com/spectrum-health-systems/MAWSC/doc/KNOWN-ISSUES.md
-// Development: https://github.com/spectrum-health-systems/MAWSC/tree/development
-//
-// For more myAvatar™ related development, please visit the myAvatar™ Development Community:
-//
-//  https://github.com/myAvatar-Development-Community
+
+// MAWSC.cs - Entry point for MAWSC [b220525.083554]
+
+/* --------------------------------------------------------------------------------------------
+ * About MAWSC                                                     v1.99.00.0-b220525+dev081457
+ * --------------------------------------------------------------------------------------------
+ * MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
+ * MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
+ * for myAvatar™.
+ 
+ * README: https://github.com/spectrum-health-systems/MAWSC#readme
+ * Changelog: https://github.com/spectrum-health-systems/MAWSC/doc/CHANGELOG.md
+ * Roadmap: https://github.com/spectrum-health-systems/MAWSC/doc/ROADMAP.md
+ * Known issues: https://github.com/spectrum-health-systems/MAWSC/doc/KNOWN-ISSUES.md
+ * Development: https://github.com/spectrum-health-systems/MAWSC/tree/development
+ *
+ * For more myAvatar™ related development, please visit the myAvatar™ Development Community:
+ *  https://github.com/myAvatar-Development-Community
+ */
 
 
-// MAWSC.cs
-// Entry point for MAWSC
-// b2b220525.080720
+
 
 StartApp(args);
 
