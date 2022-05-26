@@ -1,5 +1,5 @@
-﻿// =========================================================== [ v1.99.00.0-b220525+dev113817 ]
-// MAWSC: MyAvatool Web Service Commander
+﻿// =========================================================== [ v1.99.00.0-b220526+dev080326 ]
+// MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
@@ -7,14 +7,14 @@
 // ============================================================================================
 
 // MAWSC.cs
-// Entry point for MAWSC 
-// bb220525.113822
+// Entry point for MAWSC.
+// b220526.080326
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
  * --------------------------------------------------------------------------------------------
- * MyAvatool Web Service Commander (MAWSC) is a command-line maintenance utility for the
- * MyAvatool Web Service (MAWS), although it can be use to help maintain any custom web service
+ * MyAvatar Web Service Commander (MAWSC) is a command-line maintenance utility for the
+ * MyAvatar Web Service (MAWS), although it can be use to help maintain any custom web service
  * for myAvatar™.
  
  * README: https://github.com/spectrum-health-systems/MAWSC#readme
@@ -53,8 +53,6 @@ static void StartApp(string[] commandLineArguments)
 
     MAWSC.Backup.VerifySessionBackupDirectory(mawscSettings);
 
-
-
     if(MAWSC.Validate.MawscCommand.IsValid(mawscSettings))
     {
         MAWSC.Roundhouse.Parse(mawscSettings);
@@ -66,15 +64,3 @@ static void StartApp(string[] commandLineArguments)
         MAWSC.Maintenance.Terminate.Gracefully(2);
     }
 }
-
-/*
-
-ERROR CODES
-
-0: No error
-1: Arguments missing
-2: Invalid command was passed.
-3: Invalid action was passed
-4: Invalid option was passed.
-
- */

@@ -17,6 +17,9 @@
     <None Update="AppData\Config\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AppData\Logs\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AppData\Log\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

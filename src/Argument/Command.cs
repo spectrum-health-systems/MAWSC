@@ -1,5 +1,5 @@
 ﻿// =============================================================================
-// MAWSC: MyAvatool Web Service Commander
+// MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
@@ -8,8 +8,7 @@
 
 // MAWSC.Argument.Command.cs
 // Logic for MAWSC Commands.
-// b220524.080525
-
+// b220526.080326
 namespace MAWSC.Argument
 {
     internal class Command

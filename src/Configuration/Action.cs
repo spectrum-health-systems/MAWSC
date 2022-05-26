@@ -1,14 +1,14 @@
 ﻿// =============================================================================
-// MAWSC: MyAvatool Web Service Commander
+// MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Configuration.cs
-// Partial class that contains action logic for MAWSC.Configuration.cs.
-// b220518.115916
+// MAWSC.Configuration.Actioncs
+// Configuration actions
+// b220526.080326
 
 namespace MAWSC.Configuration
 {
@@ -30,7 +30,7 @@ namespace MAWSC.Configuration
             var defaultSettings = new Settings()
             {
                 ConfigurationDirectory    = $@"./AppData/Config/",
-                LogDirectory              = $@"./AppData/Log/",
+                LogDirectory              = $@"./AppData/Logs/",
                 BackupDirectory           = $@"./AppData/Backup/",
                 TemporaryDirectory        = $@"./AppData/Temp/",
                 RepositoryName            = "name-of-your-repository",
