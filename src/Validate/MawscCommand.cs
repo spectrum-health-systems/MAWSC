@@ -21,6 +21,5 @@ namespace MAWSC.Validate
         {
             return mawscSettings.ValidCommands.Contains(mawscSettings.MawscCommand);
         }
-
     }
 }

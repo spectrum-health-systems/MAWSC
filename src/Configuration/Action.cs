@@ -37,9 +37,9 @@ namespace MAWSC.Configuration
                 RepositoryUrl             = "path/to/your/web/service/repository/url",
                 RepositorySrcDirectory    = "path/to/your/repository/src/",
                 StagingSourceDirectory    = $@"./AppData/Staging_source/",
-                StagingTargetDirectory    = "path/to/your/staging/web/service/target/",
-                ProductionSourceDirectory = "path/to/your/production/web/service/source/",
-                ProductionTargetDirectory = "path/to/your/production/web/service/target/",
+                StagingTargetDirectory    = "/path/to/your/staging/web/service/target/",
+                ProductionSourceDirectory = "/path/to/your/production/web/service/source/",
+                ProductionTargetDirectory = "/path/to/your/production/web/service/target/",
                 ValidCommands = new List<string>
                     {
                         "h",

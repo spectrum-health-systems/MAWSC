@@ -43,6 +43,8 @@ namespace MAWSC
                         break;
 
                     default:
+                        Console.WriteLine(MAWSC.Log.Message.CommandIsInvalid(mawscSettings.MawscCommand));
+                        MAWSC.Maintenance.Terminate.Gracefully(2);
                         break;
                 }
             }

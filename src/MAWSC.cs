@@ -33,34 +33,13 @@ static void StartApp(string[] commandLineArguments)
 {
     Console.Clear();
 
-    var SessionTimestamp = DateTime.Now.ToString("MMddyy-HHmmss");
+    var sessionTimestamp = DateTime.Now.ToString("MMddyy-HHmmss");
 
-    MAWSC.Log.Export.ToConsole(MAWSC.Log.Header.Top(SessionTimestamp));
+    MAWSC.Maintenance.Startup.CheckRequirements(commandLineArguments, sessionTimestamp);
 
-    MAWSC.Configuration.Validate.Data();
+    MAWSC.Configuration.Settings mawscSettings = MAWSC.Configuration.Settings.Initialize(commandLineArguments, sessionTimestamp);
 
-    MAWSC.Argument.Verify.Passed(commandLineArguments);
+    MAWSC.Maintenance.Startup.CheckFramework(mawscSettings);
 
-    MAWSC.Configuration.Settings mawscSettings = MAWSC.Configuration.Settings.Initialize(commandLineArguments, SessionTimestamp);
-
-    MAWSC.Framework.Refresh.Directories(mawscSettings);
-
-    MAWSC.Log.Export.ToFile(MAWSC.Log.Header.Top(SessionTimestamp), mawscSettings.LogfilePath);
-
-    MAWSC.Log.Export.ToEverywhere(MAWSC.Log.Message.ArgumentsPassed(mawscSettings), mawscSettings.LogfilePath);
-
-    MAWSC.Framework.Verify.Directories(mawscSettings);
-
-    MAWSC.Backup.VerifySessionBackupDirectory(mawscSettings);
-
-    if(MAWSC.Validate.MawscCommand.IsValid(mawscSettings))
-    {
-        MAWSC.Roundhouse.Parse(mawscSettings);
-        MAWSC.Maintenance.Terminate.Gracefully(0);
-    }
-    else
-    {
-        Console.WriteLine(MAWSC.Log.Message.CommandIsInvalid(mawscSettings.MawscCommand));
-        MAWSC.Maintenance.Terminate.Gracefully(2);
-    }
+    MAWSC.Roundhouse.Parse(mawscSettings);
 }

@@ -51,7 +51,7 @@ namespace MAWSC.Log
 
         internal static string CommandIsInvalid(string mawscCommand)
         {
-            return $"{Header.Error("Invalid command: \"{mawscCommand}\"")}" +
+            return $"{Header.Error($"Invalid command: \"{mawscCommand}\"")}" +
                    $"{Component.TypeForHelp()}";
         }
 
