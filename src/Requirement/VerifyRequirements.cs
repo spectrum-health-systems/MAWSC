@@ -31,7 +31,7 @@ namespace MAWSC.Requirements
         { //x
             ValidateConfiguration.FileData();
 
-            CommandLineVerify.ArgumentsPassed(commandLineArguments);
+            VerifyCommandLine.ArgumentsPassed(commandLineArguments);
 
             ExportLog.ToConsole(LogHeader.Top(sessionTimestamp));
         }

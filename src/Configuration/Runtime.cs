@@ -25,7 +25,7 @@ namespace MAWSC.Configuration
             mawscSettings.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
             mawscSettings.LogfilePath        = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
 
-            var mawscArguments = MAWSC.Argument.CommandLine.GetArgumentValues(commandLineArguments);
+            var mawscArguments = CommandLine.Arguments.GetArgumentValues(commandLineArguments);
 
             mawscSettings.MawscCommand = mawscArguments["mawscCommand"];
             mawscSettings.MawscAction = mawscArguments["mawscAction"];

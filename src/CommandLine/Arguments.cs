@@ -1,24 +1,40 @@
-﻿// =============================================================================
-// MAWSC: MyAvatar Web Service Commander
-// Tools and utilities for myAvatar™ custom web services.
-// https://github.com/spectrum-health-systems/MAWSC)
-// Apache v2 (https://apache.org/licenses/LICENSE-2.0)
-// Copyright 2021-2022 A Pretty Cool Program
-// =============================================================================
-
-// MAWSC.Argument.Command.cs
-// Logic for MAWSC Commands.
-// b220526.080326
-namespace MAWSC.Argument
+﻿namespace MAWSC.CommandLine
 {
-    internal class Command
+    internal class Arguments
     {
+        /// <summary>
+        /// Get the MAWSC command, action, and option.
+        /// </summary>
+        /// <param name="commandLineArguments">Arguments passed via the command line.</param>
+        /// <returns></returns>
+        internal static Dictionary<string, string> GetArgumentValues(string[] commandLineArguments)
+        {
+            return new Dictionary<string, string>
+            {
+                {"mawscCommand", GetCommandValue(commandLineArguments) },
+                {"mawscAction",  GetActionValue(commandLineArguments) },
+                {"mawscOption",  GetOptionValue(commandLineArguments) },
+            };
+        }
+
+        /// <summary>
+        /// Get the MAWSC action from the command line arguments.
+        /// </summary>
+        /// <param name="commandLineArguments">Command line arguments.</param>
+        /// <returns>The MAWSC action.</returns>
+        internal static string GetActionValue(string[] commandLineArguments)
+        {
+            return commandLineArguments.Length == 2
+                ? commandLineArguments[1].Trim().ToLower().Replace("-", "")
+                : "not-passed";
+        }
+
         /// <summary>
         /// Get the MAWSC command from the command line arguments.
         /// </summary>
         /// <param name="commandLineArguments">Command line arguments.</param>
         /// <returns>The MAWSC command.</returns>
-        internal static string GetValue(string[] commandLineArguments)
+        internal static string GetCommandValue(string[] commandLineArguments)
         {
             return commandLineArguments[0].Trim().ToLower().Replace("-", "");
         }
@@ -68,5 +84,16 @@ namespace MAWSC.Argument
             }
         }
 
+        /// <summary>
+        /// Get the MAWSC option from the command line arguments.
+        /// </summary>
+        /// <param name="commandLineArguments">Command line arguments.</param>
+        /// <returns>The MAWSC option.</returns>
+        internal static string GetOptionValue(string[] commandLineArguments)
+        {
+            return commandLineArguments.Length == 3
+                ? commandLineArguments[2].Trim().ToLower().Replace("-", "")
+                : "not-passed";
+        }
     }
 }

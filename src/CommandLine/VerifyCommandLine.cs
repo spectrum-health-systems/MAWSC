@@ -12,7 +12,7 @@
 
 namespace MAWSC.CommandLine
 {
-    internal class CommandLineVerify
+    internal class VerifyCommandLine
     {
         /// <summary>Verify at least one argument was passed via the command line.</summary>
         /// <remarks>
