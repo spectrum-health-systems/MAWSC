@@ -14,24 +14,24 @@ namespace MAWSC.Staging
 {
     internal class Backup
     {
-        internal static void Source(MAWSC.Configuration.Settings mawscSettings)
+        internal static void Source(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             var stagingSourceDirectory = mawscSettings.StagingSourceDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingSourceRequest(mawscSettings));
-            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingSource(mawscSettings));
+            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingSourceRequest(mawscSettings));
+            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingSource(mawscSettings));
 
             Du.WithArchive.DirectoryAsFullname(stagingSourceDirectory, backupDirectory);
         }
 
-        internal static void Target(MAWSC.Configuration.Settings mawscSettings)
+        internal static void Target(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             var stagingTargetDirectory = mawscSettings.StagingTargetDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingTargetRequest(mawscSettings));
-            MAWSC.Log.Export.ToConsole(Log.Message.BackupStagingTarget(mawscSettings));
+            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingTargetRequest(mawscSettings));
+            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingTarget(mawscSettings));
 
             Du.WithArchive.DirectoryAsFullname(stagingTargetDirectory, backupDirectory);
         }

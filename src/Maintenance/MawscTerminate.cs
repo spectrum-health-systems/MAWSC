@@ -12,7 +12,7 @@
 
 namespace MAWSC.Maintenance
 {
-    internal class Terminate
+    internal class MawscTerminate
     {
         /// <summary>Exit MAWSC.</summary>
         /// <param name="exitCode">Exit code for troubleshooting purposes.</param>

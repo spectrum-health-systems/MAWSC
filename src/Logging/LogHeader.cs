@@ -6,15 +6,15 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Logging.Header.cs
+// MAWSC.Logging.LogHeader.cs
 // Logging headers.
-// b220526.080326
+// b220531.085417
 
 using System.Reflection;
 
-namespace MAWSC.Log
+namespace MAWSC.Logging
 {
-    internal class Header
+    internal class LogHeader
     {
         /// <summary>
         /// 

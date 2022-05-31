@@ -6,15 +6,24 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Framework.Refresh.cs
+// MAWSC.Framework.RefreshFramework.cs
 // Refresh framework components.
-// b220526.080326
+// b220531.085631 x
+
+using MAWSC.Configuration;
 
 namespace MAWSC.Framework
 {
-    internal class Refresh
-    {
-        internal static void Directories(MAWSC.Configuration.Settings mawscSettings)
+    internal class RefreshFramework
+    { // x
+        /// <summary>Refresh MAWSC framework directories.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         - Currently only the temporary directory is refreshed.
+        ///     </para>
+        /// </remarks>
+        /// <param name="mawscSettings">Configuration settings.</param>
+        internal static void Directories(MawscSettings mawscSettings)
         {
             Du.WithDirectory.RefreshRecursively(mawscSettings.TemporaryDirectory);
         }

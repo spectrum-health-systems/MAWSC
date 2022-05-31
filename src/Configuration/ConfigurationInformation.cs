@@ -6,19 +6,17 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Configuration.Common.cs
-// Common logic
-// b220526.080326
+// MAWSC.Configuration.FileInformation.cs
+// Information about the configuration file.
+// b220531.083832 x
 
 namespace MAWSC.Configuration
 {
-    internal class Common
+    internal class ConfigurationInformation
     {
-
         /// <summary>Get the MAWSC configuration default filepath.</summary>
         /// <remarks>
         ///     <para>
-        ///         <b><u>NOTES</u></b>
         ///         - The default filepath is <i>./AppData/Config/mawsc-config.json</i>.
         ///     </para>
         /// </remarks>

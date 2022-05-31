@@ -6,18 +6,20 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Configuration.Actioncs
+// MAWSC.Configuration.ConfigurationAction.cs
 // Configuration actions
-// b220526.080326
+// b220531.094752
+
+using MAWSC.Logging;
 
 namespace MAWSC.Configuration
 {
-    internal class Action
+    internal class ConfigurationAction
     {
         /// <summary>Recreate the configuration file with default values.</summary>
-        internal static void Reset()
+        internal static void ResetConfigurationFile()
         {
-            var configurationFilePath = MAWSC.Configuration.Common.GetDefaultFilePath();
+            var configurationFilePath = ConfigurationInformation.GetDefaultFilePath();
 
             if(File.Exists($@"{configurationFilePath}"))
             {
@@ -27,7 +29,7 @@ namespace MAWSC.Configuration
             /* It's recommended that you leave these values as they are, and make any
              * modifications to the configuration file itself.
              */
-            var defaultSettings = new Settings()
+            var defaultSettings = new MawscSettings()
             {
                 ConfigurationDirectory    = $@"./AppData/Config/",
                 LogDirectory              = $@"./AppData/Logs/",
@@ -40,48 +42,17 @@ namespace MAWSC.Configuration
                 StagingTargetDirectory    = "/path/to/your/staging/web/service/target/",
                 ProductionSourceDirectory = "/path/to/your/production/web/service/source/",
                 ProductionTargetDirectory = "/path/to/your/production/web/service/target/",
-                ValidCommands = new List<string>
-                    {
-                        "h",
-                        "help",
-                        "s",
-                        "stage",
-                        "staging",
-                        "p",
-                        "prod",
-                        "production",
-                        "c",
-                        "config",
-                        "configuration"
-                    },
-                ValidActions = new List<string>
-                    {
-                        "b",
-                        "backup",
-                        "d",
-                        "deploy",
-                        "i",
-                        "info",
-                        "information",
-                        "r",
-                        "reset"
-                    },
-                ValidOptions = new List<string>
-                    {
-                        "t",
-                        "tbd",
-                    },
-                ApplicationVersion = "set-at-runtime",
-                SessionTimestamp   = "set-at-runtime",
-                LogfilePath        = "set-at-runtime",
-                MawscCommand       = "set-at-runtime",
-                MawscAction        = "set-at-runtime",
-                MawscOption        = "set-at-runtime",
+                ApplicationVersion        = "set-at-runtime",
+                SessionTimestamp          = "set-at-runtime",
+                LogfilePath               = "set-at-runtime",
+                MawscCommand              = "set-at-runtime",
+                MawscAction               = "set-at-runtime",
+                MawscOption               = "set-at-runtime",
             };
 
-            Du.WithJson.SerializeToIndentedFile<Settings>(defaultSettings, $@"{configurationFilePath}");
+            Du.WithJson.SerializeToIndentedFile<MawscSettings>(defaultSettings, $@"{configurationFilePath}");
 
-            MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileReset());
+            ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileReset());
         }
     }
 }

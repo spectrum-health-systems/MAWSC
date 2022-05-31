@@ -6,13 +6,13 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Configuration.Settings.cs
+// MAWSC.Configuration.MawscSettings.cs
 // Setting properties
-// b220526.080326
+// b220531.085849
 
 namespace MAWSC.Configuration
 {
-    internal class Settings
+    internal class MawscSettings
     {
         public string ConfigurationDirectory { get; set; }
         public string LogDirectory { get; set; }
@@ -25,9 +25,6 @@ namespace MAWSC.Configuration
         public string StagingTargetDirectory { get; set; }
         public string ProductionSourceDirectory { get; set; }
         public string ProductionTargetDirectory { get; set; }
-        public List<string> ValidCommands { get; set; }
-        public List<string> ValidActions { get; set; }
-        public List<string> ValidOptions { get; set; }
         public string ApplicationVersion { get; set; }
         public string SessionTimestamp { get; set; }
         public string LogfilePath { get; set; }
@@ -36,9 +33,9 @@ namespace MAWSC.Configuration
         public string MawscOption { get; set; }
 
 
-        internal static Settings Initialize(string[] commandLineArguments, string sessionTimestamp)
+        internal static MawscSettings Initialize(string[] commandLineArguments, string sessionTimestamp)
         {
-            Settings mawscSettings = Configuration.Load.FromFile();
+            MawscSettings mawscSettings = Configuration.Load.FromFile();
 
             mawscSettings = Runtime.SetSetting(mawscSettings, commandLineArguments, sessionTimestamp);
 

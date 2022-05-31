@@ -6,32 +6,32 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Logging.Component.cs
+// MAWSC.Logging.LogComponent.cs
 // Logging components.
-// b220526.080326
+// b220531.085407
 
-namespace MAWSC.Log
+namespace MAWSC.Logging
 {
-    internal class Component
+    internal class LogComponent
     {
-        internal static string ArgumentsPassed(MAWSC.Configuration.Settings mawscSettings)
+        internal static string ArgumentsPassed(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"-{ mawscSettings.MawscCommand} [-{ mawscSettings.MawscAction}] [-{ mawscSettings.MawscOption}]";
         }
 
-        internal static string BackupStagingSource(MAWSC.Configuration.Settings mawscSettings)
+        internal static string BackupStagingSource(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"{Environment.NewLine}" +
                    $"           {mawscSettings.StagingSourceDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
         }
 
-        internal static string BackupStagingTarget(MAWSC.Configuration.Settings mawscSettings)
+        internal static string BackupStagingTarget(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"{Environment.NewLine}" +
                    $"           {mawscSettings.StagingTargetDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
         }
 
-        internal static string ConfigurationInformation(MAWSC.Configuration.Settings mawscSettings)
+        internal static string ConfigurationInformation(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"ConfigDirectory: {mawscSettings.ConfigurationDirectory}{Environment.NewLine}" +
                    $"LogDirectory: {mawscSettings.LogDirectory}{Environment.NewLine}" +
@@ -64,7 +64,7 @@ namespace MAWSC.Log
             return $"{verificationMessage}";
         }
 
-        internal static string StagingInformation(MAWSC.Configuration.Settings mawscSettings)
+        internal static string StagingInformation(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"Staging source directory: {mawscSettings.StagingSourceDirectory}{Environment.NewLine}" +
                    $"Staging target directory: {mawscSettings.StagingTargetDirectory}{Environment.NewLine}";

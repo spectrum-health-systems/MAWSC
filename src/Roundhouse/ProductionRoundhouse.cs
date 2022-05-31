@@ -6,20 +6,18 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.MawscCommand.Validate.cs
-// MAWSC Command validation.
+// MAWSC.Roundhouse.Production.cs
+// Production roundhouse.
 // b220526.080326
 
-namespace MAWSC.MawscCommand
+namespace MAWSC.Roundhouse
 {
-    internal class Validate
+    internal class ProductionRoundhouse
     {
-        ///// <summary></summary>
-        ///// <param name="mawscSettings"></param>
-        ///// <returns></returns>
-        //internal static bool IsValid(MAWSC.Configuration.Settings mawscSettings)
-        //{
-        //    return mawscSettings.ValidCommands.Contains(mawscSettings.MawscCommand);
-        //}
+        internal static void Test()
+        {
+
+        }
     }
 }
+

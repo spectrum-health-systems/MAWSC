@@ -6,27 +6,32 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Help.Display.cs
+// MAWSC.Help.DisplayHelp.cs
 // Display help information on the console.
-// b220526.080326
+// b220531.093936 x
+
+using MAWSC.Maintenance;
 
 namespace MAWSC.Help
 {
-    internal class Display
+    internal class DisplayHelp
     {
+        /// <summary>
+        /// 
+        /// </summary>
         internal static void Complete()
         {
             Console.Clear();
 
-            var helpMessage = Component.HelpHeader() +
-                              Component.UsageSyntax() +
-                              Component.ValidArguments() +
-                              Component.Examples() +
-                              Component.MoreInformation();
+            var helpMessage = HelpComponent.HelpHeader() +
+                              HelpComponent.UsageSyntaxHelp() +
+                              HelpComponent.ValidArgumentHelp() +
+                              HelpComponent.ExampleHelp() +
+                              HelpComponent.MoreInformationHelp();
 
             Console.WriteLine(helpMessage);
 
-            MAWSC.Maintenance.Terminate.Gracefully(0);
+            MawscTerminate.Gracefully(0);
         }
     }
 }

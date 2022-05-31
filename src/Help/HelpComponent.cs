@@ -6,13 +6,13 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Help.Component.cs
+// MAWSC.Help.HelpComponent.cs
 // Help components.
-// b220526.080326
+// b220531.093925 x
 
 namespace MAWSC.Help
 {
-    internal class Component
+    internal class HelpComponent
     {
         /// <summary>Create the log message master header.</summary>
         /// <remarks>
@@ -31,7 +31,7 @@ namespace MAWSC.Help
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string UsageSyntax()
+        internal static string UsageSyntaxHelp()
         {
             return $"usage: mawsc <command> [action] [option]{ Environment.NewLine}" +
                    $"{Environment.NewLine}";
@@ -39,7 +39,7 @@ namespace MAWSC.Help
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string ValidArguments()
+        internal static string ValidArgumentHelp()
         {
             return $"commands:{ Environment.NewLine}" +
                    $"    -s, -stage   Staging environment{ Environment.NewLine}" +
@@ -55,7 +55,7 @@ namespace MAWSC.Help
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string Examples()
+        internal static string ExampleHelp()
         {
             return $"examples:{ Environment.NewLine}" +
                    $"    To deploy the staging environment: \"mawsc -s -d\"{ Environment.NewLine}" +
@@ -68,7 +68,7 @@ namespace MAWSC.Help
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string MoreInformation()
+        internal static string MoreInformationHelp()
         {
             return $"For more information, please visit: https://github.com/spectrum-health-systems/MAWSC{ Environment.NewLine}";
         }

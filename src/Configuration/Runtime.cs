@@ -16,7 +16,7 @@ namespace MAWSC.Configuration
 {
     internal class Runtime
     {
-        internal static Settings SetSetting(MAWSC.Configuration.Settings mawscSettings, string[] commandLineArguments, string sessionTimestamp)
+        internal static MawscSettings SetSetting(MAWSC.Configuration.MawscSettings mawscSettings, string[] commandLineArguments, string sessionTimestamp)
         {
 
             /* Some of the configuration settings are set at runtime.

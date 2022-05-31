@@ -6,18 +6,18 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Logging.Export.cs
+// MAWSC.Logging.ExportLog.cs
 // Exports log data to the command line and/or a local file.
-// b220518.115916
+// b220531.085400 x
 
-namespace MAWSC.Log
+namespace MAWSC.Logging
 {
-    internal class Export
+    internal class ExportLog
     {
         /// <summary>Display log information on the console.</summary>
         /// <param name="logMessage">Log message to display.</param>
         internal static void ToConsole(string logMessage)
-        {
+        { //x
             Console.WriteLine(logMessage);
         }
 
@@ -25,17 +25,17 @@ namespace MAWSC.Log
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToEverywhere(string logMessage, string logfilePath)
-        {
-            ToFile(logMessage, logfilePath);
-            ToConsole(logMessage);
+        { //x
+            ExportLog.ToFile(logMessage, logfilePath);
+            ExportLog.ToConsole(logMessage);
         }
 
         /// <summary>Write log information to a file.</summary>
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToFile(string logMessage, string logfilePath)
-        {
-            MAWSC.Du.WithFile.AppendText(logMessage, logfilePath);
+        { //x
+            Du.WithFile.AppendText(logMessage, logfilePath);
         }
     }
 }

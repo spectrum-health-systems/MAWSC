@@ -34,16 +34,16 @@ namespace MAWSC.Configuration
         ///     </para>
         /// </remarks>
         /// <returns>Configuration settings.</returns>
-        internal static Settings FromFile()
+        internal static MawscSettings FromFile()
         {
-            var configurationFile = MAWSC.Configuration.Common.GetDefaultFilePath();
+            var configurationFile = MAWSC.Configuration.ConfigurationInformation.GetDefaultFilePath();
 
             if(!File.Exists($@"{configurationFile}"))
             {
-                Action.Reset();
+                ConfigurationAction.ResetConfigurationFile();
             }
 
-            Settings mawscSettings = Du.WithJson.DeserializeFromFile<Settings>(configurationFile);
+            MawscSettings mawscSettings = Du.WithJson.DeserializeFromFile<MawscSettings>(configurationFile);
 
 
             return mawscSettings;

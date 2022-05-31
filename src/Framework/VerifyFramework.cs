@@ -6,33 +6,21 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Framework.Verify.cs
+// MAWSC.Framework.VerifyFramework.cs
 // Verify framework components.
-// b220526.080326
+// b220531.085752 x
+
+using MAWSC.Configuration;
+using MAWSC.Logging;
 
 namespace MAWSC.Framework
 {
-    internal class Verify
+    internal class VerifyFramework
     {
         /// <summary>Verify that required directories exist, and create them if they don't.</summary>
         /// <returns>Log message.</returns>
-        internal static void Directories(MAWSC.Configuration.Settings mawscSettings)
-        {
-            //var logRequiredDirectoriesMessage    = RequiredDirectories(mawscSettings);
-            //var logSessionBackupDirectoryMessage = SessionBackupDirectory(mawscSettings);
-
-            Verify.RequiredDirectories(mawscSettings);
-            //Verify.SessionBackupDirectory(mawscSettings);
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="mawscSettings"></param>
-        /// <returns></returns>
-        private static void RequiredDirectories(MAWSC.Configuration.Settings mawscSettings)
-        {
+        internal static void RequiredDirectories(MawscSettings mawscSettings)
+        { //x
             var requiredDirectories = new List<string>
             {
                 mawscSettings.ConfigurationDirectory,
@@ -51,7 +39,7 @@ namespace MAWSC.Framework
                 if(!Directory.Exists(requiredDirectory))
                 {
                     logContent += $"           {requiredDirectory}: does not exist...";
-                    _=Directory.CreateDirectory(requiredDirectory);
+                    Directory.CreateDirectory(requiredDirectory);
                     logContent += $"created...Verified";
                 }
                 else
@@ -60,7 +48,21 @@ namespace MAWSC.Framework
                 }
             }
 
-            MAWSC.Log.Export.ToEverywhere(MAWSC.Log.Message.FrameworkDirectoryRequirementsVerify(logContent), mawscSettings.LogfilePath);
+            ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawscSettings.LogfilePath);
+
+            /* Also verify the session backup directory.
+             */
+            SessionBackupDirectory(mawscSettings.BackupDirectory, mawscSettings.SessionTimestamp);
         }
+
+        /// <summary>Verify that the session backup directory exists, and create it if it does not.</summary>
+        /// <param name="sessionBackupDirectory"></param>
+        /// <param name="sessionTimeStamp"></param>
+        internal static void SessionBackupDirectory(string sessionBackupDirectory, string sessionTimeStamp)
+        {
+            Du.WithDirectory.ConfirmDirectoryExists($"{sessionBackupDirectory}{sessionTimeStamp}");
+            ExportLog.ToConsole(MAWSC.Logging.LogMessage.SessionBackupDirectoryVerify());
+        }
+
     }
 }

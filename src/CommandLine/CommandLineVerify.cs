@@ -6,30 +6,29 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Argument.Verify.cs
-// Verify argument data.
-// b220526.080326
+// MAWSC.CommandLine.Verify.cs
+// Verify configuration data.
+// b220531.083429 x
 
-namespace MAWSC.Argument
+namespace MAWSC.CommandLine
 {
-    internal class Verify
+    internal class CommandLineVerify
     {
         /// <summary>Verify at least one argument was passed via the command line.</summary>
         /// <remarks>
         ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
         ///         - We aren't testing for valid arguments yet, just their existance.<br/>
         ///         - If there aren't any passed arguments, we can't do anything, so let the user know via the console (don't write a log file), and exit MAWSC.
         ///     </para>
         /// </remarks>
         /// <param name="commandLineArguments"></param>
-        internal static void Passed(string[] commandLineArguments)
+        internal static void ArgumentsPassed(string[] commandLineArguments)
         {
             if(commandLineArguments.Length == 0)
             {
-                MAWSC.Log.Export.ToConsole(Log.Message.ArgumentsMissing());
+                Logging.ExportLog.ToConsole(Logging.LogMessage.ArgumentsMissing());
 
-                MAWSC.Maintenance.Terminate.Gracefully(1);
+                Maintenance.MawscTerminate.Gracefully(1);
             }
         }
     }

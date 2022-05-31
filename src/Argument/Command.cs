@@ -39,14 +39,14 @@ namespace MAWSC.Argument
         /// </summary>
         /// <param name="mawscCommand">tet</param>
         /// <param name="mawscSettings">tet</param>
-        internal static void Process(MAWSC.Configuration.Settings mawscSettings)
+        internal static void Process(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             /* If the "help" argument was passed, show the help screen and exit.
              */
             if(mawscSettings.MawscCommand.StartsWith("h"))
             {
-                MAWSC.Help.Display.Complete();
-                MAWSC.Maintenance.Terminate.Gracefully(0);
+                MAWSC.Help.DisplayHelp.Complete();
+                MAWSC.Maintenance.MawscTerminate.Gracefully(0);
             }
             else
             {

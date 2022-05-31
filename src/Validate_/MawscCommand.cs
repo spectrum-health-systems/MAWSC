@@ -17,7 +17,7 @@ namespace MAWSC.Validate
         /// <summary></summary>
         /// <param name="mawscSettings"></param>
         /// <returns></returns>
-        internal static bool IsValid(MAWSC.Configuration.Settings mawscSettings)
+        internal static bool IsValid(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return mawscSettings.ValidCommands.Contains(mawscSettings.MawscCommand);
         }

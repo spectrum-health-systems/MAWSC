@@ -8,11 +8,11 @@
 
 // MAWSC.Configuration.Validate.cs
 // Validate configuration data.
-// b220526.080326
+// b220531.083429 x
 
 namespace MAWSC.Configuration
 {
-    internal class Validate
+    internal class ValidateConfiguration
     {
         /// <summary>Verify a valid configuration file exists.</summary>
         /// <remarks>
@@ -29,29 +29,32 @@ namespace MAWSC.Configuration
         ///             </item>
         ///             <item>
         ///                 <term>Is too short</term>
-        ///                 <description>There are at least 5 configuration settings, so if the configuration file must contain<br/> more than 5 lines.</description>
+        ///                 <description>There are at least 5 configuration settings, so if the configuration file must contain more than 5 lines.</description>
         ///             </item>
-        ///         </list>    
+        ///         </list>
         ///     </para>
+        ///     <para>
+        ///         - This is a quick-and-dirty test!
+        ///     </para> 
         /// </remarks>
-        internal static void Data()
+        internal static void FileData()
         {
-            var configurationFile  = MAWSC.Configuration.Common.GetDefaultFilePath();
+            var configurationFilePath  = Configuration.ConfigurationInformation.GetDefaultFilePath();
 
-            if(!File.Exists($@"{configurationFile}"))
+            if(!File.Exists($@"{configurationFilePath}"))
             {
-                MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileNotFound());
-                Action.Reset();
+                Logging.ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileNotFound());
+                Configuration.ConfigurationAction.ResetConfigurationFile();
             }
             else
             {
-                var fileContents       = File.ReadAllLines(configurationFile);
+                var fileContents       = File.ReadAllLines(configurationFilePath);
                 var fileEnclosureValid = fileContents[0] == "{" && fileContents[^1] == "}";
 
                 if(!fileEnclosureValid || fileContents.Length < 5)
                 {
-                    MAWSC.Log.Export.ToConsole(Log.Message.ConfigurationFileInvalid());
-                    Action.Reset();
+                    Logging.ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileInvalid());
+                    Configuration.ConfigurationAction.ResetConfigurationFile();
                 }
             }
         }

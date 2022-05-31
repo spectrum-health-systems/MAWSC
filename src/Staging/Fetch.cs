@@ -14,7 +14,7 @@ namespace MAWSC.Staging
 {
     internal class Fetch
     {
-        internal static void FromUrl(MAWSC.Configuration.Settings mawscSettings)
+        internal static void FromUrl(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             var downloadFilePath = $"{mawscSettings.TemporaryDirectory}web-service-from-url.zip";
 
