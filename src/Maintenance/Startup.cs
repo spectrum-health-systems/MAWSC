@@ -14,8 +14,10 @@ namespace MAWSC.Maintenance
 {
     internal class Startup
     {
-        internal static void CheckRequirements
-            (string[] commandLineArguments, string sessionTimestamp)
+        /// <summary></summary>
+        /// <param name="commandLineArguments"></param>
+        /// <param name="sessionTimestamp"></param>
+        internal static void CheckRequirements(string[] commandLineArguments, string sessionTimestamp)
         {
             Log.Export.ToConsole(Log.Header.Top(sessionTimestamp));
 
@@ -24,6 +26,8 @@ namespace MAWSC.Maintenance
             Argument.Verify.Passed(commandLineArguments);
         }
 
+        /// <summary></summary>
+        /// <param name="mawscSettings"></param>
         internal static void CheckFramework(Configuration.Settings mawscSettings)
         {
             Framework.Refresh.Directories(mawscSettings);
