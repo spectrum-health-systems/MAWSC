@@ -10,6 +10,9 @@
 // Staging roundhouse.
 // b220526.080326
 
+using MAWSC.Configuration;
+using MAWSC.Staging;
+
 namespace MAWSC.Roundhouse
 {
 
@@ -20,15 +23,15 @@ namespace MAWSC.Roundhouse
         /// </summary>
         /// <param name="mawscCommand">tet</param>
         /// <param name="mawscSettings">tet</param>
-        internal static void ParseAction(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void ParseAction(MawscSettings mawscSettings)
         {
 
             switch(mawscSettings.MawscAction)
             {
                 case "b":
                 case "backup":
-                    MAWSC.Staging.Backup.Source(mawscSettings);
-                    MAWSC.Staging.Backup.Target(mawscSettings);
+                    BackupStaging.Source(mawscSettings);
+                    BackupStaging.Target(mawscSettings);
                     break;
 
                 case "d":
@@ -38,16 +41,16 @@ namespace MAWSC.Roundhouse
 
                 case "f":
                 case "fetch":
-                    MAWSC.Staging.Backup.Source(mawscSettings);
-                    MAWSC.Staging.Backup.Target(mawscSettings);
-                    MAWSC.Staging.Fetch.FromUrl(mawscSettings);
+                    BackupStaging.Source(mawscSettings);
+                    BackupStaging.Target(mawscSettings);
+                    FetchStaging.FromUrl(mawscSettings);
                     break;
 
                 case "r":
                 case "refresh":
-                    MAWSC.Staging.Backup.Source(mawscSettings);
-                    MAWSC.Staging.Backup.Target(mawscSettings);
-                    MAWSC.Staging.Fetch.FromUrl(mawscSettings);
+                    BackupStaging.Source(mawscSettings);
+                    BackupStaging.Target(mawscSettings);
+                    FetchStaging.FromUrl(mawscSettings);
                     break;
 
                 case "i":
@@ -62,23 +65,23 @@ namespace MAWSC.Roundhouse
         }
 
 
-        internal static void ParseOptionDeploy(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void ParseOptionDeploy(MawscSettings mawscSettings)
         {
             switch(mawscSettings.MawscOption)
             {
                 case "a":
                 case "all":
-                    MAWSC.Staging.Deploy.All(mawscSettings);
+                    DeployStaging.All(mawscSettings);
                     break;
 
                 case "m":
                 case "minimal":
-                    MAWSC.Staging.Deploy.Minimal(mawscSettings);
+                    DeployStaging.Minimal(mawscSettings);
                     break;
 
                 case "not-passed":
                 default:
-                    MAWSC.Staging.Deploy.Minimal(mawscSettings);
+                    DeployStaging.Minimal(mawscSettings);
                     break;
             }
         }

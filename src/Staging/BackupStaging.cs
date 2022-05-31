@@ -6,32 +6,35 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Staging.Backup.cs
+// MAWSC.Staging.BackupStaging.cs
 // Backup the current staging source.
-// b220526.080326
+// b220531.110901
+
+using MAWSC.Configuration;
+using MAWSC.Logging;
 
 namespace MAWSC.Staging
 {
-    internal class Backup
+    internal class BackupStaging
     {
-        internal static void Source(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void Source(MawscSettings mawscSettings)
         {
             var stagingSourceDirectory = mawscSettings.StagingSourceDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingSourceRequest(mawscSettings));
-            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingSource(mawscSettings));
+            ExportLog.ToConsole(Logging.LogMessage.BackupStagingSourceRequest(mawscSettings));
+            ExportLog.ToConsole(Logging.LogMessage.BackupStagingSource(mawscSettings));
 
             Du.WithArchive.DirectoryAsFullname(stagingSourceDirectory, backupDirectory);
         }
 
-        internal static void Target(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void Target(MawscSettings mawscSettings)
         {
             var stagingTargetDirectory = mawscSettings.StagingTargetDirectory;
             var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
 
-            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingTargetRequest(mawscSettings));
-            MAWSC.Logging.ExportLog.ToConsole(Logging.LogMessage.BackupStagingTarget(mawscSettings));
+            ExportLog.ToConsole(Logging.LogMessage.BackupStagingTargetRequest(mawscSettings));
+            ExportLog.ToConsole(Logging.LogMessage.BackupStagingTarget(mawscSettings));
 
             Du.WithArchive.DirectoryAsFullname(stagingTargetDirectory, backupDirectory);
         }

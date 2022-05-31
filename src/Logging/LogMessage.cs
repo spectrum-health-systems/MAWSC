@@ -69,30 +69,30 @@ namespace MAWSC.Logging
 
         internal static string ConfigurationFileInvalid()
         {
-            return $"{MAWSC.Logging.LogHeader.Error("Invalid configuration file.")}" +
+            return $"{LogHeader.Error("Invalid configuration file.")}" +
                    $"{LogComponent.ConfigurationFileWillBeReset()}";
         }
 
         internal static string ConfigurationFileNotFound()
         {
-            return $"{MAWSC.Logging.LogHeader.Error("Configuration file not found...")}" +
+            return $"{LogHeader.Error("Configuration file not found...")}" +
                    $"{LogComponent.ConfigurationFileWillBeReset()}";
         }
 
         internal static string ConfigurationFileResetRequest()
         {
-            return $"{MAWSC.Logging.LogHeader.Request("Reset configuration file.")}";
+            return $"{LogHeader.Request("Reset configuration file.")}";
         }
 
         internal static string ConfigurationFileReset()
         {
-            return $"{MAWSC.Logging.LogHeader.Info("Resetting configuration file...")}" +
+            return $"{LogHeader.Info("Resetting configuration file...")}" +
                    $"{LogComponent.ConfigurationFileHasBeenReset()}";
         }
 
         internal static string VerifyFrameworkRequiredDirectories(string verificationMessage)
         {
-            return $"{MAWSC.Logging.LogHeader.Verify("Required framework directories.")}" +
+            return $"{LogHeader.Verify("Required framework directories.")}" +
                    $"{LogComponent.FrameworkRequiredDirectoriesVerified(verificationMessage)}";
         }
 
@@ -105,7 +105,7 @@ namespace MAWSC.Logging
 
         internal static string StagingInformationRequest(MAWSC.Configuration.MawscSettings mawscSettings)
         {
-            return $"{MAWSC.Logging.LogHeader.Request("Staging information")}" +
+            return $"{LogHeader.Request("Staging information")}" +
                    $"{LogComponent.StagingInformation(mawscSettings)}";
         }
     }

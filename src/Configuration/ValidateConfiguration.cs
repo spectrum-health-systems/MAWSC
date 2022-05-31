@@ -10,6 +10,8 @@
 // Validate configuration data.
 // b220531.083429 x
 
+using MAWSC.Logging;
+
 namespace MAWSC.Configuration
 {
     internal class ValidateConfiguration
@@ -39,12 +41,12 @@ namespace MAWSC.Configuration
         /// </remarks>
         internal static void FileData()
         {
-            var configurationFilePath  = Configuration.ConfigurationInformation.GetDefaultFilePath();
+            var configurationFilePath  = ConfigurationInformation.GetDefaultFilePath();
 
             if(!File.Exists($@"{configurationFilePath}"))
             {
-                Logging.ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileNotFound());
-                Configuration.ConfigurationAction.ResetConfigurationFile();
+                ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileNotFound());
+                ConfigurationAction.ResetConfigurationFile();
             }
             else
             {
@@ -53,8 +55,8 @@ namespace MAWSC.Configuration
 
                 if(!fileEnclosureValid || fileContents.Length < 5)
                 {
-                    Logging.ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileInvalid());
-                    Configuration.ConfigurationAction.ResetConfigurationFile();
+                    ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileInvalid());
+                    ConfigurationAction.ResetConfigurationFile();
                 }
             }
         }

@@ -6,15 +6,17 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Staging.Deploy.cs
-// Deploy the staging source.
-// b220526.080326
+// MAWSC.Staging.DeployStaging.cs
+// Deploy the current staging source.
+// b220531.110901
+
+using MAWSC.Configuration;
 
 namespace MAWSC.Staging
 {
-    internal class Deploy
+    internal class DeployStaging
     {
-        internal static void All(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void All(MawscSettings mawscSettings)
         {
             var stagingSrcDirectory = $"{mawscSettings.StagingSourceDirectory}{mawscSettings.RepositorySrcDirectory}";
 
@@ -23,7 +25,7 @@ namespace MAWSC.Staging
             Du.WithDirectory.MoveRecursively(stagingSrcDirectory, mawscSettings.StagingTargetDirectory);
         }
 
-        internal static void Minimal(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void Minimal(MawscSettings mawscSettings)
         {
             var stagingSrcDirectory = $"{mawscSettings.StagingSourceDirectory}{mawscSettings.RepositorySrcDirectory}";
 

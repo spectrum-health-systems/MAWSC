@@ -35,7 +35,7 @@ namespace MAWSC.Configuration
 
         internal static MawscSettings Initialize(string[] commandLineArguments, string sessionTimestamp)
         {
-            MawscSettings mawscSettings = Configuration.Load.FromFile();
+            MawscSettings mawscSettings = Load.FromFile();
 
             mawscSettings = Runtime.SetSetting(mawscSettings, commandLineArguments, sessionTimestamp);
 

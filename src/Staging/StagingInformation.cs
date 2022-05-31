@@ -6,17 +6,19 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Staging.Validate.cs
-// Validate staging information.
-// b220526.080326
+// MAWSC.Staging.StagingInformation.cs
+// Get information about the staging source.
+// b220531.110901
+
+using MAWSC.Configuration;
 
 namespace MAWSC.Staging
 {
-    internal class Validate
+    internal class StagingInformation
     {
-        internal static bool IsValid(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void Display(MawscSettings mawscSettings)
         {
-            return mawscSettings.ValidActions.Contains(mawscSettings.MawscAction);
+
         }
     }
 }

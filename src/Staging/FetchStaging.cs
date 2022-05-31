@@ -6,15 +6,17 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Staging.Fetch.cs
+// MAWSC.Staging.FetchStaging.cs
 // Get the staging source from a repository.
-// b220526.080326
+// b220531.110901
+
+using MAWSC.Configuration;
 
 namespace MAWSC.Staging
 {
-    internal class Fetch
+    internal class FetchStaging
     {
-        internal static void FromUrl(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static void FromUrl(MawscSettings mawscSettings)
         {
             var downloadFilePath = $"{mawscSettings.TemporaryDirectory}web-service-from-url.zip";
 

@@ -1,4 +1,4 @@
-﻿// =========================================================== [ v1.99.00.0-b220531+dev081040 ]
+﻿// =========================================================== [ v1.99.00.0-b220531+dev095555 ]
 // MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
@@ -28,25 +28,23 @@
  */
 
 using MAWSC.Configuration;
-using MAWSC.Maintenance;
+using MAWSC.Framework;
+using MAWSC.Requirements;
 using MAWSC.Roundhouse;
 
-StartMawsc(args);
+MawscInitializer(args);
 
-static void StartMawsc(string[] commandLineArguments)
+static void MawscInitializer(string[] commandLineArguments)
 {
     Console.Clear();
 
-    /* We get the timestamp as soon as MAWSC starts, and use it throughout the session. That
-     * way logfiles and timestamps will be consistant.
-     */
     var sessionTimestamp = DateTime.Now.ToString("MMddyy-HHmmss");
 
-    Startup.VerifyMawscRequirements(commandLineArguments, sessionTimestamp);
+    VerifyRequirements.Startup(commandLineArguments, sessionTimestamp);
 
-    MawscSettings mawscSettings = MAWSC.Configuration.MawscSettings.Initialize(commandLineArguments, sessionTimestamp);
+    MawscSettings mawscSettings = MawscSettings.Initialize(commandLineArguments, sessionTimestamp);
 
-    Startup.VerifyMawscFramework(mawscSettings);
+    VerifyFramework.Startup(mawscSettings);
 
     MawscCommandRoundhouse.ParseCommand(mawscSettings);
 }

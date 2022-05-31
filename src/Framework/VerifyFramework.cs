@@ -17,6 +17,25 @@ namespace MAWSC.Framework
 {
     internal class VerifyFramework
     {
+        /// <summary>Verify the MAWSC framework.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         - Now that we have the configuration settings, we can verify the framework.
+        ///         - We'll jumpstart the logfile with the header we created earlier, then write log information everywhere going forward.
+        ///     </para>
+        /// </remarks>
+        /// <param name="mawscSettings"></param>
+        internal static void Startup(MawscSettings mawscSettings)
+        { //x
+            RefreshFramework.Directories(mawscSettings);
+
+            ExportLog.ToFile(LogHeader.Top(mawscSettings.SessionTimestamp), mawscSettings.LogfilePath);
+            ExportLog.ToEverywhere(LogMessage.ArgumentsPassed(mawscSettings), mawscSettings.LogfilePath);
+
+            RequiredDirectories(mawscSettings);
+            SessionBackupDirectory(mawscSettings.BackupDirectory, mawscSettings.SessionTimestamp);
+        }
+
         /// <summary>Verify that required directories exist, and create them if they don't.</summary>
         /// <returns>Log message.</returns>
         internal static void RequiredDirectories(MawscSettings mawscSettings)
@@ -49,10 +68,6 @@ namespace MAWSC.Framework
             }
 
             ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawscSettings.LogfilePath);
-
-            /* Also verify the session backup directory.
-             */
-            SessionBackupDirectory(mawscSettings.BackupDirectory, mawscSettings.SessionTimestamp);
         }
 
         /// <summary>Verify that the session backup directory exists, and create it if it does not.</summary>
