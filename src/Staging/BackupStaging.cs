@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.BackupStaging.cs
 // Backup the current staging source.
-// b220531.110901
+// b220601.160231
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -17,26 +17,42 @@ namespace MAWSC.Staging
 {
     internal class BackupStaging
     {
-        internal static void Source(MawscSettings mawscSettings)
+        /// <summary></summary>
+        /// <param name="mawscSettings"></param>
+        internal static void ExistingLocations(MawscSettings mawscSettings)
         {
-            var stagingSourceDirectory = mawscSettings.StagingSourceDirectory;
-            var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
-
-            ExportLog.ToConsole(Logging.LogMessage.BackupStagingSourceRequest(mawscSettings));
-            ExportLog.ToConsole(Logging.LogMessage.BackupStagingSource(mawscSettings));
-
-            Du.WithArchive.DirectoryAsFullname(stagingSourceDirectory, backupDirectory);
+            SourceLocation(mawscSettings);
+            TargetLocation(mawscSettings);
         }
 
-        internal static void Target(MawscSettings mawscSettings)
+        /// <summary>Backup the existing staging source location.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         - When you fetch a sourcecode from GitHub, that sourcecode is saved to the StagingSource. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
+        ///     </para>
+        /// </remarks>
+        /// <param name="mawscSettings">MAWSC settings.</param>
+        private static void SourceLocation(MawscSettings mawscSettings)
         {
-            var stagingTargetDirectory = mawscSettings.StagingTargetDirectory;
-            var backupDirectory  = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
+            ExportLog.ToConsole(LogMessage.BackupStagingSourceRequest(mawscSettings));
+            ExportLog.ToConsole(LogMessage.BackupStagingSource(mawscSettings));
 
-            ExportLog.ToConsole(Logging.LogMessage.BackupStagingTargetRequest(mawscSettings));
-            ExportLog.ToConsole(Logging.LogMessage.BackupStagingTarget(mawscSettings));
+            Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingFetchDirectory, mawscSettings.SessionBackupDirectory);
+        }
 
-            Du.WithArchive.DirectoryAsFullname(stagingTargetDirectory, backupDirectory);
+        /// <summary>Backup the existing staging target location.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         - When you deploy sourcecode from StagingSource, that sourcecode is copied to the StagingTarget. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
+        ///     </para>
+        /// </remarks>
+        /// <param name="mawscSettings">MAWSC settings.</param>
+        private static void TargetLocation(MawscSettings mawscSettings)
+        {
+            ExportLog.ToConsole(LogMessage.BackupStagingTargetRequest(mawscSettings));
+            ExportLog.ToConsole(LogMessage.BackupStagingTarget(mawscSettings));
+
+            Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingTestingDirectory, mawscSettings.SessionBackupDirectory);
         }
     }
 }

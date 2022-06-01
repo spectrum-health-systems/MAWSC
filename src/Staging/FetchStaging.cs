@@ -16,6 +16,8 @@ namespace MAWSC.Staging
 {
     internal class FetchStaging
     {
+        /// <summary></summary>
+        /// <param name="mawscSettings"></param>
         internal static void FromUrl(MawscSettings mawscSettings)
         {
             var downloadFilePath = $"{mawscSettings.TemporaryDirectory}web-service-from-url.zip";
@@ -28,9 +30,9 @@ namespace MAWSC.Staging
 
             Du.WithFile.MoveUsingFileName(downloadFilePath, $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/");
 
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingSourceDirectory);
+            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingFetchDirectory);
 
-            Du.WithDirectory.MoveRecursively(extractFilePath, mawscSettings.StagingSourceDirectory);
+            Du.WithDirectory.MoveRecursively(extractFilePath, mawscSettings.StagingFetchDirectory);
         }
     }
 }

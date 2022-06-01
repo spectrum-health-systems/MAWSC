@@ -45,7 +45,7 @@ namespace MAWSC.Framework
                 mawscSettings.ConfigurationDirectory,
                 mawscSettings.LogDirectory,
                 mawscSettings.BackupDirectory,
-                mawscSettings.StagingSourceDirectory,
+                mawscSettings.StagingFetchDirectory,
                 mawscSettings.TemporaryDirectory
             };
 

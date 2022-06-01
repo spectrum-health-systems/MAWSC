@@ -14,25 +14,54 @@ namespace MAWSC.Configuration
 {
     internal class MawscSettings
     {
-        public string ConfigurationDirectory { get; set; }
-        public string LogDirectory { get; set; }
-        public string BackupDirectory { get; set; }
-        public string TemporaryDirectory { get; set; }
-        public string RepositoryName { get; set; }
-        public string RepositoryUrl { get; set; }
-        public string RepositorySrcDirectory { get; set; }
-        public string StagingSourceDirectory { get; set; }
-        public string StagingTargetDirectory { get; set; }
-        public string ProductionSourceDirectory { get; set; }
-        public string ProductionTargetDirectory { get; set; }
-        public string ApplicationVersion { get; set; }
+        /* Application
+         */
         public string SessionTimestamp { get; set; }
+        public string ApplicationVersion { get; set; }
+
+        /* Configuration
+         */
+        public string ConfigurationDirectory { get; set; }
+
+        /* Logging
+         */
+        public string LogDirectory { get; set; }
         public string LogfilePath { get; set; }
+
+        /* Backups
+         */
+        public string BackupDirectory { get; set; }
+        public string SessionBackupDirectory { get; set; }
+
+        /* Temporary
+         */
+        public string TemporaryDirectory { get; set; }
+
+        /* Repository
+         */
+        public string RepositoryName { get; set; }
+        public string RepositoryBranch { get; set; }
+        public string RepositoryUrl { get; set; }
+
+        /* Staging
+         */
+        public string StagingFetchDirectory { get; set; }
+        public string StagingTestingDirectory { get; set; }
+
+        /* Production
+         */
+        public string ProductionDirectory { get; set; }
+
+        /* Command line
+         */
         public string MawscCommand { get; set; }
         public string MawscAction { get; set; }
         public string MawscOption { get; set; }
 
-
+        /// <summary></summary>
+        /// <param name="commandLineArguments"></param>
+        /// <param name="sessionTimestamp"></param>
+        /// <returns></returns>
         internal static MawscSettings Initialize(string[] commandLineArguments, string sessionTimestamp)
         {
             MawscSettings mawscSettings = Load.FromFile();

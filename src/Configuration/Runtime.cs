@@ -21,9 +21,14 @@ namespace MAWSC.Configuration
 
             /* Some of the configuration settings are set at runtime.
              */
-            mawscSettings.SessionTimestamp   = sessionTimestamp;
-            mawscSettings.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawscSettings.LogfilePath        = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
+            mawscSettings.SessionTimestamp       = sessionTimestamp;
+            mawscSettings.ApplicationVersion     = Assembly.GetEntryAssembly().GetName().Version.ToString();
+
+            mawscSettings.LogfilePath            = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
+
+            mawscSettings.SessionBackupDirectory = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
+
+            mawscSettings.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawscSettings.RepositoryName}/archive/refs/heads/{mawscSettings.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetArgumentValues(commandLineArguments);
 
@@ -35,3 +40,15 @@ namespace MAWSC.Configuration
         }
     }
 }
+
+
+/*
+ 
+ 
+  "RepositoryName": "MAWS",
+  "RepositoryUrl": "https://github.com/spectrum-health-systems/MAWS/archive/refs/heads/v0.60-development.zip",
+  "RepositorySrcDirectory": "MAWS-0.60-development/src/",
+  "StagingSourceDirectory": "./AppData/Staging_source/",
+  "StagingTargetDirectory": "c:/Users/cbanw/Downloads/mawstest/",
+ 
+*/

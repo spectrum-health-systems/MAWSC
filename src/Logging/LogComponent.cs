@@ -22,13 +22,13 @@ namespace MAWSC.Logging
         internal static string BackupStagingSource(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"{Environment.NewLine}" +
-                   $"           {mawscSettings.StagingSourceDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
+                   $"           {mawscSettings.StagingFetchDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
         }
 
         internal static string BackupStagingTarget(MAWSC.Configuration.MawscSettings mawscSettings)
         {
             return $"{Environment.NewLine}" +
-                   $"           {mawscSettings.StagingTargetDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
+                   $"           {mawscSettings.StagingTestingDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
         }
 
         internal static string ConfigurationInformation(MAWSC.Configuration.MawscSettings mawscSettings)
@@ -37,10 +37,10 @@ namespace MAWSC.Logging
                    $"LogDirectory: {mawscSettings.LogDirectory}{Environment.NewLine}" +
                    $"BackupDirectory: {mawscSettings.BackupDirectory}{Environment.NewLine}" +
                    $"TemporaryDirectory: {mawscSettings.TemporaryDirectory}{Environment.NewLine}" +
-                   $"StagingSourceDirectory: {mawscSettings.StagingSourceDirectory}{Environment.NewLine}" +
-                   $"StagingTargetDirectory: {mawscSettings.StagingSourceDirectory}{Environment.NewLine}" +
-                   $"ProductionSourceDirectory: {mawscSettings.ProductionSourceDirectory}{Environment.NewLine}" +
-                   $"ProductionTargetDirectory: {mawscSettings.ProductionSourceDirectory}{Environment.NewLine}" +
+                   $"StagingSourceDirectory: {mawscSettings.StagingFetchDirectory}{Environment.NewLine}" +
+                   $"StagingTargetDirectory: {mawscSettings.StagingFetchDirectory}{Environment.NewLine}" +
+                   $"ProductionSourceDirectory: {mawscSettings.ProductionDirectory}{Environment.NewLine}" +
+                   $"ProductionTargetDirectory: {mawscSettings.ProductionDirectory}{Environment.NewLine}" +
                    $"Application version: {mawscSettings.ApplicationVersion}{Environment.NewLine}" +
                    $"SessionTimestamp: {mawscSettings.SessionTimestamp}{Environment.NewLine}" +
                    $"LogfilePath: {mawscSettings.LogfilePath}{Environment.NewLine}" +
@@ -66,8 +66,8 @@ namespace MAWSC.Logging
 
         internal static string StagingInformation(MAWSC.Configuration.MawscSettings mawscSettings)
         {
-            return $"Staging source directory: {mawscSettings.StagingSourceDirectory}{Environment.NewLine}" +
-                   $"Staging target directory: {mawscSettings.StagingTargetDirectory}{Environment.NewLine}";
+            return $"Staging source directory: {mawscSettings.StagingFetchDirectory}{Environment.NewLine}" +
+                   $"Staging target directory: {mawscSettings.StagingTestingDirectory}{Environment.NewLine}";
         }
 
         internal static string SessionBackupDirectoryVerified()

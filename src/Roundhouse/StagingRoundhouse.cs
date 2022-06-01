@@ -6,9 +6,9 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Roundhouse.Staging.cs
+// MAWSC.Roundhouse.StagingRoundhouse.cs
 // Staging roundhouse.
-// b220526.080326
+// b220601.163655
 
 using MAWSC.Configuration;
 using MAWSC.Staging;
@@ -30,26 +30,26 @@ namespace MAWSC.Roundhouse
             {
                 case "b":
                 case "backup":
-                    BackupStaging.Source(mawscSettings);
-                    BackupStaging.Target(mawscSettings);
+                    BackupStaging.ExistingLocations(mawscSettings);
                     break;
 
                 case "d":
                 case "deploy":
-                    ParseOptionDeploy(mawscSettings);
+                    BackupStaging.ExistingLocations(mawscSettings);
+                    FetchStaging.FromUrl(mawscSettings);
+                    DeployStaging.Components(mawscSettings);
+                    //ParseDeployOption(mawscSettings);
                     break;
 
                 case "f":
                 case "fetch":
-                    BackupStaging.Source(mawscSettings);
-                    BackupStaging.Target(mawscSettings);
+                    BackupStaging.ExistingLocations(mawscSettings);
                     FetchStaging.FromUrl(mawscSettings);
                     break;
 
                 case "r":
                 case "refresh":
-                    BackupStaging.Source(mawscSettings);
-                    BackupStaging.Target(mawscSettings);
+                    BackupStaging.ExistingLocations(mawscSettings);
                     FetchStaging.FromUrl(mawscSettings);
                     break;
 
@@ -64,26 +64,25 @@ namespace MAWSC.Roundhouse
 
         }
 
+        //internal static void ParseDeployOption(MawscSettings mawscSettings)
+        //{
+        //    switch(mawscSettings.MawscOption)
+        //    {
+        //        case "a":
+        //        case "all":
+        //            DeployStaging.All(mawscSettings);
+        //            break;
 
-        internal static void ParseOptionDeploy(MawscSettings mawscSettings)
-        {
-            switch(mawscSettings.MawscOption)
-            {
-                case "a":
-                case "all":
-                    DeployStaging.All(mawscSettings);
-                    break;
+        //        case "m":
+        //        case "minimal":
+        //            DeployStaging.Minimal(mawscSettings);
+        //            break;
 
-                case "m":
-                case "minimal":
-                    DeployStaging.Minimal(mawscSettings);
-                    break;
-
-                case "not-passed":
-                default:
-                    DeployStaging.Minimal(mawscSettings);
-                    break;
-            }
-        }
+        //        case "not-passed":
+        //        default:
+        //            DeployStaging.Minimal(mawscSettings);
+        //            break;
+        //    }
+        //}
     }
 }

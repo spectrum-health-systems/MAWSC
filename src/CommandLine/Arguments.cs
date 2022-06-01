@@ -24,7 +24,7 @@
         /// <returns>The MAWSC action.</returns>
         internal static string GetActionValue(string[] commandLineArguments)
         {
-            return commandLineArguments.Length == 2
+            return commandLineArguments.Length >= 2
                 ? commandLineArguments[1].Trim().ToLower().Replace("-", "")
                 : "not-passed";
         }
@@ -91,7 +91,7 @@
         /// <returns>The MAWSC option.</returns>
         internal static string GetOptionValue(string[] commandLineArguments)
         {
-            return commandLineArguments.Length == 3
+            return commandLineArguments.Length >= 3
                 ? commandLineArguments[2].Trim().ToLower().Replace("-", "")
                 : "not-passed";
         }

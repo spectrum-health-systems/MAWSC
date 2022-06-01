@@ -29,22 +29,27 @@ namespace MAWSC.Configuration
             /* It's recommended that you leave these values as they are, and make any
              * modifications to the configuration file itself.
              */
+
+            /* RepositoryName   = "MAWS"
+             * RepositoryBranch = "development"
+             * 
+             */
             var defaultSettings = new MawscSettings()
             {
+                SessionTimestamp          = "set-at-runtime",
+                ApplicationVersion        = "set-at-runtime",
                 ConfigurationDirectory    = $@"./AppData/Config/",
                 LogDirectory              = $@"./AppData/Logs/",
+                LogfilePath               = "set-at-runtime",
                 BackupDirectory           = $@"./AppData/Backup/",
+                SessionBackupDirectory    = "set-at-runtime",
                 TemporaryDirectory        = $@"./AppData/Temp/",
                 RepositoryName            = "name-of-your-repository",
-                RepositoryUrl             = "path/to/your/web/service/repository/url",
-                RepositorySrcDirectory    = "path/to/your/repository/src/",
-                StagingSourceDirectory    = $@"./AppData/Staging_source/",
-                StagingTargetDirectory    = "/path/to/your/staging/web/service/target/",
-                ProductionSourceDirectory = "/path/to/your/production/web/service/source/",
-                ProductionTargetDirectory = "/path/to/your/production/web/service/target/",
-                ApplicationVersion        = "set-at-runtime",
-                SessionTimestamp          = "set-at-runtime",
-                LogfilePath               = "set-at-runtime",
+                RepositoryBranch          = "name-of-your-repository-branch",
+                RepositoryUrl             = "set-at-runtime",
+                StagingFetchDirectory     = $@"./AppData/Staging_fetch/",
+                StagingTestingDirectory   = "/path/to/your/web/service/testing/environment/",
+                ProductionDirectory       = "/path/to/your/web/service/production/environment/",
                 MawscCommand              = "set-at-runtime",
                 MawscAction               = "set-at-runtime",
                 MawscOption               = "set-at-runtime",

@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.DeployStaging.cs
 // Deploy the current staging source.
-// b220531.110901
+// b220601.161356
 
 using MAWSC.Configuration;
 
@@ -16,22 +16,48 @@ namespace MAWSC.Staging
 {
     internal class DeployStaging
     {
-        internal static void All(MawscSettings mawscSettings)
+        internal static void Components(MawscSettings mawscSettings)
         {
-            var stagingSrcDirectory = $"{mawscSettings.StagingSourceDirectory}{mawscSettings.RepositorySrcDirectory}";
+            switch(mawscSettings.MawscOption)
+            {
+                case "a":
+                case "all":
+                    All(mawscSettings);
+                    break;
 
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTargetDirectory);
+                case "m":
+                case "min":
+                case "minimal":
+                    Minimal(mawscSettings);
+                    break;
 
-            Du.WithDirectory.MoveRecursively(stagingSrcDirectory, mawscSettings.StagingTargetDirectory);
+                case "not-passed":
+                default:
+                    break;
+            }
         }
 
-        internal static void Minimal(MawscSettings mawscSettings)
+        /// <summary></summary>
+        /// 
+        /// <param name="mawscSettings"></param>
+        private static void All(MawscSettings mawscSettings)
         {
-            var stagingSrcDirectory = $"{mawscSettings.StagingSourceDirectory}{mawscSettings.RepositorySrcDirectory}";
+            var stagingSrcDirectory = $"{mawscSettings.StagingFetchDirectory}{mawscSettings.RepositorySrcDirectory}";
 
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTargetDirectory);
+            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTestingDirectory);
 
-            Du.WithDirectory.CopyRecursively($"{stagingSrcDirectory}bin/", $"{mawscSettings.StagingTargetDirectory}bin/");
+            Du.WithDirectory.MoveRecursively(stagingSrcDirectory, mawscSettings.StagingTestingDirectory);
+        }
+
+        /// <summary></summary>
+        /// <param name="mawscSettings"></param>
+        private static void Minimal(MawscSettings mawscSettings)
+        {
+            var stagingSrcDirectory = $"{mawscSettings.StagingFetchDirectory}{mawscSettings.RepositorySrcDirectory}";
+
+            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTestingDirectory);
+
+            Du.WithDirectory.CopyRecursively($"{stagingSrcDirectory}bin/", $"{mawscSettings.StagingTestingDirectory}bin/");
 
             var filesToCopy = new List<string>()
             {
@@ -43,9 +69,18 @@ namespace MAWSC.Staging
                 $"Web.Release.config",
             };
 
-            Du.WithFile.CopyFiles(filesToCopy, stagingSrcDirectory, mawscSettings.StagingTargetDirectory);
+            Du.WithFile.CopyFiles(filesToCopy, stagingSrcDirectory, mawscSettings.StagingTestingDirectory);
         }
     }
 }
 
-/* https://github.com/spectrum-health-systems/MAWS/archive/refs/heads/main.zip */
+/*
+ 
+ 
+  "RepositoryName": "MAWS",
+  "RepositoryUrl": "https://github.com/spectrum-health-systems/MAWS/archive/refs/heads/v0.60-development.zip",
+  "RepositorySrcDirectory": "MAWS-0.60-development/src/",
+  "StagingSourceDirectory": "./AppData/Staging_source/",
+  "StagingTargetDirectory": "c:/Users/cbanw/Downloads/mawstest/",
+ 
+*/

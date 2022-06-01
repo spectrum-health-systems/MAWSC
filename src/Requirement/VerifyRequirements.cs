@@ -6,9 +6,9 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Requirements.VerifyMawscRequirements.cs
-// Verify MAWSC requirements
-// b220531.081353 x
+// MAWSC.Requirements.VerifyRequirements.cs
+// Verify MAWSC requirements.
+// b220601.160201
 
 using MAWSC.CommandLine;
 using MAWSC.Configuration;
@@ -28,7 +28,7 @@ namespace MAWSC.Requirements
         /// <param name="commandLineArguments">Arguments passed via the command line when MAWSC executes.</param>
         /// <param name="sessionTimestamp">Timestamp for the session.</param>
         internal static void Startup(string[] commandLineArguments, string sessionTimestamp)
-        { //x
+        {
             ValidateConfiguration.FileData();
 
             VerifyCommandLine.ArgumentsPassed(commandLineArguments);
