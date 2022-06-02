@@ -22,34 +22,86 @@ namespace MAWSC.Help
         ///     </para> 
         /// </remarks>
         /// <returns>Header string for log files.</returns>
-        internal static string HelpHeader()
+        internal static string HelpHeader(string helpSubText)
         {
             return $"----------------------------------------{Environment.NewLine}" +
-                   $"MAWSC HELP{Environment.NewLine}" +
-                   $"----------------------------------------{Environment.NewLine}";
+                   $"MAWSC HELP {Environment.NewLine}" +
+                   $"----------------------------------------{Environment.NewLine}" +
+                   $"{helpSubText}";
         }
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string UsageSyntaxHelp()
+        internal static string UsageSyntaxHelp(string usageLine)
         {
-            return $"usage: mawsc <command> [action] [option]{ Environment.NewLine}" +
+            return $"usage: mawsc {usageLine}{ Environment.NewLine}" +
                    $"{Environment.NewLine}";
         }
 
         /// <summary></summary>
         /// <returns></returns>
-        internal static string ValidArgumentHelp()
+        internal static string DefaultHelp()
         {
             return $"commands:{ Environment.NewLine}" +
-                   $"    -s, -stage   Staging environment{ Environment.NewLine}" +
-                   $"    -p, -prod    Production environment{ Environment.NewLine}" +
-                   $"    -c, -config  Configuration file{ Environment.NewLine}" +
-                   $"    -h, -help    Display this help screen{ Environment.NewLine}" +
+                   $"    -c, -configuration     Configuration file{ Environment.NewLine}" +
+                   $"    -h, -help              Display this help screen{ Environment.NewLine}" +
+                   $"    -s, -staging           Staging environment{ Environment.NewLine}" +
+                   $"    -p, -production        Production environment{ Environment.NewLine}" +
                    $"{Environment.NewLine}" +
-                   $"actions:{ Environment.NewLine}" +
-                   $"    -d, -deploy  Deploy a specific environment{ Environment.NewLine}" +
-                   $"    -r, -reset   Reset a specific component{ Environment.NewLine}" +
+                   $"For command-specific help, type \"mawsc -help <command>\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"examples:{ Environment.NewLine}" +
+                   $"    \"mawsc -help staging\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"    \"mawsc -help configuration\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}";
+        }
+
+        /// <summary></summary>
+        /// <returns></returns>
+        internal static string ConfigurationHelp()
+        {
+            return $"commands:{ Environment.NewLine}" +
+                   $"    -i, -information   View the configuration settings{ Environment.NewLine}" +
+                   $"    -r, -reset         Reset the configuration file to default settings{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"examples:{ Environment.NewLine}" +
+                   $"    \"mawsc -configuration -i\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"    \"mawsc -c -reset\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}";
+        }
+
+        /// <summary></summary>
+        /// <returns></returns>
+        internal static string StagingHelp()
+        {
+            return $"commands:{ Environment.NewLine}" +
+                   $"    -b, -backup        Backup the current staging location{ Environment.NewLine}" +
+                   $"    -d, -deploy        Deploy the current staging location to production{ Environment.NewLine}" +
+                   $"    -f, -fetch         Fetch staging sourcecode{ Environment.NewLine}" +
+                   $"    -i, -information   Display information about the staging environment{ Environment.NewLine}" +
+                   $"    -r, -refresh       Backup, fetch, and deploy the staging environment{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"examples:{ Environment.NewLine}" +
+                   $"    \"mawsc -staging -b\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"    \"mawsc -s -deploy\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}";
+        }
+
+        /// <summary></summary>
+        /// <returns></returns>
+        internal static string ProductionHelp()
+        {
+            return $"commands:{ Environment.NewLine}" +
+                   $"    -b, -backup        Backup the current production location{ Environment.NewLine}" +
+                   $"    -i, -information   Display information about the staging environment{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"examples:{ Environment.NewLine}" +
+                   $"    \"mawsc -staging -b\"{ Environment.NewLine}" +
+                   $"{Environment.NewLine}" +
+                   $"    \"mawsc -s -information\"{ Environment.NewLine}" +
                    $"{Environment.NewLine}";
         }
 
@@ -60,9 +112,9 @@ namespace MAWSC.Help
             return $"examples:{ Environment.NewLine}" +
                    $"    To deploy the staging environment: \"mawsc -s -d\"{ Environment.NewLine}" +
                    $"{Environment.NewLine}" +
-                   $"    To deploy the production environment: \"mawsc -prod -deploy\"{ Environment.NewLine}" +
+                   $"    To deploy the production environment: \"mawsc -staging -deploy\"{ Environment.NewLine}" +
                    $"{Environment.NewLine}" +
-                   $"    To reset the configuration file: \"mawsc -config -r\"{ Environment.NewLine}" +
+                   $"    To reset the configuration file: \"mawsc -configuration -r\"{ Environment.NewLine}" +
                    $"{Environment.NewLine}";
         }
 

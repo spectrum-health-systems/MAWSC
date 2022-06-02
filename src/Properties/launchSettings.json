@@ -2,7 +2,7 @@
   "profiles": {
     "MAWSC": {
       "commandName": "Project",
-      "commandLineArgs": "-s -d -a"
+      "commandLineArgs": "-h staging"
     }
   }
 }

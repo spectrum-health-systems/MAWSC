@@ -19,10 +19,10 @@ namespace MAWSC.Logging
             return $"-{ mawscSettings.MawscCommand} [-{ mawscSettings.MawscAction}] [-{ mawscSettings.MawscOption}]";
         }
 
-        internal static string BackupStagingSource(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string BackupStagingSource(string stagingFetchDirectory, string sessionBackupDirectory)
         {
             return $"{Environment.NewLine}" +
-                   $"           {mawscSettings.StagingFetchDirectory} -> {mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
+                   $"           {stagingFetchDirectory} -> {sessionBackupDirectory}/";
         }
 
         internal static string BackupStagingTarget(MAWSC.Configuration.MawscSettings mawscSettings)

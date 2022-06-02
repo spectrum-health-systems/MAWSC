@@ -15,14 +15,8 @@ using MAWSC.Staging;
 
 namespace MAWSC.Roundhouse
 {
-
     internal class StagingRoundhouse
     {
-        /// <summary>
-        /// wetrw
-        /// </summary>
-        /// <param name="mawscCommand">tet</param>
-        /// <param name="mawscSettings">tet</param>
         internal static void ParseAction(MawscSettings mawscSettings)
         {
 
@@ -30,27 +24,22 @@ namespace MAWSC.Roundhouse
             {
                 case "b":
                 case "backup":
-                    BackupStaging.ExistingLocations(mawscSettings);
+                    BackupStaging.SoupToNuts(mawscSettings);
                     break;
 
                 case "d":
                 case "deploy":
-                    BackupStaging.ExistingLocations(mawscSettings);
-                    FetchStaging.FromUrl(mawscSettings);
-                    DeployStaging.Components(mawscSettings);
-                    //ParseDeployOption(mawscSettings);
+                    DeployStaging.SoupToNuts(mawscSettings);
                     break;
 
                 case "f":
                 case "fetch":
-                    BackupStaging.ExistingLocations(mawscSettings);
-                    FetchStaging.FromUrl(mawscSettings);
+                    FetchStaging.SoupToNuts(mawscSettings);
                     break;
 
                 case "r":
                 case "refresh":
-                    BackupStaging.ExistingLocations(mawscSettings);
-                    FetchStaging.FromUrl(mawscSettings);
+                    RefreshStaging.SoupToNuts(mawscSettings);
                     break;
 
                 case "i":
@@ -58,31 +47,10 @@ namespace MAWSC.Roundhouse
                 case "information":
                 case "not-passed":
                 default:
-                    //MAWSC.Logging.Export.ToEverywhere(Logging.Message.ConfigurationInformationRequest(mawscSettings), mawscSettings.LogfilePath);
+                    StagingInformation.Display(mawscSettings);
                     break;
             }
 
         }
-
-        //internal static void ParseDeployOption(MawscSettings mawscSettings)
-        //{
-        //    switch(mawscSettings.MawscOption)
-        //    {
-        //        case "a":
-        //        case "all":
-        //            DeployStaging.All(mawscSettings);
-        //            break;
-
-        //        case "m":
-        //        case "minimal":
-        //            DeployStaging.Minimal(mawscSettings);
-        //            break;
-
-        //        case "not-passed":
-        //        default:
-        //            DeployStaging.Minimal(mawscSettings);
-        //            break;
-        //    }
-        //}
     }
 }

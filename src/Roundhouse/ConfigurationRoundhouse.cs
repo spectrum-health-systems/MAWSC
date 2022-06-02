@@ -25,7 +25,7 @@ namespace MAWSC.Roundhouse
             {
                 case "r":
                 case "reset":
-                    ExportLog.ToEverywhere(LogMessage.ConfigurationFileResetRequest(), mawscSettings.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawscSettings.LogfilePath);
 
                     ConfigurationAction.ResetConfigurationFile();
 
@@ -38,7 +38,7 @@ namespace MAWSC.Roundhouse
                 case "information":
                 case "not-passed":
                 default:
-                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformationRequest(mawscSettings), mawscSettings.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawscSettings.LogfilePath);
 
                     break;
             }

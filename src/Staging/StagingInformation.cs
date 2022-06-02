@@ -18,7 +18,18 @@ namespace MAWSC.Staging
     {
         internal static void Display(MawscSettings mawscSettings)
         {
-
+            var stagingInformation = $"Current staging information:" +
+                                     $"Name: {mawscSettings.RepositoryName}{Environment.NewLine}" +
+                                     $"Branch: {mawscSettings.RepositoryBranch} mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Version: mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Last fetched: mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Last deployed: mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Last logfile timestamp: mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Logfile directory size: XXXMB{Environment.NewLine}" +
+                                     $"Fetch location directory: {mawscSettings.StagingFetchDirectory} /path/to/{Environment.NewLine}" +
+                                     $"Testing location directory: {mawscSettings.StagingTestingDirectory} /path/to/{Environment.NewLine}" +
+                                     $"Deployment location directory: {mawscSettings.ProductionDirectory}{Environment.NewLine}" +
+                                     $"{Environment.NewLine}";
         }
     }
 }

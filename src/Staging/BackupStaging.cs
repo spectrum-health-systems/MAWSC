@@ -19,7 +19,7 @@ namespace MAWSC.Staging
     {
         /// <summary></summary>
         /// <param name="mawscSettings"></param>
-        internal static void ExistingLocations(MawscSettings mawscSettings)
+        internal static void SoupToNuts(MawscSettings mawscSettings)
         {
             SourceLocation(mawscSettings);
             TargetLocation(mawscSettings);
@@ -34,8 +34,8 @@ namespace MAWSC.Staging
         /// <param name="mawscSettings">MAWSC settings.</param>
         private static void SourceLocation(MawscSettings mawscSettings)
         {
-            ExportLog.ToConsole(LogMessage.BackupStagingSourceRequest(mawscSettings));
-            ExportLog.ToConsole(LogMessage.BackupStagingSource(mawscSettings));
+            ExportLog.ToConsole(LogMessage.RequestBackupStagingSource());
+            ExportLog.ToConsole(LogMessage.BackupStagingSource(mawscSettings.StagingFetchDirectory, mawscSettings.SessionBackupDirectory));
 
             Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingFetchDirectory, mawscSettings.SessionBackupDirectory);
         }
@@ -49,7 +49,7 @@ namespace MAWSC.Staging
         /// <param name="mawscSettings">MAWSC settings.</param>
         private static void TargetLocation(MawscSettings mawscSettings)
         {
-            ExportLog.ToConsole(LogMessage.BackupStagingTargetRequest(mawscSettings));
+            ExportLog.ToConsole(LogMessage.RequestBackupStagingTarget());
             ExportLog.ToConsole(LogMessage.BackupStagingTarget(mawscSettings));
 
             Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingTestingDirectory, mawscSettings.SessionBackupDirectory);

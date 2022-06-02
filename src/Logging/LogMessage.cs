@@ -10,6 +10,8 @@
 // Logging message.
 // bb220531.085425
 
+using MAWSC.Configuration;
+
 namespace MAWSC.Logging
 {
     internal class LogMessage
@@ -20,31 +22,35 @@ namespace MAWSC.Logging
                    $"{LogComponent.TypeForHelp()}";
         }
 
-        internal static string ArgumentsPassed(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string ArgumentsPassed(MawscSettings mawscSettings)
         {
             return $"{LogHeader.Info("Passed command line arguments: ")}" +
                    $"{LogComponent.ArgumentsPassed(mawscSettings)}";
         }
 
-        internal static string BackupStagingSource(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string BackupStagingSource(string stagingFetchDirectory, string sessionBackupDirectory)
         {
-            return $"{LogHeader.Backup("Backing up current staging source ")}" +
-                   $"{LogComponent.BackupStagingSource(mawscSettings)}";
+            return $"{LogHeader.Backup("Backing up current staging source...please wait.")}" +
+                   $"{LogComponent.BackupStagingSource(stagingFetchDirectory, sessionBackupDirectory)}";
         }
 
-        internal static string BackupStagingSourceRequest(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string RequestBackupStagingSource()
         {
             return $"{LogHeader.Request("Backup current staging source.")}";
         }
 
-
-        internal static string BackupStagingTarget(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string BackupStagingTarget(MawscSettings mawscSettings)
         {
-            return $"{LogHeader.Backup("Backing up current staging target.")}" +
+            return $"{LogHeader.Backup("Backing up current staging target...please wait.")}" +
                    $"{LogComponent.BackupStagingTarget(mawscSettings)}";
         }
 
-        internal static string BackupStagingTargetRequest(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string InfoMovingFiles()
+        {
+            return $"{LogHeader.Info("Moving files...please wait.")}";
+        }
+
+        internal static string RequestBackupStagingTarget()
         {
             return $"{LogHeader.Request("Backup current staging target.")}";
         }
@@ -55,16 +61,15 @@ namespace MAWSC.Logging
                    $"{LogComponent.TypeForHelp()}";
         }
 
-        internal static string ConfigurationInformation(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string ConfigurationInformation(MawscSettings mawscSettings)
         {
-            return $"{LogHeader.Sub("Configuration information")}" +
+            return $"{LogHeader.Sub("Current configuration information:")}" +
                    $"{LogComponent.ConfigurationInformation(mawscSettings)}";
         }
 
-        internal static string ConfigurationInformationRequest(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string RequestConfigurationInformation()
         {
-            return $"{LogHeader.Request("Configuration information")}" +
-                   $"{LogMessage.ConfigurationInformation(mawscSettings)}";
+            return $"{LogHeader.Request("Configuration information")}";
         }
 
         internal static string ConfigurationFileInvalid()
@@ -79,7 +84,7 @@ namespace MAWSC.Logging
                    $"{LogComponent.ConfigurationFileWillBeReset()}";
         }
 
-        internal static string ConfigurationFileResetRequest()
+        internal static string RequestConfigurationFileReset()
         {
             return $"{LogHeader.Request("Reset configuration file.")}";
         }
@@ -103,7 +108,7 @@ namespace MAWSC.Logging
         }
 
 
-        internal static string StagingInformationRequest(MAWSC.Configuration.MawscSettings mawscSettings)
+        internal static string RequestStagingInformation(MawscSettings mawscSettings)
         {
             return $"{LogHeader.Request("Staging information")}" +
                    $"{LogComponent.StagingInformation(mawscSettings)}";

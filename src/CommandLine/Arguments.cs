@@ -61,7 +61,7 @@
              */
             if(mawscSettings.MawscCommand.StartsWith("h"))
             {
-                MAWSC.Help.DisplayHelp.Complete();
+                MAWSC.Help.DisplayHelp.ForDefault();
                 MAWSC.Maintenance.MawscTerminate.Gracefully(0);
             }
             else

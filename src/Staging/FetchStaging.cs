@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.FetchStaging.cs
 // Get the staging source from a repository.
-// b220531.110901
+// bb220602.083119
 
 using MAWSC.Configuration;
 
@@ -16,23 +16,42 @@ namespace MAWSC.Staging
 {
     internal class FetchStaging
     {
-        /// <summary></summary>
-        /// <param name="mawscSettings"></param>
-        internal static void FromUrl(MawscSettings mawscSettings)
+        internal static void SoupToNuts(MawscSettings mawscSettings)
         {
-            var downloadFilePath = $"{mawscSettings.TemporaryDirectory}web-service-from-url.zip";
+            BackupStaging.SoupToNuts(mawscSettings);
+            CleanStaging.FetchLocation(mawscSettings);
 
-            Du.Internet.DownloadZipFromUrl(mawscSettings.RepositoryUrl, downloadFilePath);
+            var targetFile = $"{mawscSettings.TemporaryDirectory}{mawscSettings.RepositoryBranch}"; // config
 
-            var extractFilePath = $"{mawscSettings.TemporaryDirectory}web-service-repository/";
+            GetFromUrl(mawscSettings.RepositoryUrl, targetFile);
+            UncompressStagingSource(targetFile);
 
-            Du.WithArchive.Uncompress(downloadFilePath, extractFilePath);
+            var sessionBackupDirectory = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
+            var targetDirectory        = $"{targetFile}/{mawscSettings.RepositoryName}-{mawscSettings.RepositoryBranch}";
 
-            Du.WithFile.MoveUsingFileName(downloadFilePath, $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/");
-
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingFetchDirectory);
-
-            Du.WithDirectory.MoveRecursively(extractFilePath, mawscSettings.StagingFetchDirectory);
+            CopyTo(targetFile, sessionBackupDirectory, targetDirectory, mawscSettings.StagingFetchDirectory);
         }
+
+        /// <summary>Fetch staging sourcecode from a URL.</summary>
+        /// <param name="mawscSettings">MAWSC session settings.</param>
+        private static void GetFromUrl(string repositoryUrl, string targetFile)
+        {
+            Du.Internet.DownloadZipFromUrl(repositoryUrl, $"{targetFile}.zip");
+        }
+
+        private static void UncompressStagingSource(string targetFile)
+        {
+            Du.WithArchive.Uncompress($"{targetFile}.zip", $"{targetFile}/");
+
+        }
+
+        private static void CopyTo(string targetFile, string sessionBackupDirectory, string targetDirectory,
+                                   string stagingFetchDirectory)
+        {
+            Du.WithFile.MoveUsingFileName($"{targetFile}.zip", $"{sessionBackupDirectory}");
+
+            Du.WithDirectory.CopyRecursively($"{targetDirectory}/src/", stagingFetchDirectory);
+        }
+
     }
 }

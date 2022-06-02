@@ -26,7 +26,8 @@ namespace MAWSC.Roundhouse
             {
                 case "h":
                 case "help":
-                    Help.DisplayHelp.Complete();
+                    HelpRoundhouse.ParseAction(mawscSettings);
+                    //Help.DisplayHelp.Complete();
                     break;
 
                 case "c":

@@ -19,14 +19,67 @@ namespace MAWSC.Help
         /// <summary>
         /// 
         /// </summary>
-        internal static void Complete()
+        internal static void ForDefault()
         {
             Console.Clear();
 
-            var helpMessage = HelpComponent.HelpHeader() +
-                              HelpComponent.UsageSyntaxHelp() +
-                              HelpComponent.ValidArgumentHelp() +
-                              HelpComponent.ExampleHelp() +
+            var helpMessage = HelpComponent.HelpHeader("") +
+                              HelpComponent.UsageSyntaxHelp("<-command> [-action] [-option]") +
+                              HelpComponent.DefaultHelp() +
+                              HelpComponent.MoreInformationHelp();
+
+            Console.WriteLine(helpMessage);
+
+            MawscTerminate.Gracefully(0);
+        }
+
+        internal static void ForConfiguration()
+        {
+            Console.Clear();
+
+            var helpHeaderSubText = $"{Environment.NewLine}" +
+                                    $"[Configuration command]{Environment.NewLine}" +
+                                    $"{ Environment.NewLine}";
+
+            var helpMessage = HelpComponent.HelpHeader(helpHeaderSubText) +
+                              HelpComponent.UsageSyntaxHelp("-configuration [-action] [-option]") +
+                              HelpComponent.ConfigurationHelp() +
+                              HelpComponent.MoreInformationHelp();
+
+            Console.WriteLine(helpMessage);
+
+            MawscTerminate.Gracefully(0);
+        }
+
+        internal static void ForStaging()
+        {
+            Console.Clear();
+
+            var helpHeaderSubText = $"{Environment.NewLine}" +
+                                    $"[Staging command]{Environment.NewLine}" +
+                                    $"{ Environment.NewLine}";
+
+            var helpMessage = HelpComponent.HelpHeader(helpHeaderSubText) +
+                              HelpComponent.UsageSyntaxHelp("-staging [-action] [-option]") +
+                              HelpComponent.StagingHelp() +
+                              HelpComponent.MoreInformationHelp();
+
+            Console.WriteLine(helpMessage);
+
+            MawscTerminate.Gracefully(0);
+        }
+
+        internal static void ForProduction()
+        {
+            Console.Clear();
+
+            var helpHeaderSubText = $"{Environment.NewLine}" +
+                                    $"[Production command]{Environment.NewLine}" +
+                                    $"{ Environment.NewLine}";
+
+            var helpMessage = HelpComponent.HelpHeader(helpHeaderSubText) +
+                              HelpComponent.UsageSyntaxHelp("-production [-action] [-option]") +
+                              HelpComponent.ProductionHelp() +
                               HelpComponent.MoreInformationHelp();
 
             Console.WriteLine(helpMessage);

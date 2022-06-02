@@ -124,6 +124,8 @@ namespace MAWSC.Du
                 string targetSubDirectory = Path.Combine(targetDirectory, subDir.Name);
                 MoveRecursively(subDir.FullName, targetSubDirectory);
             }
+
+            var break_=0;
         }
 
         /// <summary>
