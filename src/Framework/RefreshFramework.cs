@@ -22,10 +22,10 @@ namespace MAWSC.Framework
         ///         - Currently only the temporary directory is refreshed.
         ///     </para>
         /// </remarks>
-        /// <param name="mawscSettings">Configuration settings.</param>
-        internal static void Directories(MawscSettings mawscSettings)
+        /// <param name="mawsc">Configuration settings.</param>
+        internal static void Directories(MawscSettings mawsc)
         {
-            Du.WithDirectory.RefreshRecursively(mawscSettings.TemporaryDirectory);
+            Du.WithDirectory.RefreshRecursively(mawsc.TemporaryDirectory);
         }
     }
 }

@@ -4,7 +4,7 @@ namespace MAWSC.Staging
 {
     internal class RefreshStaging
     {
-        internal static void SoupToNuts(MawscSettings mawscSettings)
+        internal static void SoupToNuts(MawscSettings mawsc)
         {
 
         }

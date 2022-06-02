@@ -16,27 +16,27 @@ namespace MAWSC.Configuration
 {
     internal class Runtime
     {
-        internal static MawscSettings SetSetting(MAWSC.Configuration.MawscSettings mawscSettings, string[] commandLineArguments, string sessionTimestamp)
+        internal static MawscSettings SetSetting(MAWSC.Configuration.MawscSettings mawsc, string[] commandLineArguments, string sessionTimestamp)
         {
 
             /* Some of the configuration settings are set at runtime.
              */
-            mawscSettings.SessionTimestamp       = sessionTimestamp;
-            mawscSettings.ApplicationVersion     = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            mawsc.SessionTimestamp       = sessionTimestamp;
+            mawsc.ApplicationVersion     = Assembly.GetEntryAssembly().GetName().Version.ToString();
 
-            mawscSettings.LogfilePath            = $"{mawscSettings.LogDirectory}mawsc-{mawscSettings.SessionTimestamp}.log";
+            mawsc.LogfilePath            = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
 
-            mawscSettings.SessionBackupDirectory = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}";
+            mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
 
-            mawscSettings.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawscSettings.RepositoryName}/archive/refs/heads/{mawscSettings.RepositoryBranch}.zip";
+            mawsc.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetArgumentValues(commandLineArguments);
 
-            mawscSettings.MawscCommand = mawscArguments["mawscCommand"];
-            mawscSettings.MawscAction = mawscArguments["mawscAction"];
-            mawscSettings.MawscOption = mawscArguments["mawscOption"];
+            mawsc.MawscCommand = mawscArguments["mawscCommand"];
+            mawsc.MawscAction = mawscArguments["mawscAction"];
+            mawsc.MawscOption = mawscArguments["mawscOption"];
 
-            return mawscSettings;
+            return mawsc;
         }
     }
 }

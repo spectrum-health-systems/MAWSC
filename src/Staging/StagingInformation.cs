@@ -16,19 +16,19 @@ namespace MAWSC.Staging
 {
     internal class StagingInformation
     {
-        internal static void Display(MawscSettings mawscSettings)
+        internal static void Display(MawscSettings mawsc)
         {
             var stagingInformation = $"Current staging information:" +
-                                     $"Name: {mawscSettings.RepositoryName}{Environment.NewLine}" +
-                                     $"Branch: {mawscSettings.RepositoryBranch} mmddyy hh:mm:ss{Environment.NewLine}" +
+                                     $"Name: {mawsc.RepositoryName}{Environment.NewLine}" +
+                                     $"Branch: {mawsc.RepositoryBranch} mmddyy hh:mm:ss{Environment.NewLine}" +
                                      $"Version: mmddyy hh:mm:ss{Environment.NewLine}" +
                                      $"Last fetched: mmddyy hh:mm:ss{Environment.NewLine}" +
                                      $"Last deployed: mmddyy hh:mm:ss{Environment.NewLine}" +
                                      $"Last logfile timestamp: mmddyy hh:mm:ss{Environment.NewLine}" +
                                      $"Logfile directory size: XXXMB{Environment.NewLine}" +
-                                     $"Fetch location directory: {mawscSettings.StagingFetchDirectory} /path/to/{Environment.NewLine}" +
-                                     $"Testing location directory: {mawscSettings.StagingTestingDirectory} /path/to/{Environment.NewLine}" +
-                                     $"Deployment location directory: {mawscSettings.ProductionDirectory}{Environment.NewLine}" +
+                                     $"Fetch location directory: {mawsc.StagingFetchDirectory} /path/to/{Environment.NewLine}" +
+                                     $"Testing location directory: {mawsc.StagingTestingDirectory} /path/to/{Environment.NewLine}" +
+                                     $"Deployment location directory: {mawsc.ProductionDirectory}{Environment.NewLine}" +
                                      $"{Environment.NewLine}";
         }
     }

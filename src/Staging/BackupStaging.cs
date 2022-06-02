@@ -18,11 +18,11 @@ namespace MAWSC.Staging
     internal class BackupStaging
     {
         /// <summary></summary>
-        /// <param name="mawscSettings"></param>
-        internal static void SoupToNuts(MawscSettings mawscSettings)
+        /// <param name="mawsc"></param>
+        internal static void SoupToNuts(MawscSettings mawsc)
         {
-            SourceLocation(mawscSettings);
-            TargetLocation(mawscSettings);
+            SourceLocation(mawsc);
+            TargetLocation(mawsc);
         }
 
         /// <summary>Backup the existing staging source location.</summary>
@@ -31,13 +31,13 @@ namespace MAWSC.Staging
         ///         - When you fetch a sourcecode from GitHub, that sourcecode is saved to the StagingSource. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
         ///     </para>
         /// </remarks>
-        /// <param name="mawscSettings">MAWSC settings.</param>
-        private static void SourceLocation(MawscSettings mawscSettings)
+        /// <param name="mawsc">MAWSC settings.</param>
+        private static void SourceLocation(MawscSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestBackupStagingSource());
-            ExportLog.ToConsole(LogMessage.BackupStagingSource(mawscSettings.StagingFetchDirectory, mawscSettings.SessionBackupDirectory));
+            ExportLog.ToConsole(LogMessage.BackupStagingSource(mawsc.StagingFetchDirectory, mawsc.SessionBackupDirectory));
 
-            Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingFetchDirectory, mawscSettings.SessionBackupDirectory);
+            Du.WithArchive.DirectoryAsFullname(mawsc.StagingFetchDirectory, mawsc.SessionBackupDirectory);
         }
 
         /// <summary>Backup the existing staging target location.</summary>
@@ -46,13 +46,13 @@ namespace MAWSC.Staging
         ///         - When you deploy sourcecode from StagingSource, that sourcecode is copied to the StagingTarget. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
         ///     </para>
         /// </remarks>
-        /// <param name="mawscSettings">MAWSC settings.</param>
-        private static void TargetLocation(MawscSettings mawscSettings)
+        /// <param name="mawsc">MAWSC settings.</param>
+        private static void TargetLocation(MawscSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestBackupStagingTarget());
-            ExportLog.ToConsole(LogMessage.BackupStagingTarget(mawscSettings));
+            ExportLog.ToConsole(LogMessage.BackupStagingTarget(mawsc));
 
-            Du.WithArchive.DirectoryAsFullname(mawscSettings.StagingTestingDirectory, mawscSettings.SessionBackupDirectory);
+            Du.WithArchive.DirectoryAsFullname(mawsc.StagingTestingDirectory, mawsc.SessionBackupDirectory);
         }
     }
 }

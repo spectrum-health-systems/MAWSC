@@ -1,4 +1,6 @@
-﻿namespace MAWSC.CommandLine
+﻿using MAWSC.Configuration;
+
+namespace MAWSC.CommandLine
 {
     internal class Arguments
     {
@@ -54,12 +56,12 @@
         /// wetrw
         /// </summary>
         /// <param name="mawscCommand">tet</param>
-        /// <param name="mawscSettings">tet</param>
-        internal static void Process(MAWSC.Configuration.MawscSettings mawscSettings)
+        /// <param name="mawsc">tet</param>
+        internal static void Process(MawscSettings mawsc)
         {
             /* If the "help" argument was passed, show the help screen and exit.
              */
-            if(mawscSettings.MawscCommand.StartsWith("h"))
+            if(mawsc.MawscCommand.StartsWith("h"))
             {
                 MAWSC.Help.DisplayHelp.ForDefault();
                 MAWSC.Maintenance.MawscTerminate.Gracefully(0);

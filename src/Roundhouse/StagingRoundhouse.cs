@@ -17,29 +17,29 @@ namespace MAWSC.Roundhouse
 {
     internal class StagingRoundhouse
     {
-        internal static void ParseAction(MawscSettings mawscSettings)
+        internal static void ParseAction(MawscSettings mawsc)
         {
 
-            switch(mawscSettings.MawscAction)
+            switch(mawsc.MawscAction)
             {
                 case "b":
                 case "backup":
-                    BackupStaging.SoupToNuts(mawscSettings);
+                    BackupStaging.SoupToNuts(mawsc);
                     break;
 
                 case "d":
                 case "deploy":
-                    DeployStaging.SoupToNuts(mawscSettings);
+                    DeployStaging.SoupToNuts(mawsc);
                     break;
 
                 case "f":
                 case "fetch":
-                    FetchStaging.SoupToNuts(mawscSettings);
+                    FetchStaging.SoupToNuts(mawsc);
                     break;
 
                 case "r":
                 case "refresh":
-                    RefreshStaging.SoupToNuts(mawscSettings);
+                    RefreshStaging.SoupToNuts(mawsc);
                     break;
 
                 case "i":
@@ -47,7 +47,7 @@ namespace MAWSC.Roundhouse
                 case "information":
                 case "not-passed":
                 default:
-                    StagingInformation.Display(mawscSettings);
+                    StagingInformation.Display(mawsc);
                     break;
             }
 

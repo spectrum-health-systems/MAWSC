@@ -64,11 +64,11 @@ namespace MAWSC.Configuration
         /// <returns></returns>
         internal static MawscSettings Initialize(string[] commandLineArguments, string sessionTimestamp)
         {
-            MawscSettings mawscSettings = Load.FromFile();
+            MawscSettings mawsc = Load.FromFile();
 
-            mawscSettings = Runtime.SetSetting(mawscSettings, commandLineArguments, sessionTimestamp);
+            mawsc = Runtime.SetSetting(mawsc, commandLineArguments, sessionTimestamp);
 
-            return mawscSettings;
+            return mawsc;
         }
     }
 

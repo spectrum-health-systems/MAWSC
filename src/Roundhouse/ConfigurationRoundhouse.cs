@@ -18,18 +18,18 @@ namespace MAWSC.Roundhouse
     internal class ConfigurationRoundhouse
     {
         /// <summary></summary>
-        /// <param name="mawscSettings">tet</param>
-        internal static void ParseAction(MawscSettings mawscSettings)
+        /// <param name="mawsc">tet</param>
+        internal static void ParseAction(MawscSettings mawsc)
         {
-            switch(mawscSettings.MawscAction)
+            switch(mawsc.MawscAction)
             {
                 case "r":
                 case "reset":
-                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawscSettings.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawsc.LogfilePath);
 
                     ConfigurationAction.ResetConfigurationFile();
 
-                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawscSettings), mawscSettings.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);
 
                     break;
 
@@ -38,7 +38,7 @@ namespace MAWSC.Roundhouse
                 case "information":
                 case "not-passed":
                 default:
-                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawscSettings.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawsc.LogfilePath);
 
                     break;
             }

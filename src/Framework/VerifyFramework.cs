@@ -24,29 +24,29 @@ namespace MAWSC.Framework
         ///         - We'll jumpstart the logfile with the header we created earlier, then write log information everywhere going forward.
         ///     </para>
         /// </remarks>
-        /// <param name="mawscSettings"></param>
-        internal static void Startup(MawscSettings mawscSettings)
+        /// <param name="mawsc"></param>
+        internal static void Startup(MawscSettings mawsc)
         { //x
-            RefreshFramework.Directories(mawscSettings);
+            RefreshFramework.Directories(mawsc);
 
-            ExportLog.ToFile(LogHeader.Top(mawscSettings.SessionTimestamp), mawscSettings.LogfilePath);
-            ExportLog.ToEverywhere(LogMessage.ArgumentsPassed(mawscSettings), mawscSettings.LogfilePath);
+            ExportLog.ToFile(LogHeader.Top(mawsc.SessionTimestamp), mawsc.LogfilePath);
+            ExportLog.ToEverywhere(LogMessage.ArgumentsPassed(mawsc), mawsc.LogfilePath);
 
-            RequiredDirectories(mawscSettings);
-            SessionBackupDirectory(mawscSettings.BackupDirectory, mawscSettings.SessionTimestamp);
+            RequiredDirectories(mawsc);
+            SessionBackupDirectory(mawsc.BackupDirectory, mawsc.SessionTimestamp);
         }
 
         /// <summary>Verify that required directories exist, and create them if they don't.</summary>
         /// <returns>Log message.</returns>
-        internal static void RequiredDirectories(MawscSettings mawscSettings)
+        internal static void RequiredDirectories(MawscSettings mawsc)
         { //x
             var requiredDirectories = new List<string>
             {
-                mawscSettings.ConfigurationDirectory,
-                mawscSettings.LogDirectory,
-                mawscSettings.BackupDirectory,
-                mawscSettings.StagingFetchDirectory,
-                mawscSettings.TemporaryDirectory
+                mawsc.ConfigurationDirectory,
+                mawsc.LogDirectory,
+                mawsc.BackupDirectory,
+                mawsc.StagingFetchDirectory,
+                mawsc.TemporaryDirectory
             };
 
             var logContent = "";
@@ -67,7 +67,7 @@ namespace MAWSC.Framework
                 }
             }
 
-            ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawscSettings.LogfilePath);
+            ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawsc.LogfilePath);
         }
 
         /// <summary>Verify that the session backup directory exists, and create it if it does not.</summary>
@@ -76,7 +76,7 @@ namespace MAWSC.Framework
         internal static void SessionBackupDirectory(string sessionBackupDirectory, string sessionTimeStamp)
         {
             Du.WithDirectory.ConfirmDirectoryExists($"{sessionBackupDirectory}{sessionTimeStamp}");
-            ExportLog.ToConsole(MAWSC.Logging.LogMessage.SessionBackupDirectoryVerify());
+            ExportLog.ToConsole(LogMessage.SessionBackupDirectoryVerify());
         }
 
     }

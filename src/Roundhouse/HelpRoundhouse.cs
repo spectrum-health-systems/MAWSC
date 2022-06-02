@@ -8,11 +8,11 @@ namespace MAWSC.Roundhouse
         /// wetrw
         /// </summary>
         /// <param name="mawscCommand">tet</param>
-        /// <param name="mawscSettings">tet</param>
-        internal static void ParseAction(MawscSettings mawscSettings)
+        /// <param name="mawsc">tet</param>
+        internal static void ParseAction(MawscSettings mawsc)
         {
 
-            switch(mawscSettings.MawscAction)
+            switch(mawsc.MawscAction)
             {
                 case "c":
                 case "config":

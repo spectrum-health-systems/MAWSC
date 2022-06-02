@@ -19,31 +19,31 @@ namespace MAWSC.Roundhouse
     internal class MawscCommandRoundhouse
     {
         /// <summary> </summary>
-        /// <param name="mawscSettings"></param>
-        internal static void ParseCommand(MawscSettings mawscSettings)
+        /// <param name="mawsc"></param>
+        internal static void ParseCommand(MawscSettings mawsc)
         {
-            switch(mawscSettings.MawscCommand)
+            switch(mawsc.MawscCommand)
             {
                 case "h":
                 case "help":
-                    HelpRoundhouse.ParseAction(mawscSettings);
+                    HelpRoundhouse.ParseAction(mawsc);
                     //Help.DisplayHelp.Complete();
                     break;
 
                 case "c":
                 case "config":
                 case "configuration":
-                    ConfigurationRoundhouse.ParseAction(mawscSettings);
+                    ConfigurationRoundhouse.ParseAction(mawsc);
                     break;
 
                 case "s":
                 case "stage":
                 case "staging":
-                    StagingRoundhouse.ParseAction(mawscSettings);
+                    StagingRoundhouse.ParseAction(mawsc);
                     break;
 
                 default:
-                    Console.WriteLine(LogMessage.CommandIsInvalid(mawscSettings.MawscCommand));
+                    Console.WriteLine(LogMessage.CommandIsInvalid(mawsc.MawscCommand));
                     MawscTerminate.Gracefully(2);
                     break;
             }

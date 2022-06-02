@@ -17,22 +17,22 @@ namespace MAWSC.Staging
 {
     internal class DeployStaging
     {
-        internal static void SoupToNuts(MawscSettings mawscSettings)
+        internal static void SoupToNuts(MawscSettings mawsc)
         {
-            BackupStaging.SoupToNuts(mawscSettings);
-            FetchStaging.SoupToNuts(mawscSettings);
+            BackupStaging.SoupToNuts(mawsc);
+            FetchStaging.SoupToNuts(mawsc);
 
-            switch(mawscSettings.MawscOption)
+            switch(mawsc.MawscOption)
             {
                 case "a":
                 case "all":
-                    All(mawscSettings);
+                    All(mawsc);
                     break;
 
                 case "m":
                 case "min":
                 case "minimal":
-                    Minimal(mawscSettings);
+                    Minimal(mawsc);
                     break;
 
                 case "not-passed":
@@ -43,20 +43,20 @@ namespace MAWSC.Staging
 
         /// <summary></summary>
         /// 
-        /// <param name="mawscSettings"></param>
-        private static void All(MawscSettings mawscSettings)
+        /// <param name="mawsc"></param>
+        private static void All(MawscSettings mawsc)
         {
-            var targetFile = $"{mawscSettings.TemporaryDirectory}{mawscSettings.RepositoryBranch}";
+            var targetFile = $"{mawsc.TemporaryDirectory}{mawsc.RepositoryBranch}";
 
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingTestingDirectory);
+            Du.WithDirectory.RefreshRecursively(mawsc.StagingTestingDirectory);
 
             ExportLog.ToConsole(LogMessage.InfoMovingFiles());
-            Du.WithDirectory.MoveRecursively($"{targetFile}/", mawscSettings.StagingTestingDirectory);
+            Du.WithDirectory.MoveRecursively($"{targetFile}/", mawsc.StagingTestingDirectory);
         }
 
         /// <summary></summary>
-        /// <param name="mawscSettings"></param>
-        private static void Minimal(MawscSettings mawscSettings)
+        /// <param name="mawsc"></param>
+        private static void Minimal(MawscSettings mawsc)
         {
             //var stagingSrcDirectory = $"{mawscSettings.StagingFetchDirectory}{mawscSettings.RepositorySrcDirectory}";
 

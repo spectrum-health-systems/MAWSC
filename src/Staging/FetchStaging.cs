@@ -16,20 +16,20 @@ namespace MAWSC.Staging
 {
     internal class FetchStaging
     {
-        internal static void SoupToNuts(MawscSettings mawscSettings)
+        internal static void SoupToNuts(MawscSettings mawsc)
         {
-            BackupStaging.SoupToNuts(mawscSettings);
-            CleanStaging.FetchLocation(mawscSettings);
+            BackupStaging.SoupToNuts(mawsc);
+            CleanStaging.FetchLocation(mawsc);
 
-            var targetFile = $"{mawscSettings.TemporaryDirectory}{mawscSettings.RepositoryBranch}"; // config
+            var targetFile = $"{mawsc.TemporaryDirectory}{mawsc.RepositoryBranch}"; // config
 
-            GetFromUrl(mawscSettings.RepositoryUrl, targetFile);
+            GetFromUrl(mawsc.RepositoryUrl, targetFile);
             UncompressStagingSource(targetFile);
 
-            var sessionBackupDirectory = $"{mawscSettings.BackupDirectory}{mawscSettings.SessionTimestamp}/";
-            var targetDirectory        = $"{targetFile}/{mawscSettings.RepositoryName}-{mawscSettings.RepositoryBranch}";
+            var sessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}/";
+            var targetDirectory        = $"{targetFile}/{mawsc.RepositoryName}-{mawsc.RepositoryBranch}";
 
-            CopyTo(targetFile, sessionBackupDirectory, targetDirectory, mawscSettings.StagingFetchDirectory);
+            CopyTo(targetFile, sessionBackupDirectory, targetDirectory, mawsc.StagingFetchDirectory);
         }
 
         /// <summary>Fetch staging sourcecode from a URL.</summary>

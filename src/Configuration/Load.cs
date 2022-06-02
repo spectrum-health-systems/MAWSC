@@ -36,7 +36,7 @@ namespace MAWSC.Configuration
         /// <returns>Configuration settings.</returns>
         internal static MawscSettings FromFile()
         {
-            var configurationFile = MAWSC.Configuration.ConfigurationInformation.GetDefaultFilePath();
+            var configurationFile = ConfigurationInformation.GetDefaultFilePath();
 
             if(!File.Exists($@"{configurationFile}"))
             {

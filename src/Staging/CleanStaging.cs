@@ -4,9 +4,9 @@ namespace MAWSC.Staging
 {
     internal class CleanStaging
     {
-        internal static void FetchLocation(MawscSettings mawscSettings)
+        internal static void FetchLocation(MawscSettings mawsc)
         {
-            Du.WithDirectory.RefreshRecursively(mawscSettings.StagingFetchDirectory);
+            Du.WithDirectory.RefreshRecursively(mawsc.StagingFetchDirectory);
         }
     }
 }

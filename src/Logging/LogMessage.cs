@@ -22,10 +22,10 @@ namespace MAWSC.Logging
                    $"{LogComponent.TypeForHelp()}";
         }
 
-        internal static string ArgumentsPassed(MawscSettings mawscSettings)
+        internal static string ArgumentsPassed(MawscSettings mawsc)
         {
             return $"{LogHeader.Info("Passed command line arguments: ")}" +
-                   $"{LogComponent.ArgumentsPassed(mawscSettings)}";
+                   $"{LogComponent.ArgumentsPassed(mawsc)}";
         }
 
         internal static string BackupStagingSource(string stagingFetchDirectory, string sessionBackupDirectory)
@@ -39,10 +39,10 @@ namespace MAWSC.Logging
             return $"{LogHeader.Request("Backup current staging source.")}";
         }
 
-        internal static string BackupStagingTarget(MawscSettings mawscSettings)
+        internal static string BackupStagingTarget(MawscSettings mawsc)
         {
             return $"{LogHeader.Backup("Backing up current staging target...please wait.")}" +
-                   $"{LogComponent.BackupStagingTarget(mawscSettings)}";
+                   $"{LogComponent.BackupStagingTarget(mawsc)}";
         }
 
         internal static string InfoMovingFiles()
@@ -61,10 +61,10 @@ namespace MAWSC.Logging
                    $"{LogComponent.TypeForHelp()}";
         }
 
-        internal static string ConfigurationInformation(MawscSettings mawscSettings)
+        internal static string ConfigurationInformation(MawscSettings mawsc)
         {
             return $"{LogHeader.Sub("Current configuration information:")}" +
-                   $"{LogComponent.ConfigurationInformation(mawscSettings)}";
+                   $"{LogComponent.ConfigurationInformation(mawsc)}";
         }
 
         internal static string RequestConfigurationInformation()
@@ -108,10 +108,10 @@ namespace MAWSC.Logging
         }
 
 
-        internal static string RequestStagingInformation(MawscSettings mawscSettings)
+        internal static string RequestStagingInformation(MawscSettings mawsc)
         {
             return $"{LogHeader.Request("Staging information")}" +
-                   $"{LogComponent.StagingInformation(mawscSettings)}";
+                   $"{LogComponent.StagingInformation(mawsc)}";
         }
     }
 }
