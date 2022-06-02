@@ -39,7 +39,7 @@ namespace MAWSC.Roundhouse
                 case "not-passed":
                 default:
                     ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawsc.LogfilePath);
-
+                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);
                     break;
             }
         }

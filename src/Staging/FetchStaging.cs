@@ -42,7 +42,6 @@ namespace MAWSC.Staging
         private static void UncompressStagingSource(string targetFile)
         {
             Du.WithArchive.Uncompress($"{targetFile}.zip", $"{targetFile}/");
-
         }
 
         private static void CopyTo(string targetFile, string sessionBackupDirectory, string targetDirectory,
