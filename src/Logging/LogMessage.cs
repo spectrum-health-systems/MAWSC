@@ -72,6 +72,18 @@ namespace MAWSC.Logging
             return $"{LogHeader.Request("Configuration information")}";
         }
 
+
+        internal static string StagingInformation(MawscSettings mawsc)
+        {
+            return $"{LogHeader.Sub("Current staging information:")}" +
+                   $"{LogComponent.StagingInformation(mawsc)}";
+        }
+
+        internal static string RequestStagingInformation()
+        {
+            return $"{LogHeader.Request("Staging information")}";
+        }
+
         internal static string ConfigurationFileInvalid()
         {
             return $"{LogHeader.Error("Invalid configuration file.")}" +

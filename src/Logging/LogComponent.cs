@@ -50,6 +50,23 @@ namespace MAWSC.Logging
                    $"For a list of valid commands/actions/options, please type: \"mawsc -help\"{Environment.NewLine}";
         }
 
+        internal static string StagingInformation(MawscSettings mawsc)
+        {
+            var assemblyVersion = Staging.StagingInformation.GetWebServiceVersion(mawsc);
+
+            var lastFetchedDate = Staging.StagingInformation.GetLastFetchedTimestamp(mawsc);
+
+
+            return $"Name: {mawsc.RepositoryName}{Environment.NewLine}" +
+                   $"Branch: {mawsc.RepositoryBranch}{Environment.NewLine}" +
+                   $"Version: {assemblyVersion}{Environment.NewLine}" +
+                   $"Last fetched: {lastFetchedDate}{Environment.NewLine}" +
+                   $"Fetch location directory: {mawsc.StagingFetchDirectory}{Environment.NewLine}" +
+                   $"Testing location directory: {mawsc.StagingTestingDirectory}{Environment.NewLine}" +
+                   $"Deployment location directory: {mawsc.ProductionDirectory}{Environment.NewLine}" +
+                   $"{Environment.NewLine}";
+        }
+
         internal static string ConfigurationFileWillBeReset()
         {
             return $"Configuration file will be created.";
@@ -64,12 +81,6 @@ namespace MAWSC.Logging
         internal static string FrameworkRequiredDirectoriesVerified(string verificationMessage)
         {
             return $"{verificationMessage}";
-        }
-
-        internal static string StagingInformation(MawscSettings mawsc)
-        {
-            return $"Staging source directory: {mawsc.StagingFetchDirectory}{Environment.NewLine}" +
-                   $"Staging target directory: {mawsc.StagingTestingDirectory}{Environment.NewLine}";
         }
 
         internal static string SessionBackupDirectoryVerified()

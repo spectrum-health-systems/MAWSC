@@ -11,6 +11,7 @@
 // b220531.110901
 
 using MAWSC.Configuration;
+using MAWSC.Logging;
 
 namespace MAWSC.Staging
 {
@@ -18,18 +19,50 @@ namespace MAWSC.Staging
     {
         internal static void Display(MawscSettings mawsc)
         {
-            var stagingInformation = $"Current staging information:" +
-                                     $"Name: {mawsc.RepositoryName}{Environment.NewLine}" +
-                                     $"Branch: {mawsc.RepositoryBranch} mmddyy hh:mm:ss{Environment.NewLine}" +
-                                     $"Version: mmddyy hh:mm:ss{Environment.NewLine}" +
-                                     $"Last fetched: mmddyy hh:mm:ss{Environment.NewLine}" +
-                                     $"Last deployed: mmddyy hh:mm:ss{Environment.NewLine}" +
-                                     $"Last logfile timestamp: mmddyy hh:mm:ss{Environment.NewLine}" +
-                                     $"Logfile directory size: XXXMB{Environment.NewLine}" +
-                                     $"Fetch location directory: {mawsc.StagingFetchDirectory} /path/to/{Environment.NewLine}" +
-                                     $"Testing location directory: {mawsc.StagingTestingDirectory} /path/to/{Environment.NewLine}" +
-                                     $"Deployment location directory: {mawsc.ProductionDirectory}{Environment.NewLine}" +
-                                     $"{Environment.NewLine}";
+            ExportLog.ToConsole(LogMessage.RequestStagingInformation());
+            ExportLog.ToConsole(LogMessage.StagingInformation(mawsc));
         }
+
+        internal static string GetWebServiceVersion(MawscSettings mawsc)
+        {
+            var assemblyVersion = "unknown";
+
+            var assemblyInfoPath = $"{mawsc.StagingFetchDirectory}Properties/AssemblyInfo.cs";
+
+            if(File.Exists(assemblyInfoPath))
+            {
+                var assemblyInfo = File.ReadAllLines(assemblyInfoPath);
+
+                foreach(var line in assemblyInfo)
+                {
+                    if(line.StartsWith("[assembly: AssemblyVersion"))
+                    {
+                        var start = line.IndexOf("\"");
+                        var sub = line.Substring(start +1);
+                        var end = sub.IndexOf("\"");
+                        assemblyVersion = sub.Substring(0, end);
+                    }
+                }
+
+            }
+
+            return assemblyVersion;
+        }
+
+        internal static string GetLastFetchedTimestamp(MawscSettings mawsc)
+        {
+            var lastFetchedDate = "unknown";
+
+
+            if(Directory.Exists(mawsc.StagingFetchDirectory))
+            {
+                lastFetchedDate = Directory.GetCreationTime(mawsc.StagingFetchDirectory).ToString();
+
+            }
+
+            return lastFetchedDate;
+        }
+
+
     }
 }
