@@ -8,7 +8,7 @@
 
 // MAWSC.Help.HelpComponent.cs
 // Help components.
-// b220531.093925 x
+// b220603.191636
 
 namespace MAWSC.Help
 {

@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.Runtime.cs
 // Setting properties at runtime.
-// b220526.080326
+// b220603.191717
 
 using System.Reflection;
 

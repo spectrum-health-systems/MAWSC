@@ -8,7 +8,7 @@
 
 // MAWSC.Requirements.VerifyRequirements.cs
 // Verify MAWSC requirements.
-// b220601.160201
+// bb220603.191517
 
 using MAWSC.CommandLine;
 using MAWSC.Configuration;

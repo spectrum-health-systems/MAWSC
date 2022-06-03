@@ -8,7 +8,7 @@
 
 // MAWSC.Roundhouse.MawscCommandRoundhouse.cs
 // MAWSC Command roundhouse.
-// b220531.093659
+// b220603.191418
 
 using MAWSC.Configuration;
 using MAWSC.Logging;

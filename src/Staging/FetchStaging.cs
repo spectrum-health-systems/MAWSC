@@ -7,8 +7,8 @@
 // =============================================================================
 
 // MAWSC.Staging.FetchStaging.cs
-// Get the staging source from a repository.
-// bb220602.083119
+// Fetch the staging source from a repository.
+// b220603.191052
 
 using MAWSC.Configuration;
 
@@ -16,6 +16,8 @@ namespace MAWSC.Staging
 {
     internal class FetchStaging
     {
+        /// <summary></summary>
+        /// <param name="mawsc"></param>
         internal static void SoupToNuts(MawscSettings mawsc)
         {
             BackupStaging.SoupToNuts(mawsc);
@@ -39,11 +41,18 @@ namespace MAWSC.Staging
             Du.Internet.DownloadZipFromUrl(repositoryUrl, $"{targetFile}.zip");
         }
 
+        /// <summary></summary>
+        /// <param name="targetFile"></param>
         private static void UncompressStagingSource(string targetFile)
         {
             Du.WithArchive.Uncompress($"{targetFile}.zip", $"{targetFile}/");
         }
 
+        /// <summary></summary>
+        /// <param name="targetFile"></param>
+        /// <param name="sessionBackupDirectory"></param>
+        /// <param name="targetDirectory"></param>
+        /// <param name="stagingFetchDirectory"></param>
         private static void CopyTo(string targetFile, string sessionBackupDirectory, string targetDirectory,
                                    string stagingFetchDirectory)
         {

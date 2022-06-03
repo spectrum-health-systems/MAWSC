@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
-// b220531.085849
+// b220603.191721
 
 namespace MAWSC.Configuration
 {

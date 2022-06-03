@@ -8,7 +8,7 @@
 
 // MAWSC.Framework.VerifyFramework.cs
 // Verify framework components.
-// b220531.085752 x
+// b220603.191659
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -78,6 +78,5 @@ namespace MAWSC.Framework
             Du.WithDirectory.ConfirmDirectoryExists($"{sessionBackupDirectory}{sessionTimeStamp}");
             ExportLog.ToConsole(LogMessage.SessionBackupDirectoryVerify());
         }
-
     }
 }

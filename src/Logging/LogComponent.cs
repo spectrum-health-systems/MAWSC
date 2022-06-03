@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.LogComponent.cs
 // Logging components.
-// b220531.085407
+// b220603.191619
 
 using MAWSC.Configuration;
 
@@ -55,7 +55,6 @@ namespace MAWSC.Logging
             var assemblyVersion = Staging.StagingInformation.GetWebServiceVersion(mawsc);
 
             var lastFetchedDate = Staging.StagingInformation.GetLastFetchedTimestamp(mawsc);
-
 
             return $"Name: {mawsc.RepositoryName}{Environment.NewLine}" +
                    $"Branch: {mawsc.RepositoryBranch}{Environment.NewLine}" +

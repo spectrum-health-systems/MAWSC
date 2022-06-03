@@ -7,8 +7,8 @@
 // =============================================================================
 
 // MAWSC.Staging.StagingInformation.cs
-// Get information about the staging source.
-// b220531.110901
+// Get information about the staging environment.
+// b220603.190907
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -17,12 +17,17 @@ namespace MAWSC.Staging
 {
     internal class StagingInformation
     {
+        /// <summary></summary>
+        /// <param name="mawsc"></param>
         internal static void Display(MawscSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestStagingInformation());
             ExportLog.ToConsole(LogMessage.StagingInformation(mawsc));
         }
 
+        /// <summary></summary>
+        /// <param name="mawsc"></param>
+        /// <returns></returns>
         internal static string GetWebServiceVersion(MawscSettings mawsc)
         {
             var assemblyVersion = "unknown";
@@ -43,16 +48,17 @@ namespace MAWSC.Staging
                         assemblyVersion = sub.Substring(0, end);
                     }
                 }
-
             }
 
             return assemblyVersion;
         }
 
+        /// <summary></summary>
+        /// <param name="mawsc"></param>
+        /// <returns></returns>
         internal static string GetLastFetchedTimestamp(MawscSettings mawsc)
         {
             var lastFetchedDate = "unknown";
-
 
             if(Directory.Exists(mawsc.StagingFetchDirectory))
             {
@@ -62,7 +68,5 @@ namespace MAWSC.Staging
 
             return lastFetchedDate;
         }
-
-
     }
 }

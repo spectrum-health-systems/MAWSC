@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.FileInformation.cs
 // Information about the configuration file.
-// b220531.083832 x
+// b220603.191730
 
 namespace MAWSC.Configuration
 {

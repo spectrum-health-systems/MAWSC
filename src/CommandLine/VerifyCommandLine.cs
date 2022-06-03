@@ -8,7 +8,7 @@
 
 // MAWSC.CommandLine.Verify.cs
 // Verify configuration data.
-// b220531.083429 x
+// b220603.191739
 
 namespace MAWSC.CommandLine
 {

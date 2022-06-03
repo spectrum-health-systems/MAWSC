@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.Load.cs
 // Load configuration settings.
-// b220526.080326
+// b220603.191726
 
 namespace MAWSC.Configuration
 {

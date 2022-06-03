@@ -8,7 +8,7 @@
 
 // MAWSC.Roundhouse.ConfigurationRoundhouse.cs
 // Configuration roundhouse.
-// b220526.080326
+// b220603.191512
 
 using MAWSC.Configuration;
 using MAWSC.Logging;

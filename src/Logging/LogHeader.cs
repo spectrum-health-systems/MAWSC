@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.LogHeader.cs
 // Logging headers.
-// b220531.085417
+// b220603.191548
 
 using System.Reflection;
 
@@ -110,6 +110,5 @@ namespace MAWSC.Logging
                    $"========================================{Environment.NewLine}" +
                    $"[STARTING]";
         }
-
     }
 }

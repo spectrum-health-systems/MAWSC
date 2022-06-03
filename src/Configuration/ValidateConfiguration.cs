@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.Validate.cs
 // Validate configuration data.
-// b220531.083429 x
+// b220603.191711
 
 using MAWSC.Logging;
 

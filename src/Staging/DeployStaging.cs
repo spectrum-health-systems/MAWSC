@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.DeployStaging.cs
 // Deploy the current staging source.
-// b220601.161356
+// b220603.191137
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -17,6 +17,8 @@ namespace MAWSC.Staging
 {
     internal class DeployStaging
     {
+        /// <summary></summary>
+        /// <param name="mawsc"></param>
         internal static void SoupToNuts(MawscSettings mawsc)
         {
             BackupStaging.SoupToNuts(mawsc);
@@ -42,7 +44,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// 
         /// <param name="mawsc"></param>
         private static void All(MawscSettings mawsc)
         {

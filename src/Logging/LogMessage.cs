@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.LogMessage.cs
 // Logging message.
-// bb220531.085425
+// b220603.191536
 
 using MAWSC.Configuration;
 
@@ -71,8 +71,6 @@ namespace MAWSC.Logging
         {
             return $"{LogHeader.Request("Configuration information")}";
         }
-
-
         internal static string StagingInformation(MawscSettings mawsc)
         {
             return $"{LogHeader.Sub("Current staging information:")}" +
@@ -118,7 +116,6 @@ namespace MAWSC.Logging
             return $"{LogHeader.Verify("Session backup directory")}" +
                    $"{LogComponent.SessionBackupDirectoryVerified()}";
         }
-
 
         internal static string RequestStagingInformation(MawscSettings mawsc)
         {

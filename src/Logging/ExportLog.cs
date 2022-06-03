@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.ExportLog.cs
 // Exports log data to the command line and/or a local file.
-// b220531.085400 x
+// b220603.191624
 
 namespace MAWSC.Logging
 {

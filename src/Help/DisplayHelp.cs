@@ -8,7 +8,7 @@
 
 // MAWSC.Help.DisplayHelp.cs
 // Display help information on the console.
-// b220531.093936 x
+// b220603.191649
 
 using MAWSC.Maintenance;
 
@@ -50,7 +50,6 @@ namespace MAWSC.Help
 
             MawscTerminate.Gracefully(0);
         }
-
         internal static void ForStaging()
         {
             Console.Clear();
