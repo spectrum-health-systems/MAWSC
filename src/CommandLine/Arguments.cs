@@ -8,13 +8,24 @@
 
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
-// b220606.131020
+// b220606.132211
 
 namespace MAWSC.CommandLine
 {
     internal class Arguments
     {
-        /// <summary>Get individual MAWSC session command, action, and option.</summary>
+        /// <summary>
+        /// Get individual MAWSC session command, action, and option.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
+        ///     - Gets the raw MAWSC session command/action/option from the command line. These components may contain dashes, and any combination of casing.<br/>
+        ///     - There must be a MAWSC session command value, which will have been verified at this point.<br/>
+        ///     - The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.<br/>
+        ///     - The MAWSC session command/action/option values are cleaned up so it's easier to apply logic to them.<br/>
+        ///     </para>
+        /// </remarks>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
         internal static Dictionary<string, string> GetIndividualComponents(string[] arguments)
@@ -24,7 +35,6 @@ namespace MAWSC.CommandLine
 
             return cleanComponents;
         }
-
         private static Dictionary<string, string> GetRawComponents(string[] arguments)
         {
             return new Dictionary<string, string>()
@@ -35,11 +45,24 @@ namespace MAWSC.CommandLine
             };
         }
 
-        private static string GetRawCommand(string[] arguments) => arguments[0];
+        private static string GetRawCommand(string[] arguments)
+        {
+            return arguments[0];
+        }
 
-        private static string GetRawAction(string[] arguments) => arguments.Length >= 2 ? arguments[1] : "unused";
+        private static string GetRawAction(string[] arguments)
+        {
+            return (arguments.Length >= 2)
+                ? arguments[1]
+                : "unused";
+        }
 
-        private static string GetRawOption(string[] arguments) => arguments.Length >= 3 ? arguments[2] : "unused";
+        private static string GetRawOption(string[] arguments)
+        {
+            return (arguments.Length >= 3)
+                ? arguments[2]
+                : "unused";
+        }
 
         private static Dictionary<string, string> CleanComponents(Dictionary<string, string> rawComponents)
         {
