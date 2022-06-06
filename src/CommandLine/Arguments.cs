@@ -8,14 +8,14 @@
 
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
-// b220606.132211
+// b220606.132655
 
 namespace MAWSC.CommandLine
 {
     internal class Arguments
     {
         /// <summary>
-        /// Get individual MAWSC session command, action, and option.
+        /// Get individual MAWSC session command/action/option.
         /// </summary>
         /// <remarks>
         ///     <para>
@@ -35,6 +35,18 @@ namespace MAWSC.CommandLine
 
             return cleanComponents;
         }
+
+        /// <summary>
+        /// Get individual MAWSC session command, action, and option.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     - Gets the raw MAWSC session command/action/option from the command line.<br/>
+        ///     - These components may contain dashes, and any combination of casing.
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>Individual command, action, and option values.</returns>
         private static Dictionary<string, string> GetRawComponents(string[] arguments)
         {
             return new Dictionary<string, string>()
@@ -45,11 +57,32 @@ namespace MAWSC.CommandLine
             };
         }
 
+        /// <summary>
+        /// Get MAWSC session command.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     - There must be a MAWSC session command value, which will have been verified at this point.
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWSC session command.</returns>
         private static string GetRawCommand(string[] arguments)
         {
             return arguments[0];
         }
 
+        /// <summary>
+        /// Get individual MAWSC session action.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     - The MAWSC session action is optional.<br/>
+        ///     - If an MAWSC session action is not passed, it is set to "unused".
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWSC session action.</returns>
         private static string GetRawAction(string[] arguments)
         {
             return (arguments.Length >= 2)
@@ -57,6 +90,17 @@ namespace MAWSC.CommandLine
                 : "unused";
         }
 
+        /// <summary>
+        /// Get individual MAWSC session option.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     - The MAWSC session option is optional.<br/>
+        ///     - If an MAWSC session option is not passed, it is set to "unused".
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWSC session option.</returns>
         private static string GetRawOption(string[] arguments)
         {
             return (arguments.Length >= 3)
@@ -64,6 +108,16 @@ namespace MAWSC.CommandLine
                 : "unused";
         }
 
+        /// <summary>
+        /// Clean MAWSC session command/action/option.
+        /// </summary>
+        /// <remarks>
+        ///     <para>
+        ///     - The MAWSC session command/action/option values are cleaned up so it's easier to apply logic to them.
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>Individual command, action, and option values.</returns>
         private static Dictionary<string, string> CleanComponents(Dictionary<string, string> rawComponents)
         {
             var cleanComponents = new Dictionary<string, string>();
