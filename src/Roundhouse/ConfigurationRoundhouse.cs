@@ -36,7 +36,7 @@ namespace MAWSC.Roundhouse
                 case "i":
                 case "info":
                 case "information":
-                case "not-passed":
+                case "unused":
                 default:
                     ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawsc.LogfilePath);
                     ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);

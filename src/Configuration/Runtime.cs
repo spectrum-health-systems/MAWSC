@@ -30,7 +30,7 @@ namespace MAWSC.Configuration
 
             mawsc.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
-            var mawscArguments = CommandLine.Arguments.GetArgumentValues(commandLineArguments);
+            var mawscArguments = CommandLine.Arguments.GetIndividualComponents(commandLineArguments);
 
             mawsc.MawscCommand = mawscArguments["mawscCommand"];
             mawsc.MawscAction = mawscArguments["mawscAction"];

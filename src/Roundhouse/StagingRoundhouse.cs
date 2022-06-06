@@ -45,7 +45,7 @@ namespace MAWSC.Roundhouse
                 case "i":
                 case "info":
                 case "information":
-                case "not-passed":
+                case "unused":
                 default:
                     StagingInformation.Display(mawsc);
                     break;

@@ -37,7 +37,7 @@ namespace MAWSC.Staging
                     Minimal(mawsc);
                     break;
 
-                case "not-passed":
+                case "unused":
                 default:
                     break;
             }

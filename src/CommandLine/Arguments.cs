@@ -7,107 +7,95 @@
 // =============================================================================
 
 // MAWSC.CommandLine.Arguments.cs
-// Command line stuff.
-// b220603.190907
-
-using MAWSC.Configuration;
+// Processes the command line arguments that are passed to MAWSC at execution.
+// b220606.130747
 
 namespace MAWSC.CommandLine
 {
     internal class Arguments
     {
-        /// <summary>
-        /// Get the MAWSC command, action, and option.
-        /// </summary>
-        /// <param name="commandLineArguments">Arguments passed via the command line.</param>
-        /// <returns></returns>
-        internal static Dictionary<string, string> GetArgumentValues(string[] commandLineArguments)
+        /// <summary>Get individual MAWSC session command, action, and option.</summary>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>Individual command, action, and option values.</returns>
+        internal static Dictionary<string, string> GetIndividualComponents(string[] arguments)
         {
-            return new Dictionary<string, string>
+            Dictionary<string, string> rawComponents   = GetRawComponents(arguments);
+            Dictionary<string, string> cleanComponents = CleanComponents(rawComponents);
+
+            return cleanComponents;
+        }
+
+        /// <summary>Get raw passed arguments.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         - Arguments can be passed with leading dashes, and any case combination. These end up as the rawComponents, which will be cleaned up later.
+        ///     </para> 
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>Arguments as they were passed via the command line..</returns>
+        private static Dictionary<string, string> GetRawComponents(string[] arguments)
+        {
+            return new Dictionary<string, string>()
             {
-                {"mawscCommand", GetCommandValue(commandLineArguments) },
-                {"mawscAction",  GetActionValue(commandLineArguments) },
-                {"mawscOption",  GetOptionValue(commandLineArguments) },
+                {"mawscCommand", GetRawCommand(arguments)},
+                {"mawscAction",  GetRawAction(arguments) },
+                {"mawscOption",  GetRawOption(arguments) },
             };
         }
 
-        /// <summary>
-        /// Get the MAWSC action from the command line arguments.
-        /// </summary>
-        /// <param name="commandLineArguments">Command line arguments.</param>
-        /// <returns>The MAWSC action.</returns>
-        internal static string GetActionValue(string[] commandLineArguments)
-        {
-            return commandLineArguments.Length >= 2
-                ? commandLineArguments[1].Trim().ToLower().Replace("-", "")
-                : "not-passed";
-        }
+        /// <summary>Get MAWSC session command from the command line.</summary>
+        /// <remarks>
+        ///     <para>
+        ///      <b><u>NOTES</u></b><br/>
+        ///      - A MAWSC command is required, and will have been verified at this point.
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWS session command.</returns>
+        private static string GetRawCommand(string[] arguments) => arguments[0];
 
-        /// <summary>
-        /// Get the MAWSC command from the command line arguments.
-        /// </summary>
-        /// <param name="commandLineArguments">Command line arguments.</param>
-        /// <returns>The MAWSC command.</returns>
-        internal static string GetCommandValue(string[] commandLineArguments)
-        {
-            return commandLineArguments[0].Trim().ToLower().Replace("-", "");
-        }
+        /// <summary>Get MAWSC session action from the command line.</summary>
+        /// <remarks>
+        ///     <para>
+        ///      <b><u>NOTES</u></b><br/>
+        ///      - If a MAWSC action wasn't passsed, it will be set to the default "unused" value.
+        ///     </para>
+        /// </remarks> 
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWS session action.</returns>
+        private static string GetRawAction(string[] arguments) => arguments.Length >= 2 ? arguments[1] : "unused";
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="mawscCommand"></param>
-        /// <param name="validCommands"></param>
-        /// <returns></returns>
-        internal static bool Validate(string mawscCommand, List<string> validCommands)
-        {
-            return validCommands.Contains(mawscCommand);
-        }
+        /// <summary>Get MAWSC session option from the command line.</summary>
+        /// <remarks>
+        ///     <para>
+        ///      <b><u>NOTES</u></b><br/>
+        ///      - If a MAWSC option wasn't passsed, it will be set to the default "unused" value.
+        ///     </para>
+        /// </remarks> 
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        /// <returns>MAWS session option.</returns>
+        private static string GetRawOption(string[] arguments) => arguments.Length >= 3 ? arguments[2] : "unused";
 
-        /// <summary>
-        /// wetrw
-        /// </summary>
-        /// <param name="mawscCommand">tet</param>
-        /// <param name="mawsc">tet</param>
-        internal static void Process(MawscSettings mawsc)
+        /// <summary>Cleanup the MAWSC session command, action, and option.</summary>
+        /// <remarks>
+        ///     <para>
+        ///      <b><u>NOTES</u></b><br/>
+        ///      - Removes and dashes, and makes everything lowercase to make the logic around these components easier.
+        ///     </para>
+        /// </remarks> 
+        /// <param name="rawComponents">The MAWSC session command, action, and option as they were passed via the command line.</param>
+        /// <returns>Cleaned MAWSC session command, action, and option.</returns>
+        private static Dictionary<string, string> CleanComponents(Dictionary<string, string> rawComponents)
         {
-            /* If the "help" argument was passed, show the help screen and exit.
-             */
-            if(mawsc.MawscCommand.StartsWith("h"))
+            var cleanComponents = new Dictionary<string, string>();
+
+            foreach(KeyValuePair<string, string> item in rawComponents)
             {
-                MAWSC.Help.DisplayHelp.ForDefault();
-                MAWSC.Maintenance.MawscTerminate.Gracefully(0);
+                cleanComponents[item.Key] = item.Value.Trim().ToLower().Replace("-", "");
             }
-            else
-            {
-                //MAWSC.Maintenance.Initialize(mawscArguments, mawscConfiguration);
 
-                ////if(mawscArguments["mawscCommand"].StartsWith("c"))
-                ////{
-                ////    MAWSC.Configuration.Roundhouse.ProcessAction(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscSettings);
-                ////}
-                ////else if(mawscArguments["mawscCommand"].StartsWith("p"))
-                ////{
-                ////    //CommandProduction(mawscConfiguration);
-                ////}
-                ////else if(mawscArguments["mawscCommand"].StartsWith("s"))
-                ////{
-                ////    //MAWSC.Staging.Roundhouse.Process(mawscArguments["mawscAction"], mawscArguments["mawscOption"], mawscConfiguration);
-
-                ////}
-            }
-        }
-
-        /// <summary>
-        /// Get the MAWSC option from the command line arguments.
-        /// </summary>
-        /// <param name="commandLineArguments">Command line arguments.</param>
-        /// <returns>The MAWSC option.</returns>
-        internal static string GetOptionValue(string[] commandLineArguments)
-        {
-            return commandLineArguments.Length >= 3
-                ? commandLineArguments[2].Trim().ToLower().Replace("-", "")
-                : "not-passed";
+            return cleanComponents;
         }
     }
 }

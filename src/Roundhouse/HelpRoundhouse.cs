@@ -47,7 +47,7 @@ namespace MAWSC.Roundhouse
                 case "refresh":
                     break;
 
-                case "not-passed":
+                case "unused":
                 default:
                     MAWSC.Help.DisplayHelp.ForDefault();
                     break;
