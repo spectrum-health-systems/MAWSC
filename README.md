@@ -199,7 +199,6 @@ MAWSC syntax is:
 mawsc -<command>
 ```
 For example:
-MAWSC syntax is:
 ```
 mawsc -help
 ```
@@ -214,12 +213,20 @@ Commands also have shortcuts. For example, instead of typing `mawsc -help`, you 
 As of version 2.0 of MAWSC, the following commands are valid:
 
 
-| Command                     | Description                               |
-|:--------------------------- |:----------------------------------------- |
-| -help, -h                   | Display help information to the console   |
-| -configuration, -config, -c | Do something with the configuration file  |
-| -staging, -stage, -s        | Do something with the staging environment |
+| Command                     | Description                               | Default behavior                        |
+|:--------------------------- |:----------------------------------------- |:--------------------------------------- |
+| -help, -h                   | Display help information to the console   | Display help overview                   |
+| -configuration, -config, -c | Do something with the configuration file  | Display current configuration settings  |
+| -staging, -stage, -s        | Do something with the staging environment | Display staging environment information |
 
+### The MAWSC Action
+
+The MAWSC action is optional, and generally indicates that something specific is to be done with the MAWSC command.
+
+For example, to reset the configuration file to default settings:
+```
+mawsc -configuration -reset
+```
 
 
 ### Commands and Actions
