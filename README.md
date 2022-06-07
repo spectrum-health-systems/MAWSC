@@ -1,10 +1,10 @@
 <!-- b220607.091610 -->
 
 <div align="center">
-  <img src="https://img.shields.io/badge/WARNING-THIS%20IS%20BETA%20SOFTWARE-FF160C?style=flat-square">
-</div>
 
-***
+  <img src="https://img.shields.io/badge/WARNING-THIS%20IS%20BETA%20SOFTWARE-FF160C?style=flat-square">
+
+</div>
 
 <div align="center">
 
