@@ -31,7 +31,7 @@
 
 <div align="center">
 
-  <img src=".github/Readme-resources/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="384">
+  <img src=".github/Readme-resource/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="512">
   <h3>
   Screenshot
   </h3>
