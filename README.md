@@ -203,6 +203,19 @@ MAWSC syntax is:
 ```
 mawsc -help
 ```
+Most commands have a default behavior that doesn't require an action or option to be passed.
+
+Commands can be passed using any casing, and don't have to start with a `-`, since MAWSC will remove any `-` characters, and convert the command to lowercase before processing.
+
+Commands also have shortcuts. For example, instead of typing `mawsc -help`, you could type `mawsc -h`
+
+#### Current MAWSC commands
+
+As of version 2.0 of MAWSC, the following commands are valid:
+
+
+|Command | Description |
+|:------ |:----------- |
 
 
 ### Commands and Actions
