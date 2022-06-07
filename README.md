@@ -154,11 +154,11 @@ You will need to modify the following settings for your organization:
 }
 ```
 
-`RepositoryName`
-`RepositoryBranch`
-`StagingFetchDirectory`
-`StagingTestingDirectory`
-`ProductionDirectory`
+`RepositoryName`<br>
+`RepositoryBranch`<br>
+`StagingFetchDirectory`<br>
+`StagingTestingDirectory`<br>
+`ProductionDirectory`<br>
 
 
 ## Using
