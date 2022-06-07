@@ -14,8 +14,10 @@
   <br>
   Tools and utilities for custom myAvatar™ web services
   <br>
-  
+
 </h3>
+
+***
 
 <h3 align="center">
 
