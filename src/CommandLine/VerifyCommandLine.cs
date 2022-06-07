@@ -7,8 +7,8 @@
 // =============================================================================
 
 // MAWSC.CommandLine.Verify.cs
-// Verify configuration data.
-// b220603.191739
+// Verify command line data.
+// b220607.090446
 
 namespace MAWSC.CommandLine
 {
@@ -21,10 +21,10 @@ namespace MAWSC.CommandLine
         ///         - If there aren't any passed arguments, we can't do anything, so let the user know via the console (don't write a log file), and exit MAWSC.
         ///     </para>
         /// </remarks>
-        /// <param name="commandLineArguments"></param>
-        internal static void ArgumentsPassed(string[] commandLineArguments)
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        internal static void ArgumentsPassed(string[] arguments)
         {
-            if(commandLineArguments.Length == 0)
+            if(arguments.Length == 0)
             {
                 Logging.ExportLog.ToConsole(Logging.LogMessage.ArgumentsMissing());
 

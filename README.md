@@ -4,7 +4,7 @@
 
 <h3 align="center">
 
-  <img src="resource/logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="300">
+  <img src=".github/Logo/mawsc-logo-commander-256x128.png" alt="MAWSC logo" width="256">
   <br>
 
 </h3>

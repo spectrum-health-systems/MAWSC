@@ -31,7 +31,7 @@ namespace MAWSC.CommandLine
         internal static Dictionary<string, string> GetIndividualComponents(string[] arguments)
         {
             Dictionary<string, string> rawComponents   = GetRawComponents(arguments);
-            Dictionary<string, string> cleanComponents = CleanComponents(rawComponents);
+            Dictionary<string, string> cleanComponents = CleanRawComponents(rawComponents);
 
             return cleanComponents;
         }
@@ -118,7 +118,7 @@ namespace MAWSC.CommandLine
         /// </remarks>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
-        private static Dictionary<string, string> CleanComponents(Dictionary<string, string> rawComponents)
+        private static Dictionary<string, string> CleanRawComponents(Dictionary<string, string> rawComponents)
         {
             var cleanComponents = new Dictionary<string, string>();
 

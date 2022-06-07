@@ -7,8 +7,8 @@
 // =============================================================================
 
 // MAWSC.Configuration.ConfigurationAction.cs
-// Configuration actions
-// b220603.191735
+// Configuration action logic
+// -b220607+dev090457
 
 using MAWSC.Logging;
 
@@ -16,7 +16,9 @@ namespace MAWSC.Configuration
 {
     internal class ConfigurationAction
     {
-        /// <summary>Recreate the configuration file with default values.</summary>
+        /// <summary>
+        /// Recreate the configuration file with default values.
+        /// </summary>
         internal static void ResetConfigurationFile()
         {
             var configurationFilePath = ConfigurationInformation.GetDefaultFilePath();
