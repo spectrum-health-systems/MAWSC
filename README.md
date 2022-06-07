@@ -117,6 +117,31 @@ To create it, navigate to the directory where you extracted MAWSC, and type:
 mawsc -configuration -reset
 ```
 
+This will create a configuration file named `./AppData/Config/mawsc-config.json`.
+
+The default contents of the configuration file are:
+
+```
+{
+  "SessionTimestamp": "set-at-runtime",
+  "ApplicationVersion": "set-at-runtime",
+  "ConfigurationDirectory": "./AppData/Config/",
+  "LogDirectory": "./AppData/Logs/",
+  "LogfilePath": "set-at-runtime",
+  "BackupDirectory": "./AppData/Backup/",
+  "SessionBackupDirectory": "set-at-runtime",
+  "TemporaryDirectory": "./AppData/Temp/",
+  "RepositoryName": "name-of-your-repository",
+  "RepositoryBranch": "name-of-your-repository-branch",
+  "RepositoryUrl": "set-at-runtime",
+  "StagingFetchDirectory": "./AppData/Staging_fetch/",
+  "StagingTestingDirectory": "/path/to/your/web/service/testing/environment/",
+  "ProductionDirectory": "/path/to/your/web/service/production/environment/",
+  "MawscCommand": "set-at-runtime",
+  "MawscAction": "set-at-runtime",
+  "MawscOption": "set-at-runtime"
+}
+```
 
 ## Using
 
