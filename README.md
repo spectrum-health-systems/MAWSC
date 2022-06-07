@@ -64,6 +64,8 @@ MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Servi
 
 Testing web services is a tedious process that is prone to error, so I created MAWSC to take the human element out of the equation. The result is a deployment process that is faster, safer, and easily repeatable.
 
+MAWSC is a portable application, and is easy to install and use.
+
 ## Features
 
 * Written in .NET 6 C#, so it's cross platform (in theory)
@@ -73,29 +75,31 @@ Testing web services is a tedious process that is prone to error, so I created M
 * All session actions are backed up and logged to the console and local logfiles
 * Extremely configurable
 
-## Requirements
+## Built with
+
+* .NET 6
+
+# Getting started
+
+## Prerequisites
 
 * .NET 6
 * A [**MAWS**](https://github.com/spectrum-health-systems/MAWS) installation (or a custom web service of your own.)
 * Microsoft Windows Operating System
 
-## Built with
-
-* .NET 6
-
-## Getting started
-
-### Before you begin
+## Before you begin
 
 MAWSC is developed and tested on Windows 10 and Windows Server XXXX.
 
-While MAWSC is cross-platform, it has not been tested on non-Windows Operating Systems.
+While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows Operating Systems.
+
+## Initial setup
 
 Before you use MAWSC, you will need to:
 1. Install MAWSC
 2. Configure MAWSC
 
-## Installing
+### Installing
 
 MAWSC is a portable application, so it doesn't need to be installed. Just follow these steps:
 1. Download the [latest release]()
@@ -103,7 +107,7 @@ MAWSC is a portable application, so it doesn't need to be installed. Just follow
 
 If you add the directory where you installed MAWSC to your environment path, you can execute MAWSC from anywhere. Otherwise, you will need to be in the folder that contains `MAWSC.exe`.
 
-## Configuring
+### Configuring
 
 MAWSC uses an external configuration file to store settings. When you first install MAWSC, that configuration file doesn't exist.
 
