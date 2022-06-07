@@ -146,36 +146,52 @@ The default contents of the configuration file are:
 You will need to modify the following settings for your organization. Keep in mind the repository settings use GitHub as an example, and will need to be modified if you use another version control platform.
 
 #### RepositoryName
+
 The name of your repository. For example, if the URL to your repository is...
 ```
 https://github.com/spectrum-health-systems/MAWS
 ```
-...your `RepositoryName` would be `MAWS`
+...your `RepositoryName` would be `"MAWS"`
 
 #### RepositoryBranch
-The name of the branch you are using. If you are using the main branch of a repository, you can leave this set to `""`
+
+The name of the branch you are using. If you are using the main branch of a repository, leave this set to `""`
 
 If you are using a non-main branch of a repository, the URL probably looks like this...
 ```
 https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 ```
-...and your `RepositoryName` would be `0.60-development`
+...and your `RepositoryName` would be `"0.60-development"`
 
-* **`StagingFetchDirectory`**<br>
-* **`StagingTestingDirectory`**<br>
-* **`ProductionDirectory`**<br>
+#### StagingTestingDirectory
 
+This is the location of your staging environment that you use to test web service functionality. It might look like this:
+```
+https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
+
+```
+
+#### ProductionDirectory
+
+This is the location of your production environment of your web service. It might look like this:
+```
+https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
+
+```
 
 ## Using
 
-### Verifying directory structure
-While in developemnt MAWSC uses the following hard-coded directories:
+MAWSC is a command line interface application, so everything you'll be doing, you'll be doing by typing text into a terminal window, then pressing "Enter" to execute MAWSC.
 
-* IIS Staging backup directory: `C:\MyAvatool\MAWS\Staging\Backup`
-* IIS Staging directory: `C:\AvatoolWebService\MAWS_Staging\`
-* GitHub src/: `C:\MyAvatool\MAWS\Repository\src\`
-* Temporary folder: `C:\MyAvatool\Temp\`
+### Syntax
+
+MAWSC syntax is:
+```
+mawsc -<command> [-action] [-option]
+```
+
+
 
 ### Commands and Actions
 
