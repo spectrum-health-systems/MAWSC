@@ -96,13 +96,13 @@ While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows
 ## Initial setup
 
 Before you use MAWSC, you will need to:
-1. Install MAWSC
-2. Configure MAWSC
+1. [Install](#installing) MAWSC
+2. [Configure](#configuring) MAWSC
 
 ### Installing
 
 MAWSC is a portable application, so it doesn't need to be installed. Just follow these steps:
-1. Download the [latest release]()
+1. Download the [latest release]() of MAWSC
 2. Extract the "mawsc-release-X-x-x-x.zip to a directory of your choosing
 
 If you add the directory where you installed MAWSC to your environment path, you can execute MAWSC from anywhere. Otherwise, you will need to be in the folder that contains `MAWSC.exe`.
@@ -113,7 +113,7 @@ MAWSC uses an external configuration file to store settings. When you first inst
 
 To create it, navigate to the directory where you extracted MAWSC, and type:
 
-`mawsc -configuration -reset`
+    `mawsc -configuration -reset`
 
 
 ## Using
