@@ -1,10 +1,10 @@
 <!-- b220607.091610 -->
 
-<h6 align="center">
+<div align="center">
 
   <img src="https://img.shields.io/badge/WARNING-THIS%20IS%20BETA%20SOFTWARE-FF160C?style=flat-square">
   
-</h6>
+</div>
 
 ***
 
@@ -29,14 +29,14 @@
 
 </div>
 
-<h4 align="center">
+<div align="center">
 
 
 
   [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
   <br>
 
-</h4>
+</div>
 
   ### CONTENTS
   [ABOUT](#about)<br>
