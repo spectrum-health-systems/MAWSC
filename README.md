@@ -144,10 +144,11 @@ The default contents of the configuration file are:
 ```
 
 You will need to modify the following settings for your organization. Keep in mind the repository settings use GitHub as an example, and will need to be modified if you use another version control platform.
-* **`RepositoryName`**<br>
+
+#### RepositoryName
 The name of your repository. For example, if the URL to your repository is
 `https://github.com/spectrum-health-systems/MAWS`
-Your `RepositoryName` would be `MAWS`.
+Your `RepositoryName` would be `MAWS`
 
 
 
