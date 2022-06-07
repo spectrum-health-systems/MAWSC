@@ -223,11 +223,34 @@ As of version 2.0 of MAWSC, the following commands are valid:
 
 The MAWSC action is optional, and generally indicates that something specific is to be done with the MAWSC command.
 
-For example, to reset the configuration file to default settings:
+For example, to reset the deploy the staging environment to production, type:
 ```
-mawsc -configuration -reset
+mawsc -staging -deploy
 ```
+To learn more about what actions are available for different commands, type:
+```
+mawsc -help <command>
+```
+For example, to learn about what actions are available for the configuration command, type:
+```
+mawsc -help staging
+```
+### The MAWSC Option
 
+The MAWSC option rarely used, and generally indicates that something specific is to be done with the MAWSC action.
+
+For example, by default when you deploy your staging environment to production, only necessary files are deployed. You can override that by typing:
+```
+mawsc -staging -deploy -all
+```
+To learn more about what options are available for different actions, type:
+```
+mawsc -help <command>
+```
+For example, to learn about what options are available for the -deploy action of the -staging command, type:
+```
+mawsc -help staging
+```
 
 ### Commands and Actions
 
