@@ -214,8 +214,12 @@ Commands also have shortcuts. For example, instead of typing `mawsc -help`, you 
 As of version 2.0 of MAWSC, the following commands are valid:
 
 
-|Command | Description |
-|:------ |:----------- |
+| Command                     | Description                               |
+|:--------------------------- |:----------------------------------------- |
+| -help, -h                   | Display help information to the console   |
+| -configuration, -config, -c | Do something with the configuration file  |
+| -staging, -stage, -s        | Do something with the staging environment |
+
 
 
 ### Commands and Actions
