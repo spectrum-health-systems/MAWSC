@@ -147,7 +147,9 @@ You will need to modify the following settings for your organization. Keep in mi
 
 #### RepositoryName
 The name of your repository. For example, if the URL to your repository is
-`https://github.com/spectrum-health-systems/MAWS`
+```
+https://github.com/spectrum-health-systems/MAWS
+```
 Your `RepositoryName` would be `MAWS`
 
 
