@@ -144,21 +144,11 @@ The default contents of the configuration file are:
 ```
 
 You will need to modify the following settings for your organization:
-```
-{
-  "RepositoryName": "name-of-your-repository",
-  "RepositoryBranch": "name-of-your-repository-branch",
-  "StagingFetchDirectory": "./AppData/Staging_fetch/",
-  "StagingTestingDirectory": "/path/to/your/web/service/testing/environment/",
-  "ProductionDirectory": "/path/to/your/web/service/production/environment/",
-}
-```
-
-**`RepositoryName`**<br>
-`RepositoryBranch`<br>
-`StagingFetchDirectory`<br>
-`StagingTestingDirectory`<br>
-`ProductionDirectory`<br>
+* **`RepositoryName`****<br>
+* **`RepositoryBranch`**<br>
+* **`StagingFetchDirectory`**<br>
+* **`StagingTestingDirectory`**<br>
+* **`ProductionDirectory`**<br>
 
 
 ## Using
