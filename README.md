@@ -17,7 +17,7 @@
 
 </div>
 
-***
+<br>
 
 <div align="center">
 
@@ -25,20 +25,22 @@
   [![License](https://img.shields.io/github/license/spectrum-health-systems/MAWSC?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
   [![GitHub release](https://img.shields.io/github/v/release/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/releases)&nbsp;
   [![Issues](https://img.shields.io/github/issues/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/issues)&nbsp;
-  [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)&nbsp;
+  [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)
 
 </div>
 
+<br>
 
+***
 
 <div align="center">
-
-
 
   [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
   <br>
 
 </div>
+
+***
 
   ### CONTENTS
   [ABOUT](#about)<br>
