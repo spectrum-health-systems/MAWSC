@@ -146,22 +146,22 @@ The default contents of the configuration file are:
 You will need to modify the following settings for your organization. Keep in mind the repository settings use GitHub as an example, and will need to be modified if you use another version control platform.
 
 #### RepositoryName
-The name of your repository. For example, if the URL to your repository is
+The name of your repository. For example, if the URL to your repository is...
 ```
 https://github.com/spectrum-health-systems/MAWS
 ```
-Your `RepositoryName` would be `MAWS`
+...your `RepositoryName` would be `MAWS`
 
+#### RepositoryBranch
+The name of the branch you are using. If you are using the main branch of a repository, you can leave this set to `""`
 
+If you are using a non-main branch of a repository, the URL probably looks like this...
+```
+https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
+```
+...and your `RepositoryName` would be `0.60-development`
 
-
-https://github.com/spectrum-health-systems/MAWS/tree/v0.60-development
-
-
-
-
-* **`RepositoryBranch`**<br>
 * **`StagingFetchDirectory`**<br>
 * **`StagingTestingDirectory`**<br>
 * **`ProductionDirectory`**<br>

@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.ConfigurationAction.cs
 // Configuration action logic
-// -b220607+dev090457
+// b220607.122647
 
 using MAWSC.Logging;
 
@@ -47,7 +47,7 @@ namespace MAWSC.Configuration
                 SessionBackupDirectory    = "set-at-runtime",
                 TemporaryDirectory        = $@"./AppData/Temp/",
                 RepositoryName            = "name-of-your-repository",
-                RepositoryBranch          = "name-of-your-repository-branch",
+                RepositoryBranch          = "",
                 RepositoryUrl             = "set-at-runtime",
                 StagingFetchDirectory     = $@"./AppData/Staging_fetch/",
                 StagingTestingDirectory   = "/path/to/your/web/service/testing/environment/",
