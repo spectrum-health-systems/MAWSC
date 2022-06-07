@@ -154,7 +154,7 @@ You will need to modify the following settings for your organization:
 }
 ```
 
-`*RepositoryName*`<br>
+**`RepositoryName`**<br>
 `RepositoryBranch`<br>
 `StagingFetchDirectory`<br>
 `StagingTestingDirectory`<br>
