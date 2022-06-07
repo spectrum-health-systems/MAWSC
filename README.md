@@ -31,6 +31,18 @@
 
 <div align="center">
 
+  <img src=".github/Readme-resources/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="384">
+  <h3>
+  Screenshot
+  </h3>
+
+</div>
+
+***
+
+
+<div align="center">
+
   [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)&nbsp;
 
 </div>
