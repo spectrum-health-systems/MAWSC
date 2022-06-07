@@ -39,7 +39,7 @@
 
 <div align="center">
 
-  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
 
 </div>
 
@@ -64,10 +64,16 @@ MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Servi
 
 Testing web services is a tedious process that is prone to error, so I created MAWSC to take the human element out of the equation. The result is a deployment process that is faster, safer, and easily repeatable.
 
-### Features
+## Features
 
-* Deploy development branches to the MAWS Staging environment.
-* More things soon!
+* Written in .NET 6 C#, so it's cross platform
+* Displays various information about your web service environments
+* Allows basic administration of your web service environments
+* Automatically downloads web service sourcecode from a repository
+* All session actions are backed up and logged to the console and local logfiles
+* Extremely configurable
+
+### Built with
 
 ## GETTING STARTED
 
