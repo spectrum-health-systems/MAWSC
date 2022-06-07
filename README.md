@@ -180,18 +180,18 @@ https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 ```
 
-## Using
+# Using
 
 MAWSC is a command line interface application, so everything you'll be doing, you'll be doing by typing text into a terminal window, then pressing "Enter" to execute MAWSC.
 
-### Syntax
+## Syntax
 
 MAWSC syntax is:
 ```
 mawsc -<command> [-action] [-option]
 ```
 
-### The MAWSC Command
+## The MAWSC Command
 
 At a minimum, you'll need to pass a command to MAWSC via the command line by typing:
 MAWSC syntax is:
@@ -208,7 +208,7 @@ Commands can be passed using any casing, and don't have to start with a `-`, sin
 
 Commands also have shortcuts. For example, instead of typing `mawsc -help`, you could type `mawsc -h`
 
-#### Current MAWSC commands
+### Current MAWSC commands
 
 As of version 2.0 of MAWSC, the following commands are valid:
 
@@ -219,7 +219,7 @@ As of version 2.0 of MAWSC, the following commands are valid:
 | -configuration, -config, -c | Do something with the configuration file  | Display current configuration settings  |
 | -staging, -stage, -s        | Do something with the staging environment | Display staging environment information |
 
-### The MAWSC Action
+## The MAWSC Action
 
 The MAWSC action is optional, and generally indicates that something specific is to be done with the MAWSC command.
 
@@ -235,7 +235,7 @@ For example, to learn about what actions are available for the configuration com
 ```
 mawsc -help staging
 ```
-### The MAWSC Option
+## The MAWSC Option
 
 The MAWSC option rarely used, and generally indicates that something specific is to be done with the MAWSC action.
 
@@ -252,27 +252,11 @@ For example, to learn about what options are available for the -deploy action of
 mawsc -help staging
 ```
 
-### Commands and Actions
-
-MAWSC needs at least a `command` and an `action` to work.
-
-From a console, type `MAWSC -command -action [-option]`
-
-#### Current commands and actions:
-
-*This section will be updated as MAWSC is developed*
-
-MAWSC can do the following:
-
-* `MAWS -staging -deploy`: Deploy only the necessary files needed for MAWS to run in a staging environemnt.
-* `MAWS -staging -deploy -full`: Deploy the entire MAWS source to a staging environemnt.
-
-# UPDATING
+# Updating
 
 Since MAWSC is portable, you just need to replace the old version with the new version.
 
-# UNINSTALLING
-
+# Uninstalling
 Since MAWSC is portable, you just need to delete the location where Archiwizator resides.
 
 
