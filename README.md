@@ -8,18 +8,18 @@
 
 ***
 
-<h3 align="center">
+<div align="center">
 
   <img src=".github/Logo/maws-logo-commander-256x128.png" alt="MAWSC logo" width="256">
   <br>
   Tools and utilities for custom myAvatar™ web services
   <br>
 
-</h3>
+</div>
 
 ***
 
-<h3 align="center">
+<div align="center">
 
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square">&nbsp;
   [![License](https://img.shields.io/github/license/spectrum-health-systems/MAWSC?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
@@ -27,9 +27,11 @@
   [![Issues](https://img.shields.io/github/issues/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/issues)&nbsp;
   [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)&nbsp;
 
-</h3>
+</div>
 
 <h4 align="center">
+
+
 
   [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
   <br>
