@@ -144,7 +144,8 @@ The default contents of the configuration file are:
 ```
 
 You will need to modify the following settings for your organization:
-* **`RepositoryName`****<br>
+* **`RepositoryName`**<br>
+The name of your repository
 * **`RepositoryBranch`**<br>
 * **`StagingFetchDirectory`**<br>
 * **`StagingTestingDirectory`**<br>
@@ -183,3 +184,11 @@ Since MAWSC is portable, you just need to replace the old version with the new v
 # UNINSTALLING
 
 Since MAWSC is portable, you just need to delete the location where Archiwizator resides.
+
+
+
+
+
+https://github.com/spectrum-health-systems/MAWS
+
+https://github.com/spectrum-health-systems/MAWS/tree/v0.60-development
