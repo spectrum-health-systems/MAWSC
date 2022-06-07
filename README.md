@@ -32,9 +32,9 @@
 <div align="center">
 
   <img src=".github/Readme-resource/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="512">
-  <h5>
+  <h6>
   Command line interfaces are cool.
-  </h5>
+  </h6>
 
 </div>
 
