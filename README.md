@@ -58,7 +58,7 @@
 
 ***
 
-# ABOUT
+# About
 
 MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS), although it can be used to help maintain any custom web service for myAvatar™.
 
@@ -66,43 +66,53 @@ Testing web services is a tedious process that is prone to error, so I created M
 
 ## Features
 
-* Written in .NET 6 C#, so it's cross platform
+* Written in .NET 6 C#, so it's cross platform (in theory)
 * Displays various information about your web service environments
 * Allows basic administration of your web service environments
 * Automatically downloads web service sourcecode from a repository
 * All session actions are backed up and logged to the console and local logfiles
 * Extremely configurable
 
-### Built with
+## Requirements
 
-## GETTING STARTED
+* .NET 6
+* A [**MAWS**](https://github.com/spectrum-health-systems/MAWS) installation (or a custom web service of your own.)
+* Microsoft Windows Operating System
+
+## Built with
+
+* .NET 6
+
+## Getting started
 
 ### Before you begin
 
-MAWSC is a work in progress, and is being developed alongside MAWS. Currently the feature set leans heavily towards development, so it's probably not much use to end-users.
+MAWSC is developed and tested on Windows 10 and Windows Server XXXX.
 
-As MAWS continues to be developed, end-user features will be added to MAWSC.
+While MAWSC is cross-platform, it has not been tested on non-Windows Operating Systems.
 
-### Prerequisites
+Before you use MAWSC, you will need to:
+1. Install MAWSC
+2. Configure MAWSC
 
-* .NET 6
-* A [**MAWS**](https://github.com/spectrum-health-systems/MAWS) installation
+## Installing
 
-## INSTALLING
+MAWSC is a portable application, so it doesn't need to be installed. Just follow these steps:
+1. Download the [latest release]()
+2. Extract the "mawsc-release-X-x-x-x.zip to a directory of your choosing
 
-MAWSC is a portable application, so it doesn't need to be installed.
+If you add the directory where you installed MAWSC to your environment path, you can execute MAWSC from anywhere. Otherwise, you will need to be in the folder that contains `MAWSC.exe`.
 
-### Windows
+## Configuring
 
-1. Download the [latest release](https://github.com/spectrum-health-systems/MAWSC/releases) of MAWSC.
-2. Extract the `MAWSC.zip` file to a directory.
-3. It is recommended that you add the directory that contains MAWSC.exe to your environment path.
+MAWSC uses an external configuration file to store settings. When you first install MAWSC, that configuration file doesn't exist.
 
-### Other operating systems
+To create it, navigate to the directory where you extracted MAWSC, and type:
 
-Currently MAWSC only supports Microsoft Windows.
+`mawsc -configuration -reset`
 
-## USING
+
+## Using
 
 ### Verifying directory structure
 While in developemnt MAWSC uses the following hard-coded directories:
