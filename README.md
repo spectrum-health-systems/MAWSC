@@ -31,10 +31,7 @@
 
 <div align="center">
 
-  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-blue?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;
-
-  [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
-  <br>
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-blue?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-blue?style=for-the-badge)](doc/ROADMAP.md)&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-blue?style=for-the-badge)](doc/KNOWN-ISSUES.md)&nbsp;
 
 </div>
 
