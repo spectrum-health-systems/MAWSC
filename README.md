@@ -31,7 +31,7 @@
 
 <div align="center">
 
-  [(https://img.shields.io/badge/CHANGELOG-blue?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-blue?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;
 
   [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
   <br>
