@@ -113,7 +113,9 @@ MAWSC uses an external configuration file to store settings. When you first inst
 
 To create it, navigate to the directory where you extracted MAWSC, and type:
 
-    `mawsc -configuration -reset`
+```
+mawsc -configuration -reset
+```
 
 
 ## Using
