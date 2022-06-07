@@ -31,7 +31,7 @@
 
 <div align="center">
 
-  <img src=".github/Readme-resource/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="512">
+  <img src=".github/Readme-resource/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="256">
 
 </div>
 
@@ -56,9 +56,13 @@
   [DEVELOPMENT](#development)<br>
   [ADDITIONAL INFORMATION](#additional-information)<br>
 
+***
+
 # ABOUT
 
 MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS), although it can be used to help maintain any custom web service for myAvatar™.
+
+Testing web services is a tedious process that is prone to error, so I created MAWSC to take the human element out of the equation. The result is a deployment process that is faster, safer, and easily repeatable.
 
 ### Features
 
