@@ -96,8 +96,8 @@ While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows
 ## Initial setup
 
 Before you use MAWSC, you will need to:
-1. [Install](#installing) MAWSC
-2. [Configure](#configuring) MAWSC
+1. [Install MAWSC](#installing)
+2. [Configure MAWSC](#configuring)
 
 ### Installing
 
@@ -142,6 +142,19 @@ The default contents of the configuration file are:
   "MawscOption": "set-at-runtime"
 }
 ```
+
+You will need to modify the following settings for your organization:
+```
+{
+  "RepositoryName": "name-of-your-repository",
+  "RepositoryBranch": "name-of-your-repository-branch",
+  "StagingFetchDirectory": "./AppData/Staging_fetch/",
+  "StagingTestingDirectory": "/path/to/your/web/service/testing/environment/",
+  "ProductionDirectory": "/path/to/your/web/service/production/environment/",
+}
+```
+
+
 
 ## Using
 
