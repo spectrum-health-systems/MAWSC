@@ -191,6 +191,18 @@ MAWSC syntax is:
 mawsc -<command> [-action] [-option]
 ```
 
+### The MAWSC Command
+
+At a minimum, you'll need to pass a command to MAWSC via the command line by typing:
+MAWSC syntax is:
+```
+mawsc -<command>
+```
+For example:
+MAWSC syntax is:
+```
+mawsc -help
+```
 
 
 ### Commands and Actions
