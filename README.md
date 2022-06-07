@@ -12,12 +12,14 @@
 
   <img src=".github/Logo/maws-logo-commander-256x128.png" alt="MAWSC logo" width="256">
   <br>
+  <br>
   Tools and utilities for custom myAvatar™ web services
   <br>
 
 </h3>
 
 ***
+
 <h3 align="center">
 
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square">&nbsp;
@@ -39,9 +41,12 @@
   [ABOUT](#about)<br>
   [GETTING STARTED](#getting-started)<br>
   [INSTALLING](#installing)<br>
+  [SETUP](#setup)<br>
   [USING](#using)<br>
   [UPDATING](#updating)<br>
   [UNINSTALLING](#uninstalling)<br>
+  [DEVELOPMENT](#development)<br>
+  [ADDITIONAL INFORMATION](#additional-information)<br>
 
 # ABOUT
 
