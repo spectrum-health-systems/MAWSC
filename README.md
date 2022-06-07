@@ -6,13 +6,14 @@
 
 </div>
 
+<br>
 
 <div align="center">
 
   <img src=".github/Logo/maws-logo-commander-256x128.png" alt="MAWSC logo" width="256">
-  <br>
+  <h3>
   Tools and utilities for custom myAvatar™ web services
-  <br>
+  </h3>
 
 </div>
 
