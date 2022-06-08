@@ -202,9 +202,16 @@ For example:
 ```
 mawsc -help
 ```
-Most commands have a default behavior that doesn't require an action or option to be passed.
 
-Commands can be passed using any casing, and don't have to start with a `-`, since MAWSC will remove any `-` characters, and convert the command to lowercase before processing.
+MAWSC Commands:
+* Have a default behavior that doesn't require an action or option to be passed.
+* Generally have shortcuts (e.g., "`mawsc -h`" is the same as "`mawsc -help`")
+* Can be passed using any casing (e.g., "`mawsc -HeLp`" is a valid command)
+* Do not *have* to start with a `-`, but it's recommended for readability
+
+When MAWSC processes the arguments passed via the command line, it converts everything to lowercase, and removes any `-` characters. This way it's easier to for the logic to process commands/actions/options.
+
+
 
 Commands also have shortcuts. For example, instead of typing `mawsc -help`, you could type `mawsc -h`
 
