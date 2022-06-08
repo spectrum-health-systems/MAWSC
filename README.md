@@ -77,21 +77,21 @@ MAWSC is a portable application, and is easy to install and use.
 
 ## Built with
 
-* .NET 6
+* [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 # Getting started
 
 ## Prerequisites
 
-* .NET 6
-* A [**MAWS**](https://github.com/spectrum-health-systems/MAWS) installation (or a custom web service of your own.)
+* [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* A myAvatar custom web service (for example, [**MAWS**](https://github.com/spectrum-health-systems/MAWS))
 * Microsoft Windows Operating System
 
 ## Before you begin
 
-MAWSC is developed and tested on Windows 10 and Windows Server XXXX.
+MAWSC is developed and tested on Windows 10 and Windows Server 2019.
 
-While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows Operating Systems.
+While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows Operating Systems. I would imagine any incompatibility would revolve around the way each OS handles filepaths.
 
 ## Initial setup
 
