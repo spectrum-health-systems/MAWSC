@@ -184,7 +184,7 @@ https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 MAWSC is a command line interface application, so everything you'll be doing, you'll be doing by typing text into a terminal window, then pressing "Enter" to execute MAWSC.
 
-## Syntax
+## MAWSC Syntax
 
 MAWSC syntax is:
 ```
@@ -205,13 +205,11 @@ mawsc -help
 
 MAWSC Commands:
 * Have a default behavior that doesn't require an action or option to be passed.
-* Generally have shortcuts (e.g., "`mawsc -h`" is the same as "`mawsc -help`")
+* Generally have shortcuts (e.g., `mawsc -h` is the same as "`mawsc -help`")
 * Can be passed using any casing (e.g., "`mawsc -HeLp`" is a valid command)
 * Do not *have* to start with a `-`, but it's recommended for readability
 
 When MAWSC processes the arguments passed via the command line, it converts everything to lowercase, and removes any `-` characters. This way it's easier to for the logic to process commands/actions/options.
-
-
 
 Commands also have shortcuts. For example, instead of typing `mawsc -help`, you could type `mawsc -h`
 
