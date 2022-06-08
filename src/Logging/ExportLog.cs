@@ -8,13 +8,19 @@
 
 // MAWSC.Logging.ExportLog.cs
 // Exports log data to the command line and/or a local file.
-// b220603.191624
+// b220608.151504
 
 namespace MAWSC.Logging
 {
     internal class ExportLog
     {
         /// <summary>Display log information on the console.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         internal static void ToConsole(string logMessage)
         { //x
@@ -22,6 +28,12 @@ namespace MAWSC.Logging
         }
 
         /// <summary>Display log information on the console, and write it to a file.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToEverywhere(string logMessage, string logfilePath)
@@ -31,6 +43,12 @@ namespace MAWSC.Logging
         }
 
         /// <summary>Write log information to a file.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToFile(string logMessage, string logfilePath)

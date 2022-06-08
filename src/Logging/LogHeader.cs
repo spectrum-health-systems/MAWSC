@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.LogHeader.cs
 // Logging headers.
-// b220603.191548
+// b220608.151504
 
 using System.Reflection;
 
@@ -16,9 +16,13 @@ namespace MAWSC.Logging
 {
     internal class LogHeader
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="backupText"></param>
         /// <returns></returns>
         internal static string Backup(string backupText)
@@ -26,9 +30,13 @@ namespace MAWSC.Logging
             return $"[BACKUP  ] {backupText}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="backupText"></param>
         /// <returns></returns>
         internal static string Error(string errorText)
@@ -36,9 +44,13 @@ namespace MAWSC.Logging
             return $"[ERROR   ] {errorText}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="infoHeaderText"></param>
         /// <returns></returns>
         internal static string Info(string infoText)
@@ -46,9 +58,13 @@ namespace MAWSC.Logging
             return $"[INFO    ] {infoText}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="requestHeaderText"></param>
         /// <returns></returns>
         internal static string Request(string requestText)
@@ -56,9 +72,13 @@ namespace MAWSC.Logging
             return $"[REQUEST ] {requestText}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="verifyText"></param>
         /// <returns></returns>
         internal static string Verify(string verifyText)
@@ -66,9 +86,13 @@ namespace MAWSC.Logging
             return $"[VERIFY  ] {verifyText}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="validateText"></param>
         /// <returns></returns>
         internal static string Validate(string validateText)

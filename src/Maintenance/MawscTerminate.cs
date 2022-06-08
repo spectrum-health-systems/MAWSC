@@ -6,15 +6,21 @@
 // Copyright 2021-2022 A Pretty Cool Program
 // =============================================================================
 
-// MAWSC.Maintenance.Terminate.cs
-// Termination stuff
-// b220603.191523
+// MAWSC.Terminate.cs
+// Termination stuff.
+// b220608.151504
 
 namespace MAWSC.Maintenance
 {
     internal class MawscTerminate
     {
         /// <summary>Exit MAWSC.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="exitCode">Exit code for troubleshooting purposes.</param>
         internal static void Gracefully(int exitCode)
         {

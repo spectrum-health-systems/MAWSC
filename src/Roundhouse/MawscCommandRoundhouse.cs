@@ -8,7 +8,7 @@
 
 // MAWSC.Roundhouse.MawscCommandRoundhouse.cs
 // MAWSC Command roundhouse.
-// b220603.191418
+// b220608.151504
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -19,8 +19,14 @@ namespace MAWSC.Roundhouse
     internal class MawscCommandRoundhouse
     {
         /// <summary> </summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <param name="mawsc"></param>
-        internal static void ParseCommand(MawscSettings mawsc)
+        internal static void ParseCommand(ConfigurationSettings mawsc)
         {
             switch(mawsc.MawscCommand)
             {
@@ -49,5 +55,4 @@ namespace MAWSC.Roundhouse
             }
         }
     }
-
 }

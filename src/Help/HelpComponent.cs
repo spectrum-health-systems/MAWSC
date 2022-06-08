@@ -8,7 +8,7 @@
 
 // MAWSC.Help.HelpComponent.cs
 // Help components.
-// b220603.191636
+// b220608.151504
 
 namespace MAWSC.Help
 {
@@ -31,6 +31,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string UsageSyntaxHelp(string usageLine)
         {
@@ -39,6 +45,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string DefaultHelp()
         {
@@ -58,6 +70,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string ConfigurationHelp()
         {
@@ -73,6 +91,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string StagingHelp()
         {
@@ -91,6 +115,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string ProductionHelp()
         {
@@ -106,6 +136,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <returns></returns>
         internal static string ExampleHelp()
         {
@@ -119,6 +155,12 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <returns></returns>
         internal static string MoreInformationHelp()
         {

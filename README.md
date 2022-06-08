@@ -168,15 +168,14 @@ https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 This is the location of your staging environment that you use to test web service functionality. It might look like this:
 ```
-https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
-
+C:\MyWebsites\MyWebService\Testing\
 ```
 
 #### ProductionDirectory
 
 This is the location of your production environment of your web service. It might look like this:
 ```
-https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
+C:\MyWebsites\MyWebService\Production\
 
 ```
 
@@ -205,8 +204,8 @@ mawsc -help
 
 MAWSC Commands:
 * Have a default behavior that doesn't require an action or option to be passed.
-* Generally have shortcuts (e.g., `mawsc -h` is the same as "`mawsc -help`")
-* Can be passed using any casing (e.g., "`mawsc -HeLp`" is a valid command)
+* Generally have shortcuts (e.g., `mawsc -h` is the same as `mawsc -help`)
+* Can be passed using any casing (e.g., `mawsc -HeLp` is a valid command)
 * Do not *have* to start with a `-`, but it's recommended for readability
 
 When MAWSC processes the arguments passed via the command line, it converts everything to lowercase, and removes any `-` characters. This way it's easier to for the logic to process commands/actions/options.
@@ -216,7 +215,6 @@ Commands also have shortcuts. For example, instead of typing `mawsc -help`, you 
 ### Current MAWSC commands
 
 As of version 2.0 of MAWSC, the following commands are valid:
-
 
 | Command                     | Description                               | Default behavior                        |
 |:--------------------------- |:----------------------------------------- |:--------------------------------------- |

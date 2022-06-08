@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.StagingInformation.cs
 // Get information about the staging environment.
-// b220603.190907
+// b220608.151504
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -18,17 +18,29 @@ namespace MAWSC.Staging
     internal class StagingInformation
     {
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>  
         /// <param name="mawsc"></param>
-        internal static void Display(MawscSettings mawsc)
+        internal static void Display(ConfigurationSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestStagingInformation());
             ExportLog.ToConsole(LogMessage.StagingInformation(mawsc));
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>  
         /// <param name="mawsc"></param>
         /// <returns></returns>
-        internal static string GetWebServiceVersion(MawscSettings mawsc)
+        internal static string GetWebServiceVersion(ConfigurationSettings mawsc)
         {
             var assemblyVersion = "unknown";
 
@@ -54,9 +66,15 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>  
         /// <param name="mawsc"></param>
         /// <returns></returns>
-        internal static string GetLastFetchedTimestamp(MawscSettings mawsc)
+        internal static string GetLastFetchedTimestamp(ConfigurationSettings mawsc)
         {
             var lastFetchedDate = "unknown";
 

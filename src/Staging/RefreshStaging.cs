@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.RefreshStaging.cs
 // Refresh
-// b220603.190907
+// b220608.151504
 
 using MAWSC.Configuration;
 
@@ -16,7 +16,15 @@ namespace MAWSC.Staging
 {
     internal class RefreshStaging
     {
-        internal static void SoupToNuts(MawscSettings mawsc)
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>  
+        /// <param name="mawsc"></param>
+        internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
 
         }

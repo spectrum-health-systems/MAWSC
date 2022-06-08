@@ -8,7 +8,7 @@
 
 // MAWSC.Help.DisplayHelp.cs
 // Display help information on the console.
-// b220603.191649
+// b220608.151504
 
 using MAWSC.Maintenance;
 
@@ -16,9 +16,13 @@ namespace MAWSC.Help
 {
     internal class DisplayHelp
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         internal static void ForDefault()
         {
             Console.Clear();
@@ -33,6 +37,13 @@ namespace MAWSC.Help
             MawscTerminate.Gracefully(0);
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         internal static void ForConfiguration()
         {
             Console.Clear();
@@ -50,6 +61,14 @@ namespace MAWSC.Help
 
             MawscTerminate.Gracefully(0);
         }
+
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         internal static void ForStaging()
         {
             Console.Clear();
@@ -68,6 +87,13 @@ namespace MAWSC.Help
             MawscTerminate.Gracefully(0);
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         internal static void ForProduction()
         {
             Console.Clear();

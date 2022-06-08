@@ -8,19 +8,39 @@
 
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
-// b220606.132655
+// b220608.105635
 
 namespace MAWSC.CommandLine
 {
     internal class Arguments
     {
+        /// <summary>Verify at least one argument was passed via the command line.</summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         - We aren't testing for valid arguments yet, just their existance.<br/>
+        ///         - If there aren't any passed arguments, we can't do anything, so let the user know via the console (don't write a log file), and exit MAWSC.
+        ///     </para>
+        /// </remarks>
+        /// <param name="arguments">Arguments passed via the command line.</param>
+        internal static void VerifyPassed(string[] arguments)
+        {
+            if (arguments.Length == 0)
+            {
+                Logging.ExportLog.ToConsole(Logging.LogMessage.ArgumentsMissing());
+
+                Maintenance.MawscTerminate.Gracefully(1);
+            }
+        }
+
         /// <summary>
         /// Get individual MAWSC session command/action/option.
         /// </summary>
         /// <remarks>
         ///     <para>
         ///     <b><u>NOTES</u></b><br/>
-        ///     - Gets the raw MAWSC session command/action/option from the command line. These components may contain dashes, and any combination of casing.<br/>
+        ///     - Gets the raw MAWSC session command/action/option from the command line.<br/>
+        ///     - Components may contain dashes, and any combination of casing.<br/>
         ///     - There must be a MAWSC session command value, which will have been verified at this point.<br/>
         ///     - The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.<br/>
         ///     - The MAWSC session command/action/option values are cleaned up so it's easier to apply logic to them.<br/>
@@ -41,6 +61,7 @@ namespace MAWSC.CommandLine
         /// </summary>
         /// <remarks>
         ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
         ///     - Gets the raw MAWSC session command/action/option from the command line.<br/>
         ///     - These components may contain dashes, and any combination of casing.
         ///     </para>
@@ -62,6 +83,7 @@ namespace MAWSC.CommandLine
         /// </summary>
         /// <remarks>
         ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
         ///     - There must be a MAWSC session command value, which will have been verified at this point.
         ///     </para>
         /// </remarks>
@@ -77,6 +99,7 @@ namespace MAWSC.CommandLine
         /// </summary>
         /// <remarks>
         ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
         ///     - The MAWSC session action is optional.<br/>
         ///     - If an MAWSC session action is not passed, it is set to "unused".
         ///     </para>
@@ -95,6 +118,7 @@ namespace MAWSC.CommandLine
         /// </summary>
         /// <remarks>
         ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
         ///     - The MAWSC session option is optional.<br/>
         ///     - If an MAWSC session option is not passed, it is set to "unused".
         ///     </para>
@@ -113,6 +137,7 @@ namespace MAWSC.CommandLine
         /// </summary>
         /// <remarks>
         ///     <para>
+        ///     <b><u>NOTES</u></b><br/>
         ///     - The MAWSC session command/action/option values are cleaned up so it's easier to apply logic to them.
         ///     </para>
         /// </remarks>

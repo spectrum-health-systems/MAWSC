@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.BackupStaging.cs
 // Backup the current staging source.
-// b220603.191353
+// b220608.151504
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -18,8 +18,14 @@ namespace MAWSC.Staging
     internal class BackupStaging
     {
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <param name="mawsc"></param>
-        internal static void SoupToNuts(MawscSettings mawsc)
+        internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
             SourceLocation(mawsc);
             TargetLocation(mawsc);
@@ -32,7 +38,7 @@ namespace MAWSC.Staging
         ///     </para>
         /// </remarks>
         /// <param name="mawsc">MAWSC settings.</param>
-        private static void SourceLocation(MawscSettings mawsc)
+        private static void SourceLocation(ConfigurationSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestBackupStagingSource());
             ExportLog.ToConsole(LogMessage.BackupStagingSource(mawsc.StagingFetchDirectory, mawsc.SessionBackupDirectory));
@@ -47,7 +53,7 @@ namespace MAWSC.Staging
         ///     </para>
         /// </remarks>
         /// <param name="mawsc">MAWSC settings.</param>
-        private static void TargetLocation(MawscSettings mawsc)
+        private static void TargetLocation(ConfigurationSettings mawsc)
         {
             ExportLog.ToConsole(LogMessage.RequestBackupStagingTarget());
             ExportLog.ToConsole(LogMessage.BackupStagingTarget(mawsc));

@@ -8,7 +8,7 @@
 
 // MAWSC.Staging.DeployStaging.cs
 // Deploy the current staging source.
-// b220603.191137
+// b220608.151504
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -18,8 +18,14 @@ namespace MAWSC.Staging
     internal class DeployStaging
     {
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <param name="mawsc"></param>
-        internal static void SoupToNuts(MawscSettings mawsc)
+        internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
             BackupStaging.SoupToNuts(mawsc);
             FetchStaging.SoupToNuts(mawsc);
@@ -44,8 +50,14 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <param name="mawsc"></param>
-        private static void All(MawscSettings mawsc)
+        private static void All(ConfigurationSettings mawsc)
         {
             var targetFile = $"{mawsc.TemporaryDirectory}{mawsc.RepositoryBranch}";
 
@@ -56,8 +68,14 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>  
         /// <param name="mawsc"></param>
-        private static void Minimal(MawscSettings mawsc)
+        private static void Minimal(ConfigurationSettings mawsc)
         {
             //var stagingSrcDirectory = $"{mawscSettings.StagingFetchDirectory}{mawscSettings.RepositorySrcDirectory}";
 
@@ -83,8 +101,6 @@ namespace MAWSC.Staging
 }
 
 /*
- 
- 
 {
   "SessionTimestamp": "set-at-runtime",
   "ApplicationVersion": "set-at-runtime",
@@ -104,5 +120,4 @@ namespace MAWSC.Staging
   "MawscAction": "set-at-runtime",
   "MawscOption": "set-at-runtime"
 }
- 
 */

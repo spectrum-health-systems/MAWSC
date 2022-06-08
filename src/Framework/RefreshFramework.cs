@@ -8,22 +8,23 @@
 
 // MAWSC.Framework.RefreshFramework.cs
 // Refresh framework components.
-// b220603.191704
+// b220608.151504
 
 using MAWSC.Configuration;
 
 namespace MAWSC.Framework
 {
     internal class RefreshFramework
-    { // x
+    {
         /// <summary>Refresh MAWSC framework directories.</summary>
         /// <remarks>
         ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
         ///         - Currently only the temporary directory is refreshed.
         ///     </para>
         /// </remarks>
         /// <param name="mawsc">Configuration settings.</param>
-        internal static void Directories(MawscSettings mawsc)
+        internal static void Directories(ConfigurationSettings mawsc)
         {
             Du.WithDirectory.RefreshRecursively(mawsc.TemporaryDirectory);
         }

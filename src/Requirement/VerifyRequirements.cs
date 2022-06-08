@@ -8,7 +8,7 @@
 
 // MAWSC.Requirements.VerifyRequirements.cs
 // Verify MAWSC requirements.
-// bb220603.191517
+// b220608.151504
 
 using MAWSC.CommandLine;
 using MAWSC.Configuration;
@@ -29,9 +29,9 @@ namespace MAWSC.Requirements
         /// <param name="sessionTimestamp">Timestamp for the session.</param>
         internal static void Startup(string[] commandLineArguments, string sessionTimestamp)
         {
-            ValidateConfiguration.FileData();
+            ConfigurationSettings.FileData();
 
-            VerifyCommandLine.ArgumentsPassed(commandLineArguments);
+            Arguments.VerifyPassed(commandLineArguments);
 
             ExportLog.ToConsole(LogHeader.Top(sessionTimestamp));
         }

@@ -1,4 +1,4 @@
-﻿// =========================================================== [ v1.99.00.0-b220607+dev122905 ]
+﻿// =========================================================== [ v1.99.00.0-b220608+dev105909 ]
 // MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
@@ -8,7 +8,7 @@
 
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220607.090226
+// b220608.151504
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
@@ -42,7 +42,7 @@ static void MawscInitializer(string[] commandLineArguments)
 
     VerifyRequirements.Startup(commandLineArguments, sessionTimestamp);
 
-    MawscSettings mawsc = MawscSettings.Initialize(commandLineArguments, sessionTimestamp);
+    ConfigurationSettings mawsc = ConfigurationSettings.Initialize(commandLineArguments, sessionTimestamp);
 
     VerifyFramework.Startup(mawsc);
 

@@ -8,7 +8,7 @@
 
 // MAWSC.Roundhouse.HelpRoundhouse.cs
 // Help roundhouse.
-// b220603.190907
+// b220608.151504
 
 using MAWSC.Configuration;
 
@@ -16,12 +16,16 @@ namespace MAWSC.Roundhouse
 {
     internal class HelpRoundhouse
     {
-        /// <summary>
-        /// wetrw
-        /// </summary>
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
         /// <param name="mawscCommand">tet</param>
         /// <param name="mawsc">tet</param>
-        internal static void ParseAction(MawscSettings mawsc)
+        internal static void ParseAction(ConfigurationSettings mawsc)
         {
 
             switch(mawsc.MawscAction)

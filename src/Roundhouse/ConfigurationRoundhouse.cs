@@ -8,7 +8,7 @@
 
 // MAWSC.Roundhouse.ConfigurationRoundhouse.cs
 // Configuration roundhouse.
-// b220603.191512
+// b220608.151504
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -18,8 +18,14 @@ namespace MAWSC.Roundhouse
     internal class ConfigurationRoundhouse
     {
         /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks> 
         /// <param name="mawsc">tet</param>
-        internal static void ParseAction(MawscSettings mawsc)
+        internal static void ParseAction(ConfigurationSettings mawsc)
         {
             switch(mawsc.MawscAction)
             {
@@ -27,7 +33,7 @@ namespace MAWSC.Roundhouse
                 case "reset":
                     ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawsc.LogfilePath);
 
-                    ConfigurationAction.ResetConfigurationFile();
+                    ConfigurationAction.ResetFile();
 
                     ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);
 

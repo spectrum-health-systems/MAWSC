@@ -8,7 +8,7 @@
 
 // MAWSC.Logging.LogComponent.cs
 // Logging components.
-// b220603.191619
+// b220608.151504
 
 using MAWSC.Configuration;
 
@@ -16,24 +16,57 @@ namespace MAWSC.Logging
 {
     internal class LogComponent
     {
-        internal static string ArgumentsPassed(MawscSettings mawsc)
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <param name="mawsc"></param>
+        /// <returns></returns>
+        internal static string ArgumentsPassed(ConfigurationSettings mawsc)
         {
             return $"-{ mawsc.MawscCommand} [-{ mawsc.MawscAction}] [-{ mawsc.MawscOption}]";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string BackupStagingSource(string stagingFetchDirectory, string sessionBackupDirectory)
         {
             return $"{Environment.NewLine}" +
                    $"           {stagingFetchDirectory} -> {sessionBackupDirectory}/";
         }
 
-        internal static string BackupStagingTarget(MawscSettings mawsc)
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns> 
+        internal static string BackupStagingTarget(ConfigurationSettings mawsc)
         {
             return $"{Environment.NewLine}" +
                    $"           {mawsc.StagingTestingDirectory} -> {mawsc.BackupDirectory}{mawsc.SessionTimestamp}/";
         }
 
-        internal static string ConfigurationInformation(MawscSettings mawsc)
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
+        internal static string ConfigurationInformation(ConfigurationSettings mawsc)
         {
             return $"ConfigDirectory: {mawsc.ConfigurationDirectory}{Environment.NewLine}" +
                    $"LogDirectory: {mawsc.LogDirectory}{Environment.NewLine}" +
@@ -50,7 +83,15 @@ namespace MAWSC.Logging
                    $"For a list of valid commands/actions/options, please type: \"mawsc -help\"{Environment.NewLine}";
         }
 
-        internal static string StagingInformation(MawscSettings mawsc)
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
+        internal static string StagingInformation(ConfigurationSettings mawsc)
         {
             var assemblyVersion = Staging.StagingInformation.GetWebServiceVersion(mawsc);
 
@@ -66,27 +107,67 @@ namespace MAWSC.Logging
                    $"{Environment.NewLine}";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string ConfigurationFileWillBeReset()
         {
             return $"Configuration file will be created.";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string ConfigurationFileHasBeenReset()
         {
 
             return "Configuration file has been reset.";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string FrameworkRequiredDirectoriesVerified(string verificationMessage)
         {
             return $"{verificationMessage}";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string SessionBackupDirectoryVerified()
         {
             return ": Verified.";
         }
 
+        /// <summary></summary>
+        /// <remarks>
+        ///     <para>
+        ///         <b><u>NOTES</u></b><br/>
+        ///         -
+        ///     </para>
+        /// </remarks>
+        /// <returns></returns>
         internal static string TypeForHelp()
         {
             return $"{Environment.NewLine}" +
