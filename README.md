@@ -58,7 +58,7 @@
 
 ***
 
-# About
+# ABOUT
 
 MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS), although it can be used to help maintain any custom web service for myAvatar™.
 
@@ -79,7 +79,7 @@ MAWSC is a portable application, and is easy to install and use.
 
 * [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-# Getting started
+# GETTING STARTED
 
 ## Prerequisites
 
@@ -180,7 +180,7 @@ https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 ```
 
-# Using
+# USING
 
 MAWSC is a command line interface application, so everything you'll be doing, you'll be doing by typing text into a terminal window, then pressing "Enter" to execute MAWSC.
 
