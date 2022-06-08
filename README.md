@@ -151,7 +151,7 @@ The name of your repository. For example, if the URL to your repository is...
 ```
 https://github.com/spectrum-health-systems/MAWS
 ```
-...your `RepositoryName` would be `"MAWS"`
+...your `RepositoryName` would be `MAWS`
 
 #### RepositoryBranch
 
@@ -162,7 +162,7 @@ If you are using a non-main branch of a repository, the URL probably looks like 
 https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
 
 ```
-...and your `RepositoryName` would be `"0.60-development"`
+...and your `RepositoryName` would be `0.60-development`
 
 #### StagingTestingDirectory
 
