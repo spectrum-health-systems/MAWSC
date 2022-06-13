@@ -1,0 +1,3 @@
+# MAWC: Contributors
+
+None yet.

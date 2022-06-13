@@ -1,107 +1,268 @@
-<!--
-  GitHub repository template (b210103)
-  https://github.com/APrettyCoolProgram/my-development-environment/tree/master/templates/github/
--->
+<!-- b220607.091610 -->
 
-***
+<div align="center">
 
-<h3 align="center">
+  <img src="https://img.shields.io/badge/WARNING-THIS%20IS%20BETA%20SOFTWARE-FF160C?style=for-the-badge">
 
-  <img src="Resource/Logo/MAWSC-logo-512x350.png" alt="MAWSC logo" width="300">
-  <br>
+</div>
 
-</h3>
+<br>
 
-<h3 align="center">
+<div align="center">
+
+  <img src=".github/Logo/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
+  <h3>
+  Tools and utilities for custom myAvatar™ web services
+  </h3>
+
+</div>
+
+<div align="center">
 
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square">&nbsp;
   [![License](https://img.shields.io/github/license/spectrum-health-systems/MAWSC?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
   [![GitHub release](https://img.shields.io/github/v/release/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/releases)&nbsp;
   [![Issues](https://img.shields.io/github/issues/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/issues)&nbsp;
-  [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)&nbsp;
+  [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/MAWSC?style=flat-square)](https://github.com/spectrum-health-systems/MAWSC/pulls)
 
-</h3>
+</div>
 
-<h4 align="center">
+***
 
-  [CHANGELOG](doc/CHANGELOG.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/ROADMAP.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/KNOWN-ISSUES.md)
-  <br>
+<div align="center">
 
-</h4>
+  <img src=".github/Readme-resource/Screenshot/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="384">
 
-  ## CONTENTS
+</div>
+
+***
+
+<div align="center">
+
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
+
+</div>
+
+***
+
+  ### CONTENTS
   [ABOUT](#about)<br>
   [GETTING STARTED](#getting-started)<br>
   [INSTALLING](#installing)<br>
+  [SETUP](#setup)<br>
   [USING](#using)<br>
   [UPDATING](#updating)<br>
   [UNINSTALLING](#uninstalling)<br>
+  [DEVELOPMENT](#development)<br>
+  [ADDITIONAL INFORMATION](#additional-information)<br>
 
-## ABOUT
+***
 
-MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatool Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS).
+# ABOUT
 
-### Features
+MAWS Commander (MAWSC) is a command-line interface for the [**MyAvatar Web Service (MAWS)**](https://github.com/spectrum-health-systems/MAWS), although it can be used to help maintain any custom web service for myAvatar™.
 
-* Deploy development branches to the MAWS Staging environment.
-* More things soon!
+Testing web services is a tedious process that is prone to error, so I created MAWSC to take the human element out of the equation. The result is a deployment process that is faster, safer, and easily repeatable.
 
-## GETTING STARTED
+MAWSC is a portable application, and is easy to install and use.
 
-### Before you begin
+## Features
 
-MAWSC is a work in progress, and is being developed alongside MAWS. Currently the feature set leans heavily towards development, so it's probably not much use to end-users.
+* Written in .NET 6 C#, so it's cross platform (in theory)
+* Displays various information about your web service environments
+* Allows basic administration of your web service environments
+* Automatically downloads web service sourcecode from a repository
+* All session actions are backed up and logged to the console and local logfiles
+* Extremely configurable
 
-As MAWS continues to be developed, end-user features will be added to MAWSC.
+## Built with
 
-### Prerequisites
+* [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-* .NET 6
-* A [**MAWS**](https://github.com/spectrum-health-systems/MAWS) installation
+# GETTING STARTED
 
-## INSTALLING
+## Prerequisites
 
-MAWSC is a portable application, so it doesn't need to be installed.
+* [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* A myAvatar custom web service (for example, [**MAWS**](https://github.com/spectrum-health-systems/MAWS))
+* Microsoft Windows Operating System
 
-### Windows
+## Before you begin
 
-1. Download the [latest release](https://github.com/spectrum-health-systems/MAWSC/releases) of MAWSC.
-2. Extract the `MAWSC.zip` file to a directory.
-3. It is recommended that you add the directory that contains MAWSC.exe to your environment path.
+MAWSC is developed and tested on Windows 10 and Windows Server 2019.
 
-### Other operating systems
+While MAWSC is (in theory) cross-platform, it has not been tested on non-Windows Operating Systems. I would imagine any incompatibility would revolve around the way each OS handles filepaths.
 
-Currently MAWSC only supports Microsoft Windows.
+## Initial setup
 
-## USING
+Before you use MAWSC, you will need to:
+1. [Install MAWSC](#installing)
+2. [Configure MAWSC](#configuring)
 
-### Verifying directory structure
-While in developemnt MAWSC uses the following hard-coded directories:
+### Installing
 
-* IIS Staging backup directory: `C:\MyAvatool\MAWS\Staging\Backup`
-* IIS Staging directory: `C:\AvatoolWebService\MAWS_Staging\`
-* GitHub src/: `C:\MyAvatool\MAWS\Repository\src\`
-* Temporary folder: `C:\MyAvatool\Temp\`
+MAWSC is a portable application, so it doesn't need to be installed. Just follow these steps:
+1. Download the [latest release]() of MAWSC
+2. Extract the "mawsc-release-X-x-x-x.zip to a directory of your choosing
 
-### Commands and Actions
+If you add the directory where you installed MAWSC to your environment path, you can execute MAWSC from anywhere. Otherwise, you will need to be in the folder that contains `MAWSC.exe`.
 
-MAWSC needs at least a `command` and an `action` to work.
+### Configuring
 
-From a console, type `MAWSC -command -action [-option]`
+MAWSC uses an external configuration file to store settings. When you first install MAWSC, that configuration file doesn't exist.
 
-#### Current commands and actions:
+To create it, navigate to the directory where you extracted MAWSC, and type:
 
-*This section will be updated as MAWSC is developed*
+```
+mawsc -configuration -reset
+```
 
-MAWSC can do the following:
+This will create a configuration file named `./AppData/Config/mawsc-config.json`.
 
-* `MAWS -staging -deploy`: Deploy only the necessary files needed for MAWS to run in a staging environemnt.
-* `MAWS -staging -deploy -full`: Deploy the entire MAWS source to a staging environemnt.
+The default contents of the configuration file are:
 
-# UPDATING
+```
+{
+  "SessionTimestamp": "set-at-runtime",
+  "ApplicationVersion": "set-at-runtime",
+  "ConfigurationDirectory": "./AppData/Config/",
+  "LogDirectory": "./AppData/Logs/",
+  "LogfilePath": "set-at-runtime",
+  "BackupDirectory": "./AppData/Backup/",
+  "SessionBackupDirectory": "set-at-runtime",
+  "TemporaryDirectory": "./AppData/Temp/",
+  "RepositoryName": "name-of-your-repository",
+  "RepositoryBranch": "name-of-your-repository-branch",
+  "RepositoryUrl": "set-at-runtime",
+  "StagingFetchDirectory": "./AppData/Staging_fetch/",
+  "StagingTestingDirectory": "/path/to/your/web/service/testing/environment/",
+  "ProductionDirectory": "/path/to/your/web/service/production/environment/",
+  "MawscCommand": "set-at-runtime",
+  "MawscAction": "set-at-runtime",
+  "MawscOption": "set-at-runtime"
+}
+```
+
+You will need to modify the following settings for your organization. Keep in mind the repository settings use GitHub as an example, and will need to be modified if you use another version control platform.
+
+#### RepositoryName
+
+The name of your repository. For example, if the URL to your repository is...
+```
+https://github.com/spectrum-health-systems/MAWS
+```
+...your `RepositoryName` would be `MAWS`
+
+#### RepositoryBranch
+
+The name of the branch you are using. If you are using the main branch of a repository, leave this set to `""`
+
+If you are using a non-main branch of a repository, the URL probably looks like this...
+```
+https://github.com/spectrum-health-systems/MAWS/tree/0.60-development
+
+```
+...and your `RepositoryName` would be `0.60-development`
+
+#### StagingTestingDirectory
+
+This is the location of your staging environment that you use to test web service functionality. It might look like this:
+```
+C:\MyWebsites\MyWebService\Testing\
+```
+
+#### ProductionDirectory
+
+This is the location of your production environment of your web service. It might look like this:
+```
+C:\MyWebsites\MyWebService\Production\
+
+```
+
+# USING
+
+MAWSC is a command line interface application, so everything you'll be doing, you'll be doing by typing text into a terminal window, then pressing "Enter" to execute MAWSC.
+
+## MAWSC Syntax
+
+MAWSC syntax is:
+```
+mawsc -<command> [-action] [-option]
+```
+
+## The MAWSC Command
+
+At a minimum, you'll need to pass a command to MAWSC via the command line by typing:
+MAWSC syntax is:
+```
+mawsc -<command>
+```
+For example:
+```
+mawsc -help
+```
+
+MAWSC Commands:
+* Have a default behavior that doesn't require an action or option to be passed.
+* Generally have shortcuts (e.g., `mawsc -h` is the same as `mawsc -help`)
+* Can be passed using any casing (e.g., `mawsc -HeLp` is a valid command)
+* Do not *have* to start with a `-`, but it's recommended for readability
+
+When MAWSC processes the arguments passed via the command line, it converts everything to lowercase, and removes any `-` characters. This way it's easier to for the logic to process commands/actions/options.
+
+Commands also have shortcuts. For example, instead of typing `mawsc -help`, you could type `mawsc -h`
+
+### Current MAWSC commands
+
+As of version 2.0 of MAWSC, the following commands are valid:
+
+| Command                     | Description                               | Default behavior                        |
+|:--------------------------- |:----------------------------------------- |:--------------------------------------- |
+| -help, -h                   | Display help information to the console   | Display help overview                   |
+| -configuration, -config, -c | Do something with the configuration file  | Display current configuration settings  |
+| -staging, -stage, -s        | Do something with the staging environment | Display staging environment information |
+
+## The MAWSC Action
+
+The MAWSC action is optional, and generally indicates that something specific is to be done with the MAWSC command.
+
+For example, to reset the deploy the staging environment to production, type:
+```
+mawsc -staging -deploy
+```
+To learn more about what actions are available for different commands, type:
+```
+mawsc -help <command>
+```
+For example, to learn about what actions are available for the configuration command, type:
+```
+mawsc -help staging
+```
+## The MAWSC Option
+
+The MAWSC option rarely used, and generally indicates that something specific is to be done with the MAWSC action.
+
+For example, by default when you deploy your staging environment to production, only necessary files are deployed. You can override that by typing:
+```
+mawsc -staging -deploy -all
+```
+To learn more about what options are available for different actions, type:
+```
+mawsc -help <command>
+```
+For example, to learn about what options are available for the -deploy action of the -staging command, type:
+```
+mawsc -help staging
+```
+
+# Updating
 
 Since MAWSC is portable, you just need to replace the old version with the new version.
 
-# UNINSTALLING
-
+# Uninstalling
 Since MAWSC is portable, you just need to delete the location where Archiwizator resides.
+
+
+
+
+
