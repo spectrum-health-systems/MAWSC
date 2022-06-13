@@ -18,9 +18,9 @@
  * for myAvatar™.
  
  * README: https://github.com/spectrum-health-systems/MAWSC#readme
- * Changelog: https://github.com/spectrum-health-systems/MAWSC/doc/CHANGELOG.md
- * Roadmap: https://github.com/spectrum-health-systems/MAWSC/doc/ROADMAP.md
- * Known issues: https://github.com/spectrum-health-systems/MAWSC/doc/KNOWN-ISSUES.md
+ * Changelog: https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/CHANGELOG.md
+ * Roadmap: https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/ROADMAP.md
+ * Known issues: https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/KNOWN-ISSUES.md
  * Development: https://github.com/spectrum-health-systems/MAWSC/tree/development
  *
  * For more myAvatar™ related development, please visit the myAvatar™ Development Community:
