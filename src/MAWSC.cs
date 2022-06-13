@@ -1,4 +1,4 @@
-﻿// =========================================================== [ v1.99.00.0-b220608+dev153448 ]
+﻿// ===================================================== [ v1.99.00.0 (220613.084244-devbuild)]
 // MAWSC: MyAvatar Web Service Commander
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC)
@@ -8,7 +8,7 @@
 
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220608.151504
+// b220613.084312
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
