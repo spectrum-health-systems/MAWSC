@@ -9,6 +9,7 @@
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
 // b220608.105635
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/dev/development-notes.md#argumentscs
 
 using MAWSC.Logging;
 using MAWSC.Maintenance;
