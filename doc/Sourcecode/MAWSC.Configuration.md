@@ -1,7 +1,12 @@
 ﻿# MAWSC.Configuration
+> Back to [MAWSC Sourcecode documentation](README.md)
+***
+<br>
 
 [Configuration.Action](#configurationaction)<br>
 [Configuration.Settings](#configurationsettings)
+
+***
 
 ## **ConfigurationAction.cs**
 > Logic for configuration actions
@@ -37,3 +42,10 @@ LogfilePath
 ### ConfigurationSettings.GetRuntimeValues()
 
 ### ConfigurationSettings.FileData()
+
+<br>
+
+***
+<br>
+
+> Back to [MAWSC Sourcecode documentation](README.md)
