@@ -1,6 +1,10 @@
 ﻿# MAWSC.Requirement
 
-## VerifyRequirement.Startup
+[VerifyRequirements](#verifyrequirementscs)
+
+## VerifyRequirements.cs
+
+### VerifyRequirement.Startup
 
 Verify the following, neither of which require configuration settings:
 1. The configuration file exists, and is valid

@@ -1,5 +1,7 @@
 ﻿# MAWSC.CommandLine
 
+[Arguments.cs](argumentscs)
+
 ## Arguments.cs
 > Processes the command line arguments that are passed to MAWSC at execution.
 
