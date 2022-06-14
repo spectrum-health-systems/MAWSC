@@ -1,24 +1,4 @@
-﻿# MAWSC: Development Notes
-
-[MAWSC](#mawsc)<br>
-[MAWSC.CommandLine](#mawsccommmandline)<br>
-[MAWSC.Requirement](#mawscrequirement)<br>
-
-# MAWSC
-
-## MAWSC.cs
-> Entry point for MAWSC.
-
-## MAWSC.MawscInitializer()
-We get the timestamp here, right at the beginning, so we can use the same timestamp throughout the session. Otherwise we might have different timestamps at different times for different things (backups, deployments, etc.)
-
-The initialization process:
-1. Verifies the basic requirements that are needed, that don't require configuration settings.
-2. Loads the configuration settings (and also creates session-specific settings)
-3. Does another round of verifications for things that require configuration settings.
-4. Hands things off to the MawscRoundhouse.
-
-# MAWSC.CommandLine
+﻿# MAWSC.CommandLine
 
 ## Arguments.cs
 > Processes the command line arguments that are passed to MAWSC at execution.
@@ -52,11 +32,3 @@ The initialization process:
 ### CleanRawArguments()
 - Components may contain dashes, and any combination of casing.
 - The arguments are cleaned up so it's easier to apply logic to them. For example, if an argument can be passed as `-staging` or `-STAGING` or `--StAgInG`, and it will be cleaned up to be `staging`, which makes it easier to test against.
-
-# MAWSC.Requirement
-
-## VerifyRequirement.Startup
-
-Verify the following, neither of which require configuration settings:
-1. The configuration file exists, and is valid
-2. Arguments were passed
