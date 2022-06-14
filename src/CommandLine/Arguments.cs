@@ -48,12 +48,12 @@ namespace MAWSC.CommandLine
         /// </remarks>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
-        internal static Dictionary<string, string> GetIndividualComponents(string[] arguments)
+        internal static Dictionary<string, string> GetIndividualArguments(string[] arguments)
         {
-            Dictionary<string, string> rawComponents   = GetRawComponents(arguments);
-            Dictionary<string, string> cleanComponents = CleanRawComponents(rawComponents);
+            Dictionary<string, string> rawArguments = GetRawComponents(arguments);
+            Dictionary<string, string> cleanArguments = CleanRawComponents(rawArguments);
 
-            return cleanComponents;
+            return cleanArguments;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace MAWSC.CommandLine
         {
             var cleanComponents = new Dictionary<string, string>();
 
-            foreach(KeyValuePair<string, string> item in rawComponents)
+            foreach (KeyValuePair<string, string> item in rawComponents)
             {
                 cleanComponents[item.Key] = item.Value.Trim().ToLower().Replace("-", "");
             }

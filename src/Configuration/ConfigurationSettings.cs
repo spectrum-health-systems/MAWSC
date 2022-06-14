@@ -148,7 +148,7 @@ namespace MAWSC.Configuration
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
             mawsc.RepositoryUrl          = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
-            var mawscArguments = CommandLine.Arguments.GetIndividualComponents(arguments);
+            var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 
             mawsc.MawscCommand = mawscArguments["mawscCommand"];
             mawsc.MawscAction  = mawscArguments["mawscAction"];
