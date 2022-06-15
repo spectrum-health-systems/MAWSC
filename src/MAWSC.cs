@@ -8,7 +8,8 @@
 
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220614.093822
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
