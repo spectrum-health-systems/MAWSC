@@ -8,7 +8,8 @@
 
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
-// b220608.142229
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md
 
 using MAWSC.Logging;
 using System.Reflection;
@@ -142,17 +143,17 @@ namespace MAWSC.Configuration
         /// <returns></returns>
         internal static ConfigurationSettings GetRuntimeValues(MAWSC.Configuration.ConfigurationSettings mawsc, string[] arguments, string sessionTimestamp)
         {
-            mawsc.SessionTimestamp       = sessionTimestamp;
-            mawsc.ApplicationVersion     = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawsc.LogfilePath            = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
+            mawsc.SessionTimestamp = sessionTimestamp;
+            mawsc.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            mawsc.LogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
-            mawsc.RepositoryUrl          = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
+            mawsc.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 
             mawsc.MawscCommand = mawscArguments["mawscCommand"];
-            mawsc.MawscAction  = mawscArguments["mawscAction"];
-            mawsc.MawscOption  = mawscArguments["mawscOption"];
+            mawsc.MawscAction = mawscArguments["mawscAction"];
+            mawsc.MawscOption = mawscArguments["mawscOption"];
 
             return mawsc;
         }

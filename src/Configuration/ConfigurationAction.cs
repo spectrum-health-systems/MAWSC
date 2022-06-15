@@ -8,8 +8,8 @@
 
 // MAWSC.Configuration.ConfigurationAction.cs
 // Logic for configuration actions
-// b220614.105930
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md#configurationaction
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md
 
 using MAWSC.Logging;
 
