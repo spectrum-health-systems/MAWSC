@@ -8,7 +8,8 @@
 
 // MAWSC.Logging.LogHeader.cs
 // Logging headers.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using System.Reflection;
 

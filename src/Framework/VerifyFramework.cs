@@ -8,7 +8,8 @@
 
 // MAWSC.Framework.VerifyFramework.cs
 // Verify framework components.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -58,11 +59,11 @@ namespace MAWSC.Framework
 
             var logContent = "";
 
-            foreach(var requiredDirectory in requiredDirectories)
+            foreach (var requiredDirectory in requiredDirectories)
             {
                 logContent += $"{Environment.NewLine}";
 
-                if(!Directory.Exists(requiredDirectory))
+                if (!Directory.Exists(requiredDirectory))
                 {
                     logContent += $"           {requiredDirectory}: does not exist...";
                     Directory.CreateDirectory(requiredDirectory);

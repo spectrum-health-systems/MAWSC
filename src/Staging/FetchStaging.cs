@@ -8,7 +8,8 @@
 
 // MAWSC.Staging.FetchStaging.cs
 // Fetch the staging source from a repository.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using MAWSC.Configuration;
 
@@ -35,7 +36,7 @@ namespace MAWSC.Staging
             UncompressStagingSource(targetFile);
 
             var sessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}/";
-            var targetDirectory        = $"{targetFile}/{mawsc.RepositoryName}-{mawsc.RepositoryBranch}";
+            var targetDirectory = $"{targetFile}/{mawsc.RepositoryName}-{mawsc.RepositoryBranch}";
 
             CopyTo(targetFile, sessionBackupDirectory, targetDirectory, mawsc.StagingFetchDirectory);
         }

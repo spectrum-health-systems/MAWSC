@@ -8,7 +8,8 @@
 
 // MAWSC.Roundhouse.ConfigurationRoundhouse.cs
 // Configuration roundhouse.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -27,7 +28,7 @@ namespace MAWSC.Roundhouse
         /// <param name="mawsc">tet</param>
         internal static void ParseAction(ConfigurationSettings mawsc)
         {
-            switch(mawsc.MawscAction)
+            switch (mawsc.MawscAction)
             {
                 case "r":
                 case "reset":

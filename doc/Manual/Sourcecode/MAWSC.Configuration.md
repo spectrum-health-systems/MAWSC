@@ -1,5 +1,5 @@
 ﻿# MAWSC.Configuration
-> Back to [MAWSC Sourcecode documentation](README.md)
+> Back to [MAWSC Sourcecode documentation](Sourcecode.md)
 ***
 <br>
 
@@ -35,6 +35,8 @@ LogfilePath
 ```
 ### ConfigurationSettings.Initialize()
 
+
+
 ### ConfigurationSettings.LoadFromFile()
 
 ### ConfigurationSettings.GetDefaultFilePath()
@@ -48,4 +50,4 @@ LogfilePath
 ***
 <br>
 
-> Back to [MAWSC Sourcecode documentation](README.md)
+> Back to [MAWSC Sourcecode documentation](Sourcecode.md)

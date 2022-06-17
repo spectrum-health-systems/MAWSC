@@ -8,7 +8,8 @@
 
 // MAWSC.Roundhouse.HelpRoundhouse.cs
 // Help roundhouse.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using MAWSC.Configuration;
 
@@ -28,7 +29,7 @@ namespace MAWSC.Roundhouse
         internal static void ParseAction(ConfigurationSettings mawsc)
         {
 
-            switch(mawsc.MawscAction)
+            switch (mawsc.MawscAction)
             {
                 case "c":
                 case "config":

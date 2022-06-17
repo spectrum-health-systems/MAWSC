@@ -8,7 +8,8 @@
 
 // MAWSC.Staging.BackupStaging.cs
 // Backup the current staging source.
-// b220608.151504
+// b220615.085103
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;

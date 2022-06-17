@@ -1,4 +1,4 @@
-﻿## MAWSC.cs
+﻿# MAWSC.cs
 > Entry point for MAWSC.
 
 ## MAWSC.MawscInitializer()
