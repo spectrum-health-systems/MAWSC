@@ -32,7 +32,7 @@ namespace MAWSC.Staging
 
             var targetFile = $"{mawsc.TemporaryDirectory}{mawsc.RepositoryBranch}"; // config
 
-            GetFromUrl(mawsc.RepositoryUrl, targetFile);
+            GetFromUrl(mawsc.RepositoryZipUrl, targetFile);
             UncompressStagingSource(targetFile);
 
             var sessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}/";

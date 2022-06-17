@@ -29,7 +29,7 @@ namespace MAWSC.Configuration
         public string RepositoryLocation { get; set; }
         public string RepositoryName { get; set; }
         public string RepositoryBranch { get; set; }
-        public string RepositoryUrl { get; set; }
+        public string RepositoryZipUrl { get; set; }
         public string StagingFetchDirectory { get; set; }
         public string StagingTestingDirectory { get; set; }
         public string ProductionDirectory { get; set; }
@@ -122,7 +122,7 @@ namespace MAWSC.Configuration
             mawsc.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
             mawsc.SessionLogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
-            mawsc.RepositoryUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
+            mawsc.RepositoryZipUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 
