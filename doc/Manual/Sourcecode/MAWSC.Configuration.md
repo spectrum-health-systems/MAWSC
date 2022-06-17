@@ -1,12 +1,9 @@
-﻿# MAWSC.Configuration
-[ Back to [MAWSC Sourcecode documentation](Sourcecode.md) ]
-***
-<br>
+﻿[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](MAWSC-Sourcecode.md) &gt; **MAWSC.Configuration**
+
+# MAWSC.Configuration
 
 [Configuration.Action.cs](#configurationaction)<br>
 [Configuration.Settings.cs](#configurationsettings)
-
-<br>
 
 ***
 

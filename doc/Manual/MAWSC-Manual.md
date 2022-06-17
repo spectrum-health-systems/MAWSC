@@ -1,0 +1,3 @@
+# MAWSC Manual
+
+# Sourcecode
