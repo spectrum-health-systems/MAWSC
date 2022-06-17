@@ -1,6 +1,6 @@
 ﻿[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](MAWSC-Sourcecode.md) &gt; **MAWSC.Configuration**
 
-###### MAWSC.Configuration
+## MAWSC.Configuration
 
 # **ConfigurationAction.cs**
 > Logic for configuration actions.
