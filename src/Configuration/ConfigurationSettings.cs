@@ -9,9 +9,8 @@
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
-using MAWSC.Logging;
 using System.Reflection;
 
 namespace MAWSC.Configuration
@@ -38,71 +37,46 @@ namespace MAWSC.Configuration
         public string MawscOption { get; set; }
 
         /// <summary>Get the MAWSC configuration settings for the session.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         - Load default settings from the external file.<br/>
-        ///         - Set some runtime-specific values.
-        ///     </para>
-        /// </remarks>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <param name="sessionTimestamp">Session timestamp created at execution.</param>
         /// <returns>MAWSC configuration settings.</returns>
         internal static ConfigurationSettings Initialize(string[] arguments, string sessionTimestamp)
         {
-            ConfigurationSettings mawsc = LoadFromFile();
+            ConfigurationSettings mawsc = ConfigurationFile.Load();
 
             mawsc = GetRuntimeValues(mawsc, arguments, sessionTimestamp);
 
             return mawsc;
         }
 
-        /// <summary>Load MAWSC settings from the configuration file.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         - If the configuration file does not exist, a new configuration file will be created.<br/>
-        ///         - The following configuration settings are created at runtime:     
-        ///         <list type ="bullet">
-        ///             <item>
-        ///                 <description>SessionTimestamp</description>
-        ///             </item>
-        ///             <item>
-        ///                 <description>ApplicationVersion</description>
-        ///             </item>
-        ///             <item>
-        ///                 <description>LogfilePath</description>
-        ///             </item>
-        ///         </list>
-        ///     </para>
-        /// </remarks>
-        /// <returns>Configuration settings.</returns>
-        internal static ConfigurationSettings LoadFromFile()
-        {
-            var configurationFile = ConfigurationSettings.GetDefaultFilePath();
+        ///// <summary>Load MAWSC configuration settings from the configuration file.</summary>
+        ///// <returns>Configuration settings.</returns>
+        //internal static ConfigurationSettings LoadFromFile()
+        //{
+        //    var configurationFile = ConfigurationSettings.GetDefaultFilePath();
 
-            if (!File.Exists($@"{configurationFile}"))
-            {
-                ConfigurationAction.ResetFile();
-            }
+        //    if (!File.Exists($@"{configurationFile}"))
+        //    {
+        //        ConfigurationAction.ResetFile();
+        //    }
 
-            ConfigurationSettings mawscSettings = Du.WithJson.DeserializeFromFile<ConfigurationSettings>(configurationFile);
+        //    ConfigurationSettings mawscSettings = Du.WithJson.DeserializeFromFile<ConfigurationSettings>(configurationFile);
 
-            return mawscSettings;
-        }
+        //    return mawscSettings;
+        //}
 
-        /// <summary>Get the MAWSC configuration default filepath.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>   
-        ///         - It is recommended that you leave the default filepath as <i>./AppData/Config/mawsc-config.json</i>.
-        ///     </para>
-        /// </remarks>
-        /// <returns>Default configuration file path.</returns>
-        internal static string GetDefaultFilePath()
-        {
-            return $@"./AppData/Config/mawsc-config.json";
-        }
+        ///// <summary>Get the MAWSC configuration default filepath.</summary>
+        ///// <remarks>
+        /////     <para>
+        /////         <b><u>NOTES</u></b><br/>   
+        /////         - It is recommended that you leave the default filepath as <i>./AppData/Config/mawsc-config.json</i>.
+        /////     </para>
+        ///// </remarks>
+        ///// <returns>Default configuration file path.</returns>
+        //internal static string GetDefaultFilePath()
+        //{
+        //    return $@"./AppData/Config/mawsc-config.json";
+        //}
 
         /// <summary>Get a few session-specific settings.</summary>
         /// <remarks>
@@ -133,50 +107,50 @@ namespace MAWSC.Configuration
             return mawsc;
         }
 
-        /// <summary>Verify a valid configuration file exists.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         Recreate./AppData/Config/mawsc-config.json if the file:
-        ///         <list type ="bullet">
-        ///             <item>
-        ///                 <term>Does not exist</term>
-        ///                 <description>The configuration file is required.</description>
-        ///             </item>
-        ///             <item>
-        ///                 <term>Is not enclosed properly</term>
-        ///                 <description>JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data.JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data.</description>
-        ///             </item>
-        ///             <item>
-        ///                 <term>Is too short</term>
-        ///                 <description>There are at least 5 configuration settings, so if the configuration file must contain more than 5 lines.</description>
-        ///             </item>
-        ///         </list>
-        ///     </para>
-        ///     <para>
-        ///         - This is a quick-and-dirty test!
-        ///     </para> 
-        /// </remarks>
-        internal static void FileData()
-        {
-            var configurationFilePath = ConfigurationSettings.GetDefaultFilePath();
+        ///// <summary>Verify a valid configuration file exists.</summary>
+        ///// <remarks>
+        /////     <para>
+        /////         Recreate./AppData/Config/mawsc-config.json if the file:
+        /////         <list type ="bullet">
+        /////             <item>
+        /////                 <term>Does not exist</term>
+        /////                 <description>The configuration file is required.</description>
+        /////             </item>
+        /////             <item>
+        /////                 <term>Is not enclosed properly</term>
+        /////                 <description>JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data.JSON formatted files are enclosed in brackets, so if the configuration file doesn't start with a <b>{</b> and end with a <b>}</b>, it's not valid JSON data.</description>
+        /////             </item>
+        /////             <item>
+        /////                 <term>Is too short</term>
+        /////                 <description>There are at least 5 configuration settings, so if the configuration file must contain more than 5 lines.</description>
+        /////             </item>
+        /////         </list>
+        /////     </para>
+        /////     <para>
+        /////         - This is a quick-and-dirty test!
+        /////     </para> 
+        ///// </remarks>
+        //internal static void FileData()
+        //{
+        //    var configurationFilePath = ConfigurationFile.GetDefaultFilePath();
 
-            if (!File.Exists($@"{configurationFilePath}"))
-            {
-                ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileNotFound());
-                ConfigurationAction.ResetFile();
-            }
-            else
-            {
-                var fileContents = File.ReadAllLines(configurationFilePath);
-                var fileEnclosureValid = fileContents[0] == "{" && fileContents[^1] == "}";
+        //    if (!File.Exists($@"{configurationFilePath}"))
+        //    {
+        //        ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileNotFound());
+        //        ConfigurationAction.ResetFile();
+        //    }
+        //    else
+        //    {
+        //        var fileContents = File.ReadAllLines(configurationFilePath);
+        //        var fileEnclosureValid = fileContents[0] == "{" && fileContents[^1] == "}";
 
-                if (!fileEnclosureValid || fileContents.Length < 5)
-                {
-                    ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileInvalid());
-                    ConfigurationAction.ResetFile();
-                }
-            }
-        }
+        //        if (!fileEnclosureValid || fileContents.Length < 5)
+        //        {
+        //            ExportLog.ToConsole(Logging.LogMessage.ConfigurationFileInvalid());
+        //            ConfigurationAction.ResetFile();
+        //        }
+        //    }
+        //}
     }
 }
 
