@@ -8,8 +8,8 @@
 
 // MAWSC.Help.DisplayHelp.cs
 // Display help information on the console.
-// b220615.085103
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Maintenance;
 
