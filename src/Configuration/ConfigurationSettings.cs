@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
-// b220615.085103
+// b220617.080310
 // https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Logging;
@@ -20,26 +20,19 @@ namespace MAWSC.Configuration
     {
         public string SessionTimestamp { get; set; }
         public string ApplicationVersion { get; set; }
-
         public string ConfigurationDirectory { get; set; }
-
         public string LogDirectory { get; set; }
-        public string LogfilePath { get; set; }
-
+        public string SessionLogfilePath { get; set; }
         public string BackupDirectory { get; set; }
         public string SessionBackupDirectory { get; set; }
-
         public string TemporaryDirectory { get; set; }
-
+        public string RepositoryLocation { get; set; }
         public string RepositoryName { get; set; }
         public string RepositoryBranch { get; set; }
         public string RepositoryUrl { get; set; }
-
         public string StagingFetchDirectory { get; set; }
         public string StagingTestingDirectory { get; set; }
-
         public string ProductionDirectory { get; set; }
-
         public string MawscCommand { get; set; }
         public string MawscAction { get; set; }
         public string MawscOption { get; set; }
@@ -127,9 +120,9 @@ namespace MAWSC.Configuration
         {
             mawsc.SessionTimestamp = sessionTimestamp;
             mawsc.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawsc.LogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
+            mawsc.SessionLogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
-            mawsc.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
+            mawsc.RepositoryUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 

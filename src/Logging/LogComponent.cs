@@ -8,8 +8,8 @@
 
 // MAWSC.Logging.LogComponent.cs
 // Logging components.
-// b220615.085103
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/README.md
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 
@@ -79,7 +79,7 @@ namespace MAWSC.Logging
                    $"ProductionTargetDirectory: {mawsc.ProductionDirectory}{Environment.NewLine}" +
                    $"Application version: {mawsc.ApplicationVersion}{Environment.NewLine}" +
                    $"SessionTimestamp: {mawsc.SessionTimestamp}{Environment.NewLine}" +
-                   $"LogfilePath: {mawsc.LogfilePath}{Environment.NewLine}" +
+                   $"LogfilePath: {mawsc.SessionLogfilePath}{Environment.NewLine}" +
                    $"{Environment.NewLine}" +
                    $"For a list of valid commands/actions/options, please type: \"mawsc -help\"{Environment.NewLine}";
         }

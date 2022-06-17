@@ -2,7 +2,7 @@
 > Back to [MAWSC Manual](../MAWSC-Manual.md)
 ***
 
-This is a collection of documents that provide 
+This is a collection of documents that provides detailed information about the MAWSC sourcecode.
 
 [MAWSC](MAWSC.md)<br>
 [MAWSC.CommandLine](MAWSC.CommandLine.md)<br>
