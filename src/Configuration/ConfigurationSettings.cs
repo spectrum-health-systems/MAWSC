@@ -8,8 +8,8 @@
 
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
-// b220615.085103
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Logging;
 using System.Reflection;
@@ -18,46 +18,21 @@ namespace MAWSC.Configuration
 {
     internal class ConfigurationSettings
     {
-        /* Application
-         */
         public string SessionTimestamp { get; set; }
         public string ApplicationVersion { get; set; }
-
-        /* Configuration
-         */
         public string ConfigurationDirectory { get; set; }
-
-        /* Logging
-         */
         public string LogDirectory { get; set; }
-        public string LogfilePath { get; set; }
-
-        /* Backups
-         */
+        public string SessionLogfilePath { get; set; }
         public string BackupDirectory { get; set; }
         public string SessionBackupDirectory { get; set; }
-
-        /* Temporary
-         */
         public string TemporaryDirectory { get; set; }
-
-        /* Repository
-         */
+        public string RepositoryLocation { get; set; }
         public string RepositoryName { get; set; }
         public string RepositoryBranch { get; set; }
-        public string RepositoryUrl { get; set; }
-
-        /* Staging
-         */
+        public string RepositoryZipUrl { get; set; }
         public string StagingFetchDirectory { get; set; }
         public string StagingTestingDirectory { get; set; }
-
-        /* Production
-         */
         public string ProductionDirectory { get; set; }
-
-        /* Command line
-         */
         public string MawscCommand { get; set; }
         public string MawscAction { get; set; }
         public string MawscOption { get; set; }
@@ -145,9 +120,9 @@ namespace MAWSC.Configuration
         {
             mawsc.SessionTimestamp = sessionTimestamp;
             mawsc.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawsc.LogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
+            mawsc.SessionLogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
-            mawsc.RepositoryUrl = $"https://github.com/spectrum-health-systems/{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
+            mawsc.RepositoryZipUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 

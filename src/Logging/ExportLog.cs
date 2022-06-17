@@ -8,7 +8,8 @@
 
 // MAWSC.Logging.ExportLog.cs
 // Exports log data to the command line and/or a local file.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 namespace MAWSC.Logging
 {

@@ -8,7 +8,8 @@
 
 // MAWSC.Framework.RefreshFramework.cs
 // Refresh framework components.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 

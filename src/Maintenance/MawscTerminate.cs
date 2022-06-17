@@ -8,8 +8,8 @@
 
 // MAWSC.Terminate.cs
 // Termination stuff.
-// b220608.151504
-
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 namespace MAWSC.Maintenance
 {
     internal class MawscTerminate
@@ -24,7 +24,7 @@ namespace MAWSC.Maintenance
         /// <param name="exitCode">Exit code for troubleshooting purposes.</param>
         internal static void Gracefully(int exitCode)
         {
-            if(exitCode == 0)
+            if (exitCode == 0)
             {
                 Console.WriteLine($"{Environment.NewLine}>>> MAWSC Exiting gracefully (Exit code {exitCode})...");
             }

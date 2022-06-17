@@ -8,7 +8,8 @@
 
 // MAWSC.Help.HelpComponent.cs
 // Help components.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 namespace MAWSC.Help
 {

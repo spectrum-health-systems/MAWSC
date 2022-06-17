@@ -3,7 +3,7 @@
 [Arguments.cs](argumentscs)
 
 ## Arguments.cs
-> Processes the command line arguments that are passed to MAWSC at execution.
+> Process the command line arguments that are passed to MAWSC at execution.
 
 ### Arguments.VerifiedPassed()
 - One of the first things MAWSC does when it is executed is verify that arguments were passed.

@@ -8,7 +8,8 @@
 
 // MAWSC.Framework.VerifyFramework.cs
 // Verify framework components.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -30,8 +31,8 @@ namespace MAWSC.Framework
         {
             RefreshFramework.Directories(mawsc);
 
-            ExportLog.ToFile(LogHeader.Top(mawsc.SessionTimestamp), mawsc.LogfilePath);
-            ExportLog.ToEverywhere(LogMessage.ArgumentsPassed(mawsc), mawsc.LogfilePath);
+            ExportLog.ToFile(LogHeader.Top(mawsc.SessionTimestamp), mawsc.SessionLogfilePath);
+            ExportLog.ToEverywhere(LogMessage.ArgumentsPassed(mawsc), mawsc.SessionLogfilePath);
 
             RequiredDirectories(mawsc);
             SessionBackupDirectory(mawsc.BackupDirectory, mawsc.SessionTimestamp);
@@ -58,11 +59,11 @@ namespace MAWSC.Framework
 
             var logContent = "";
 
-            foreach(var requiredDirectory in requiredDirectories)
+            foreach (var requiredDirectory in requiredDirectories)
             {
                 logContent += $"{Environment.NewLine}";
 
-                if(!Directory.Exists(requiredDirectory))
+                if (!Directory.Exists(requiredDirectory))
                 {
                     logContent += $"           {requiredDirectory}: does not exist...";
                     Directory.CreateDirectory(requiredDirectory);
@@ -74,7 +75,7 @@ namespace MAWSC.Framework
                 }
             }
 
-            ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawsc.LogfilePath);
+            ExportLog.ToEverywhere(LogMessage.VerifyFrameworkRequiredDirectories(logContent), mawsc.SessionLogfilePath);
         }
 
         /// <summary>Verify that the session backup directory exists, and create it if it does not.</summary>

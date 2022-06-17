@@ -8,7 +8,8 @@
 
 // MAWSC.Roundhouse.StagingRoundhouse.cs
 // Staging roundhouse.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Staging;
@@ -28,7 +29,7 @@ namespace MAWSC.Roundhouse
         internal static void ParseAction(ConfigurationSettings mawsc)
         {
 
-            switch(mawsc.MawscAction)
+            switch (mawsc.MawscAction)
             {
                 case "b":
                 case "backup":

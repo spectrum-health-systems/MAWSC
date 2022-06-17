@@ -8,7 +8,8 @@
 
 // MAWSC.Staging.StagingInformation.cs
 // Get information about the staging environment.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -46,16 +47,16 @@ namespace MAWSC.Staging
 
             var assemblyInfoPath = $"{mawsc.StagingFetchDirectory}Properties/AssemblyInfo.cs";
 
-            if(File.Exists(assemblyInfoPath))
+            if (File.Exists(assemblyInfoPath))
             {
                 var assemblyInfo = File.ReadAllLines(assemblyInfoPath);
 
-                foreach(var line in assemblyInfo)
+                foreach (var line in assemblyInfo)
                 {
-                    if(line.StartsWith("[assembly: AssemblyVersion"))
+                    if (line.StartsWith("[assembly: AssemblyVersion"))
                     {
                         var start = line.IndexOf("\"");
-                        var sub = line.Substring(start +1);
+                        var sub = line.Substring(start + 1);
                         var end = sub.IndexOf("\"");
                         assemblyVersion = sub.Substring(0, end);
                     }
@@ -78,7 +79,7 @@ namespace MAWSC.Staging
         {
             var lastFetchedDate = "unknown";
 
-            if(Directory.Exists(mawsc.StagingFetchDirectory))
+            if (Directory.Exists(mawsc.StagingFetchDirectory))
             {
                 lastFetchedDate = Directory.GetCreationTime(mawsc.StagingFetchDirectory).ToString();
 

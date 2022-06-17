@@ -8,7 +8,8 @@
 
 // MAWSC.Staging.DeployStaging.cs
 // Deploy the current staging source.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -30,7 +31,7 @@ namespace MAWSC.Staging
             BackupStaging.SoupToNuts(mawsc);
             FetchStaging.SoupToNuts(mawsc);
 
-            switch(mawsc.MawscOption)
+            switch (mawsc.MawscOption)
             {
                 case "a":
                 case "all":

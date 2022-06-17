@@ -8,8 +8,8 @@
 
 // MAWSC.Configuration.ConfigurationAction.cs
 // Logic for configuration actions
-// b220615.085103
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Sourcecode/MAWSC.Configuration.md
+// b220617.083043
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 using MAWSC.Logging;
 
@@ -29,23 +29,24 @@ namespace MAWSC.Configuration
 
             var defaultSettings = new ConfigurationSettings()
             {
-                SessionTimestamp = "set-at-runtime",
-                ApplicationVersion = "set-at-runtime",
-                ConfigurationDirectory = $@"./AppData/Config/",
-                LogDirectory = $@"./AppData/Logs/",
-                LogfilePath = "set-at-runtime",
-                BackupDirectory = $@"./AppData/Backup/",
-                SessionBackupDirectory = "set-at-runtime",
-                TemporaryDirectory = $@"./AppData/Temp/",
-                RepositoryName = "name-of-your-repository",
-                RepositoryBranch = "",
-                RepositoryUrl = "set-at-runtime",
-                StagingFetchDirectory = $@"./AppData/Staging_fetch/",
+                SessionTimestamp        = "set-at-runtime",
+                ApplicationVersion      = "set-at-runtime",
+                ConfigurationDirectory  = $@"./AppData/Config/",
+                LogDirectory            = $@"./AppData/Logs/",
+                SessionLogfilePath      = "set-at-runtime",
+                BackupDirectory         = $@"./AppData/Backup/",
+                SessionBackupDirectory  = "set-at-runtime",
+                TemporaryDirectory      = $@"./AppData/Temp/",
+                RepositoryLocation      = "https://github.com/spectrum-health-systems/",
+                RepositoryName          = "name-of-your-repository",
+                RepositoryBranch        = "",
+                RepositoryZipUrl        = "set-at-runtime",
+                StagingFetchDirectory   = $@"./AppData/Staging-fetch/",
                 StagingTestingDirectory = "/path/to/your/web/service/testing/environment/",
-                ProductionDirectory = "/path/to/your/web/service/production/environment/",
-                MawscCommand = "set-at-runtime",
-                MawscAction = "set-at-runtime",
-                MawscOption = "set-at-runtime",
+                ProductionDirectory     = "/path/to/your/web/service/production/environment/",
+                MawscCommand            = "set-at-runtime",
+                MawscAction             = "set-at-runtime",
+                MawscOption             = "set-at-runtime",
             };
 
             Du.WithJson.SerializeToIndentedFile<ConfigurationSettings>(defaultSettings, $@"{configurationFilePath}");

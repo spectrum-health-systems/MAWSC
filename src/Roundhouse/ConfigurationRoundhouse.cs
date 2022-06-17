@@ -8,7 +8,8 @@
 
 // MAWSC.Roundhouse.ConfigurationRoundhouse.cs
 // Configuration roundhouse.
-// b220608.151504
+// b220617.080310
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
 
 using MAWSC.Configuration;
 using MAWSC.Logging;
@@ -27,15 +28,15 @@ namespace MAWSC.Roundhouse
         /// <param name="mawsc">tet</param>
         internal static void ParseAction(ConfigurationSettings mawsc)
         {
-            switch(mawsc.MawscAction)
+            switch (mawsc.MawscAction)
             {
                 case "r":
                 case "reset":
-                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawsc.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationFileReset(), mawsc.SessionLogfilePath);
 
                     ConfigurationAction.ResetFile();
 
-                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.SessionLogfilePath);
 
                     break;
 
@@ -44,8 +45,8 @@ namespace MAWSC.Roundhouse
                 case "information":
                 case "unused":
                 default:
-                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawsc.LogfilePath);
-                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.LogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.RequestConfigurationInformation(), mawsc.SessionLogfilePath);
+                    ExportLog.ToEverywhere(LogMessage.ConfigurationInformation(mawsc), mawsc.SessionLogfilePath);
                     break;
             }
         }
