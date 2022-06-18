@@ -8,7 +8,7 @@
 
 // MAWSC.Configuration.ConfigurationFile.cs
 // Logic related to the configuration file
-// b220617.100803
+// b220618.091029
 // https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 using MAWSC.Logging;
@@ -24,7 +24,7 @@ namespace MAWSC.Configuration
         /// <summary>Verify the configuration file exists, and that it (probably) contains valid data.</summary>
         internal static void Verify()
         {
-            var configurationFilePath = ConfigurationFile.GetDefaultFilePath();
+            var configurationFilePath = GetDefaultFilePath();
 
             if (!File.Exists($@"{configurationFilePath}"))
             {
@@ -45,7 +45,7 @@ namespace MAWSC.Configuration
         }
 
         /// <summary>Load MAWSC configuration settings from the configuration file.</summary>
-        /// <returns>Configuration settings.</returns>
+        /// <returns>MAWSC settings.</returns>
         internal static ConfigurationSettings Load()
         {
             var configurationFile = ConfigurationFile.GetDefaultFilePath();
@@ -59,6 +59,5 @@ namespace MAWSC.Configuration
 
             return mawscSettings;
         }
-
     }
 }

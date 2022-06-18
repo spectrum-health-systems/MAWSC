@@ -9,7 +9,7 @@
 // MAWSC.Staging.StagingInformation.cs
 // Get information about the staging environment.
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 using MAWSC.Configuration;
 using MAWSC.Logging;

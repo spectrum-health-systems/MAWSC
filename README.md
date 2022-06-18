@@ -8,14 +8,20 @@
 
 <br>
 
+***
+
+<br>
+
 <div align="center">
 
   <img src=".github/Logo/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
-  <h3>
+  <h3> 
   Tools and utilities for custom myAvatar™ web services
   </h3>
 
 </div>
+
+<br>
 
 <div align="center">
 
@@ -27,7 +33,7 @@
 
 </div>
 
-***
+<br>
 
 <div align="center">
 
@@ -35,7 +41,11 @@
 
 </div>
 
-***
+<br>
+
+
+
+
 
 <div align="center">
 
@@ -43,18 +53,7 @@
 
 </div>
 
-***
 
-  ### CONTENTS
-  [ABOUT](#about)<br>
-  [GETTING STARTED](#getting-started)<br>
-  [INSTALLING](#installing)<br>
-  [SETUP](#setup)<br>
-  [USING](#using)<br>
-  [UPDATING](#updating)<br>
-  [UNINSTALLING](#uninstalling)<br>
-  [DEVELOPMENT](#development)<br>
-  [ADDITIONAL INFORMATION](#additional-information)<br>
 
 ***
 

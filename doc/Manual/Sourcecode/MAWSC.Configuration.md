@@ -1,6 +1,26 @@
 ﻿[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](MAWSC-Sourcecode.md) &gt; **MAWSC.Configuration**
 
-## MAWSC.Configuration
+<br>
+
+<div align="center">
+
+  <img src="../../../.github/Logo/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
+  <h2>
+  MAWSC Manual
+  </h2>
+
+</div>
+
+<br>
+
+<div align="center">
+
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
+
+</div>
+
+***
+
 
 # **ConfigurationAction.cs**
 > Logic for configuration actions.
@@ -146,14 +166,21 @@ Get the MAWSC configuration settings for the session by:
 1. Loading the default settings from the external configuration file
 2. Setting a few values at runtime
 
-
-
-
-
-
 ## ConfigurationSettings.GetRuntimeValues()
+Get a few session-specific settings.
 
-## ConfigurationSettings.FileData()
+The following values are set at runtime, and are specific to this session:
+
+```
+SessionTimestamp
+ApplicationVersion
+SessionLogfilePath
+SessionBackupDirectory
+RepositryZipUrl
+MawscCommand
+MawscAction
+MawscOption
+```
 
 
 
