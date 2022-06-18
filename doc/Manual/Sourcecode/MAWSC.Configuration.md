@@ -1,4 +1,22 @@
-﻿[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](MAWSC-Sourcecode.md) &gt; **MAWSC.Configuration**
+﻿<!-- b220618.093429 -->
+
+[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode documentation](../Sourcecode/MAWSC.Configuration.md) &gt; **MAWSC.Configuration**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
