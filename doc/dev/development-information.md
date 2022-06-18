@@ -12,3 +12,12 @@ ERROR CODES
 4: Invalid option was passed.
 
  */
+
+ 
+/*
+  "RepositoryName": "MAWS",
+  "RepositoryUrl": "https://github.com/spectrum-health-systems/MAWS/archive/refs/heads/v0.60-development.zip",
+  "RepositorySrcDirectory": "MAWS-0.60-development/src/",
+  "StagingSourceDirectory": "./AppData/Staging_source/",
+  "StagingTargetDirectory": "c:/Users/cbanw/Downloads/mawstest/",
+*/

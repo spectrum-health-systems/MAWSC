@@ -1,13 +1,44 @@
-﻿[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](MAWSC-Sourcecode.md) &gt; **MAWSC.Configuration**
+﻿<!-- b220618.093429 -->
 
-# MAWSC.Configuration
+[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode documentation](../Sourcecode/MAWSC.Configuration.md) &gt; **MAWSC.Configuration**
 
-[Configuration.Action.cs](#configurationaction)<br>
-[Configuration.Settings.cs](#configurationsettings)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<div align="center">
+
+  <img src="../../../.github/Logo/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
+  <h2>
+  MAWSC Manual
+  </h2>
+
+</div>
+
+<br>
+
+<div align="center">
+
+  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
+
+</div>
 
 ***
 
-<br>
 
 # **ConfigurationAction.cs**
 > Logic for configuration actions.
@@ -29,10 +60,50 @@
 
 <br>
 
+# **ConfigurationFile.cs**
+
+## ConfigurationFile.GetDefaultFilePath()
+> Get the MAWSC configuration default filepath.
+
+By default, the path is "./AppData/Config/mawsc-config.json" by default.
+
+It is recommended that you do not modify the default configuration file path.
+
+## ConfigurationFile.Verify()
+> Verify the configuration file exists, and that it (probably) contains valid data.
+
+In order for an existing configuration file to (probably) be valid, it must:
+   1. Start with a "{" and end with a "}"<br>
+      Valid JSON-formatted files are enclosed in {} brackets, so if the configuration file doesnt start and end with them, it's not a valid JSON data file.
+   2. Contain at least five (5) lines of data<br>
+      There are more than five configuration settings, so there should be at least 5 lines of data in the configuration file.
+
+Keep in mind that:
+* This is a quick-and-dirty test
+* In order for this to work correctly, the configuration file needs to be written as indented JSON-formatted data, which MAWSC does by default.
+
+## ConfigurationFile.Load()
+> Load MAWSC settings from the configuration file.
+
+* If ./AppData/Config/mawsc-config.json doesn't exist, a new configuration file will be created with default setting values.
+
+<br>
+
+***
+
+<br>
+
 # **ConfigurationSettings.cs**
 > Configuration setting properties, and methods related to those settings.
 
 ## Properties
+
+### Notes
+* These settings are stored in the MAWSC configuration file, which is located at ./AppData/Config/mawsc-config.json.
+* If a setting is a *User defined value*, you will need to modify the configuration file prior to executing MAWSC. Failure to do so will result in MAWSC not functioning correctly.
+* If a setting has a *Default value*, it is highly recommended that you leave the setting at that value.
+* If a setting is *Created at runtime*, the value in the configuration file will be replaced by a session value when MAWSC is executed.
+* Repository values assume that GitHub is being used for version control. Other version control solutions may not work without modifying the sourcecode.
 
 `SessionTimestamp`<br>
 *Created at runtime*<br>
@@ -108,22 +179,28 @@ The (optional) MAWSC Action passed via command line when MAWSC is executed.
 *Created at runtime: "arg[2]*<br>
 The (optional) MAWSC Option passed via command line when MAWSC is executed.
 
-runtime
-github
-user defined values
+## ConfigurationSettings.Initialize()
+Get the MAWSC configuration settings for the session by:
+1. Loading the default settings from the external configuration file
+2. Setting a few values at runtime
+
+## ConfigurationSettings.GetRuntimeValues()
+Get a few session-specific settings.
+
+The following values are set at runtime, and are specific to this session:
+
+```
+SessionTimestamp
+ApplicationVersion
+SessionLogfilePath
+SessionBackupDirectory
+RepositryZipUrl
+MawscCommand
+MawscAction
+MawscOption
+```
 
 
-### ConfigurationSettings.Initialize()
-
-
-
-### ConfigurationSettings.LoadFromFile()
-
-### ConfigurationSettings.GetDefaultFilePath()
-
-### ConfigurationSettings.GetRuntimeValues()
-
-### ConfigurationSettings.FileData()
 
 <br>
 

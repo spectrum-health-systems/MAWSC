@@ -9,7 +9,7 @@
 // MAWSC.Staging.FetchStaging.cs
 // Fetch the staging source from a repository.
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 using MAWSC.Configuration;
 

@@ -9,7 +9,7 @@
 // MAWSC.Requirements.VerifyRequirements.cs
 // Verify MAWSC requirements.
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 using MAWSC.CommandLine;
 using MAWSC.Configuration;
@@ -30,7 +30,7 @@ namespace MAWSC.Requirements
         /// <param name="sessionTimestamp">Timestamp for the session.</param>
         internal static void Startup(string[] commandLineArguments, string sessionTimestamp)
         {
-            ConfigurationSettings.FileData();
+            ConfigurationFile.Verify();
 
             Arguments.VerifyPassed(commandLineArguments);
 

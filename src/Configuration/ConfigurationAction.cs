@@ -20,7 +20,7 @@ namespace MAWSC.Configuration
         /// <summary>Recreate the configuration file with default values.</summary>
         internal static void ResetFile()
         {
-            var configurationFilePath = ConfigurationSettings.GetDefaultFilePath();
+            var configurationFilePath = ConfigurationFile.GetDefaultFilePath();
 
             if (File.Exists($@"{configurationFilePath}"))
             {

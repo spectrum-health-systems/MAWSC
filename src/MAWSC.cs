@@ -4,12 +4,12 @@
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 // Copyright 2021-2022 A Pretty Cool Program
-// ================================================================= [ 220617.090730-devbuild ]
+// ================================================================= [ 220618.085702-devbuild ]
 
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/Sourcecode/README.md
+// b220618.085815
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
@@ -17,7 +17,7 @@
  * MyAvatar Web Service Commander (MAWSC) is a command-line maintenance utility for the
  * MyAvatar Web Service (MAWS), although it can be use to help maintain any custom web service
  * for myAvatar™.
- 
+ *
  * README: https://github.com/spectrum-health-systems/MAWSC#readme
  * Changelog: https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/CHANGELOG.md
  * Roadmap: https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/ROADMAP.md
