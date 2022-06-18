@@ -1,6 +1,6 @@
 <!-- b220618.112932 -->
 
-[MAWSC](../../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **Sourcecode documentation**
+[MAWSC](https://github.com/spectrum-health-systems/MAWSC) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **Sourcecode documentation**
 
 ***
 
