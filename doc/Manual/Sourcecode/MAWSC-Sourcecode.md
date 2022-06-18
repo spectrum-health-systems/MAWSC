@@ -1,6 +1,6 @@
 <!-- b220618.112932 -->
 
-[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode documentation](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **Sourcecode documentation**
+[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **Sourcecode documentation**
 
 ***
 
@@ -14,7 +14,7 @@
   </h1>
   <br>
   
-  [![HOME](https://img.shields.io/badge/HOME-007474?style=for-the-badge)](../MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![INSTALLATION](https://img.shields.io/badge/INSTALLATION-00c0c0?style=for-the-badge)](../Installation/MAWSC-Installation.md)&nbsp;&nbsp;&nbsp;[![USAGE](https://img.shields.io/badge/USAGE-007474?style=for-the-badge)](../Usage/MAWSC-Usage.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-007474?style=for-the-badge)](Sourcecode/MAWSC-Sourcecode.md)
+  [![HOME](https://img.shields.io/badge/HOME-007474?style=for-the-badge)](../MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![INSTALLATION](https://img.shields.io/badge/INSTALLATION-007474?style=for-the-badge)](../Installation/MAWSC-Installation.md)&nbsp;&nbsp;&nbsp;[![USAGE](https://img.shields.io/badge/USAGE-007474?style=for-the-badge)](../Usage/MAWSC-Usage.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-00c0c0?style=for-the-badge)](Sourcecode/MAWSC-Sourcecode.md)
 
 </div>
 
