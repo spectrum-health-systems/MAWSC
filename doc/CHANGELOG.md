@@ -1,6 +1,8 @@
-<!-- b220618.120857 -->
+<!-- b220618.112932 -->
 
-[MAWSC](https://github.com/spectrum-health-systems/MAWSC) &gt; **MAWSC Changelog**
+[MAWSC](https://github.com/spectrum-health-systems/MAWSC) &gt; **Changelog**
+
+***
 
 <div align="center">
 
