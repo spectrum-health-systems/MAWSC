@@ -1,4 +1,4 @@
-<!-- b220618.093429 -->
+<!-- b220618.120857 -->
 
 <div align="center">
 
@@ -35,15 +35,10 @@
   </h5>
 
   <br>
-  <br>
-  
-  [![MANUAL](https://img.shields.io/badge/MANUAL-00c0c0?style=for-the-badge)](doc/Manual/MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
+
+  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-00c0c0?style=for-the-badge)](https://github.com/spectrum-health-systems/MAWSC)&nbsp;&nbsp;&nbsp;[![CHANGELOG](https://img.shields.io/badge/CHANGELOG-007474?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-007474?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-007474?style=for-the-badge)](doc/Manual/MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-007474?style=for-the-badge)](doc/Sourcecode/MAWSC-Sourcecode.md)
 
 </div>
-
-<br>
-
-***
 
 <br>
 
