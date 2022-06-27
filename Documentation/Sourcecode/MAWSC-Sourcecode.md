@@ -70,9 +70,6 @@ That being said, you will find the following types of comments in the MAWS sourc
 
 # VARIABLES
 
-##  Standard casing/whitespace
-Most logic in MAWSC is checked against lowercase values without any leading/trailing whitespace, so (in general) MAWSC will reduce a variable to its trimmed, lowercase value. This is done as soon as possible, usually when a variable is declared.
-
 ## Variable prefixes
 
 * `sent`<br>
@@ -83,6 +80,11 @@ If a variable name starts with "work" (e.g., `workDictionary`), it will be used 
 
 * `final`<br>
 If a variable name starts with "final" (e.g., `finalValue`), the data is in it's final form, and is most likely what will be returned from a method.
+
+##  Standard casing/trimming of values
+Most logic in MAWSC is checked against lowercase values without any leading/trailing whitespace, so (in general) MAWSC will reduce a variable to its trimmed, lowercase value. This is done as soon as possible, usually when a variable is declared.
+
+For example, if a variable has a value of "`_AValue_`" (where the `_` character is whitespace), it will be converted to "`avalue`". This way if the user has the incorrect casing for a setting called "`EnableAllLogs`", MAWSC will still be able to apply logic because it checks against "`enablealllogs` (which isn't very user friendly).
 
 # NAMESPACES
 * [MAWSC](MAWSC.md)
