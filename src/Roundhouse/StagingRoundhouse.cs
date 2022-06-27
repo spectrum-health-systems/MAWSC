@@ -9,7 +9,7 @@
 // MAWSC.Roundhouse.StagingRoundhouse.cs
 // Staging roundhouse.
 // b220617.080310
-// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Sourcecode/MAWSC-Sourcecode.md
+// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
 
 using MAWSC.Configuration;
 using MAWSC.Staging;
