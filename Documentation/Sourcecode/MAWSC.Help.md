@@ -1,6 +1,6 @@
 ﻿> Last updated 6.27.2022
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Requirement**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Help**
 
 ***
 
@@ -19,26 +19,52 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Requirement
-Logic for various requirements
+# **[NAMESPACE]** MAWSC.Help
+Logic for MAWSC help.
 
 <br>
 
 ***
 
-# `[CLASS]` VerifyRequirements.cs
-Verify various MAWSC requirements.
+# `[CLASS]` DisplayHelp.cs
+Display help information on the console.
 
-## `[METHOD]` Startup()
-Verify the basic requirements.
+## `[METHOD]` ForDefault()
+TBD
 
 ### Details
-1. The configuration file exists, and is valid
-2. Arguments were passed
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ForConfiguration()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ForStaging()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ForProduction()
+TBD
+
+### Details
+TBD
 
 ### Notes
 None.
 
 ***
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Requirement**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Help**

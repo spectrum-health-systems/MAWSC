@@ -23,7 +23,8 @@
 Handles information that is passed via the command line when MAWSC is executed.
 
 <br>
-<br>
+
+***
 
 # `[CLASS]` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
