@@ -8,7 +8,7 @@
 
 <div align="center">
 
-  <img src="../../.github/Logo/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
+  <img src="../../.github/Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
   <h1> 
     MANUAL
   </h1>
