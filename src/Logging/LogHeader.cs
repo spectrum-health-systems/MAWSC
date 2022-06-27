@@ -9,7 +9,7 @@
 // MAWSC.Logging.LogHeader.cs
 // Logging headers.
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Manual/MAWSC-Manual.md#sourcecode
+// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Sourcecode/MAWSC-Sourcecode.md
 
 using System.Reflection;
 

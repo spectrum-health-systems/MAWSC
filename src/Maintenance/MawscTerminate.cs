@@ -9,7 +9,7 @@
 // MAWSC.Terminate.cs
 // Termination stuff.
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Manual/MAWSC-Manual.md#sourcecode
+// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Sourcecode/MAWSC-Sourcecode.md
 namespace MAWSC.Maintenance
 {
     internal class MawscTerminate
