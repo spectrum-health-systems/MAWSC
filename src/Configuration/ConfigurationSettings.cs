@@ -9,7 +9,7 @@
 // MAWSC.Configuration.MawscSettings.cs
 // Setting properties
 // b220617.080310
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Manual/MAWSC-Manual.md#sourcecode
 
 using System.Reflection;
 

@@ -4,12 +4,12 @@
 // https://github.com/spectrum-health-systems/MAWSC)
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 // Copyright 2021-2022 A Pretty Cool Program
-// ================================================================= [ 220618.092918-devbuild ]
+// ================================================================= [ 220627.084043-devbuild ]
 
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220618.085815
-// https://github.com/spectrum-health-systems/MAWSC/blob/main/doc/Manual/MAWSC-Manual.md#sourcecode
+// b220627.084038
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Manual/MAWSC-Manual.md#sourcecode
 
 /* --------------------------------------------------------------------------------------------
  * About MAWSC
