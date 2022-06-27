@@ -88,9 +88,9 @@ For example, if a variable has a value of "`_AValue_`" (where the `_` character 
 
 # NAMESPACES
 * [MAWSC](MAWSC.md)
-* [MAWSC.CommandLine](MAWS.CommandLine.md)
-* [MAWSC.Configuration](MAWS.Configuration.md)
-* [MAWSC.Requirement](MAWS.Requirement.md)
+* [MAWSC.CommandLine](MAWSC.CommandLine.md)
+* [MAWSC.Configuration](MAWSC.Configuration.md)
+* [MAWSC.Requirement](MAWSC.Requirement.md)
 
 # ADDITIONAL READING
 There is quite a bit of myAvatar-related information/documentation at the [myAvatar Development Community](
