@@ -9,7 +9,7 @@
 // -----------------------------------------[ CLASS ]------------------------------------------
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220627.084038
+// b220627.100923
 // Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
 // --------------------------------------------------------------------------------------------
 
