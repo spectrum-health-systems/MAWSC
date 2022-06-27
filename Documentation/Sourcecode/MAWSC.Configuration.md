@@ -1,49 +1,47 @@
-﻿<!-- b220618.093429 -->
+﻿> Last updated 6.27.2022
 
-[MAWSC](../../../) &gt; [MAWSC Manual](../MAWSC-Manual.md) &gt; [Sourcecode documentation](../Sourcecode/MAWSC.Configuration.md) &gt; **MAWSC.Configuration**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-
-<div align="center">
-
-  <img src="../../../.github/Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="384">
-  <h2>
-  MAWSC Manual
-  </h2>
-
-</div>
-
-<br>
-
-<div align="center">
-
-  [![CHANGELOG](https://img.shields.io/badge/CHANGELOG-00c0c0?style=for-the-badge)](doc/CHANGELOG.md)&nbsp;&nbsp;&nbsp;[![ROADMAP](https://img.shields.io/badge/ROADMAP-00c0c0?style=for-the-badge)](doc/ROADMAP.md)&nbsp;&nbsp;&nbsp;[![KNOWN ISSUES](https://img.shields.io/badge/KNOWN%20ISSUES-00c0c0?style=for-the-badge)](doc/KNOWN-ISSUES.md)
-
-</div>
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Configuration**
 
 ***
 
+<br>
 
-# **ConfigurationAction.cs**
-> Logic for configuration actions.
+<div align="center">
 
-## ConfigurationAction.ResetFile()
+  <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWS logo" width="256">
+  <h1> 
+    SOURCODE DOCUMENTATION
+  </h1>
+
+  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)](https://github.com/spectrum-health-systems/MAWSC)&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)](../Manual/MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)](MAWSC-Sourcecode.md)
+
+
+  <h2> 
+  
+    NAMESPACE: MAWSC.CommandLine
+  </h2>
+
+
+</div>
+
+# `[NAMESPACE]` MAWSC.Configuration
+Logic for configuration actions.
+
+<br>
+<br>
+
+***
+
+# `[CLASS]` ConfigurationAction.cs
+Handles arguments that are passed via the command line when MAWSC is executed.
+
+## `[METHOD]` ResetFile()
+Resets the configuration file contents to defaults.
+
+### Details
+TBD.
+
+### Notes
 * If the configuration file exists, it is deleted and then recreated.
 * It's recommended that you leave these values as they are, and make any modifications to the configuration file itself.
 * You will need to modify the following settings for your organization:
@@ -55,23 +53,30 @@
        The directory that contains the web service sourcode using in production (e.g., "C:\MyWebsites\MyWebService\Production\".>
 
 <br>
+<br>
 
 ***
 
-<br>
+# `[CLASS]` ConfigurationFile.cs
+Logic related to the local configuration file.
 
-# **ConfigurationFile.cs**
-
-## ConfigurationFile.GetDefaultFilePath()
+## `[METHOD]` GetDefaultFilePath()
 > Get the MAWSC configuration default filepath.
 
-By default, the path is "./AppData/Config/mawsc-config.json" by default.
+### Details
+TBD.
 
-It is recommended that you do not modify the default configuration file path.
+### Notes
+* By default, the path is "./AppData/Config/mawsc-config.json" by default.
+* It is recommended that you do not modify the default configuration file path.
 
-## ConfigurationFile.Verify()
+## `[METHOD]` Verify()
 > Verify the configuration file exists, and that it (probably) contains valid data.
 
+### Details
+TBD.
+
+### Notes
 In order for an existing configuration file to (probably) be valid, it must:
    1. Start with a "{" and end with a "}"<br>
       Valid JSON-formatted files are enclosed in {} brackets, so if the configuration file doesnt start and end with them, it's not a valid JSON data file.
@@ -82,28 +87,24 @@ Keep in mind that:
 * This is a quick-and-dirty test
 * In order for this to work correctly, the configuration file needs to be written as indented JSON-formatted data, which MAWSC does by default.
 
-## ConfigurationFile.Load()
+## `[METHOD]` Load()
 > Load MAWSC settings from the configuration file.
 
+### Details
+TBD.
+
+### Notes
 * If ./AppData/Config/mawsc-config.json doesn't exist, a new configuration file will be created with default setting values.
 
+<br>
 <br>
 
 ***
 
-<br>
+# `[CLASS]` ConfigurationSettings.cs
+Configuration setting properties, and methods related to those settings.
 
-# **ConfigurationSettings.cs**
-> Configuration setting properties, and methods related to those settings.
-
-## Properties
-
-### Notes
-* These settings are stored in the MAWSC configuration file, which is located at ./AppData/Config/mawsc-config.json.
-* If a setting is a *User defined value*, you will need to modify the configuration file prior to executing MAWSC. Failure to do so will result in MAWSC not functioning correctly.
-* If a setting has a *Default value*, it is highly recommended that you leave the setting at that value.
-* If a setting is *Created at runtime*, the value in the configuration file will be replaced by a session value when MAWSC is executed.
-* Repository values assume that GitHub is being used for version control. Other version control solutions may not work without modifying the sourcecode.
+## `PROPERTIES`
 
 `SessionTimestamp`<br>
 *Created at runtime*<br>
@@ -179,14 +180,30 @@ The (optional) MAWSC Action passed via command line when MAWSC is executed.
 *Created at runtime: "arg[2]*<br>
 The (optional) MAWSC Option passed via command line when MAWSC is executed.
 
-## ConfigurationSettings.Initialize()
-Get the MAWSC configuration settings for the session by:
-1. Loading the default settings from the external configuration file
-2. Setting a few values at runtime
+### Notes
+* These settings are stored in the MAWSC configuration file, which is located at ./AppData/Config/mawsc-config.json.
+* If a setting is a *User defined value*, you will need to modify the configuration file prior to executing MAWSC. Failure to do so will result in MAWSC not functioning correctly.
+* If a setting has a *Default value*, it is highly recommended that you leave the setting at that value.
+* If a setting is *Created at runtime*, the value in the configuration file will be replaced by a session value when MAWSC is executed.
+* Repository values assume that GitHub is being used for version control. Other version control solutions may not work without modifying the sourcecode.
 
-## ConfigurationSettings.GetRuntimeValues()
-Get a few session-specific settings.
+## `[METHOD]` Initialize()
+> Load MAWSC settings from the configuration file.
 
+### Details
+1. Load the default settings from the external configuration file
+2. Set a few session-specific values at runtime
+
+### Notes
+None.
+
+## `[METHOD]` GetRuntimeValues()
+> Get a few session-specific settings.
+
+### Details
+TBD.
+
+### Notes
 The following values are set at runtime, and are specific to this session:
 
 ```
@@ -200,11 +217,6 @@ MawscAction
 MawscOption
 ```
 
-
-
-<br>
-
 ***
-<br>
 
-[ Back to [MAWSC Sourcecode documentation](Sourcecode.md) ]
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Configuration**

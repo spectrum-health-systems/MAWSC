@@ -19,81 +19,84 @@
 
 <br>
 
-# `NAMESPACE` MAWSC.CommandLine
+# **[NAMESPACE]** MAWSC.CommandLine
 Handles information that is passed via the command line when MAWSC is executed.
 
-## `CLASS` Arguments.cs
+<br>
+<br>
+
+# `[CLASS]` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
 
-### `METHOD` VerifiedPassed()
-> Verifies that argument(s) were passed.
+## `[METHOD]` VerifiedPassed()
+Verifies that argument(s) were passed.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * One of the first things MAWSC does when it is executed is verify that arguments were passed.
 * If no arguments were passed, we will let the user know, and exit gracefully.
 * We aren't testing for valid arguments at this point, only that they (or it) exists.
 
-### `METHOD` GetIndividualArguments()
-> Separate the passed arguments into individual components.
+## `[METHOD]` GetIndividualArguments()
+Separate the passed arguments into individual components.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * There must be a MAWSC session command value - this will have been verified at this point.
 * The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.
 * The `rawArguments` are the arguments directly from the command line (e.g., `-staging` `-d`).
 * The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
 
-### `METHOD` GetRawArguments()
-> Separate the passed arguments into individual components.
+## `[METHOD]` GetRawArguments()
+Separate the passed arguments into individual components.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * Gets the raw MAWSC session command/action/option from the command line
 * These components may contain dashes, and any combination of casing.
 
-### `METHOD` GetRawCommand()
-> Get the raw MAWS Command.
+## `[METHOD]` GetRawCommand()
+Get the raw MAWS Command.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * There must be a MAWSC session command value, which will have been verified at this point.
 
-### `METHOD` GetRawAction()
-> Get the raw MAWS Action.
+## `[METHOD]` GetRawAction()
+Get the raw MAWS Action.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * The MAWSC session action is optional.
 *-* If an MAWSC session action is not passed, it is set to "unused".
 
-### `METHOD` GetRawOption()
-> Get the raw MAWS Option.
+## `[METHOD]` GetRawOption()
+Get the raw MAWS Option.
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * The MAWSC session option is optional.
 * If an MAWSC session option is not passed, it is set to "unused".
 
-### `METHOD` CleanRawArguments()
-> Clean the raw argument components
+## `[METHOD]` CleanRawArguments()
+Clean the raw argument components
 
-#### Details
+### Details
 This method is pretty straight forward, and doesn't change.
 
-#### Notes
+### Notes
 * Components may contain dashes, and any combination of casing.
 * The arguments are cleaned up so it's easier to apply logic to them. For example, if an argument can be passed as `-staging` or `-STAGING` or `--StAgInG`, and it will be cleaned up to be `staging`, which makes it easier to test against.
 
