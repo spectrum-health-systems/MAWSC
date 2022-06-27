@@ -29,7 +29,7 @@
 
   <br>
 
-  <img src=".github/Readme-resources/Screenshots/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="384">
+  <img src=".github/Screenshots/Readme/mawsc-repository-screenshot.png" alt="MAWSC screenshot" width="384">
   <h5> 
   The MAWSC command line interface
   </h5>
