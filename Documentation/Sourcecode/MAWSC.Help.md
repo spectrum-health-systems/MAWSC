@@ -67,4 +67,81 @@ None.
 
 ***
 
+# `[CLASS]` HelpComponents.cs
+Help components.
+
+## `[METHOD]` HelpHeader()
+Create the log message master header.
+
+### Details
+TBD
+
+### Notes
+* The master header string is at the top of each logfile, and always contains the same information.
+
+## `[METHOD]` UsageSyntaxHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` DefaultHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ConfigurationHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` StagingHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ProductionHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` ExampleHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+## `[METHOD]` MoreInformationHelp()
+TBD
+
+### Details
+TBD
+
+### Notes
+None.
+
+***
+
 [MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Help**
