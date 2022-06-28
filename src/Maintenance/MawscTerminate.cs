@@ -17,13 +17,7 @@ namespace MAWSC.Maintenance
 {
     internal class MawscTerminate
     {
-        /// <summary>Exit MAWSC.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
+        /// <summary>Exit MAWSC gracefully.</summary>
         /// <param name="exitCode">Exit code for troubleshooting purposes.</param>
         internal static void Gracefully(int exitCode)
         {

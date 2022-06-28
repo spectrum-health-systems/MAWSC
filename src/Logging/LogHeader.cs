@@ -20,12 +20,6 @@ namespace MAWSC.Logging
     internal class LogHeader
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="backupText"></param>
         /// <returns></returns>
         internal static string Backup(string backupText)
@@ -34,12 +28,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="backupText"></param>
         /// <returns></returns>
         internal static string Error(string errorText)
@@ -48,12 +36,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="infoHeaderText"></param>
         /// <returns></returns>
         internal static string Info(string infoText)
@@ -62,12 +44,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="requestHeaderText"></param>
         /// <returns></returns>
         internal static string Request(string requestText)
@@ -76,12 +52,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="verifyText"></param>
         /// <returns></returns>
         internal static string Verify(string verifyText)
@@ -90,12 +60,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="validateText"></param>
         /// <returns></returns>
         internal static string Validate(string validateText)
@@ -104,12 +68,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary>Create a log message sub-header.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         - The sub-header string is a generic sub-header for log files. Content is determined by the subHeaderText parameter.
-        ///     </para>
-        /// </remarks>
         /// <returns>Sub-header string for log files.</returns>
         /// <param name="subText">Sub-header text to be displayed.</param>
         internal static string Sub(string subText)
@@ -121,12 +79,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary>Create the log message master header.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         - The master header string is at the top of each logfile, and always contains the same information.
-        ///     </para> 
-        /// </remarks>
         /// <returns>Header string for log files.</returns>
         internal static string Top(string sessionTimestamp)
         {

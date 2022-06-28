@@ -21,12 +21,6 @@ namespace MAWSC.Staging
     internal class StagingInformation
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>  
         /// <param name="mawsc"></param>
         internal static void Display(ConfigurationSettings mawsc)
         {
@@ -35,12 +29,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>  
         /// <param name="mawsc"></param>
         /// <returns></returns>
         internal static string GetWebServiceVersion(ConfigurationSettings mawsc)
@@ -69,13 +57,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>  
-        /// <param name="mawsc"></param>
         /// <returns></returns>
         internal static string GetLastFetchedTimestamp(ConfigurationSettings mawsc)
         {

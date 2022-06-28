@@ -18,12 +18,6 @@ namespace MAWSC.Help
     internal class HelpComponent
     {
         /// <summary>Create the log message master header.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         - The master header string is at the top of each logfile, and always contains the same information.
-        ///     </para> 
-        /// </remarks>
         /// <returns>Header string for log files.</returns>
         internal static string HelpHeader(string helpSubText)
         {
@@ -34,12 +28,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string UsageSyntaxHelp(string usageLine)
         {
@@ -48,12 +36,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string DefaultHelp()
         {
@@ -73,12 +55,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string ConfigurationHelp()
         {
@@ -94,12 +70,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string StagingHelp()
         {
@@ -118,12 +88,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string ProductionHelp()
         {
@@ -139,12 +103,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <returns></returns>
         internal static string ExampleHelp()
         {
@@ -158,12 +116,6 @@ namespace MAWSC.Help
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string MoreInformationHelp()
         {

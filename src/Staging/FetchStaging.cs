@@ -20,12 +20,6 @@ namespace MAWSC.Staging
     internal class FetchStaging
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>  
         /// <param name="mawsc"></param>
         internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
@@ -44,12 +38,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary>Fetch staging sourcecode from a URL.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="mawscSettings">MAWSC session settings.</param>
         private static void GetFromUrl(string repositoryUrl, string targetFile)
         {
@@ -57,12 +45,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="targetFile"></param>
         private static void UncompressStagingSource(string targetFile)
         {
@@ -70,12 +52,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="targetFile"></param>
         /// <param name="sessionBackupDirectory"></param>
         /// <param name="targetDirectory"></param>

@@ -20,12 +20,6 @@ namespace MAWSC.Roundhouse
     internal class HelpRoundhouse
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="mawscCommand">tet</param>
         /// <param name="mawsc">tet</param>
         internal static void ParseAction(ConfigurationSettings mawsc)

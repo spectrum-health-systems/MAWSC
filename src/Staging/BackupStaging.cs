@@ -21,12 +21,6 @@ namespace MAWSC.Staging
     internal class BackupStaging
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="mawsc"></param>
         internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
@@ -35,11 +29,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary>Backup the existing staging source location.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         - When you fetch a sourcecode from GitHub, that sourcecode is saved to the StagingSource. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
-        ///     </para>
-        /// </remarks>
         /// <param name="mawsc">MAWSC settings.</param>
         private static void SourceLocation(ConfigurationSettings mawsc)
         {
@@ -50,11 +39,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary>Backup the existing staging target location.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         - When you deploy sourcecode from StagingSource, that sourcecode is copied to the StagingTarget. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
-        ///     </para>
-        /// </remarks>
         /// <param name="mawsc">MAWSC settings.</param>
         private static void TargetLocation(ConfigurationSettings mawsc)
         {
