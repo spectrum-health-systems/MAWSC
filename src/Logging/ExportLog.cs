@@ -18,40 +18,22 @@ namespace MAWSC.Logging
     internal class ExportLog
     {
         /// <summary>Display log information on the console.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         internal static void ToConsole(string logMessage)
-        { //x
+        {
             Console.WriteLine(logMessage);
         }
 
         /// <summary>Display log information on the console, and write it to a file.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToEverywhere(string logMessage, string logfilePath)
-        { //x
+        {
             ExportLog.ToFile(logMessage, logfilePath);
             ExportLog.ToConsole(logMessage);
         }
 
         /// <summary>Write log information to a file.</summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="logMessage">Log message to display.</param>
         /// <param name="logfilePath">Logfile path.</param>
         internal static void ToFile(string logMessage, string logfilePath)

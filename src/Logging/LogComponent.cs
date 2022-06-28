@@ -20,12 +20,6 @@ namespace MAWSC.Logging
     internal class LogComponent
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <param name="mawsc"></param>
         /// <returns></returns>
         internal static string ArgumentsPassed(ConfigurationSettings mawsc)
@@ -34,12 +28,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string BackupStagingSource(string stagingFetchDirectory, string sessionBackupDirectory)
         {
@@ -48,12 +36,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns> 
         internal static string BackupStagingTarget(ConfigurationSettings mawsc)
         {
@@ -62,12 +44,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string ConfigurationInformation(ConfigurationSettings mawsc)
         {
@@ -87,12 +63,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string StagingInformation(ConfigurationSettings mawsc)
         {
@@ -111,12 +81,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string ConfigurationFileWillBeReset()
         {
@@ -124,12 +88,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string ConfigurationFileHasBeenReset()
         {
@@ -138,12 +96,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string FrameworkRequiredDirectoriesVerified(string verificationMessage)
         {
@@ -151,12 +103,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string SessionBackupDirectoryVerified()
         {
@@ -164,12 +110,6 @@ namespace MAWSC.Logging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>
         /// <returns></returns>
         internal static string TypeForHelp()
         {

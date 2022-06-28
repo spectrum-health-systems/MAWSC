@@ -1,6 +1,6 @@
-﻿> Last updated 6.27.2022
+﻿> Last updated MM.DD.YYYY
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Requirement**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.%NAMESPACE%**
 
 ***
 
@@ -19,26 +19,24 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Requirement
+# **[NAMESPACE]** MAWSC.%NAMESPACE%**
 Logic for various requirements
 
 <br>
 
 ***
 
-# `[CLASS]` VerifyRequirements.cs
-Verify various MAWSC requirements.
+# `[CLASS]` %CLASS%.cs
+TBD
 
-## `[METHOD]` Startup()
-Verify the basic requirements.
+## `[METHOD]` %METHOD%()
+TBD
 
 ### Details
-1. The configuration file exists, and is valid
-2. Arguments were passed
-
+TBD
 ### Notes
 None.
 
 ***
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Requirement**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.%NAMESPACE%**
