@@ -21,12 +21,6 @@ namespace MAWSC.Staging
     internal class DeployStaging
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="mawsc"></param>
         internal static void SoupToNuts(ConfigurationSettings mawsc)
         {
@@ -53,12 +47,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="mawsc"></param>
         private static void All(ConfigurationSettings mawsc)
         {
@@ -71,12 +59,6 @@ namespace MAWSC.Staging
         }
 
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks>  
         /// <param name="mawsc"></param>
         private static void Minimal(ConfigurationSettings mawsc)
         {

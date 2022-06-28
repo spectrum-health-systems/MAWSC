@@ -20,12 +20,6 @@ namespace MAWSC.Staging
     internal class CleanStaging
     {
         /// <summary></summary>
-        /// <remarks>
-        ///     <para>
-        ///         <b><u>NOTES</u></b><br/>
-        ///         -
-        ///     </para>
-        /// </remarks> 
         /// <param name="mawsc"></param>
         internal static void FetchLocation(ConfigurationSettings mawsc)
         {

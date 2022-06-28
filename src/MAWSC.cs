@@ -16,7 +16,7 @@
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-[ ABOUT MAWSC ]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // https://github.com/spectrum-health-systems/MAWSC
 // Version1.99.0.0
-// Build: 220627.085320+devbuild
+// Build: 220628.132216-devbuild
 //
 // MyAvatar Web Service Commander (MAWSC) is a command-line maintenance utility for the
 // MyAvatar Web Service (MAWS), although it can be use to help maintain any custom web service
