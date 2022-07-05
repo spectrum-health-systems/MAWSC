@@ -1,4 +1,4 @@
-﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.CommandLine namespace**
 
 <br>
 <br>
@@ -14,7 +14,7 @@
 
 <div align="center">
 
-# **`MAWSC.CommandLine NAMESPACE`**
+# **`NAMESPACE`** MAWSC.CommandLine
 
 </div>
 
@@ -123,7 +123,7 @@ This method is pretty straight forward, and doesn't change.
 
 ***
 
-> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
+> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.CommandLine namespace**
 
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
