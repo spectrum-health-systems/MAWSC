@@ -9,7 +9,7 @@
   </h1>
 
   [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
-  
+
 </div>
 
 <div align="center">
@@ -23,7 +23,7 @@ The MAWSC namespace is the entry point for MAWSC, and handles the initialization
 
 This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session.
 
-# Sourcecode documentation
+## Sourcecode documentation
 
 <details>
 <summary>
