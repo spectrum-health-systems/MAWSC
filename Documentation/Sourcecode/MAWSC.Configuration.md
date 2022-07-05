@@ -120,76 +120,76 @@ This class contains both the MAWSC settings properties, and logic related to tho
 
 `SessionTimestamp`  
 *Created at runtime*  
-The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.  
+The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.
 
 `ApplicationVersion`  
 *Created at runtime*  
-The version of MAWSC that is being used.  
+The version of MAWSC that is being used.
 
 `ConfigurationDirectory`  
 *Default value: "./AppData/Config/"*  
-The directory where the mawsc-config.json file is located. This is hardcoded, and therefore shouldn't be changed.  
+The directory where the mawsc-config.json file is located. This is hardcoded, and therefore shouldn't be changed.
 
 `LogDirectory`  
 *Default value: "./AppData/Logs/"*  
-The directory where logfiles are created.  
+The directory where logfiles are created.
 
 `SessionLogfilePath`  
 *Created at runtime: "./AppData/Logs/mawsc-%SessionTimestamp%.log"*  
 The path to the session logfile, which contains log information for the session.
 
-`BackupDirectory`<br>
-*Default value: "./AppData/Backup/"*<br>
+`BackupDirectory`  
+*Default value: "./AppData/Backup/"*  
 The directory where backup files are stored.
 
-`SessionBackupDirectory`<br>
-*Created at runtime: "./AppData/Backup/%SessionTimestamp%/*<br>
+`SessionBackupDirectory`  
+*Created at runtime: "./AppData/Backup/%SessionTimestamp%/*  
 The directory where session backup files are stored.
 
-`TempDirectory`<br>
-*Default value: "./AppData/Temp/*<br>
+`TempDirectory`  
+*Default value: "./AppData/Temp/*  
 The directory where temporary files are stored. By default this is "./AppData/Temp/". This directory is deleted/recreated when MAWSC is executed.
 
-`RepositoryLocation`<br>
-*User defined value*<br>
-The base level URL of the account that contains the repository you are using. Using an the Spectrum Health Systems GitHub accoung (**https://github.com/spectrum-health-systems/**) as an example, this value would be **https://github.com/spectrum-health-systems/**.
+`RepositoryLocation`  
+*User defined value*  
+The base level URL of the account that contains the repository you are using. Using an the Spectrum Health Systems GitHub accoung (`https://github.com/spectrum-health-systems/`) as an example, this value would be `https://github.com/spectrum-health-systems/`.
 
-`RepositoryName`<br>
-*User defined value*<br>
+`RepositoryName`  
+*User defined value*  
 The name of the repository that contains the web service you are using. Using an the MAWSC GitHub respository (**https://github.com/spectrum-health-systems/MAWSC**) as an example, this value would be **MAWSC**.
 
-`RepositoryBranch`<br>
-*User defined value*<br>
+`RepositoryBranch`  
+*User defined value*  
 The name of the repository branch that contains the web service you are using. Using an the MAWSC development branch (**https://github.com/spectrum-health-systems/MAWSC/tree/development**) as an example, this value would be **development**. If you are using the main/master branch, leave this set to **""**.
 
-`RepositoryZipUrl`<br>
-*Created at runtime: "%RepositoryLocation%/%RepositoryName%/archive/refs/heads/%RepositoryBranch%.zip*<br>
+`RepositoryZipUrl`  
+*Created at runtime: "%RepositoryLocation%/%RepositoryName%/archive/refs/heads/%RepositoryBranch%.zip*  
 The URL of zip archive for the repository you are using, built using the **RepositoryLocation**, **RepositoryName**, and **RepositoryBranch**. Using the examples above would look like **https://github.com/spectrum-health-systems/MAWSC/archive/refs/heads/development.zip**
 
-`StagingFetchDirectory`<br>
-*Default value: "./AppData/Staging-fetch/*<br>
+`StagingFetchDirectory`  
+*Default value: "./AppData/Staging-fetch/*  
 The directory where the repository archive will be downloaded.
 
-`StagingTestingDirectory`<br>
-*User defined value*<br>
+`StagingTestingDirectory`  
+*User defined value*  
 The directory where the staging source will be copied to for testing. For example:
 "/path/to/your/web/service/testing/".
 
-`ProductionDirectory`<br>
-*User defined value*<br>
+`ProductionDirectory`  
+*User defined value*  
 The directory where your production web service is located. For example:
 "/path/to/your/web/service/production/".
 
-`MawscCommand `<br>
-*Created at runtime: "arg[0]*<br>
+`MawscCommand `  
+*Created at runtime: "arg[0]*  
 The MAWSC Command passed via command line when MAWSC is executed. This is required, and MAWSC will exit gracefully if it does not exist.
 
-`MawscAction `<br>
-*Created at runtime: "arg[1]*<br>
+`MawscAction `  
+*Created at runtime: "arg[1]*  
 The (optional) MAWSC Action passed via command line when MAWSC is executed.
 
-`MawscOption `<br>
-*Created at runtime: "arg[2]*<br>
+`MawscOption `  
+*Created at runtime: "arg[2]*  
 The (optional) MAWSC Option passed via command line when MAWSC is executed.
 
 
