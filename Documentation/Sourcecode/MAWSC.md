@@ -50,8 +50,7 @@ Initialize a new MAWSC session.
 </details>
 
 <br>
-
-***
+<br>
 
 > [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
