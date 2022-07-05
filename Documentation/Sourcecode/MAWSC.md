@@ -23,7 +23,7 @@ The MAWSC namespace is the entry point for MAWSC, and handles the initialization
 
 This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session.
 
-## Sourcecode documentation
+## Class documentation
 
 <details>
 <summary>
