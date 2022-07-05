@@ -134,8 +134,7 @@ Clean the MAWSC Command/Action/Option components.
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
 [3]: ../Manual/MAWSC-Manual.md
-[4]: ../MAWSC-Sourcecode.md#standard-casingtrimming-of-values
-
+[4]: ../Sourcecode/MAWSC-Sourcecode.md#standard-casingtrimming-of-values
 
 <div align="center">
   <sub>
