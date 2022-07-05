@@ -1,27 +1,34 @@
-> [MAWS][1] &gt; [Sourcecode documentation][2]
+> Last updated 6.27.22
+
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC Sourcecode documentation**
+
+***
 
 <br>
+
 <div align="center">
+
   <img src="../../.github/Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
   <h1> 
     MAWSC SOURCODE DOCUMENTATION
   </h1>
 
-<!-- In order for this block to render properly, it needs to be seperate from the <div> tag, and left-justified. -->
-[![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
+  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)](https://github.com/spectrum-health-systems/MAWSC)&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)](../Manual/MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)](MAWSC-Sourcecode.md)
 
 </div>
+
 <br>
 
-# About this document
-This is detailed documentation about the MAWSC sourcecode.
+# ABOUT THIS DOCUMENT
+This is detailed documentation about the MAWSC sourcecode, which includes:
 
-Instead of having a ton of comments in the sourcecode, details about the code will be here.
+* Information about sourcecode [comments](#sourcecode-comments) and [variables](#variables).
+* Detailed information about each [namespace](#namespaces), and the classes and methods within.
 
-# About the sourcecode
+# SOURCECODE
 
-## Headers
-Every class has a standard `**==[ PROJECT ]==**` header thta looks like this:
+## HEADERS
+Every class has a standard **==[ PROJECT ]==** header thta looks like this:
 ```
 // ========================================[ PROJECT ]=========================================
 // MAWSC (MyAvatar Web Service Commander)
@@ -32,7 +39,7 @@ Every class has a standard `**==[ PROJECT ]==**` header thta looks like this:
 // ============================================================================================
 ```
 
-Every class has a unique `**--[ CLASS ]--**` header that looks like this:
+Every class has a unique **--[ CLASS ]--** header that looks like this:
 ```
 // -----------------------------------------[ CLASS ]------------------------------------------
 // %ClassName%.cs
@@ -44,7 +51,7 @@ Every class has a unique `**--[ CLASS ]--**` header that looks like this:
 
 The entry point for MAWSC (*MAWSC.cs*) also has an **=-[ ABOUT ]-=** header that provides various information and documentation links related to MAWSC. 
 
-## Comments
+## COMMENTS
 Attempts have been made to make the MAWS sourcecode as human-readable as possible, so I'm keeping the comments to a minimum. The document you are currently reading is the primary source of information about how everything works.
 
 That being said, you will find the following types of comments in the MAWS sourcecode:
@@ -61,7 +68,7 @@ That being said, you will find the following types of comments in the MAWS sourc
 
 ```
 
-# Variables
+# VARIABLES
 
 ## Variable prefixes
 
@@ -95,14 +102,6 @@ For example, if a variable has a value of "`_AValue_`" (where the `_` character 
 There is quite a bit of myAvatar-related information/documentation at the [myAvatar Development Community](
 https://github.com/myAvatar-Development-Community/).
 
-> [MAWS][1] &gt; [Sourcecode documentation][2]
+***
 
-[1]: https://github.com/spectrum-health-systems/MAWSC
-[2]: ../Sourcecode/MAWSC-Sourcecode.md
-[3]: ../Manual/MAWSC-Manual.md
-
-<div align="center">
-  <sub>
-    Last updated July 5th, 2022
-  </sub>
-<br>
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC Sourcecode documentation**

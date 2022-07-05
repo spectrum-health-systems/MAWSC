@@ -1,22 +1,14 @@
-﻿> Last updated 7.5.2022
-
-[MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
-
-***
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
 
 <br>
-
 <div align="center">
-
   <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
   <h1> 
     MAWSC SOURCODE DOCUMENTATION
   </h1>
 
   [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
-
 </div>
-
 <br>
 
 <div align="center">
@@ -46,11 +38,17 @@ Initialize a new MAWSC session.
 * This class/method is designed to be pretty static, and rarely modified.
 * **[2]** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
 
-***
+<br>
 
-[MAWS][1] &gt; [Sourcecode][2]) &gt;  **MAWSC**
+> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
 
 
-[1]: https://github.com/spectrum-health-systems/MAWSC "MAWSC repository"
-[2]: ../Sourcecode/MAWSC-Sourcecode.md "MAWSC sourcecode documentation"
-[3]: ../Manual/MAWSC-Manual.md "MAWSC Manual"
+[1]: https://github.com/spectrum-health-systems/MAWSC
+[2]: ../Sourcecode/MAWSC-Sourcecode.md
+[3]: ../Manual/MAWSC-Manual.md
+
+<div align="center">
+  <sub>
+    Last updated July 5th, 2022
+  </sub>
+<br>
