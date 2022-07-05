@@ -13,7 +13,7 @@
 
 <div align="center">
 
-# **`NAMESPACE`** MAWSC
+# **`MAWSC NAMESPACE`**
 
 </div>
 
