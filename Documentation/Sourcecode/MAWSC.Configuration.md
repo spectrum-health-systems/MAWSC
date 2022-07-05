@@ -116,11 +116,11 @@ This class contains both the MAWSC settings properties, and logic related to tho
 
 ***
 
-## `PROPERTIES`
+## PROPERTIES
 
-`SessionTimestamp`<br>
-*Created at runtime*<br>
-The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.<br>
+`SessionTimestamp`  
+*Created at runtime*  
+The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.  
 
 `ApplicationVersion`<br>
 *Created at runtime*<br>
