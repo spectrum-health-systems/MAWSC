@@ -17,6 +17,10 @@ using MAWSC.Configuration;
 
 namespace MAWSC.Staging
 {
+
+    /// <summary>
+    ///   <br />
+    /// </summary>
     internal class CleanStaging
     {
         /// <summary></summary>

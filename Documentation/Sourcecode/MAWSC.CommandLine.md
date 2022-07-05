@@ -8,7 +8,7 @@
 
 <div align="center">
 
-  <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWS logo" width="256">
+  <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
   <h1> 
     MAWSC SOURCODE DOCUMENTATION
   </h1>
