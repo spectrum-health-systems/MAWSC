@@ -116,26 +116,26 @@ This class contains both the MAWSC settings properties, and logic related to tho
 
 ***
 
-## PROPERTIES
+## ConfigurationSettings.cs properties
 
 `SessionTimestamp`  
 *Created at runtime*  
 The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.  
 
-`ApplicationVersion`<br>
-*Created at runtime*<br>
-The version of MAWSC that is being used.<br>
+`ApplicationVersion`  
+*Created at runtime*  
+The version of MAWSC that is being used.  
 
-`ConfigurationDirectory`<br>
-*Default value: "./AppData/Config/"*<br>
-The directory where the mawsc-config.json file is located. This is hardcoded, and therefore shouldn't be changed.
+`ConfigurationDirectory`  
+*Default value: "./AppData/Config/"*  
+The directory where the mawsc-config.json file is located. This is hardcoded, and therefore shouldn't be changed.  
 
-`LogDirectory`<br>
-*Default value: "./AppData/Logs/"*<br>
-The directory where logfiles are created.
+`LogDirectory`  
+*Default value: "./AppData/Logs/"*  
+The directory where logfiles are created.  
 
-`SessionLogfilePath`<br>
-*Created at runtime: "./AppData/Logs/mawsc-%SessionTimestamp%.log"*<br>
+`SessionLogfilePath`  
+*Created at runtime: "./AppData/Logs/mawsc-%SessionTimestamp%.log"*  
 The path to the session logfile, which contains log information for the session.
 
 `BackupDirectory`<br>
