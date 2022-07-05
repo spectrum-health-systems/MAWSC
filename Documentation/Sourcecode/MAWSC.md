@@ -32,10 +32,10 @@ This namespace doesn't have much to it, it just handles the initialization of a 
 
 This class has a single class, with a single method, that handels the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
 
-## `MawscInitializer()`
+### `MawscInitializer()`
 Initialize a new MAWSC session.
 
-### Operation
+#### Operation
 1. Clear the console.
 2. Get the current MMddyy and HHmmss.
 3. Verify the basic MAWSC requirements.
