@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Logging
+# `NAMESPACE` MAWSC.Logging
 Exports log data to the command line and/or a local file.
 
 <br>
 
 ***
 
-# `[CLASS]` ExportLog.cs
+## `CLASS` ExportLog.cs
 Verify various MAWSC requirements.
 
-## `[METHOD]` ToConsole()
+### `METHOD` ToConsole()
 Display log information on the console.
 
 ### Operation
@@ -38,7 +38,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ToEverywhere()
+### `METHOD` ToEverywhere()
 Display log information on the console, and write it to a file.
 
 ### Operation
@@ -47,7 +47,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ToFile()
+### `METHOD` ToFile()
 Write log information to a file. 
 
 ### Operation
@@ -60,10 +60,10 @@ None.
 
 ***
 
-# `[CLASS]` LogComponents.cs
+## `CLASS` LogComponents.cs
 Log components.
 
-## `[METHOD]` ArgumentsPassed()
+### `METHOD` ArgumentsPassed()
 TBD
 
 ### Operation
@@ -72,7 +72,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` BackupStagingSource()
+### `METHOD` BackupStagingSource()
 TBD
 
 ### Operation
@@ -81,7 +81,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` BackupStagingTarget()
+### `METHOD` BackupStagingTarget()
 TBD
 
 ### Operation
@@ -90,7 +90,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationInformation()
+### `METHOD` ConfigurationInformation()
 TBD
 
 ### Operation
@@ -99,7 +99,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` StagingInformation()
+### `METHOD` StagingInformation()
 TBD
 
 ### Operation
@@ -108,7 +108,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationFileWillBeReset()
+### `METHOD` ConfigurationFileWillBeReset()
 TBD
 
 ### Operation
@@ -117,7 +117,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationFileHasBeenReset()
+### `METHOD` ConfigurationFileHasBeenReset()
 TBD
 
 ### Operation
@@ -126,7 +126,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` FrameworkRequiredDirectoriesVerified()
+### `METHOD` FrameworkRequiredDirectoriesVerified()
 TBD
 
 ### Operation
@@ -135,7 +135,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` SessionBackupDirectoryVerified()
+### `METHOD` SessionBackupDirectoryVerified()
 TBD
 
 ### Operation
@@ -144,7 +144,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` TypeForHelp()
+### `METHOD` TypeForHelp()
 TBD
 
 ### Operation
@@ -157,10 +157,10 @@ None.
 
 ***
 
-# `[CLASS]` LogHeader.cs
+## `CLASS` LogHeader.cs
 Logging headers.
 
-## `[METHOD]` Backup()
+### `METHOD` Backup()
 TBD
 
 ### Operation
@@ -169,7 +169,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Error()
+### `METHOD` Error()
 TBD
 
 ### Operation
@@ -178,7 +178,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Info()
+### `METHOD` Info()
 TBD
 
 ### Operation
@@ -187,7 +187,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Request()
+### `METHOD` Request()
 TBD
 
 ### Operation
@@ -196,7 +196,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Verify()
+### `METHOD` Verify()
 TBD
 
 ### Operation
@@ -205,7 +205,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Validate()
+### `METHOD` Validate()
 TBD
 
 ### Operation
@@ -214,7 +214,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` Sub()
+### `METHOD` Sub()
 Create a log message sub-header.
 
 ### Operation
@@ -223,7 +223,7 @@ None.
 ### Notes
 * The sub-header string is a generic sub-header for log files. Content is determined by the subHeaderText parameter.
 
-## `[METHOD]` Top()
+### `METHOD` Top()
 Create the log message master header.
 
 ### Operation
@@ -236,10 +236,10 @@ None.
 
 ***
 
-# `[CLASS]` LogMessage.cs
+## `CLASS` LogMessage.cs
 Logging messages.
 
-## `[METHOD]` ArgumentsMissing()
+### `METHOD` ArgumentsMissing()
 TBD
 
 ### Operation
@@ -248,7 +248,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ArgumentsPassed()
+### `METHOD` ArgumentsPassed()
 TBD
 
 ### Operation
@@ -257,7 +257,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` BackupStagingSource()
+### `METHOD` BackupStagingSource()
 TBD
 
 ### Operation
@@ -266,7 +266,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` RequestBackupStagingSource()
+### `METHOD` RequestBackupStagingSource()
 TBD
 
 ### Operation
@@ -275,7 +275,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` BackupStagingTarget()
+### `METHOD` BackupStagingTarget()
 TBD
 
 ### Operation
@@ -284,7 +284,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` InfoMovingFiles()
+### `METHOD` InfoMovingFiles()
 TBD
 
 ### Operation
@@ -293,7 +293,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` RequestBackupStagingTarget()
+### `METHOD` RequestBackupStagingTarget()
 TBD
 
 ### Operation
@@ -302,7 +302,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` CommandIsInvalid()
+### `METHOD` CommandIsInvalid()
 TBD
 
 ### Operation
@@ -311,7 +311,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationInformation()
+### `METHOD` ConfigurationInformation()
 TBD
 
 ### Operation
@@ -320,7 +320,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` RequestConfigurationInformation()
+### `METHOD` RequestConfigurationInformation()
 TBD
 
 ### Operation
@@ -329,7 +329,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` StagingInformation()
+### `METHOD` StagingInformation()
 TBD
 
 ### Operation
@@ -338,7 +338,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationFileInvalid()
+### `METHOD` ConfigurationFileInvalid()
 TBD
 
 ### Operation
@@ -347,7 +347,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationFileNotFound()
+### `METHOD` ConfigurationFileNotFound()
 TBD
 
 ### Operation
@@ -356,7 +356,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` RequestConfigurationFileReset()
+### `METHOD` RequestConfigurationFileReset()
 TBD
 
 ### Operation
@@ -365,7 +365,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationFileReset()
+### `METHOD` ConfigurationFileReset()
 TBD
 
 ### Operation
@@ -374,7 +374,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` VerifyFrameworkRequiredDirectories()
+### `METHOD` VerifyFrameworkRequiredDirectories()
 TBD
 
 ### Operation
@@ -383,7 +383,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` SessionBackupDirectoryVerify()
+### `METHOD` SessionBackupDirectoryVerify()
 TBD
 
 ### Operation
@@ -392,7 +392,7 @@ None.
 ### Notes
 None.
 
-## `[METHOD]` RequestStagingInformation()
+### `METHOD` RequestStagingInformation()
 TBD
 
 ### Operation

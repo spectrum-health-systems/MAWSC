@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Framework
+# `NAMESPACE` MAWSC.Framework
 Logic for MAWSC framework.
 
 <br>
 
 ***
 
-# `[CLASS]` RefreshFramework.cs
+## `CLASS` RefreshFramework.cs
 Refresh framework components.
 
-## `[METHOD]` Directories()
+### `METHOD` Directories()
 Refresh MAWSC framework directories.
 
 ### Operation
@@ -43,10 +43,10 @@ TBD.
 
 ***
 
-# `[CLASS]` VerifyFramework.cs
+## `CLASS` VerifyFramework.cs
 Refresh framework components.
 
-## `[METHOD]` Startup()
+### `METHOD` Startup()
 Verify the MAWSC framework.
 
 ### Operation
@@ -56,7 +56,7 @@ TBD.
 * Verify the framework (directories, data, etc.)
 * We'll jumpstart the logfile with the header we created earlier, then write log information everywhere going forward.
 
-## `[METHOD]` RequiredDirectories()
+### `METHOD` RequiredDirectories()
 Verify that required directories exist, and create them if they don't.
 
 ### Operation
@@ -65,7 +65,7 @@ TBD.
 ### Notes
 None.
 
-## `[METHOD]` SessionBackupDirectory()
+### `METHOD` SessionBackupDirectory()
 TBD
 
 ### Operation

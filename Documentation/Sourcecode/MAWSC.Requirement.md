@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Requirement
+# `NAMESPACE` MAWSC.Requirement
 Logic for various requirements
 
 <br>
 
 ***
 
-# `[CLASS]` VerifyRequirements.cs
+## `CLASS` VerifyRequirements.cs
 Verify various MAWSC requirements.
 
-## `[METHOD]` Startup()
+### `METHOD` Startup()
 Verify the basic requirements.
 
 ### Operation

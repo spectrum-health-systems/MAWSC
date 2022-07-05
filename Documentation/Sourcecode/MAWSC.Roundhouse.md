@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.%NAMESPACE%**
+# `NAMESPACE` MAWSC.%NAMESPACE%**
 Maintenance stuff.
 
 <br>
 
 ***
 
-# `[CLASS]` MawscTerminate.cs
+## `CLASS` MawscTerminate.cs
 TBD
 
-## `[METHOD]` Gracefully()
+### `METHOD` Gracefully()
 Exit MAWSC gracefully.
 
 ### Operation

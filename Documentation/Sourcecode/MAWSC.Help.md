@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Help
+# `NAMESPACE` MAWSC.Help
 Logic for MAWSC help.
 
 <br>
 
 ***
 
-# `[CLASS]` DisplayHelp.cs
+## `CLASS` DisplayHelp.cs
 Display help information on the console.
 
-## `[METHOD]` ForDefault()
+### `METHOD` ForDefault()
 TBD
 
 ### Operation
@@ -38,7 +38,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ForConfiguration()
+### `METHOD` ForConfiguration()
 TBD
 
 ### Operation
@@ -47,7 +47,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ForStaging()
+### `METHOD` ForStaging()
 TBD
 
 ### Operation
@@ -56,7 +56,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ForProduction()
+### `METHOD` ForProduction()
 TBD
 
 ### Operation
@@ -67,10 +67,10 @@ None.
 
 ***
 
-# `[CLASS]` HelpComponents.cs
+## `CLASS` HelpComponents.cs
 Help components.
 
-## `[METHOD]` HelpHeader()
+### `METHOD` HelpHeader()
 Create the log message master header.
 
 ### Operation
@@ -79,7 +79,7 @@ TBD
 ### Notes
 * The master header string is at the top of each logfile, and always contains the same information.
 
-## `[METHOD]` UsageSyntaxHelp()
+### `METHOD` UsageSyntaxHelp()
 TBD
 
 ### Operation
@@ -88,7 +88,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` DefaultHelp()
+### `METHOD` DefaultHelp()
 TBD
 
 ### Operation
@@ -97,7 +97,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ConfigurationHelp()
+### `METHOD` ConfigurationHelp()
 TBD
 
 ### Operation
@@ -106,7 +106,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` StagingHelp()
+### `METHOD` StagingHelp()
 TBD
 
 ### Operation
@@ -115,7 +115,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ProductionHelp()
+### `METHOD` ProductionHelp()
 TBD
 
 ### Operation
@@ -124,7 +124,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` ExampleHelp()
+### `METHOD` ExampleHelp()
 TBD
 
 ### Operation
@@ -133,7 +133,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` MoreInformationHelp()
+### `METHOD` MoreInformationHelp()
 TBD
 
 ### Operation

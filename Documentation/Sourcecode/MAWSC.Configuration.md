@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Configuration
+# `NAMESPACE` MAWSC.Configuration
 Logic for configuration actions.
 
 <br>
 
 ***
 
-# `[CLASS]` ConfigurationAction.cs
+## `CLASS` ConfigurationAction.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
 
-## `[METHOD]` ResetFile()
+### `METHOD` ResetFile()
 Resets the configuration file contents to defaults.
 
 ### Operation
@@ -51,10 +51,10 @@ TBD.
 
 ***
 
-# `[CLASS]` ConfigurationFile.cs
+## `CLASS` ConfigurationFile.cs
 Logic related to the local configuration file.
 
-## `[METHOD]` GetDefaultFilePath()
+### `METHOD` GetDefaultFilePath()
 > Get the MAWSC configuration default filepath.
 
 ### Operation
@@ -64,7 +64,7 @@ TBD.
 * By default, the path is "./AppData/Config/mawsc-config.json" by default.
 * It is recommended that you do not modify the default configuration file path.
 
-## `[METHOD]` Verify()
+### `METHOD` Verify()
 > Verify the configuration file exists, and that it (probably) contains valid data.
 
 ### Operation
@@ -81,7 +81,7 @@ Keep in mind that:
 * This is a quick-and-dirty test
 * In order for this to work correctly, the configuration file needs to be written as indented JSON-formatted data, which MAWSC does by default.
 
-## `[METHOD]` Load()
+### `METHOD` Load()
 > Load MAWSC settings from the configuration file.
 
 ### Operation
@@ -95,7 +95,7 @@ TBD.
 
 ***
 
-# `[CLASS]` ConfigurationSettings.cs
+## `CLASS` ConfigurationSettings.cs
 Configuration setting properties, and methods related to those settings.
 
 ## `PROPERTIES`
@@ -181,7 +181,7 @@ The (optional) MAWSC Option passed via command line when MAWSC is executed.
 * If a setting is *Created at runtime*, the value in the configuration file will be replaced by a session value when MAWSC is executed.
 * Repository values assume that GitHub is being used for version control. Other version control solutions may not work without modifying the sourcecode.
 
-## `[METHOD]` Initialize()
+### `METHOD` Initialize()
 > Load MAWSC settings from the configuration file.
 
 ### Operation
@@ -191,7 +191,7 @@ The (optional) MAWSC Option passed via command line when MAWSC is executed.
 ### Notes
 None.
 
-## `[METHOD]` GetRuntimeValues()
+### `METHOD` GetRuntimeValues()
 > Get a few session-specific settings.
 
 ### Operation

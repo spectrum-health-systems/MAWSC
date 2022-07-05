@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.%NAMESPACE%**
+# `NAMESPACE` MAWSC.%NAMESPACE%**
 Logic for various requirements
 
 <br>
 
 ***
 
-# `[CLASS]` %CLASS%.cs
+## `CLASS` %CLASS%.cs
 TBD
 
-## `[METHOD]` %METHOD%()
+### `METHOD` %METHOD%()
 TBD
 
 ### Operation

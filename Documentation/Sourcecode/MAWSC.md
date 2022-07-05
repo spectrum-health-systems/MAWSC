@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC
+# `NAMESPACE` MAWSC
 Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
 <br>
 
 ***
 
-# `[CLASS]` MAWSC.cs
+## `CLASS` MAWSC.cs
 Main MAWSC class. Doesn't do much, just handles the intial starup logic.
 
-## `[METHOD]` MawscInitializer()
+### `METHOD` MawscInitializer()
 Initialize a new MAWSC session.
 
 ### Operation

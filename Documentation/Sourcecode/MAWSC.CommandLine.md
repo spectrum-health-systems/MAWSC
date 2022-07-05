@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.CommandLine
+# `NAMESPACE` MAWSC.CommandLine
 Handles information that is passed via the command line when MAWSC is executed.
 
 <br>
 
 ***
 
-# `[CLASS]` Arguments.cs
+## `CLASS` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
 
-## `[METHOD]` VerifiedPassed()
+### `METHOD` VerifiedPassed()
 Verifies that argument(s) were passed.
 
 ### Operation
@@ -40,7 +40,7 @@ This method is pretty straight forward, and doesn't change.
 * If no arguments were passed, we will let the user know, and exit gracefully.
 * We aren't testing for valid arguments at this point, only that they (or it) exists.
 
-## `[METHOD]` GetIndividualArguments()
+### `METHOD` GetIndividualArguments()
 Separate the passed arguments into individual components.
 
 ### Operation
@@ -52,7 +52,7 @@ This method is pretty straight forward, and doesn't change.
 * The `rawArguments` are the arguments directly from the command line (e.g., `-staging` `-d`).
 * The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
 
-## `[METHOD]` GetRawArguments()
+### `METHOD` GetRawArguments()
 Separate the passed arguments into individual components.
 
 ### Operation
@@ -62,7 +62,7 @@ This method is pretty straight forward, and doesn't change.
 * Gets the raw MAWSC session command/action/option from the command line
 * These components may contain dashes, and any combination of casing.
 
-## `[METHOD]` GetRawCommand()
+### `METHOD` GetRawCommand()
 Get the raw MAWS Command.
 
 ### Operation
@@ -71,7 +71,7 @@ This method is pretty straight forward, and doesn't change.
 ### Notes
 * There must be a MAWSC session command value, which will have been verified at this point.
 
-## `[METHOD]` GetRawAction()
+### `METHOD` GetRawAction()
 Get the raw MAWS Action.
 
 ### Operation
@@ -81,7 +81,7 @@ This method is pretty straight forward, and doesn't change.
 * The MAWSC session action is optional.
 *-* If an MAWSC session action is not passed, it is set to "unused".
 
-## `[METHOD]` GetRawOption()
+### `METHOD` GetRawOption()
 Get the raw MAWS Option.
 
 ### Operation
@@ -91,7 +91,7 @@ This method is pretty straight forward, and doesn't change.
 * The MAWSC session option is optional.
 * If an MAWSC session option is not passed, it is set to "unused".
 
-## `[METHOD]` CleanRawArguments()
+### `METHOD` CleanRawArguments()
 Clean the raw argument components
 
 ### Operation

@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Staging**
+# `NAMESPACE` MAWSC.Staging**
 Logic for various requirements
 
 <br>
 
 ***
 
-# `[CLASS]` BackupStaging.cs
+## `CLASS` BackupStaging.cs
 TBD
 
-## `[METHOD]` SoupToNuts()
+### `METHOD` SoupToNuts()
 TBD
 
 ### Operation
@@ -38,7 +38,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` SourceLocation()
+### `METHOD` SourceLocation()
 Backup the existing staging source location.
 
 ### Operation
@@ -47,7 +47,7 @@ TBD
 ### Notes
 * When you fetch a sourcecode from GitHub, that sourcecode is saved to the StagingSource. We want to back that up prior to fetching new sourcecode, in the event something goes wrong.
 
-## `[METHOD]` TargetLocation()
+### `METHOD` TargetLocation()
 Backup the existing staging target location.
 
 ### Operation
@@ -60,10 +60,10 @@ TBD
 
 ***
 
-# `[CLASS]` CleanStaging.cs
+## `CLASS` CleanStaging.cs
 TBD
 
-## `[METHOD]` FetchLocation()
+### `METHOD` FetchLocation()
 TBD
 
 ### Operation
@@ -76,10 +76,10 @@ None.
 
 ***
 
-# `[CLASS]` DeployStaging.cs
+## `CLASS` DeployStaging.cs
 Deploy the current staging source.
 
-## `[METHOD]` SoupToNuts()
+### `METHOD` SoupToNuts()
 TBD
 
 ### Operation
@@ -88,7 +88,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` All()
+### `METHOD` All()
 TBD
 
 ### Operation
@@ -97,7 +97,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` Minimal()
+### `METHOD` Minimal()
 TBD
 
 ### Operation
@@ -110,10 +110,10 @@ None.
 
 ***
 
-# `[CLASS]` FetchStaging.cs
+## `CLASS` FetchStaging.cs
 TBD
 
-## `[METHOD]` SoupToNuts()
+### `METHOD` SoupToNuts()
 TBD
 
 ### Operation
@@ -122,7 +122,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` GetFromUrl()
+### `METHOD` GetFromUrl()
 Fetch staging sourcecode from a URL.
 
 ### Operation
@@ -131,7 +131,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` UncompressStagingSource()
+### `METHOD` UncompressStagingSource()
 TBD
 
 ### Operation
@@ -140,23 +140,7 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` CopyTo()
-TBD
-
-### Operation
-TBD
-
-### Notes
-None.
-
-<br>
-
-***
-
-# `[CLASS]` RefreshStaging.cs
-TBD
-
-## `[METHOD]` SoupToNuts()
+### `METHOD` CopyTo()
 TBD
 
 ### Operation
@@ -169,19 +153,10 @@ None.
 
 ***
 
-# `[CLASS]` StagingInformation.cs
+## `CLASS` RefreshStaging.cs
 TBD
 
-## `[METHOD]` Display()
-TBD
-
-### Operation
-TBD
-
-### Notes
-None.
-
-## `[METHOD]` GetWebServiceVersion()
+### `METHOD` SoupToNuts()
 TBD
 
 ### Operation
@@ -190,7 +165,32 @@ TBD
 ### Notes
 None.
 
-## `[METHOD]` GetLastFetchedTimestamp()
+<br>
+
+***
+
+## `CLASS` StagingInformation.cs
+TBD
+
+### `METHOD` Display()
+TBD
+
+### Operation
+TBD
+
+### Notes
+None.
+
+### `METHOD` GetWebServiceVersion()
+TBD
+
+### Operation
+TBD
+
+### Notes
+None.
+
+### `METHOD` GetLastFetchedTimestamp()
 TBD
 
 ### Operation

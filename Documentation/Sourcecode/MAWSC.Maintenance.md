@@ -19,17 +19,17 @@
 
 <br>
 
-# **[NAMESPACE]** MAWSC.Roundhouse**
+# `NAMESPACE` MAWSC.Roundhouse**
 What is a roundhouse?
 
 <br>
 
 ***
 
-# `[CLASS]` ConfigurationRoundhouse.cs
+## `CLASS` ConfigurationRoundhouse.cs
 TBD
 
-## `[METHOD]` ParseAction()
+### `METHOD` ParseAction()
 TBD
 
 ### Operation
@@ -42,10 +42,10 @@ None.
 
 ***
 
-# `[CLASS]` HelpRoundhouse.cs
+## `CLASS` HelpRoundhouse.cs
 Configuration roundhouse.
 
-## `[METHOD]` ParseAction()
+### `METHOD` ParseAction()
 TBD
 
 ### Operation
@@ -58,26 +58,10 @@ None.
 
 ***
 
-# `[CLASS]` MawsCommandRoundhouse.cs
+## `CLASS` MawsCommandRoundhouse.cs
 TBD
 
-## `[METHOD]` ParseAction()
-TBD
-
-### Operation
-TBD
-
-### Notes
-None.
-
-<br>
-
-***
-
-# `[CLASS]` ProductionRoundhouse.cs
-TBD
-
-## `[METHOD]` ParseAction()
+### `METHOD` ParseAction()
 TBD
 
 ### Operation
@@ -90,10 +74,26 @@ None.
 
 ***
 
-# `[CLASS]` StagingRoundhouse.cs
+## `CLASS` ProductionRoundhouse.cs
 TBD
 
-## `[METHOD]` ParseAction()
+### `METHOD` ParseAction()
+TBD
+
+### Operation
+TBD
+
+### Notes
+None.
+
+<br>
+
+***
+
+## `CLASS` StagingRoundhouse.cs
+TBD
+
+### `METHOD` ParseAction()
 TBD
 
 ### Operation
