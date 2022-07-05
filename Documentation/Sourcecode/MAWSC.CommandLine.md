@@ -19,11 +19,13 @@
 
 <br>
 
-<div align="center">
-    <font size="+3"><b>NAMESPACE:</b> MAWSC.CommandLine</font> 
-</div>
+# NAMESPACE MAWSC.CommandLine
+Handles information that is passed via the command line when MAWSC is executed.
 
-<br>
+## Classes
+[Arguments.cs](#class-argumentscs)
+
+***
 
 # `CLASS` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
