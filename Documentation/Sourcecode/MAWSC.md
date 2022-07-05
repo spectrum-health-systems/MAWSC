@@ -17,9 +17,7 @@
 
 </div>
 
-<br>
-
-# About the `MAWSC` namespace
+# About this namespace
 Main MAWSC namespace.
 
 This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
