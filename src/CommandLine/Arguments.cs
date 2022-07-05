@@ -9,7 +9,7 @@
 // ------------------------------------------[ CLASS ]------------------------------------------
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
-// b2b220705.095306
+// b220705.124235
 // https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
 // ---------------------------------------------------------------------------------------------
 
@@ -32,21 +32,21 @@ namespace MAWSC.CommandLine
             }
         }
 
-        /// <summary>Get individual MAWSC session command/action/option.</summary>
+        /// <summary>Get the individual components of the passed arguments.</summary>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
-        internal static Dictionary<string, string> GetIndividualArguments(string[] arguments)
+        internal static Dictionary<string, string> GetIndividualComponents(string[] arguments)
         {
-            Dictionary<string, string> rawArguments = GetRawArguments(arguments);
-            Dictionary<string, string> cleanArguments = CleanRawArguments(rawArguments);
+            Dictionary<string, string> rawComponents = GetRawComponents(arguments);
+            Dictionary<string, string> cleanComponents = CleanRawComponents(rawComponents);
 
-            return cleanArguments;
+            return cleanComponents;
         }
 
         /// <summary> Get individual raw MAWSC session command, action, and option.</summary>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
-        private static Dictionary<string, string> GetRawArguments(string[] arguments)
+        private static Dictionary<string, string> GetRawComponents(string[] arguments)
         {
             return new Dictionary<string, string>()
             {
@@ -87,7 +87,7 @@ namespace MAWSC.CommandLine
         /// <summary>Clean MAWSC session arguments.</summary>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
-        private static Dictionary<string, string> CleanRawArguments(Dictionary<string, string> arguments)
+        private static Dictionary<string, string> CleanRawComponents(Dictionary<string, string> arguments)
         {
             var cleanComponents = new Dictionary<string, string>();
 

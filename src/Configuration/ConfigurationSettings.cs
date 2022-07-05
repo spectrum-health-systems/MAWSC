@@ -62,7 +62,7 @@ namespace MAWSC.Configuration
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
             mawsc.RepositoryZipUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
-            var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
+            var mawscArguments = CommandLine.Arguments.GetIndividualComponents(arguments);
 
             mawsc.MawscCommand = mawscArguments["mawscCommand"];
             mawsc.MawscAction = mawscArguments["mawscAction"];

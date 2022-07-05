@@ -19,7 +19,7 @@
 </div>
 
 ## About this namespace
-The **MAWSC.CommandLine** namespace contains logic that handles the arguments that are passed via the command line when a new MAWSC session is initialzied.
+The **MAWSC.CommandLine** namespace processes the command line arguments that are passed to MAWSC at execution.
 
 ## Classes
 This namespace has a single class that contains multiple methods that handle command line arguments.
@@ -34,88 +34,94 @@ This class does various things with passed arguments, such as verifying argument
 ***
 
 ### `VerifiedPassed()`
-Verifies that argument(s) were passed.
+Verify at least one argument was passed via the command line.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. Check to see if the length of `args[]` is `0`, and exit gracefully if it is.
 
 #### Notes
+* MAWSC requires at least one argument to work correctly. If the user didn't pass any arguments, MAWSC won't be able to do anything, so we'll exit gracefully.
 * One of the first things MAWSC does when it is executed is verify that arguments were passed.
-* If no arguments were passed, we will let the user know, and exit gracefully.
 * We aren't testing for valid arguments at this point, only that they (or it) exists.
 
 ***
 
-### `GetIndividualArguments()`
-Separate the passed arguments into individual components.
+### `GetIndividualComponents()`
+Get the individual components of the passed arguments.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. Get the individual argument components.
+2. Return nice looking component values.
 
 #### Notes
-* There must be a MAWSC session command value - this will have been verified at this point.
-* The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.
-* The `rawArguments` are the arguments directly from the command line (e.g., `-staging` `-d`).
+* The `rawComponents` are the individual arguments as they were originally passed via the command line (e.g., `-staging` or `-d`).
 * The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
+* **(2)** We return "clean" values for the individual components. For more information, please see [this documentation][4].
 
 ***
 
-### `GetRawArguments()`
-Separate the passed arguments into individual components.
+### `GetRawComponents()`
+Get individual raw MAWSC Command/Action/Option for a specific session.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. Create and return a dictionary of the individaul argument components.
 
 #### Notes
-* Gets the raw MAWSC session command/action/option from the command line
+* The `rawComponents` are the individual arguments as they were originally passed via the command line (e.g., `-staging` or `-d`).
 * These components may contain dashes, and any combination of casing.
 
 ***
 
 ### `GetRawCommand()`
-Get the raw MAWS Command.
+Get the raw MAWSC Command for the session.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. Return the MAWSC Command value
 
 #### Notes
-* There must be a MAWSC session command value, which will have been verified at this point.
+* There must be a MAWSC session command value, which will have been verified if we are here.
+* We aren't testing for valid arguments at this point.
+* **(1)** The MAWSC Command is located in `args[0]`
 
 ***
 
 ### `GetRawAction()`
-Get the raw MAWS Action.
+Get the raw MAWSC Action for the session.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. If `args[]` has two or more values, then use the return the second value as the MAWSC Action
+2. If `args[]` only has one value, the MAWSC Action will be returned as "unused".
 
 #### Notes
-* The MAWSC session action is optional.
-*-* If an MAWSC session action is not passed, it is set to "unused".
+* The MAWSC Action is optional.
+* **(1)** The MAWSC Command is located in `args[1]`
 
 ***
 
 ### `GetRawOption()`
-Get the raw MAWS Option.
+Get the raw MAWSC Option for the session.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. If `args[]` has three or more values, then use the return the third value as the MAWSC Action
+2. If `args[]` only has two values, the MAWSC Command will be returned as "unused".
 
 #### Notes
-* The MAWSC session option is optional.
-* If an MAWSC session option is not passed, it is set to "unused".
+* The MAWSC Option is optional.
+* Arguments beyond `args[2]` are ignored.
+* **(1)** The MAWSC Command is located in `args[2]`
 
 ***
 
-### `CleanRawArguments()`
-Clean the raw argument components
+### `CleanRawComponents()`
+Clean the MAWSC Command/Action/Option components.
 
 #### Operation
-This method is pretty straight forward, and doesn't change.
+1. Remove any trailing/leading whitespace from each component
+2. Convert each component to lowercase
+3. Replace any "-" characters with ""
 
 #### Notes
-* Components may contain dashes, and any combination of casing.
-* The arguments are cleaned up so it's easier to apply logic to them. For 
+* For more information as to why we cleanup these components, please see [this documentation][4].
 
 </details>
 
@@ -128,6 +134,8 @@ This method is pretty straight forward, and doesn't change.
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
 [3]: ../Manual/MAWSC-Manual.md
+[4]: MAWSC-Sourcecode.md#standard-casingtrimming-of-values
+
 
 <div align="center">
   <sub>

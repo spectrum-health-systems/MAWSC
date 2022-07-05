@@ -1,5 +1,5 @@
 ﻿// ========================================[ PROJECT ]=========================================
-// MAWSC (MyAvatar Web Service Commander)
+// MAWSC (MyAvatar Web Service Commander)### `METHOD`
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
@@ -9,14 +9,14 @@
 // -----------------------------------------[ CLASS ]------------------------------------------
 // MAWSC.cs
 // Entry point for MAWSC.
-// b220705.095255
+// b220705.124223
 // Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
 // --------------------------------------------------------------------------------------------
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-[ ABOUT MAWSC ]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // https://github.com/spectrum-health-systems/MAWSC
 // Version1.99.0.0
-// Build: 20705.095250Devbuild
+// Build: 220705.124138+devbuild
 //
 // MyAvatar Web Service Commander (MAWSC) is a command-line maintenance utility for the
 // MyAvatar Web Service (MAWS), although it can be use to help maintain any custom web service
@@ -51,6 +51,8 @@ using MAWSC.Roundhouse;
 
 MawscInitializer(args);
 
+/// <summary>Initialize a new MAWSC session.</summary>
+/// <param name="mawsc">Configuration settings.</param>
 static void MawscInitializer(string[] arguments)
 {
     Console.Clear();
