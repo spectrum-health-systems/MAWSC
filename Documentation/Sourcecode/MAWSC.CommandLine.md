@@ -19,9 +19,10 @@
 </div>
 
 ## About this namespace
-The MAWSC.CommandLine namespace contains logic that handles the arguments that are passed via the command line when a new MAWSC session is initialzied.
+The **MAWSC.CommandLine** namespace contains logic that handles the arguments that are passed via the command line when a new MAWSC session is initialzied.
 
-### Class documentation
+### Namespace classes
+This namespace has a single class that contains multiple methods that handle command line arguments.
 
 <details>
 <summary>
