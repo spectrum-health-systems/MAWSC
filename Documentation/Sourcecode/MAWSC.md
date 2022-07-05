@@ -24,8 +24,6 @@ Main MAWSC namespace.
 
 This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
-<br>
-
 # Sourcecode documentation
 
 <details>
@@ -57,6 +55,8 @@ Initialize a new MAWSC session.
 
 <br>
 <br>
+
+***
 
 > [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
