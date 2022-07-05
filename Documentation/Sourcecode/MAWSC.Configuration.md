@@ -109,12 +109,89 @@ Load MAWSC settings from the configuration file.
 
 <details>
 <summary>
-  <b>ConfigurationFile.cs</b><br>
-  <i>Logic related to the configuration file.</i>
+  <b>ConfigurationSettings.cs</b><br>
+  <i>Contains setting properties, and logic related to those properties.</i>
 </summary>
-Various things to do with the MAWSC configuration file.
+This class contains both the MAWSC settings properties, and logic related to those properties.
 
 ***
+
+## `PROPERTIES`
+
+`SessionTimestamp`<br>
+*Created at runtime*<br>
+The session timestamp, used throughout the session. This way we have a single timestamp that is used, and not different timestamps for different things.<br>
+
+`ApplicationVersion`<br>
+*Created at runtime*<br>
+The version of MAWSC that is being used.<br>
+
+`ConfigurationDirectory`<br>
+*Default value: "./AppData/Config/"*<br>
+The directory where the mawsc-config.json file is located. This is hardcoded, and therefore shouldn't be changed.
+
+`LogDirectory`<br>
+*Default value: "./AppData/Logs/"*<br>
+The directory where logfiles are created.
+
+`SessionLogfilePath`<br>
+*Created at runtime: "./AppData/Logs/mawsc-%SessionTimestamp%.log"*<br>
+The path to the session logfile, which contains log information for the session.
+
+`BackupDirectory`<br>
+*Default value: "./AppData/Backup/"*<br>
+The directory where backup files are stored.
+
+`SessionBackupDirectory`<br>
+*Created at runtime: "./AppData/Backup/%SessionTimestamp%/*<br>
+The directory where session backup files are stored.
+
+`TempDirectory`<br>
+*Default value: "./AppData/Temp/*<br>
+The directory where temporary files are stored. By default this is "./AppData/Temp/". This directory is deleted/recreated when MAWSC is executed.
+
+`RepositoryLocation`<br>
+*User defined value*<br>
+The base level URL of the account that contains the repository you are using. Using an the Spectrum Health Systems GitHub accoung (**https://github.com/spectrum-health-systems/**) as an example, this value would be **https://github.com/spectrum-health-systems/**.
+
+`RepositoryName`<br>
+*User defined value*<br>
+The name of the repository that contains the web service you are using. Using an the MAWSC GitHub respository (**https://github.com/spectrum-health-systems/MAWSC**) as an example, this value would be **MAWSC**.
+
+`RepositoryBranch`<br>
+*User defined value*<br>
+The name of the repository branch that contains the web service you are using. Using an the MAWSC development branch (**https://github.com/spectrum-health-systems/MAWSC/tree/development**) as an example, this value would be **development**. If you are using the main/master branch, leave this set to **""**.
+
+`RepositoryZipUrl`<br>
+*Created at runtime: "%RepositoryLocation%/%RepositoryName%/archive/refs/heads/%RepositoryBranch%.zip*<br>
+The URL of zip archive for the repository you are using, built using the **RepositoryLocation**, **RepositoryName**, and **RepositoryBranch**. Using the examples above would look like **https://github.com/spectrum-health-systems/MAWSC/archive/refs/heads/development.zip**
+
+`StagingFetchDirectory`<br>
+*Default value: "./AppData/Staging-fetch/*<br>
+The directory where the repository archive will be downloaded.
+
+`StagingTestingDirectory`<br>
+*User defined value*<br>
+The directory where the staging source will be copied to for testing. For example:
+"/path/to/your/web/service/testing/".
+
+`ProductionDirectory`<br>
+*User defined value*<br>
+The directory where your production web service is located. For example:
+"/path/to/your/web/service/production/".
+
+`MawscCommand `<br>
+*Created at runtime: "arg[0]*<br>
+The MAWSC Command passed via command line when MAWSC is executed. This is required, and MAWSC will exit gracefully if it does not exist.
+
+`MawscAction `<br>
+*Created at runtime: "arg[1]*<br>
+The (optional) MAWSC Action passed via command line when MAWSC is executed.
+
+`MawscOption `<br>
+*Created at runtime: "arg[2]*<br>
+The (optional) MAWSC Option passed via command line when MAWSC is executed.
+
 
 </details>
 
@@ -147,49 +224,6 @@ Various things to do with the MAWSC configuration file.
 
 
 
-## `CLASS` ConfigurationFile.cs
-Logic related to the local configuration file.
-
-### `METHOD` GetDefaultFilePath()
-> Get the MAWSC configuration default filepath.
-
-### Operation
-TBD.
-
-### Notes
-* By default, the path is "./AppData/Config/mawsc-config.json" by default.
-* It is recommended that you do not modify the default configuration file path.
-
-### `METHOD` Verify()
-> Verify the configuration file exists, and that it (probably) contains valid data.
-
-### Operation
-TBD.
-
-### Notes
-In order for an existing configuration file to (probably) be valid, it must:
-   1. Start with a "{" and end with a "}"<br>
-      Valid JSON-formatted files are enclosed in {} brackets, so if the configuration file doesnt start and end with them, it's not a valid JSON data file.
-   2. Contain at least five (5) lines of data<br>
-      There are more than five configuration settings, so there should be at least 5 lines of data in the configuration file.
-
-Keep in mind that:
-* This is a quick-and-dirty test
-* In order for this to work correctly, the configuration file needs to be written as indented JSON-formatted data, which MAWSC does by default.
-
-### `METHOD` Load()
-> Load MAWSC settings from the configuration file.
-
-### Operation
-TBD.
-
-### Notes
-* If ./AppData/Config/mawsc-config.json doesn't exist, a new configuration file will be created with default setting values.
-
-<br>
-<br>
-
-***
 
 ## `CLASS` ConfigurationSettings.cs
 Configuration setting properties, and methods related to those settings.

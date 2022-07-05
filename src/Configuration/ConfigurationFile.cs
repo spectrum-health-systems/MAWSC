@@ -57,9 +57,7 @@ namespace MAWSC.Configuration
                 ConfigurationAction.ResetFile();
             }
 
-            ConfigurationSettings mawscSettings = Du.WithJson.DeserializeFromFile<ConfigurationSettings>(configurationFile);
-
-            return mawscSettings;
+            return Du.WithJson.DeserializeFromFile<ConfigurationSettings>(configurationFile);
         }
     }
 }
