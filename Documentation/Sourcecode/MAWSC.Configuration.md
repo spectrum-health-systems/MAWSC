@@ -196,39 +196,36 @@ The (optional) MAWSC Action passed via command line when MAWSC is executed.
 *Created at runtime: "arg\[2]"*  
 The (optional) MAWSC Option passed via command line when MAWSC is executed.
 
+***
 
 ### `Initialize()`
-Load MAWSC settings from the configuration file.
+Get the MAWSC configuration settings for the session.
 
 ### Operation
-1. Load the default settings from the external configuration file
-2. Set a few session-specific values at runtime
+1. Load the default settings from the external configuration file.
+2. Set and return a few session-specific values at runtime.
 
 ### Notes
-None.
+* Pretty straight forward, honestly.
+
+***
 
 ### `GetRuntimeValues()`
 Get a few session-specific settings.
 
 ### Operation
-TBD.
+1. Set the SessionTimestamp using the sessionTimestamp we created when MAWSC initialized.
+2. Get the the current version of MAWSC.
+3. Setup directories for session logfiles and backups.
+4. Build the URL for the repository .zip file
+5. Get the individual MAWSC Command/Action/Option for the session.
 
 ### Notes
-The following values are set at runtime, and are specific to this session:
-
-```
-SessionTimestamp
-ApplicationVersion
-SessionLogfilePath
-SessionBackupDirectory
-RepositryZipUrl
-MawscCommand
-MawscAction
-MawscOption
-```
+* These setting values will be different for each individual MAWSC session.
 
 </details>
 
+<br>
 
 ***
 

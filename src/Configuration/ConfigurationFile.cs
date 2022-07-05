@@ -35,7 +35,7 @@ namespace MAWSC.Configuration
             }
             else
             {
-                var fileContents = File.ReadAllLines(configurationFilePath);
+                var fileContents       = File.ReadAllLines(configurationFilePath);
                 var fileEnclosureValid = fileContents[0] == "{" && fileContents[^1] == "}";
 
                 if (!fileEnclosureValid || fileContents.Length < 5)
