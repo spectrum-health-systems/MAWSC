@@ -8,8 +8,8 @@
 
 // -----------------------------------------[ CLASS ]------------------------------------------
 // MAWSC.Configuration.ConfigurationFile.cs
-// Logic related to the configuration file
-// b220618.091029
+// Logic related to the configuration file.
+// b220705.133118
 // Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
 // --------------------------------------------------------------------------------------------
 

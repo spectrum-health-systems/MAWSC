@@ -36,7 +36,7 @@ This class resets the configuration file to default values.
 ***
 
 ### `ResetFile()`
-Resets the configuration file contents to defaults.
+Recreate the configuration file with default values.
 
 #### Operation
 1. If the configuration file exists, delete it.
@@ -50,10 +50,73 @@ Resets the configuration file contents to defaults.
 
 </details>
 
+<br>
 
+<details>
+<summary>
+  <b>ConfigurationFile.cs</b><br>
+  <i>Logic related to the configuration file.</i>
+</summary>
+Various things to do with the MAWSC configuration file.
 
+***
 
+### `GetDefaultFilePath()`
+Get the MAWSC configuration default filepath.
 
+#### Operation
+1. Return the path to the MAWSC configuration file.
+
+#### Notes
+* The filePath of the configuration file is hardcoded into MAWSC so there is one source that defines what that path is.
+* **(1)** This value should be `./AppData/Config/mawsc-config.json`, and should not be modified.
+
+***
+
+### `Verify()`
+Verify the configuration file exists, and that it (probably) contains valid data.
+
+#### Operation
+1. Get the hardcoded configurationFilePath.
+2. If the configuration file doesn't exist, recreate it with default values.
+3. If the configuration file does exist, test to make sure it (probably) contains valid data.
+
+#### Notes
+* In order for this to work correctly, the configuration file needs to be written as indented JSON-formatted data (which MAWSC does by default when recreating the file).
+* The tests that are done to verify the configuration file contains valid data are quick-and-dirty.
+* **(3)** In order for an existing configuration file to (probably) be valid, it must:
+   - *Start with a "{" and end with a "}"*  
+      Valid JSON-formatted files are enclosed in {} brackets, so if the configuration file doesnt start and end with them, it's not a valid JSON data file.
+   - *Contain at least five (5) lines of data*..
+      There are more than five configuration settings, so there should be at least 5 lines of data in the configuration file.
+
+***
+
+### `Load()`
+Load MAWSC settings from the configuration file.
+
+#### Operation
+1. Get the hardcoded configurationFilePath.
+2. If the configuration file doesn't exist, recreate it with default values.
+3. Return a `mawscSettings` object containing the values from the configuration file.
+
+#### Notes
+* If ./AppData/Config/mawsc-config.json doesn't exist, a new configuration file will be created with default setting values.
+
+</details>
+
+<br>
+
+<details>
+<summary>
+  <b>ConfigurationFile.cs</b><br>
+  <i>Logic related to the configuration file.</i>
+</summary>
+Various things to do with the MAWSC configuration file.
+
+***
+
+</details>
 
 
 
@@ -83,59 +146,6 @@ Resets the configuration file contents to defaults.
 
 
 
-
-> Last updated 7.5.2022
-
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Configuration**
-
-***
-
-<br>
-
-<div align="center">
-
-  <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
-  <h1> 
-    SOURCODE DOCUMENTATION
-  </h1>
-
-  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)](https://github.com/spectrum-health-systems/MAWSC)&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)](../Manual/MAWSC-Manual.md)&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)](MAWSC-Sourcecode.md)
-
-</div>
-
-<br>
-
-# `NAMESPACE` MAWSC.Configuration
-Logic for configuration actions.
-
-<br>
-
-***
-
-## `CLASS` ConfigurationAction.cs
-Handles arguments that are passed via the command line when MAWSC is executed.
-
-### `METHOD` ResetFile()
-Resets the configuration file contents to defaults.
-
-### Operation
-TBD.
-
-### Notes
-* If the configuration file exists, it is deleted and then recreated.
-* It's recommended that you leave these values as they are, and make any modifications to the configuration file itself.
-* You will need to modify the following settings for your organization:
-    - `RepositoryBranch`<br>
-       Name of the repository branch (e.g., "development"). If you are using the main branch, leave this set to "".
-    - `StagingTestingDirectory`<br>
-       The directory that contains the web service sourcode that you test against (e.g., "C:\MyWebsites\MyWebService\Testing\".
-    - `ProductionDirectory`<br>
-       The directory that contains the web service sourcode using in production (e.g., "C:\MyWebsites\MyWebService\Production\".>
-
-<br>
-<br>
-
-***
 
 ## `CLASS` ConfigurationFile.cs
 Logic related to the local configuration file.
