@@ -18,6 +18,8 @@ This is detailed documentation about the MAWSC sourcecode.
 
 Instead of having a ton of comments in the sourcecode, details about the code will be here.
 
+<br>
+
 # ABOUT THE MAWSC SOURCECODE
 
 ## Headers
@@ -81,37 +83,98 @@ Most logic in MAWSC is checked against lowercase values without any leading/trai
 
 For example, if a variable has a value of "`_AValue_`" (where the "`_`" character is whitespace), it will be converted to "`avalue`". This way if the user has the incorrect casing for a setting called "`EnableAllLogs`", MAWSC will still be able to apply logic because it checks against "`enablealllogs` (which isn't very user friendly).
 
-# SOURCECODE DOCUMENATION
+<br>
+
+# NAMESPACES
 Here is where you will find information about all of the MAWSC namespaces, and their sourcecode.
 
+[MAWSC][4]
+
+
+
+
+
 <details>
-<summary><b>NAMESPACE:</b> MAWSC</summary>
+<summary>MAWSC.CommandLine</summary>
 
-The `MAWSC namespace` is the main namespace, and entry point, for MAWSC. Everything starts here.
 
-## **`CLASS`** MAWSC.cs
-Main MAWSC class. Doesn't do much, just handles the intial starup logic.
+# `CLASS` Arguments.cs
+Handles arguments that are passed via the command line when MAWSC is executed.
 
-### `METHOD` MawscInitializer()
-Initialize a new MAWSC session.
+## `METHOD` VerifiedPassed()
+Verifies that argument(s) were passed.
 
-#### Operation
-1. Clear the console.
-2. Get the current MMddyy and HHmmss.
-3. Verify the basic MAWSC requirements.
-4. Load/set MAWSC settings for the session.
-5. Verify the MAWSC framework, and resolve any issues.
-6. Process the MAWSC Command/Action/Option.
+### Operation
+This method is pretty straight forward, and doesn't change.
 
-#### Notes
-* This class/method is designed to be pretty static, and rarely modified.
-* **[2]** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
+### Notes
+* One of the first things MAWSC does when it is executed is verify that arguments were passed.
+* If no arguments were passed, we will let the user know, and exit gracefully.
+* We aren't testing for valid arguments at this point, only that they (or it) exists.
 
-<br>
+### `METHOD` GetIndividualArguments()
+Separate the passed arguments into individual components.
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* There must be a MAWSC session command value - this will have been verified at this point.
+* The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.
+* The `rawArguments` are the arguments directly from the command line (e.g., `-staging` `-d`).
+* The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
+
+### `METHOD` GetRawArguments()
+Separate the passed arguments into individual components.
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* Gets the raw MAWSC session command/action/option from the command line
+* These components may contain dashes, and any combination of casing.
+
+### `METHOD` GetRawCommand()
+Get the raw MAWS Command.
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* There must be a MAWSC session command value, which will have been verified at this point.
+
+### `METHOD` GetRawAction()
+Get the raw MAWS Action.
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* The MAWSC session action is optional.
+*-* If an MAWSC session action is not passed, it is set to "unused".
+
+### `METHOD` GetRawOption()
+Get the raw MAWS Option.
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* The MAWSC session option is optional.
+* If an MAWSC session option is not passed, it is set to "unused".
+
+### `METHOD` CleanRawArguments()
+Clean the raw argument components
+
+### Operation
+This method is pretty straight forward, and doesn't change.
+
+### Notes
+* Components may contain dashes, and any combination of casing.
+* The arguments are cleaned up so it's easier to apply logic to them. For example, if an argument can be passed as `-staging` or `-STAGING` or `--StAgInG`, and it will be cleaned up to be `staging`, which makes it easier to test against.
+
  
 </details>
-
-
 
 
 
@@ -152,6 +215,9 @@ https://github.com/myAvatar-Development-Community/).
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
 [3]: ../Manual/MAWSC-Manual.md
+[4]: ../Sourcecode/MAWSC.md
+
+
 
 <div align="center">
   <sub>

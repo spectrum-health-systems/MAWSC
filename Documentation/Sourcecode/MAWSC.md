@@ -13,17 +13,26 @@
 
 <div align="center">
 
-# `NAMESPACE` MAWSC
-Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
+# **`NAMESPACE`** MAWSC
 
 </div>
 
-***
+<br>
 
-## `CLASS` MAWSC.cs
-Main MAWSC class. Doesn't do much, just handles the intial starup logic.
+# ABOUT THE `MAWSC` NAMESPACE
+Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
-### `METHOD` MawscInitializer()
+# `MAWSC` CLASSES
+
+<details>
+<summary>
+  <b>MAWSC.cs</b><br>
+  The main namespace, and entry point for MAWSC.
+</summary>  
+This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
+<br>
+
+## `MawscInitializer()`
 Initialize a new MAWSC session.
 
 ### Operation
@@ -40,6 +49,10 @@ Initialize a new MAWSC session.
 
 <br>
 
+</details>
+
+<br><br><br><br><br><br><br>
+
 > [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
 
 
@@ -52,3 +65,32 @@ Initialize a new MAWSC session.
     Last updated July 5th, 2022
   </sub>
 <br>
+
+
+
+<details>
+<summary>MAWSC</summary>
+
+`MAWSC` is the main namespace, and entry point, for MAWSC. Everything starts here.
+
+## `CLASS` MAWSC.cs
+Main MAWSC class. Doesn't do much, just handles the intial starup logic.
+
+### `METHOD` MawscInitializer()
+Initialize a new MAWSC session.
+
+#### Operation
+1. Clear the console.
+2. Get the current MMddyy and HHmmss.
+3. Verify the basic MAWSC requirements.
+4. Load/set MAWSC settings for the session.
+5. Verify the MAWSC framework, and resolve any issues.
+6. Process the MAWSC Command/Action/Option.
+
+#### Notes
+* This class/method is designed to be pretty static, and rarely modified.
+* **[2]** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
+
+<br>
+ 
+</details>
