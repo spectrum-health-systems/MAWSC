@@ -33,11 +33,11 @@ namespace MAWSC.Du
 
             /* Strip existing trailing slash to make path names clearer later.
              */
-            sourceDirectory     = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
-            targetDirectory     = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
+            sourceDirectory = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
+            targetDirectory = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
 
             var currentDateTime = DateTime.Now.ToString("MMddyy-HHmmss");
-            var targetFilePath  = $@"{targetDirectory}/{currentDateTime}.zip";
+            var targetFilePath = $@"{targetDirectory}/{currentDateTime}.zip";
 
             ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
         }
@@ -61,12 +61,12 @@ namespace MAWSC.Du
 
             /* Strip existing trailing slash to make path names clearer later.
              */
-            sourceDirectory     = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
-            targetDirectory     = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
+            sourceDirectory = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
+            targetDirectory = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
 
-            var archiveFileName = sourceDirectory.Replace("\\","-" );
+            var archiveFileName = sourceDirectory.Replace("\\", "-");
             var currentDateTime = DateTime.Now.ToString("MMddyy-HHmmss");
-            var targetFilePath  = $@"{targetDirectory}/{archiveFileName}-{currentDateTime}.zip";
+            var targetFilePath = $@"{targetDirectory}/{archiveFileName}-{currentDateTime}.zip";
 
             ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
         }
@@ -91,11 +91,11 @@ namespace MAWSC.Du
 
             /* Strip existing trailing slash to make path names clearer later.
              */
-            sourceDirectory     = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
-            targetDirectory     = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
+            sourceDirectory = Du.WithDirectory.RemoveTrailingSlash(sourceDirectory);
+            targetDirectory = Du.WithDirectory.RemoveTrailingSlash(targetDirectory);
 
             var archiveFileName = sourceDirectory.Substring(sourceDirectory.LastIndexOf("/") + 1);
-            var targetFilePath  = $@"{targetDirectory}/{archiveFileName}.zip";
+            var targetFilePath = $@"{targetDirectory}/{archiveFileName}.zip";
 
             ZipFile.CreateFromDirectory($"{sourceDirectory}/", targetFilePath);
         }

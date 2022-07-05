@@ -56,17 +56,17 @@ namespace MAWSC.Configuration
         /// <returns>MAWSC sessions</returns>
         internal static ConfigurationSettings GetRuntimeValues(ConfigurationSettings mawsc, string[] arguments, string sessionTimestamp)
         {
-            mawsc.SessionTimestamp       = sessionTimestamp;
-            mawsc.ApplicationVersion     = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            mawsc.SessionLogfilePath     = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
+            mawsc.SessionTimestamp = sessionTimestamp;
+            mawsc.ApplicationVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            mawsc.SessionLogfilePath = $"{mawsc.LogDirectory}mawsc-{mawsc.SessionTimestamp}.log";
             mawsc.SessionBackupDirectory = $"{mawsc.BackupDirectory}{mawsc.SessionTimestamp}";
-            mawsc.RepositoryZipUrl       = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
+            mawsc.RepositoryZipUrl = $"{mawsc.RepositoryLocation}{mawsc.RepositoryName}/archive/refs/heads/{mawsc.RepositoryBranch}.zip";
 
             var mawscArguments = CommandLine.Arguments.GetIndividualArguments(arguments);
 
             mawsc.MawscCommand = mawscArguments["mawscCommand"];
-            mawsc.MawscAction  = mawscArguments["mawscAction"];
-            mawsc.MawscOption  = mawscArguments["mawscOption"];
+            mawsc.MawscAction = mawscArguments["mawscAction"];
+            mawsc.MawscOption = mawscArguments["mawscOption"];
 
             return mawsc;
         }

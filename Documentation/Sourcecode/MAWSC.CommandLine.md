@@ -32,7 +32,7 @@ Handles arguments that are passed via the command line when MAWSC is executed.
 ## `[METHOD]` VerifiedPassed()
 Verifies that argument(s) were passed.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -43,7 +43,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` GetIndividualArguments()
 Separate the passed arguments into individual components.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -55,7 +55,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` GetRawArguments()
 Separate the passed arguments into individual components.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -65,7 +65,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` GetRawCommand()
 Get the raw MAWS Command.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -74,7 +74,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` GetRawAction()
 Get the raw MAWS Action.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -84,7 +84,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` GetRawOption()
 Get the raw MAWS Option.
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes
@@ -94,7 +94,7 @@ This method is pretty straight forward, and doesn't change.
 ## `[METHOD]` CleanRawArguments()
 Clean the raw argument components
 
-### Details
+### Operation
 This method is pretty straight forward, and doesn't change.
 
 ### Notes

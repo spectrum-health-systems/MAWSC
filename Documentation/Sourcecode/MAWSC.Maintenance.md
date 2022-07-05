@@ -32,7 +32,7 @@ TBD
 ## `[METHOD]` ParseAction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -48,7 +48,7 @@ Configuration roundhouse.
 ## `[METHOD]` ParseAction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -64,7 +64,7 @@ TBD
 ## `[METHOD]` ParseAction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -80,7 +80,7 @@ TBD
 ## `[METHOD]` ParseAction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -96,7 +96,7 @@ TBD
 ## `[METHOD]` ParseAction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes

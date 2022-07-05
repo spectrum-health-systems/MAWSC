@@ -32,7 +32,7 @@ TBD
 ## `[METHOD]` SoupToNuts()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -41,7 +41,7 @@ None.
 ## `[METHOD]` SourceLocation()
 Backup the existing staging source location.
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -50,7 +50,7 @@ TBD
 ## `[METHOD]` TargetLocation()
 Backup the existing staging target location.
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -66,7 +66,7 @@ TBD
 ## `[METHOD]` FetchLocation()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -82,7 +82,7 @@ Deploy the current staging source.
 ## `[METHOD]` SoupToNuts()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -91,7 +91,7 @@ None.
 ## `[METHOD]` All()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -100,7 +100,7 @@ None.
 ## `[METHOD]` Minimal()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -116,7 +116,7 @@ TBD
 ## `[METHOD]` SoupToNuts()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -125,7 +125,7 @@ None.
 ## `[METHOD]` GetFromUrl()
 Fetch staging sourcecode from a URL.
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -134,7 +134,7 @@ None.
 ## `[METHOD]` UncompressStagingSource()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -143,7 +143,7 @@ None.
 ## `[METHOD]` CopyTo()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -159,7 +159,7 @@ TBD
 ## `[METHOD]` SoupToNuts()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -175,7 +175,7 @@ TBD
 ## `[METHOD]` Display()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -184,7 +184,7 @@ None.
 ## `[METHOD]` GetWebServiceVersion()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -193,7 +193,7 @@ None.
 ## `[METHOD]` GetLastFetchedTimestamp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes

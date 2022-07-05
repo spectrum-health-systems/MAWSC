@@ -32,7 +32,7 @@ TBD
 ## `[METHOD]` %METHOD%()
 TBD
 
-### Details
+### Operation
 TBD
 ### Notes
 None.

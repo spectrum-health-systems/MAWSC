@@ -46,7 +46,7 @@ namespace MAWSC.Du
             var jsonString = File.ReadAllText(filePath);
 
             //T J = JsonSerializer.Deserialize<T>(jsonString);
-            T jsonObject   = JsonSerializer.Deserialize<T>(jsonString);
+            T jsonObject = JsonSerializer.Deserialize<T>(jsonString);
 
             return (T)Convert.ChangeType(jsonObject, typeof(T));
         }

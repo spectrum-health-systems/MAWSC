@@ -32,7 +32,7 @@ Verify various MAWSC requirements.
 ## `[METHOD]` Startup()
 Verify the basic requirements.
 
-### Details
+### Operation
 1. The configuration file exists, and is valid
 2. Arguments were passed
 

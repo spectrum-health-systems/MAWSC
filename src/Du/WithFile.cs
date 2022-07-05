@@ -36,16 +36,16 @@ namespace MAWSC.Du
         /// <param name="filePath"></param>
         internal static void AppendText(string textToAppend, string filePath)
         {
-            if(!File.Exists(filePath))
+            if (!File.Exists(filePath))
             {
-                using(StreamWriter sw = File.CreateText(filePath))
+                using (StreamWriter sw = File.CreateText(filePath))
                 {
                     sw.WriteLine(textToAppend);
                 }
             }
             else
             {
-                using(StreamWriter sw = File.AppendText(filePath))
+                using (StreamWriter sw = File.AppendText(filePath))
                 {
                     sw.WriteLine(textToAppend);
                 }
@@ -76,7 +76,7 @@ namespace MAWSC.Du
         {
             // Not tested as of 5-10-22
 
-            foreach(var fileToCopy in filesToCopy)
+            foreach (var fileToCopy in filesToCopy)
             {
                 string targetFilePath = Path.Combine(targetDirectory, $"{targetDirectory}{fileToCopy}");
                 File.Copy($"{sourceDirectory}{fileToCopy}", targetFilePath);

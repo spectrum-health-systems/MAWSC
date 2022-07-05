@@ -32,7 +32,7 @@ Display help information on the console.
 ## `[METHOD]` ForDefault()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -41,7 +41,7 @@ None.
 ## `[METHOD]` ForConfiguration()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -50,7 +50,7 @@ None.
 ## `[METHOD]` ForStaging()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -59,7 +59,7 @@ None.
 ## `[METHOD]` ForProduction()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -73,7 +73,7 @@ Help components.
 ## `[METHOD]` HelpHeader()
 Create the log message master header.
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -82,7 +82,7 @@ TBD
 ## `[METHOD]` UsageSyntaxHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -91,7 +91,7 @@ None.
 ## `[METHOD]` DefaultHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -100,7 +100,7 @@ None.
 ## `[METHOD]` ConfigurationHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -109,7 +109,7 @@ None.
 ## `[METHOD]` StagingHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -118,7 +118,7 @@ None.
 ## `[METHOD]` ProductionHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -127,7 +127,7 @@ None.
 ## `[METHOD]` ExampleHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes
@@ -136,7 +136,7 @@ None.
 ## `[METHOD]` MoreInformationHelp()
 TBD
 
-### Details
+### Operation
 TBD
 
 ### Notes

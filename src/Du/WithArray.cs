@@ -25,7 +25,7 @@ namespace MAWSC.Du
 
             var listOfStrings = new List<string>();
 
-            foreach(var element in stringArray)
+            foreach (var element in stringArray)
             {
                 listOfStrings.Add(element);
             }

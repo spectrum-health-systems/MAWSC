@@ -32,7 +32,7 @@ Handles arguments that are passed via the command line when MAWSC is executed.
 ## `[METHOD]` ResetFile()
 Resets the configuration file contents to defaults.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -57,7 +57,7 @@ Logic related to the local configuration file.
 ## `[METHOD]` GetDefaultFilePath()
 > Get the MAWSC configuration default filepath.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -67,7 +67,7 @@ TBD.
 ## `[METHOD]` Verify()
 > Verify the configuration file exists, and that it (probably) contains valid data.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -84,7 +84,7 @@ Keep in mind that:
 ## `[METHOD]` Load()
 > Load MAWSC settings from the configuration file.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -184,7 +184,7 @@ The (optional) MAWSC Option passed via command line when MAWSC is executed.
 ## `[METHOD]` Initialize()
 > Load MAWSC settings from the configuration file.
 
-### Details
+### Operation
 1. Load the default settings from the external configuration file
 2. Set a few session-specific values at runtime
 
@@ -194,7 +194,7 @@ None.
 ## `[METHOD]` GetRuntimeValues()
 > Get a few session-specific settings.
 
-### Details
+### Operation
 TBD.
 
 ### Notes

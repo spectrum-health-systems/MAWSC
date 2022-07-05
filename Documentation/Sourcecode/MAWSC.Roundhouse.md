@@ -32,7 +32,7 @@ TBD
 ## `[METHOD]` Gracefully()
 Exit MAWSC gracefully.
 
-### Details
+### Operation
 TBD
 
 ### Notes

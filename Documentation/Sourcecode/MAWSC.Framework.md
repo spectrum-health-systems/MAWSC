@@ -32,7 +32,7 @@ Refresh framework components.
 ## `[METHOD]` Directories()
 Refresh MAWSC framework directories.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -49,7 +49,7 @@ Refresh framework components.
 ## `[METHOD]` Startup()
 Verify the MAWSC framework.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -59,7 +59,7 @@ TBD.
 ## `[METHOD]` RequiredDirectories()
 Verify that required directories exist, and create them if they don't.
 
-### Details
+### Operation
 TBD.
 
 ### Notes
@@ -68,7 +68,7 @@ None.
 ## `[METHOD]` SessionBackupDirectory()
 TBD
 
-### Details
+### Operation
 TBD.
 
 ### Notes

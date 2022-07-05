@@ -32,7 +32,7 @@ Verify various MAWSC requirements.
 ## `[METHOD]` ToConsole()
 Display log information on the console.
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -41,7 +41,7 @@ None.
 ## `[METHOD]` ToEverywhere()
 Display log information on the console, and write it to a file.
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -50,7 +50,7 @@ None.
 ## `[METHOD]` ToFile()
 Write log information to a file. 
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -66,7 +66,7 @@ Log components.
 ## `[METHOD]` ArgumentsPassed()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -75,7 +75,7 @@ None.
 ## `[METHOD]` BackupStagingSource()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -84,7 +84,7 @@ None.
 ## `[METHOD]` BackupStagingTarget()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -93,7 +93,7 @@ None.
 ## `[METHOD]` ConfigurationInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -102,7 +102,7 @@ None.
 ## `[METHOD]` StagingInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -111,7 +111,7 @@ None.
 ## `[METHOD]` ConfigurationFileWillBeReset()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -120,7 +120,7 @@ None.
 ## `[METHOD]` ConfigurationFileHasBeenReset()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -129,7 +129,7 @@ None.
 ## `[METHOD]` FrameworkRequiredDirectoriesVerified()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -138,7 +138,7 @@ None.
 ## `[METHOD]` SessionBackupDirectoryVerified()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -147,7 +147,7 @@ None.
 ## `[METHOD]` TypeForHelp()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -163,7 +163,7 @@ Logging headers.
 ## `[METHOD]` Backup()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -172,7 +172,7 @@ None.
 ## `[METHOD]` Error()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -181,7 +181,7 @@ None.
 ## `[METHOD]` Info()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -190,7 +190,7 @@ None.
 ## `[METHOD]` Request()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -199,7 +199,7 @@ None.
 ## `[METHOD]` Verify()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -208,7 +208,7 @@ None.
 ## `[METHOD]` Validate()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -217,7 +217,7 @@ None.
 ## `[METHOD]` Sub()
 Create a log message sub-header.
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -226,7 +226,7 @@ None.
 ## `[METHOD]` Top()
 Create the log message master header.
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -242,7 +242,7 @@ Logging messages.
 ## `[METHOD]` ArgumentsMissing()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -251,7 +251,7 @@ None.
 ## `[METHOD]` ArgumentsPassed()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -260,7 +260,7 @@ None.
 ## `[METHOD]` BackupStagingSource()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -269,7 +269,7 @@ None.
 ## `[METHOD]` RequestBackupStagingSource()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -278,7 +278,7 @@ None.
 ## `[METHOD]` BackupStagingTarget()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -287,7 +287,7 @@ None.
 ## `[METHOD]` InfoMovingFiles()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -296,7 +296,7 @@ None.
 ## `[METHOD]` RequestBackupStagingTarget()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -305,7 +305,7 @@ None.
 ## `[METHOD]` CommandIsInvalid()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -314,7 +314,7 @@ None.
 ## `[METHOD]` ConfigurationInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -323,7 +323,7 @@ None.
 ## `[METHOD]` RequestConfigurationInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -332,7 +332,7 @@ None.
 ## `[METHOD]` StagingInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -341,7 +341,7 @@ None.
 ## `[METHOD]` ConfigurationFileInvalid()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -350,7 +350,7 @@ None.
 ## `[METHOD]` ConfigurationFileNotFound()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -359,7 +359,7 @@ None.
 ## `[METHOD]` RequestConfigurationFileReset()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -368,7 +368,7 @@ None.
 ## `[METHOD]` ConfigurationFileReset()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -377,7 +377,7 @@ None.
 ## `[METHOD]` VerifyFrameworkRequiredDirectories()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -386,7 +386,7 @@ None.
 ## `[METHOD]` SessionBackupDirectoryVerify()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes
@@ -395,7 +395,7 @@ None.
 ## `[METHOD]` RequestStagingInformation()
 TBD
 
-### Details
+### Operation
 None.
 
 ### Notes

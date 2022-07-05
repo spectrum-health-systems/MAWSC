@@ -23,7 +23,7 @@ namespace MAWSC.Du
         {
             // Not tested as of 5-10-22
 
-            if(directoryPath.EndsWith("/"))
+            if (directoryPath.EndsWith("/"))
             {
                 directoryPath = directoryPath.Remove(directoryPath.Length - 1);
 
@@ -42,9 +42,9 @@ namespace MAWSC.Du
         {
             // Not tested as of 5-10-22
 
-            if(!Directory.Exists(directoryToConfirm))
+            if (!Directory.Exists(directoryToConfirm))
             {
-                if(createIfNonexistant)
+                if (createIfNonexistant)
                 {
                     Directory.CreateDirectory(directoryToConfirm);
                 }
@@ -67,12 +67,12 @@ namespace MAWSC.Du
 
             /* Get information about the directory we are moving, and any sub-directories that exist.
              */
-            var directoryToCopy                  = new DirectoryInfo(sourceDirectory);
+            var directoryToCopy = new DirectoryInfo(sourceDirectory);
             DirectoryInfo[] subDirectoriesToCopy = GetSubDirs(sourceDirectory, targetDirectory);
 
             /* Copy all files in the sourceDir to the targetDir
              */
-            foreach(FileInfo file in directoryToCopy.GetFiles())
+            foreach (FileInfo file in directoryToCopy.GetFiles())
             {
                 string targetFilePath = Path.Combine(targetDirectory, file.Name);
                 file.CopyTo(targetFilePath);
@@ -81,7 +81,7 @@ namespace MAWSC.Du
             /* If there are any sub-directories in sourceDir, copy all of the files in that sub-directory to the
              * targetDir. 
              */
-            foreach(DirectoryInfo subDirectory in subDirectoriesToCopy)
+            foreach (DirectoryInfo subDirectory in subDirectoriesToCopy)
             {
                 string targetSubDirectory = Path.Combine(targetDirectory, subDirectory.Name);
                 CopyRecursively(subDirectory.FullName, targetSubDirectory);
@@ -104,12 +104,12 @@ namespace MAWSC.Du
 
             /* Get information about the directory we are moving, and any sub-directories that exist.
              */
-            var directoryToMove                  = new DirectoryInfo(sourceDirectory);
+            var directoryToMove = new DirectoryInfo(sourceDirectory);
             DirectoryInfo[] subDirectoriesToMove = GetSubDirs(sourceDirectory, targetDirectory);
 
             /* Move all files in the source to the target
              */
-            foreach(FileInfo file in directoryToMove.GetFiles())
+            foreach (FileInfo file in directoryToMove.GetFiles())
             {
                 // TODO put some try...catches in here to catch exeptions.
                 string targetFilePath = Path.Combine(targetDirectory, file.Name);
@@ -119,13 +119,13 @@ namespace MAWSC.Du
             /* If there are any sub-directories in sourceDir, move all of the files in that sub-directory to the
              * targetDir. 
              */
-            foreach(DirectoryInfo subDir in subDirectoriesToMove)
+            foreach (DirectoryInfo subDir in subDirectoriesToMove)
             {
                 string targetSubDirectory = Path.Combine(targetDirectory, subDir.Name);
                 MoveRecursively(subDir.FullName, targetSubDirectory);
             }
 
-            var break_=0;
+            var break_ = 0;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace MAWSC.Du
 
             var dir = new DirectoryInfo(sourceDirectory);
 
-            if(!dir.Exists)
+            if (!dir.Exists)
             {
                 Directory.CreateDirectory(targetDirectory);
             }
@@ -158,7 +158,7 @@ namespace MAWSC.Du
             // Not tested as of 5-10-22
 
             // TODO Probably a better way to do this.
-            if(Directory.Exists(sourceDirectory))
+            if (Directory.Exists(sourceDirectory))
             {
                 Directory.Delete(sourceDirectory, true);
                 Directory.CreateDirectory(sourceDirectory);

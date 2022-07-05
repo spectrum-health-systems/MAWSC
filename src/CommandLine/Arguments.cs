@@ -1,17 +1,17 @@
-﻿// ========================================[ PROJECT ]=========================================
-// MAWSC (MyAvatar Web Service Commander)
-// Tools and utilities for myAvatar™ custom web services.
+﻿// =========================================[ PROJECT ]=========================================
+// MAWSC (MyAvatar Web
+// Service Commander) Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
 // Copyright 2021-2022 A Pretty Cool Program
-// ============================================================================================
+// =============================================================================================
 
-// -----------------------------------------[ CLASS ]------------------------------------------
+// ------------------------------------------[ CLASS ]------------------------------------------
 // MAWSC.CommandLine.Arguments.cs
 // Processes the command line arguments that are passed to MAWSC at execution.
-// b220617.080310
-// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
-// --------------------------------------------------------------------------------------------
+// b2b220705.095306
+// https://github.com/spectrum-health-systems/MAWSC/blob/main/Documentation/Sourcecode/MAWSC-Sourcecode.md
+// ---------------------------------------------------------------------------------------------
 
 using MAWSC.Logging;
 using MAWSC.Maintenance;
@@ -43,7 +43,7 @@ namespace MAWSC.CommandLine
             return cleanArguments;
         }
 
-        /// <summary>Get individual raw MAWSC session command, action, and option.</summary>
+        /// <summary> Get individual raw MAWSC session command, action, and option.</summary>
         /// <param name="arguments">Arguments passed via the command line.</param>
         /// <returns>Individual command, action, and option values.</returns>
         private static Dictionary<string, string> GetRawArguments(string[] arguments)
