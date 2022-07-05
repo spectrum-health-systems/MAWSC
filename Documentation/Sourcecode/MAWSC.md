@@ -9,6 +9,7 @@
   </h1>
 
   [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
+  
 </div>
 
 <div align="center">
@@ -50,7 +51,8 @@ Initialize a new MAWSC session.
 </details>
 
 <br>
-<br>
+
+***
 
 > [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
