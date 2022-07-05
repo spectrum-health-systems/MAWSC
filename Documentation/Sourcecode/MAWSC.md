@@ -32,15 +32,19 @@ Initialize a new MAWSC session.
 
 ### Operation
 1. Clear the console.
-2. Get the current MMddyy and HHmmss.
+2. Get the current MMddyy and HHmmss.[^2]
 3. Verify the basic MAWSC requirements.
 4. Load/set MAWSC settings for the session.
 5. Verify the MAWSC framework, and resolve any issues.
 6. Process the MAWSC Command/Action/Option.
 
+Here is a simple footnote[^1]. With some additional text after it.
+
+[^1]: My reference.
+
 ### Notes
 * This class/method is designed to be pretty static, and rarely modified.
-* *[2]* We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
+* [^2] We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
 
 ***
 

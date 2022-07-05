@@ -21,9 +21,6 @@
 
 ***
 
-Underline H1
-======
-
 
 `NAMESPACE` MAWSC.CommandLine
 ==================
