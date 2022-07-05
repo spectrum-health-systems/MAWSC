@@ -32,6 +32,8 @@ This namespace doesn't have much to it, it just handles the initialization of a 
 
 This class has a single class, with a single method, that handels the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
 
+***
+
 ### `MawscInitializer()`
 Initialize a new MAWSC session.
 
@@ -46,6 +48,8 @@ Initialize a new MAWSC session.
 #### Notes
 * This class/method is designed to be pretty static, and rarely modified.
 * **(2)** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
+
+***
 
 </details>
 

@@ -30,6 +30,8 @@ Handles information that is passed via the command line when MAWSC is executed.
 
 TBD
 
+***
+
 ### `VerifiedPassed()`
 Verifies that argument(s) were passed.
 
