@@ -22,13 +22,17 @@
 # NAMESPACE MAWSC.CommandLine
 Handles information that is passed via the command line when MAWSC is executed.
 
-## Classes
+### Classes
 [Arguments.cs](#class-argumentscs)
 
 ***
 
 # `CLASS` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
+
+### Methods
+[VerifiedPassed()](#method-verifiedpassed)<br>
+[GetRawCommand()](#method-getrawcommand)
 
 ## `METHOD` VerifiedPassed()
 Verifies that argument(s) were passed.
