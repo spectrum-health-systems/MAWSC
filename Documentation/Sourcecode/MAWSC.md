@@ -45,7 +45,7 @@ Initialize a new MAWSC session.
 
 ### Notes
 * This class/method is designed to be pretty static, and rarely modified.
-* **[2]** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
+* **(2)** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
 
 <br>
 
