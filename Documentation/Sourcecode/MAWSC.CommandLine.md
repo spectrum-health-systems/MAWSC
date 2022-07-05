@@ -30,7 +30,6 @@ Handles information that is passed via the command line when MAWSC is executed.
 
 TBD
 
-
 ### `VerifiedPassed()`
 Verifies that argument(s) were passed.
 
@@ -41,6 +40,8 @@ This method is pretty straight forward, and doesn't change.
 * One of the first things MAWSC does when it is executed is verify that arguments were passed.
 * If no arguments were passed, we will let the user know, and exit gracefully.
 * We aren't testing for valid arguments at this point, only that they (or it) exists.
+
+***
 
 ### `GetIndividualArguments()`
 Separate the passed arguments into individual components.
@@ -53,6 +54,8 @@ This method is pretty straight forward, and doesn't change.
 * The MAWSC session action/option are optional, and are set to "unused" if not passed via the command line.
 * The `rawArguments` are the arguments directly from the command line (e.g., `-staging` `-d`).
 * The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
+
+***
 
 ### `GetRawArguments()`
 Separate the passed arguments into individual components.
