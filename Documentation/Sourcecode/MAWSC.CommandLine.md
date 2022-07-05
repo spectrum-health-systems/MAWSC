@@ -56,7 +56,7 @@ Get the individual components of the passed arguments.
 #### Notes
 * The `rawComponents` are the individual arguments as they were originally passed via the command line (e.g., `-staging` or `-d`).
 * The `cleanArguments` are the arguments after they have been cleaned. (e.g., `staging d`).
-* **(2)** We return "clean" values for the individual components. For more information, please see [this documentation][4].
+* **(2)** We return "clean" values for the individual components. For more information, please see [Standard casing/trimming of values][4].
 
 ***
 
@@ -121,7 +121,7 @@ Clean the MAWSC Command/Action/Option components.
 3. Replace any "-" characters with ""
 
 #### Notes
-* For more information as to why we cleanup these components, please see [this documentation][4].
+* For more information as to why we cleanup these components, please see [Standard casing/trimming of values][4].
 
 </details>
 
