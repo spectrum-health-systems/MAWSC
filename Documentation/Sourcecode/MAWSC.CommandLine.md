@@ -18,9 +18,10 @@
 
 </div>
 
-Handles information that is passed via the command line when MAWSC is executed.
+## About this namespace
+The MAWSC.CommandLine namespace contains logic that handles the arguments that are passed via the command line when a new MAWSC session is initialzied.
 
-# Class documentation
+### Class documentation
 
 <details>
 <summary>
