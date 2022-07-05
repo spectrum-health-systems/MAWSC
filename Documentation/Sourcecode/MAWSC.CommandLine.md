@@ -22,7 +22,7 @@
 ***
 
 `NAMESPACE` MAWSC.CommandLine
-===
+==================
 
 Handles information that is passed via the command line when MAWSC is executed.
 ===
