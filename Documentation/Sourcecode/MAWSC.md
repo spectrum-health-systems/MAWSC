@@ -1,4 +1,4 @@
-﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
 <br>
 <div align="center">
@@ -19,9 +19,13 @@
 <br>
 
 # About the `MAWSC` namespace
-Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
+Main MAWSC namespace.
 
-# `MAWSC` namespace classes
+This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
+
+<br>
+
+# Sourcecode documentation
 
 <details>
 <summary>
@@ -50,9 +54,7 @@ Initialize a new MAWSC session.
 
 </details>
 
-<br><br><br><br><br><br><br>
-
-> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC**
+> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
 
 [1]: https://github.com/spectrum-health-systems/MAWSC
@@ -64,32 +66,3 @@ Initialize a new MAWSC session.
     Last updated July 5th, 2022
   </sub>
 <br>
-
-
-
-<details>
-<summary>MAWSC</summary>
-
-`MAWSC` is the main namespace, and entry point, for MAWSC. Everything starts here.
-
-## `CLASS` MAWSC.cs
-Main MAWSC class. Doesn't do much, just handles the intial starup logic.
-
-### `METHOD` MawscInitializer()
-Initialize a new MAWSC session.
-
-#### Operation
-1. Clear the console.
-2. Get the current MMddyy and HHmmss.
-3. Verify the basic MAWSC requirements.
-4. Load/set MAWSC settings for the session.
-5. Verify the MAWSC framework, and resolve any issues.
-6. Process the MAWSC Command/Action/Option.
-
-#### Notes
-* This class/method is designed to be pretty static, and rarely modified.
-* **[2]** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
-
-<br>
- 
-</details>
