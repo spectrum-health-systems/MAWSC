@@ -241,7 +241,3 @@ Get a few session-specific settings.
     Last updated July 5th, 2022
   </sub>
 <br>
-
-***
-
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Configuration**
