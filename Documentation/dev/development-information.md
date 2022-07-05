@@ -21,3 +21,13 @@ ERROR CODES
   "StagingSourceDirectory": "./AppData/Staging_source/",
   "StagingTargetDirectory": "c:/Users/cbanw/Downloads/mawstest/",
 */
+
+
+
+* You will need to modify the following settings for your organization:
+    - `RepositoryBranch`<br>
+       Name of the repository branch (e.g., "development"). If you are using the main branch, leave this set to "".
+    - `StagingTestingDirectory`<br>
+       The directory that contains the web service sourcode that you test against (e.g., "C:\MyWebsites\MyWebService\Testing\".
+    - `ProductionDirectory`<br>
+       The directory that contains the web service sourcode using in production (e.g., "C:\MyWebsites\MyWebService\Production\".>

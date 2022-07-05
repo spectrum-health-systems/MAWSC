@@ -14,15 +14,19 @@
 
 <div align="center">
 
-# **`MAWSC NAMESPACE`**
+# **`NAMESPACE`** MAWSC
 
 </div>
+
+# About this namespace
 
 The MAWSC namespace is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
 This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session.
 
-# Class documentation
+# Classes
+
+This namespace has a single class that contains a single method that handles the initialization of a new MAWSC session.
 
 <details>
 <summary>
@@ -35,9 +39,11 @@ This class has a single class, with a single method, that handels the initializa
 ***
 
 ### `MawscInitializer()`
+
 Initialize a new MAWSC session.
 
 #### Operation
+
 1. Clear the console.
 2. Get the current MMddyy and HHmmss.
 3. Verify the basic MAWSC requirements.
@@ -46,6 +52,7 @@ Initialize a new MAWSC session.
 6. Process the MAWSC Command/Action/Option.
 
 #### Notes
+
 * This class/method is designed to be pretty static, and rarely modified.
 * **(2)** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
 

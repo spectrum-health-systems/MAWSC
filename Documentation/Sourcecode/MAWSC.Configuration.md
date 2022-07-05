@@ -1,4 +1,90 @@
-﻿> Last updated 7.5.2022
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.Configuration namespace**
+
+<br>
+<br>
+<div align="center">
+  <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
+  <h1> 
+    MAWSC SOURCODE DOCUMENTATION
+  </h1>
+
+  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
+
+</div>
+
+<div align="center">
+
+# **`NAMESPACE`** MAWSC.Configuration
+
+</div>
+
+## About this namespace
+
+The **MAWSC.Configuration** namespace processes the configuration data/files that are required for MAWSC to function.
+
+## Classes
+
+This namespace has a multiple classes that handle configuration/setting data.
+
+<details>
+<summary>
+  <b>ConfigurationAction.cs</b><br>
+  <i>Logic for configuration file/data actions.</i>
+</summary>
+This class resets the configuration file to default values.
+
+***
+
+### `ResetFile()`
+Resets the configuration file contents to defaults.
+
+#### Operation
+1. If the configuration file exists, delete it.
+2. Create a new defaultSettings object with the default setting values.
+3. Serialize that data as a JSON-formatted file, and write it to a local file.
+
+#### Notes
+* This method recreates the MAWSC configuration file with default values, so if there is an existing configuration file, it is deleted, so be careful with this.
+* **(2)** It's recommended that you leave these values as they are, and make any modifications to the configuration file itself.
+* **(1)**, **(3)** The filePath of the configuration file is hardcoded into MAWSC so there is one source that defines what that path is.
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.CommandLine namespace**
+
+[1]: https://github.com/spectrum-health-systems/MAWSC
+[2]: ../Sourcecode/MAWSC-Sourcecode.md
+[3]: ../Manual/MAWSC-Manual.md
+[4]: ../Sourcecode/MAWSC-Sourcecode.md#standard-casingtrimming-of-values
+
+<div align="center">
+  <sub>
+    Last updated July 5th, 2022
+  </sub>
+<br>
+
+
+
+
+
+
+
+
+
+> Last updated 7.5.2022
 
 [MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.Configuration**
 

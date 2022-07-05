@@ -7,13 +7,13 @@
     MAWSC SOURCODE DOCUMENTATION
   </h1>
 
-<!-- In order for this block to render properly, it needs to be seperate from the <div> tag, and left-justified. -->
-[![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
+  [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
 
 </div>
 <br>
 
 # ABOUT THIS DOCUMENT
+
 This is detailed documentation about the MAWSC sourcecode.
 
 Instead of having a ton of comments in the sourcecode, details about the code will be here.
@@ -23,6 +23,7 @@ Instead of having a ton of comments in the sourcecode, details about the code wi
 # ABOUT THE MAWSC SOURCECODE
 
 ## Headers
+
 Every class has a standard `**==[ PROJECT ]==**` header thta looks like this:
 ```
 // ========================================[ PROJECT ]=========================================
@@ -47,6 +48,7 @@ Every class has a unique `**--[ CLASS ]--**` header that looks like this:
 The entry point for MAWSC (*MAWSC.cs*) also has an `**=-[ ABOUT ]-=**` header that provides various information and documentation links related to MAWSC. 
 
 ## Comments
+
 Attempts have been made to make the MAWS sourcecode as human-readable as possible, so I'm keeping the comments to a minimum. The document you are currently reading is the primary source of information about how everything works.
 
 That being said, you will find the following types of comments in the MAWS sourcecode:
@@ -79,6 +81,7 @@ If a variable name starts with "work" (e.g., `workDictionary`), it will be used 
 If a variable name starts with "final" (e.g., `finalValue`), the data is in it's final form, and is most likely what will be returned from a method.
 
 ###  Standard casing/trimming of values
+
 Most logic in MAWSC is checked against lowercase values without any leading/trailing whitespace, so (in general) MAWSC will reduce a variable to its trimmed, lowercase value. This is done as soon as possible, usually when a variable is declared.
 
 For example, if a variable has a value of "`_AValue_`" (where the "`_`" character is whitespace), it will be converted to "`avalue`". This way if the user has the incorrect casing for a setting called "`EnableAllLogs`", MAWSC will still be able to apply logic because it checks against "`enablealllogs` (which isn't very user friendly).
@@ -86,10 +89,12 @@ For example, if a variable has a value of "`_AValue_`" (where the "`_`" characte
 <br>
 
 # NAMESPACES
+
 Here is where you will find information about all of the MAWSC namespaces, and their sourcecode.
 
 [MAWSC][4]
 [MAWSC.CommandLine][5]
+[MAWSC.Configuration][6]
 
 <!--
 * [MAWSC](MAWSC.md)
@@ -105,6 +110,7 @@ Here is where you will find information about all of the MAWSC namespaces, and t
 -->
 
 # ADDITIONAL READING
+
 There is quite a bit of myAvatar-related information/documentation at the [myAvatar Development Community](
 https://github.com/myAvatar-Development-Community/).
 
@@ -115,6 +121,8 @@ https://github.com/myAvatar-Development-Community/).
 [3]: ../Manual/MAWSC-Manual.md
 [4]: ../Sourcecode/MAWSC.md
 [5]: ../Sourcecode/MAWSC.CommandLine.md
+[6]: ../Sourcecode/MAWSC.Configuration.md
+
 
 <div align="center">
   <sub>
