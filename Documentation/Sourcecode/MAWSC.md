@@ -1,5 +1,7 @@
 ﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
+***
+
 <br>
 <div align="center">
   <img src="../../.github//Logos/maws-logo-commander-512x256.png" alt="MAWSC logo" width="256">
@@ -53,6 +55,8 @@ Initialize a new MAWSC session.
 <br>
 
 </details>
+
+***
 
 > [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
 
