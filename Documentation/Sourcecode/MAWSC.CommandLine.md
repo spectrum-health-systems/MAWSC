@@ -19,17 +19,15 @@
 
 <br>
 
-# `NAMESPACE` MAWSC.CommandLine
+# **NAMESPACE** MAWSC.CommandLine
 Handles information that is passed via the command line when MAWSC is executed.
-
-<br>
 
 ***
 
-## `CLASS` Arguments.cs
+# `CLASS` Arguments.cs
 Handles arguments that are passed via the command line when MAWSC is executed.
 
-### `METHOD` VerifiedPassed()
+## `METHOD` VerifiedPassed()
 Verifies that argument(s) were passed.
 
 ### Operation
