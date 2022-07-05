@@ -28,8 +28,7 @@ This namespace has a single class that contains multiple methods that handle com
   <b>Arguments.cs</b><br>
   <i>Handles arguments that are passed via the command line when MAWSC is executed.</i>
 </summary>
-
-TBD
+This class does various things with passed arguments, such as verifying arguments were passed and splitting arguments into individual components.
 
 ***
 
