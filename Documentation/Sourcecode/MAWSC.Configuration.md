@@ -152,7 +152,8 @@ The directory where temporary files are stored. By default this is "./AppData/Te
 
 `RepositoryLocation`  
 *User defined value*  
-The base level URL of the account that contains the repository you are using. Using an the Spectrum Health Systems GitHub accoung (`https://github.com/spectrum-health-systems/`) as an example, this value would be `https://github.com/spectrum-health-systems/`.
+The base level URL of the account that contains the repository you are using.  
+Using an the Spectrum Health Systems GitHub account `https://github.com/spectrum-health-systems/` as an example, this value would be `https://github.com/spectrum-health-systems/`.
 
 `RepositoryName`  
 *User defined value*  
