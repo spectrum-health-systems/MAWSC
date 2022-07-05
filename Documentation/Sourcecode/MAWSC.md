@@ -9,7 +9,6 @@
 
   [![REPOSITORY](https://img.shields.io/badge/REPOSITORY-550055?style=for-the-badge)][1]&nbsp;&nbsp;&nbsp;[![MANUAL](https://img.shields.io/badge/MANUAL-550055?style=for-the-badge)][3]&nbsp;&nbsp;&nbsp;[![SOURCECODE-DOCUMENTATION](https://img.shields.io/badge/SOURCECODE%20DOCUMENTATION-8e008e?style=for-the-badge)][2]
 </div>
-<br>
 
 <div align="center">
 
@@ -19,10 +18,10 @@
 
 <br>
 
-# ABOUT THE `MAWSC` NAMESPACE
+# About the `MAWSC` namespace
 Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
-# `MAWSC` CLASSES
+# `MAWSC` namespace classes
 
 <details>
 <summary>
