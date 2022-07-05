@@ -28,9 +28,9 @@ This namespace doesn't have much to it, it just handles the initialization of a 
 <summary>
   <b>MAWSC.cs</b><br>
   Initializes a new MAWSC session.
-</summary>..
+</summary>  
+
 This class has a single class, with a single method, that handels the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
-<br>
 
 ## `MawscInitializer()`
 Initialize a new MAWSC session.
