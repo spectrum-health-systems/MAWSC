@@ -18,18 +18,15 @@
 </div>
 
 # About this namespace
-Main MAWSC namespace.
-
-This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
+The MAWSC namespace is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session. This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
 
 # Sourcecode documentation
 
 <details>
 <summary>
   <b>MAWSC.cs</b><br>
-  The main namespace, and entry point for MAWSC.
+  Initializes a new MAWSC session.
 </summary>  
-This namespace doesn't have much to it, it just handles the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
 <br>
 
 ## `MawscInitializer()`
