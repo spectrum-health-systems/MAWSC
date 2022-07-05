@@ -92,9 +92,9 @@ For example, if a variable has a value of "`_AValue_`" (where the "`_`" characte
 
 Here is where you will find information about all of the MAWSC namespaces, and their sourcecode.
 
-[MAWSC][4]
-[MAWSC.CommandLine][5]
-[MAWSC.Configuration][6]
+[MAWSC][4]  
+[MAWSC.CommandLine][5]  
+[MAWSC.Configuration][6]  
 
 <!--
 * [MAWSC](MAWSC.md)
