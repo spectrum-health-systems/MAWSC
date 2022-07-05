@@ -24,7 +24,7 @@
 # `NAMESPACE` MAWSC
 Main MAWSC namespace. This is the entry point for MAWSC, and handles the initialization/startup of a new MAWSC session.
 
-<div align="center">
+</div>
 
 ***
 
