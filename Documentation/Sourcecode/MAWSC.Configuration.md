@@ -150,18 +150,22 @@ The directory where session backup files are stored.
 *Default value: "./AppData/Temp/*  
 The directory where temporary files are stored. By default this is "./AppData/Temp/". This directory is deleted/recreated when MAWSC is executed.
 
+<!-- The &#8203; character is required in the URL, otherwise GitHub will create a hyperlink. -->
 `RepositoryLocation`  
 *User defined value*  
-The base level URL of the account that contains the repository you are using. For example: \https://github.com/spectrum-health-systems/.
+The base level URL of the account that contains the repository you are using. For example: *https&#8203;://github.com/spectrum-health-systems/.*
 
+<!-- The &#8203; character is required in the URL, otherwise GitHub will create a hyperlink. -->
 `RepositoryName`  
 *User defined value*  
 The name of the repository that contains the web service you are using. Using an the MAWSC GitHub respository `https://github.com/spectrum-health-systems/MAWSC` as an example, this value would be `MAWSC`.
 
+<!-- The &#8203; character is required in the URL, otherwise GitHub will create a hyperlink. -->
 `RepositoryBranch`  
 *User defined value*  
 The name of the repository branch that contains the web service you are using. Using an the MAWSC development branch (**https://github.com/spectrum-health-systems/MAWSC/tree/development**) as an example, this value would be **development**. If you are using the main/master branch, leave this set to **""**.
 
+<!-- The &#8203; character is required in the URL, otherwise GitHub will create a hyperlink. -->
 `RepositoryZipUrl`  
 *Created at runtime: "%RepositoryLocation%/%RepositoryName%/archive/refs/heads/%RepositoryBranch%.zip*  
 The URL of zip archive for the repository you are using, built using the **RepositoryLocation**, **RepositoryName**, and **RepositoryBranch**. Using the examples above would look like **https://github.com/spectrum-health-systems/MAWSC/archive/refs/heads/development.zip**
