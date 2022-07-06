@@ -1,4 +1,4 @@
-> [MAWS][1] &gt; [Sourcecode documentation][2]
+> [MAWS][1] &gt; Sourcecode documentation
 
 <br>
 <div align="center">
@@ -12,17 +12,13 @@
 </div>
 <br>
 
-# ABOUT THIS DOCUMENT
+# About the MAWSC sourcecode
 
 This is detailed documentation about the MAWSC sourcecode.
 
 Instead of having a ton of comments in the sourcecode, details about the code will be here.
 
-<br>
-
-# ABOUT THE MAWSC SOURCECODE
-
-## Headers
+# Headers
 
 Every class has a standard `**==[ PROJECT ]==**` header thta looks like this:
 ```
@@ -41,17 +37,17 @@ Every class has a unique `**--[ CLASS ]--**` header that looks like this:
 // %ClassName%.cs
 // %ShortClassDescription%
 // %BuildInformation%
-// Sourcode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Sourcecode/MAWSC-Sourcecode.md
+// Sourceode documentation: https://github.com/spectrum-health-systems/MAWSC/blob/main/Documents/Sourcecode/MAWSC-Sourcecode.md
 // --------------------------------------------------------------------------------------------
 ```
 
 The entry point for MAWSC (*MAWSC.cs*) also has an `**=-[ ABOUT ]-=**` header that provides various information and documentation links related to MAWSC. 
 
-## Comments
+# Comments
 
-Attempts have been made to make the MAWS sourcecode as human-readable as possible, so I'm keeping the comments to a minimum. The document you are currently reading is the primary source of information about how everything works.
+Attempts have been made to make the MAWSC sourcecode as human-readable as possible, so I'm keeping the comments to a minimum. The document you are currently reading is the primary source of information about how everything works.
 
-That being said, you will find the following types of comments in the MAWS sourcecode:
+That being said, you will find the following types of comments in the MAWSC sourcecode:
 ```
 /// XML comments used by Visual Studio
 ```
@@ -67,9 +63,9 @@ That being said, you will find the following types of comments in the MAWS sourc
  */
 ```
 
-## Variables
+# Variables
 
-### Variable prefixes
+## Variable prefixes
 
 * `sent`  
 If a variable name starts with "sent" (e.g., `sentValue`), the data it contains original data that should not be modified at any point.
@@ -80,7 +76,7 @@ If a variable name starts with "work" (e.g., `workDictionary`), it will be used 
 * `final`  
 If a variable name starts with "final" (e.g., `finalValue`), the data is in it's final form, and is most likely what will be returned from a method.
 
-###  Standard casing/trimming of values
+##  Standard casing/trimming of values
 
 Most logic in MAWSC is checked against lowercase values without any leading/trailing whitespace, so (in general) MAWSC will reduce a variable to its trimmed, lowercase value. This is done as soon as possible, usually when a variable is declared.
 
@@ -88,7 +84,7 @@ For example, if a variable has a value of "`_AValue_`" (where the "`_`" characte
 
 <br>
 
-# NAMESPACES
+# Namespaces
 
 Here is where you will find information about all of the MAWSC namespaces, and their sourcecode.
 
@@ -109,12 +105,15 @@ Here is where you will find information about all of the MAWSC namespaces, and t
 * [MAWSC.Staging](MAWSC.Staging.md)
 -->
 
-# ADDITIONAL READING
+# Additional reading
 
-There is quite a bit of myAvatar-related information/documentation at the [myAvatar Development Community](
-https://github.com/myAvatar-Development-Community/).
+There is quite a bit of myAvatar-related information/documentation at the [myAvatar Development Community](https://github.com/myAvatar-Development-Community/).
 
-> [MAWS][1] &gt; [Sourcecode documentation][2]
+<br>
+
+***
+
+> [MAWS][1] &gt; Sourcecode documentation
 
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
@@ -122,7 +121,6 @@ https://github.com/myAvatar-Development-Community/).
 [4]: ../Sourcecode/MAWSC.md
 [5]: ../Sourcecode/MAWSC.CommandLine.md
 [6]: ../Sourcecode/MAWSC.Configuration.md
-
 
 <div align="center">
   <sub>

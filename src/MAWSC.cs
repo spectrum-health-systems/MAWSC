@@ -1,5 +1,5 @@
 ﻿// ========================================[ PROJECT ]=========================================
-// MAWSC (MyAvatar Web Service Commander)### `METHOD`
+// MAWSC (MyAvatar Web Service Commander)
 // Tools and utilities for myAvatar™ custom web services.
 // https://github.com/spectrum-health-systems/MAWSC
 // Apache v2 (https://apache.org/licenses/LICENSE-2.0)
@@ -15,7 +15,7 @@
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-[ ABOUT MAWSC ]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // https://github.com/spectrum-health-systems/MAWSC
-// Version1.99.0.0
+// Version 1.99.0.0
 // Build: 220705.124138+devbuild
 //
 // MyAvatar Web Service Commander (MAWSC) is a command-line maintenance utility for the

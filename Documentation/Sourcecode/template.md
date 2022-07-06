@@ -1,6 +1,6 @@
 ﻿> Last updated MM.DD.YYYY
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.%NAMESPACE%**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt; **MAWSC.%NAMESPACE%**
 
 ***
 
@@ -39,4 +39,4 @@ None.
 
 ***
 
-[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt;  **MAWSC.%NAMESPACE%**
+[MAWS](https://github.com/spectrum-health-systems/MAWSC) &gt; [Sourcecode](../Sourcecode/MAWSC-Sourcecode.md) &gt; **MAWSC.%NAMESPACE%**

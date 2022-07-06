@@ -1,4 +1,4 @@
-﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt; **MAWSC namespace**
 
 <br>
 <br>
@@ -34,7 +34,7 @@ This namespace has a single class that contains a single method that handles the
   <i>Logic for initializing a new MAWSC session.</i>
 </summary>
 
-This class has a single class, with a single method, that handels the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
+This class has a single method that handles the initialization of a new MAWSC session. Most of the heavy lifting is done by other namespaces/classes/methods.
 
 ***
 
@@ -56,15 +56,13 @@ Initialize a new MAWSC session.
 * This class/method is designed to be pretty static, and rarely modified.
 * **(2)** We get the date/timestamp at the start of the session, and use the same date/timestamp throughout the session. This way anything related to the specific session will be labeled as such.
 
-***
-
 </details>
 
 <br>
 
 ***
 
-> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC namespace**
+> [MAWS][1] &gt; [Sourcecode][2] &gt; **MAWSC namespace**
 
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md

@@ -1,4 +1,4 @@
-﻿> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.CommandLine namespace**
+﻿> [MAWS][1] &gt; [Sourcecode][2] &gt; **MAWSC.CommandLine namespace**
 
 <br>
 <br>
@@ -152,7 +152,7 @@ Clean the MAWSC Command/Action/Option components.
 
 ***
 
-> [MAWS][1] &gt; [Sourcecode][2] &gt;  **MAWSC.CommandLine namespace**
+> [MAWS][1] &gt; [Sourcecode][2] &gt; **MAWSC.CommandLine namespace**
 
 [1]: https://github.com/spectrum-health-systems/MAWSC
 [2]: ../Sourcecode/MAWSC-Sourcecode.md
